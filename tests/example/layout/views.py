@@ -35,5 +35,4 @@ class FormTemplateView(TemplateView):
 class DashboardView(TemplateView):
     template_name = 'dashboard.html'
 
-class LoginView(TemplateView):
-    template_name = 'login.html'
+

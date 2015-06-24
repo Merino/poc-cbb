@@ -48,6 +48,7 @@ INSTALLED_APPS = (
     'panels',
 
     'example.layout',
+    'example.pages',
     'example.views',
 
 )
