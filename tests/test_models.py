@@ -1,26 +1,22 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
-"""
-test_poc-cbb
-------------
-
-Tests for `poc-cbb` models module.
-"""
-
 import os
 import shutil
-import unittest
+from django.test import TestCase
+
 
 from panels import models
+# from example.views.models import NestedA, NestedB, NestedC, NestedD
 
 
-class TestPanels(unittest.TestCase):
+class TestPanels(TestCase):
 
     def setUp(self):
         pass
 
     def test_something(self):
+
+        #response = self.client.get('/admin/')
+
+        #print response
         pass
 
     def tearDown(self):

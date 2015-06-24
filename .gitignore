@@ -95,3 +95,6 @@ docs/_build/
 target
 
 .idea/
+include/
+# Database
+*.sqlite3
