@@ -95,6 +95,8 @@ docs/_build/
 target
 
 .idea/
+.DS_Store
 include/
+
 # Database
 *.sqlite3
