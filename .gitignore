@@ -97,6 +97,8 @@ target
 .idea/
 .DS_Store
 include/
+.sass-cache/
+node_modules/
 
 # Database
 *.sqlite3
