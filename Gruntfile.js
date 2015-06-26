@@ -26,6 +26,28 @@ module.exports = function(grunt) {
         }
     },
 
+    concat: {
+        dist: {
+            files: {
+                'panels/static/javascript/apps.js': [
+                    'panels/source/apps/javascript/_navigation.js'
+                    ],
+                'panels/static/javascript/libs.js': [
+                    'panels/source/vendors/jquery/jquery-1.11.3.min.js',
+                    'panels/source/vendors/bootstrap/assets/javascripts/bootstrap.min.js',
+                    'panels/source/vendors/turbolinks/turbolinks.js'
+                    ],
+            },
+        }
+    },
+
+    watch: {
+        css: {
+            files: 'panels/source/**/*.scss',
+            tasks: ['sass:dist'],
+        }
+    },
+
     copy: {
         fonts: {
             expand: true,
@@ -45,9 +67,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Default task(s).
-  grunt.registerTask('default', ['uglify', 'sass', 'copy']);
-
-  grunt.registerTask('build', ['uglify']);
+  grunt.registerTask('default', ['watch']);
+  grunt.registerTask('build', ['sass', 'copy', 'concat']);
 };
