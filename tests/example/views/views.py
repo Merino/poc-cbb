@@ -17,7 +17,6 @@ class NestedBForm(ModelForm):
         model = NestedB
 
 
-
 class SingleFormView(CreateView):
     form_class = NestedAForm
     template_name = 'form_single.html'
@@ -32,45 +31,3 @@ class BaseInline(object):
 
 class NestedBInline(BaseInline):
     form_class = NestedBForm
-
-
-class SingleInlineView(TemplateView):
-    form_class = NestedAForm
-
-    template_name = 'form_inline_single.html'
-
-    inlines = [
-        NestedBInline
-    ]
-
-    def get_context_data(self, **kwargs):
-
-        formset = self.inlines[0]().get_inline_formsets()
-
-        context = {
-            'form': self.form_class(),
-            'formset': formset
-        }
-
-        return context
-
-
-    def post(self, request, **kwargs):
-        print request
-        print kwargs
-
-        formset = self.inlines[0]().get_inline_formsets()(data=request.POST)
-        form = self.form_class(data=request.POST)
-
-        if form.is_valid() and formset.is_valid():
-            form.save()
-            for form in formset:
-                form.save()
-
-
-        context = {
-            'form': form,
-            'formset': formset
-        }
-
-        return self.render_to_response(context)

@@ -46,6 +46,7 @@ INSTALLED_APPS = (
 
     'turbolinks',
     'panels',
+    'crispy_forms',
 
     'example.layout',
     'example.pages',
@@ -98,3 +99,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 THEME = 'default'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
