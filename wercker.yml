@@ -2,10 +2,10 @@ box: python:2.7-slim
 build:
   steps:
     - script:
-        name: pip install requirements text
+        name: pip install requirements-tests text
         code: |
           pip install  -r requirements-test.txt
     - script:
         name: django unit test
         code: |
-          python ./src/manage.py test -v 2
+          python manage.py test -v 2
