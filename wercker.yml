@@ -8,4 +8,4 @@ build:
     - script:
         name: django unit test
         code: |
-          python manage.py test -v 2
+          python test/manage.py test -v 2
