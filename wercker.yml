@@ -1,9 +1,8 @@
-box: wercker/python
-  services:
-    - wercker/postgresql
-  build:
-    steps:
-      - script:
-          name: test
-          code: |
-            python tests/manage.py test -v 2
+box: python:2.7-slim
+build:
+  steps:
+    - pip-install
+    - script:
+        name: django unit test
+        code: |
+          python src/manage.py test -v 2
