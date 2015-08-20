@@ -1,0 +1,9 @@
+box: wercker/python
+  services:
+    - wercker/postgresql
+  build:
+    steps:
+      - script:
+          name: test
+          code: |
+            python tests/manage.py test -v 2

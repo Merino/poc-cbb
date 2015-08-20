@@ -62,14 +62,17 @@
 }
 
 .nav__item a{
-  padding: 0;
-  height: 40px;
+  line-height: 20px;
+  height: 20px;
   background-color: transparent;
   font-size:13px;
   color:#C5cfdd;
   display: block;
-  padding-left: 27px;
+  padding: 8px 0 8px 27px;
+}
 
+.nav__item a:hover {
+  background: #24272d;
 }
 
 .nav__item .nav__icon {

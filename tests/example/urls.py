@@ -14,5 +14,5 @@ urlpatterns = patterns('',
     url(r'^pages',  include('example.pages.urls')),
 
     url(r'^views', include('example.views.urls')),
-    url(r'', DashboardView.as_view())
+    url(r'^$', DashboardView.as_view())
 )
