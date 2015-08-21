@@ -2,7 +2,7 @@ box: python:2.7-slim
 build:
   steps:
     - script:
-        name: pip install requirements-tests text
+        name: pip install requirements
         code: |
           pip install  -r requirements-test.txt
     - script:

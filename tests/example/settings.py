@@ -93,6 +93,43 @@ USE_L10N = True
 USE_TZ = True
 
 
+# NAVIGATION = {
+#     {
+#         'title': 'Sales',
+#         'icon': 'sales',
+#         'link': '/admin/scm/',
+#         'children': [
+#             {
+#                 'title': 'Order',
+#                 'icon': 'sales-order',
+#                 'link': '/admin/scm/order',
+#             },
+#             {
+#                 'title': 'Shipment',
+#                 'icon': 'sales-shipment',
+#                 'link': '/admin/scm/order',
+#             },
+#         ]
+#     },
+#     {
+#         'title': 'Catalog',
+#         'icon': 'catalog',
+#         'link': '/admin/pim/',
+#         'children': [
+#             {
+#                 'title': 'Categories',
+#                 'icon': 'catalog-categories',
+#                 'link': '/admin/pim/categories',
+#             },
+#             {
+#                 'title': 'Products',
+#                 'icon': 'catalog-products',
+#                 'link': 'admin/pim/products'
+#             }
+#         ]
+#     }
+# }
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 

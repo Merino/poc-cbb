@@ -1,5 +1,17 @@
-
 from panels import forms
+
+
+class BaseView(object):
+    pass
+
+
+
+class LoginView(object):
+    pass
+
+class LogoutView(object):
+    pass
+
 
 
 #

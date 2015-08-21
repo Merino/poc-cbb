@@ -1,0 +1,24 @@
+{% extends "base_layout.html" %}
+
+{% block header %}
+    List Someting
+{% endblock %}
+
+{% block content %}
+    <table>
+        <tr>
+            {% for header in list_headers %}
+            <th>{{ header }}</th>
+            {% endfor %}
+        </tr>
+        {% for list_result in list_results %}
+        <tr>
+            <td>Value One</td>
+            <td>Value Two</td>
+            <td>Value Two</td>
+            <td>Value Two</td>
+            <td>Value Two</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
