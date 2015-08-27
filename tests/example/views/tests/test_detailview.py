@@ -26,7 +26,7 @@ class TestViewObjectCreate(TestCase):
             'name': 'Name',
             'boolean': True,
             'date': date.today(),
-            'datetime': datetime.now(),
+            'datetime': "2011-09-01T13:20:30+03:00",
             'decimal': '5',
         }
 
@@ -49,7 +49,7 @@ class TestViewObjectUpdate(TestCase):
              name='Name',
              boolean=True,
              date=date.today(),
-             datetime=datetime.now(),
+             datetime="2011-09-01T13:20:30+03:00",
              decimal=5
         )
 
@@ -66,7 +66,7 @@ class TestViewObjectUpdate(TestCase):
             'name': 'Name - Updated',
             'boolean': True,
             'date': date.today(),
-            'datetime': datetime.now(),
+            'datetime': "2011-09-01T13:20:30+03:00",
             'decimal': '800',
         }
 
@@ -94,7 +94,7 @@ class TestViewObjectDelete(TestCase):
              name='Name',
              boolean=True,
              date=date.today(),
-             datetime=datetime.now(),
+             datetime="2011-09-01T13:20:30+03:00",
              decimal=5
         )
 
