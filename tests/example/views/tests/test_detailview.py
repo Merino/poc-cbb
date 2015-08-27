@@ -1,6 +1,7 @@
 from datetime import date, datetime
 
 from django.test import TestCase, RequestFactory
+from django.utils import timezone
 
 from example.views.views import ListCreateDataView, ListUpdateDataView, ListDeleteDateView
 from example.views.models import ListData
@@ -25,8 +26,8 @@ class TestViewObjectCreate(TestCase):
         data = {
             'name': 'Name',
             'boolean': True,
-            'date': date.today(),
-            'datetime': "2011-09-01T13:20:30+03:00",
+            'date': '2015-08-27',
+            'datetime': '2015-08-27 07:53:03',
             'decimal': '5',
         }
 
@@ -49,7 +50,7 @@ class TestViewObjectUpdate(TestCase):
              name='Name',
              boolean=True,
              date=date.today(),
-             datetime="2011-09-01T13:20:30+03:00",
+             datetime=timezone.now(),
              decimal=5
         )
 
@@ -65,8 +66,8 @@ class TestViewObjectUpdate(TestCase):
             'id': object.pk,
             'name': 'Name - Updated',
             'boolean': True,
-            'date': date.today(),
-            'datetime': "2011-09-01T13:20:30+03:00",
+            'date': '2015-08-27',
+            'datetime': '2015-08-27 07:53:03',
             'decimal': '800',
         }
 
@@ -94,7 +95,7 @@ class TestViewObjectDelete(TestCase):
              name='Name',
              boolean=True,
              date=date.today(),
-             datetime="2011-09-01T13:20:30+03:00",
+             datetime=timezone.now(),
              decimal=5
         )
 

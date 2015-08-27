@@ -1,6 +1,7 @@
 from datetime import date, datetime
 
 from django.test import TestCase, RequestFactory
+from django.utils import timezone
 
 from example.views.views import ListDataModelView
 from example.views.models import ListData
@@ -16,7 +17,7 @@ class TestViewSet(TestCase):
              name='Name',
              boolean=True,
              date=date.today(),
-             datetime=datetime.now(),
+             datetime=timezone.now(),
              decimal=5
         )
 
