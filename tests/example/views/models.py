@@ -1,6 +1,5 @@
 from django.db import models
 
-# Create your models here.
 
 class ListData(models.Model):
     """
@@ -13,17 +12,35 @@ class ListData(models.Model):
     boolean = models.BooleanField(default=True)
 
 
-# class NestedA(models.Model):
-#     name = models.CharField(max_length=30)
-#
-# class NestedB(models.Model):
-#     nested_a = models.ForeignKey('NestedA')
-#     name = models.CharField(max_length=30)
-#
-# class NestedC(models.Model):
-#     nested_b = models.ForeignKey('NestedB')
-#     name = models.CharField(max_length=30)
-#
-# class NestedD(models.Model):
-#     nested_c = models.ForeignKey('NestedC')
-#     name = models.CharField(max_length=30)
+"""
+    Model to demonstrate the inlines
+"""
+class NestedA(models.Model):
+    name = models.CharField(max_length=30)
+    decimal = models.DecimalField(decimal_places=2, max_digits=5)
+    boolean = models.BooleanField(default=True)
+
+
+class NestedB1(models.Model):
+     nested_a = models.ForeignKey('NestedA')
+     name = models.CharField(max_length=30)
+
+
+class NestedB2(models.Model):
+     nested_a = models.ForeignKey('NestedA')
+     name = models.CharField(max_length=30)
+
+
+class NestedC1(models.Model):
+     nested_b = models.ForeignKey('NestedB1')
+     name = models.CharField(max_length=30)
+
+
+class NestedC2(models.Model):
+     nested_b = models.ForeignKey('NestedB1')
+     name = models.CharField(max_length=30)
+
+
+class NestedC3(models.Model):
+     nested_b = models.ForeignKey('NestedB2')
+     name = models.CharField(max_length=30)

@@ -3,6 +3,7 @@ from django.test import TestCase
 from example.views.views import ListDataModelView
 from example.views.models import ListData
 
+
 class TestViewListTable(TestCase):
 
     def setUp(self):

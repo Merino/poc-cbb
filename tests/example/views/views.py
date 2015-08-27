@@ -33,7 +33,7 @@ from django.forms.formsets import formset_factory
 
 from panels.views.data import ListView, UpdateView, CreateView, DeleteView
 from panels.views.base import ModelViewSet
-from .models import ListData
+from .models import ListData, NestedA
 
 
 class ListDataModelView(ModelViewSet):

@@ -6,6 +6,7 @@ from django.utils import timezone
 from example.views.views import ListDataModelView
 from example.views.models import ListData
 
+
 class TestViewSet(TestCase):
 
     def setUp(self):
