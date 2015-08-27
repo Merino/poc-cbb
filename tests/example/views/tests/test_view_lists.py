@@ -3,7 +3,7 @@ from django.test import TestCase
 from example.views.views import ListDataModelView
 from example.views.models import ListData
 
-class TestListView(TestCase):
+class TestViewListTable(TestCase):
 
     def setUp(self):
         pass
@@ -21,7 +21,7 @@ class TestListView(TestCase):
         pass
 
 
-class TestListViewSearch(TestCase):
+class TestViewListSearch(TestCase):
 
     def setUp(self):
         pass
@@ -39,7 +39,7 @@ class TestListViewSearch(TestCase):
         pass
 
 
-class TestListViewFacets(TestCase):
+class TestViewListFacets(TestCase):
 
     def setUp(self):
         pass
@@ -54,7 +54,7 @@ class TestListViewFacets(TestCase):
         pass
 
 
-class TestListViewActions(TestCase):
+class TestViewListActions(TestCase):
 
     def setUp(self):
         pass

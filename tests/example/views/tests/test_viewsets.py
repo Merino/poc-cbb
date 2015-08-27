@@ -11,7 +11,7 @@ class TestViewSet(TestCase):
     def setUp(self):
         pass
 
-    def test_basic_viewset(self):
+    def test_viewset_urls(self):
         view = ListDataModelView()
         object = ListData.objects.create(
              name='Name',

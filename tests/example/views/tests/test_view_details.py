@@ -7,12 +7,12 @@ from example.views.views import ListCreateDataView, ListUpdateDataView, ListDele
 from example.views.models import ListData
 
 
-class TestViewObjectCreate(TestCase):
+class TestViewDetailCreate(TestCase):
 
     def setUp(self):
         pass
 
-    def test_object_create(self):
+    def test_view_create(self):
         view = ListCreateDataView.as_view()
 
         self.assertEqual(ListData.objects.count(), 0)
@@ -38,12 +38,12 @@ class TestViewObjectCreate(TestCase):
         self.assertEqual(ListData.objects.count(), 1)
 
 
-class TestViewObjectUpdate(TestCase):
+class TestViewDetailUpdate(TestCase):
 
     def setUp(self):
         pass
 
-    def test_object_update(self):
+    def test_view_update(self):
         view = ListUpdateDataView.as_view()
 
         object = ListData.objects.create(
@@ -83,12 +83,12 @@ class TestViewObjectUpdate(TestCase):
         self.assertEqual(object_updated.decimal, 800)
 
 
-class TestViewObjectDelete(TestCase):
+class TestViewDetailDelete(TestCase):
 
     def setUp(self):
         pass
 
-    def test_object_delete(self):
+    def test_view_delete(self):
         view = ListDeleteDateView.as_view()
 
         object = ListData.objects.create(
