@@ -2,8 +2,8 @@ from datetime import date, datetime
 
 from django.test import TestCase, RequestFactory
 
-from ..views import ListDataModelView
-from ..models import ListData
+from example.views.views import ListDataModelView
+from example.views.models import ListData
 
 class TestViewSet(TestCase):
 

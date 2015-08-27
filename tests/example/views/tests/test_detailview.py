@@ -1,9 +1,9 @@
+from datetime import date, datetime
+
 from django.test import TestCase, RequestFactory
 
-from ..views import ListCreateDataView, ListUpdateDataView, ListDeleteDateView
-from ..models import ListData
-
-from datetime import date, datetime
+from example.views.views import ListCreateDataView, ListUpdateDataView, ListDeleteDateView
+from example.views.models import ListData
 
 
 class TestViewObjectCreate(TestCase):

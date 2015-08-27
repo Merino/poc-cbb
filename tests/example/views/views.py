@@ -39,6 +39,7 @@ from .models import ListData
 class ListDataModelView(ModelViewSet):
     model = ListData
     name = 'listdata'
+    app_name = 'views'
 
     list_display = [
         'name',
@@ -47,7 +48,6 @@ class ListDataModelView(ModelViewSet):
         'boolean',
         'decimal'
     ]
-
 
 # class ListDataView(ListView):
 #     queryset = ListData.objects.all()

@@ -1,7 +1,7 @@
 from django.test import TestCase
 
-from ..models import ListData
-from ..views import ListDataView
+from example.views.views import ListDataModelView
+from example.views.models import ListData
 
 class TestListView(TestCase):
 

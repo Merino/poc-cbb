@@ -49,6 +49,7 @@ class ModelViewSet(ViewSet):
     list_facets = []
     list_actions = []
     list_ordering = []
+    list_empty_note = 'Please add a new Model to you table'
 
     detail_actions = []
     detail_layout = []
@@ -75,14 +76,26 @@ class ModelViewSet(ViewSet):
             'list_facets': self.list_facets,
             'list_search': self.list_search,
             'list_ordering': self.list_ordering,
+            'list_empty_note': self.list_empty_note
         })
         return kwargs
 
     def get_create_kwargs(self):
-        return self.get_default_kwargs()
+        kwargs = self.get_default_kwargs()
+        kwargs.update({
+            'detail_layout': self.list_actions,
+            'detail_inlines': self.list_facets,
+        })
+        return kwargs
 
     def get_update_kwargs(self):
-        return self.get_default_kwargs()
+        kwargs = self.get_default_kwargs()
+        kwargs.update({
+            'detail_actions': self.list_display,
+            'detail_layout': self.list_actions,
+            'detail_inlines': self.list_facets,
+        })
+        return kwargs
 
     def get_delete_kwargs(self):
         return self.get_default_kwargs()
