@@ -13,6 +13,9 @@ class DesignGrid(TemplateView):
 class DesignIcons(TemplateView):
     template_name = 'design_icons.html'
 
+class DesignIntro(TemplateView):
+    template_name = 'design_intro.html'
+
 class DesignLayout(TemplateView):
     template_name = 'design_layout.html'
 

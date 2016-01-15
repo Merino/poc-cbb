@@ -53,6 +53,7 @@ INSTALLED_APPS = (
     'example.views',
     'example.design',
     'example.components',
+    'example.patterns',
 
 )
 

@@ -1,11 +1,8 @@
-<html>
+{% extends "design_head.html" %}
 
-    <head>
-        <title>Design Grid</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+{% block head_title %}Design Grid{% endblock %}
 
-    </head>
-    <body>
+{% block content %}
 
 
     <div class="container">
@@ -592,5 +589,7 @@ This is because the viewport width is in pixels and does not change with the <a 
 
         </div>
 
-    </body>
-</html>
+
+
+
+{% endblock %}

@@ -1,8 +1,9 @@
 from django.conf.urls import url
 
-from .views import DesignColors, DesignGrid, DesignIcons, DesignLayout, DesignMotions, DesignTypography
+from .views import DesignColors, DesignGrid, DesignIcons, DesignIntro, DesignLayout, DesignMotions, DesignTypography
 
 urlpatterns = [
+    url(r'^$', DesignIntro.as_view()),
     url(r'^colors/', DesignColors.as_view()),
     url(r'^grid/', DesignGrid.as_view()),
     url(r'^icons/', DesignIcons.as_view()),
