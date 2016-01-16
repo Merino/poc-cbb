@@ -1,10 +1,22 @@
 {% extends "base_layout.html" %}
 
+{% load list_filter %}
+
 {% block header %}
     List Someting
 {% endblock %}
 
 {% block content %}
+
+    {% block filters %}
+       {% for spec in list_filter %}
+       <div class="filter">
+            {% list_filter_render spec %}
+       </div>
+       {% endfor %}
+    {% endblock %}
+
+    {% block result %}
     <table>
         <tr>
             {% for header in list_headers %}
@@ -13,11 +25,9 @@
         </tr>
         {% for list_result in list_results %}
         <tr>
-            <td>Value One</td>
-            <td>Value Two</td>
-            <td>Value Two</td>
-            <td>Value Two</td>
-            <td>Value Two</td>
+            {% for field in list_result %}
+            <td>{{ field }}</td>
+            {% endfor %}
         </tr>
         {% empty %}
         <tr>
@@ -25,4 +35,7 @@
         </tr>
         {% endfor %}
     </table>
+
+
+    {% endblock %}
 {% endblock %}
