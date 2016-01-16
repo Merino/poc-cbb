@@ -13,6 +13,9 @@ urlpatterns = patterns('',
     #url(r'^layout', include('example.layout.urls')),
     #url(r'^pages',  include('example.pages.urls')),
 
-    url(r'^views', include('example.views.urls')),
-    url(r'^$', DashboardView.as_view())
+    url(r'^design/', include('example.design.urls')),
+    url(r'^components/', include('example.components.urls')),
+    url(r'^patterns/', include('example.patterns.urls')),
+    #url(r'^views', include('example.views.urls')),
+    url(r'^$', DashboardView.as_view()),
 )
