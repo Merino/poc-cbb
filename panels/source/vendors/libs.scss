@@ -1,9 +1,17 @@
 // Import Bootstrap Compass integration
-@import "bootstrap/assets/stylesheets/bootstrap-compass";
+//@import "bootstrap/assets/stylesheets/bootstrap-compass";
 // Import custom Bootstrap variables
-@import "bootstrap-variables";
+//@import "bootstrap-variables";
 // Import Bootstrap for Sass
-@import "bootstrap/assets/stylesheets/bootstrap";
+//@import "bootstrap/assets/stylesheets/bootstrap";
+
+
 
 // Import Font Awesome
-@import "font-awesome/scss/font-awesome";
+//@import "font-awesome/scss/font-awesome";
+
+// Import Bootstrap 4 variables
+@import "bootstrap4-variables";
+
+// Import Bootstrap 4 source
+@import "bootstrap4/scss/bootstrap";
