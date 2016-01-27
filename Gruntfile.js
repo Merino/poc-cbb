@@ -20,8 +20,8 @@ module.exports = function(grunt) {
             style: 'expanded'
           },
           files: {                         // Dictionary of files
-            'panels/static/css/apps.css': 'panels/source/apps/css/apps.scss',
-            'panels/static/css/libs.css': 'panels/source/vendors/libs.scss'
+            'panels/static/vesper/css/apps.css': 'panels/source/apps/css/apps.scss',
+            'panels/static/vesper/css/libs.css': 'panels/source/vendors/libs.scss'
           }
         }
     },
@@ -29,10 +29,10 @@ module.exports = function(grunt) {
     concat: {
         dist: {
             files: {
-                'panels/static/javascript/apps.js': [
+                'panels/static/vesper/javascript/apps.js': [
                     'panels/source/apps/javascript/_navigation.js'
                     ],
-                'panels/static/javascript/libs.js': [
+                'panels/static/vesper/javascript/libs.js': [
                     'panels/source/vendors/jquery/jquery-1.11.3.min.js',
                     'panels/source/vendors/bootstrap/assets/javascripts/bootstrap.min.js',
                     'panels/source/vendors/turbolinks/turbolinks.js'
@@ -55,7 +55,17 @@ module.exports = function(grunt) {
             src: [
                 'panels/source/vendors/bootstrap/dist/fonts/*',
                 'panels/source/vendors/font-awesome/fonts/*'],
-            dest: 'panels/static/fonts/',
+            dest: 'panels/static/vesper/fonts/',
+            filter: 'isFile',
+            flatten: true
+        },
+        image: {
+            expand: true,
+            cwd: '.',
+            src: [
+                'panels/source/apps/image/*',
+            ],
+            dest: 'panels/static/vesper/image/',
             filter: 'isFile',
             flatten: true
         }
