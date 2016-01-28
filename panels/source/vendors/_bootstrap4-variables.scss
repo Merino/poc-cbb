@@ -241,27 +241,27 @@ $font-size-root: $global-font-size;
 //$btn-active-box-shadow:          inset 0 3px 5px rgba(0,0,0,.125) !default;
 //
 //$btn-primary-color:              #fff !default;
-//$btn-primary-bg:                 $brand-primary !default;
+$btn-primary-bg:                 #3572b0 !default;
 //$btn-primary-border:             $btn-primary-bg !default;
 //
-//$btn-secondary-color:            $gray-dark !default;
-//$btn-secondary-bg:               #fff !default;
-//$btn-secondary-border:           #ccc !default;
+$btn-secondary-color:            #FFF !default;
+$btn-secondary-bg:               #707070 !default;
+$btn-secondary-border:           #909090 !default;
 //
 //$btn-info-color:                 #fff !default;
-//$btn-info-bg:                    $brand-info !default;
+$btn-info-bg:                    #59afe1 !default;
 //$btn-info-border:                $btn-info-bg !default;
 //
 //$btn-success-color:              #fff !default;
-//$btn-success-bg:                 $brand-success !default;
+$btn-success-bg:                 #67ab49 !default;
 //$btn-success-border:             $btn-success-bg !default;
 //
 //$btn-warning-color:              #fff !default;
-//$btn-warning-bg:                 $brand-warning !default;
+$btn-warning-bg:                 #f79232 !default;
 //$btn-warning-border:             $btn-warning-bg !default;
 //
 //$btn-danger-color:               #fff !default;
-//$btn-danger-bg:                  $brand-danger !default;
+$btn-danger-bg:                  #d04437 !default;
 //$btn-danger-border:              $btn-danger-bg !default;
 //
 //$btn-link-disabled-color:        $gray-light !default;
@@ -450,7 +450,7 @@ $font-size-root: $global-font-size;
 //// Define colors for form feedback states and, by default, alerts.
 //
 //$state-success-text:             #3c763d !default;
-//$state-success-bg:               #dff0d8 !default;
+$state-success-bg:               #8eb021 !default;
 //$state-success-border:           darken($state-success-bg, 5%) !default;
 //
 //$state-info-text:                #31708f !default;

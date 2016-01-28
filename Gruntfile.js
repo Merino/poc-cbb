@@ -54,7 +54,7 @@ module.exports = function(grunt) {
             cwd: '.',
             src: [
                 'panels/source/vendors/bootstrap/dist/fonts/*',
-                'panels/source/vendors/font-awesome/fonts/*'],
+                'panels/source/vendors/font-awesome-4.5.0/fonts/*'],
             dest: 'panels/static/vesper/fonts/',
             filter: 'isFile',
             flatten: true

@@ -74,7 +74,7 @@
                     </li>
                 </ul>
             </nav>
-            <header id="header-container">
+            <header id="header-container" class="navbar navbar-fixed-top">
                 <div id="header-brand">
                     <a href="/">Brameda</a>
                 </div>
@@ -83,10 +83,16 @@
                 </div>
             </header>
             <main id="main-container">
+                <div class="container-fluid">
                 {% block content %}
                     Dashboard
                 {% endblock %}
+                </div>
             </main>
+
+
+
+
             <footer id="footer-container">
                 WE &hearts; B2B Ecommerce
             </footer>
