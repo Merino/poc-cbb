@@ -89,6 +89,41 @@ body {
   text-align: center;
 }
 
+.page-header {
+  border-spacing: 0;
+  box-sizing: border-box;
+  display: table;
+  table-layout: auto;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.page-header-title {
+  box-sizing: border-box;
+  display: table-cell;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.page-header-actions {
+  padding-left: 20px;
+  text-align: right;
+  vertical-align: middle;
+  box-sizing: border-box;
+  display: table-cell;
+  margin: 0;
+  padding: 0;
+}
+
+.page-panel {
+  background: #FFF;
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+  width: 100%;
+}
+
 .message {
   border-radius: 3px;
   border: 1px solid #3572b0;

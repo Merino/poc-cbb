@@ -1,0 +1,44 @@
+
+.page-header {
+  border-spacing: 0;
+  box-sizing: border-box;
+  display: table;
+  table-layout: auto;
+  width: 100%;
+  margin-bottom:20px;
+}
+
+.page-header-title {
+      box-sizing: border-box;
+    display: table-cell;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.page-header-actions {
+  padding-left: 20px;
+  text-align: right;
+  vertical-align: middle;
+  box-sizing: border-box;
+  display: table-cell;
+  margin: 0;
+  padding: 0;
+}
+
+
+.page-panel {
+  background:#FFF;
+  border:1px solid #cccccc;
+  border-radius: 3px;
+  width: 100%;
+}
+
+.page-panel-title {
+
+}
+
+.page-panel-content {
+
+}
