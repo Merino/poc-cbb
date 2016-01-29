@@ -242,27 +242,27 @@ $font-size-root: $global-font-size;
 //
 //$btn-primary-color:              #fff !default;
 $btn-primary-bg:                 #3572b0 !default;
-//$btn-primary-border:             $btn-primary-bg !default;
+$btn-primary-border:             rgba(0,0,0,.125) !default;
 //
-$btn-secondary-color:            #FFF !default;
-$btn-secondary-bg:               #707070 !default;
-$btn-secondary-border:           #909090 !default;
+//$btn-secondary-color:            #FFF !default;
+//$btn-secondary-bg:               #707070 !default;
+$btn-secondary-border:           rgba(0,0,0,.25) !default;
 //
 //$btn-info-color:                 #fff !default;
 $btn-info-bg:                    #59afe1 !default;
-//$btn-info-border:                $btn-info-bg !default;
+$btn-info-border:                rgba(0,0,0,.125) !default;
 //
 //$btn-success-color:              #fff !default;
 $btn-success-bg:                 #67ab49 !default;
-//$btn-success-border:             $btn-success-bg !default;
+$btn-success-border:             rgba(0,0,0,.125) !default;
 //
 //$btn-warning-color:              #fff !default;
 $btn-warning-bg:                 #f79232 !default;
-//$btn-warning-border:             $btn-warning-bg !default;
+$btn-warning-border:              rgba(0,0,0,.125) !default;
 //
 //$btn-danger-color:               #fff !default;
 $btn-danger-bg:                  #d04437 !default;
-//$btn-danger-border:              $btn-danger-bg !default;
+$btn-danger-border:              rgba(0,0,0,.125) !default;
 //
 //$btn-link-disabled-color:        $gray-light !default;
 //

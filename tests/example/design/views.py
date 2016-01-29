@@ -10,6 +10,9 @@ class DesignColors(TemplateView):
 class DesignGrid(TemplateView):
     template_name = 'design_grid.html'
 
+class DesignBlocks(TemplateView):
+    template_name = 'design_blocks.html'
+
 class DesignIcons(TemplateView):
     template_name = 'design_icons.html'
 

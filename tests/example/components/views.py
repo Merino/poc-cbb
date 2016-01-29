@@ -16,3 +16,6 @@ class ComponentFormView(TemplateView):
 
 class ComponentFormButton(TemplateView):
     template_name = 'component_button.html'
+
+class ComponentPageHeader(TemplateView):
+    template_name = 'component_page_header.html'
