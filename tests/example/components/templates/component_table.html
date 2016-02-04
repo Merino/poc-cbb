@@ -1,0 +1,427 @@
+{% extends "design_head.html" %}
+
+{% block head_title %}Component Data Table{% endblock %}
+
+{% block content %}
+    <h3>Table</h3>
+
+    <section id="example-table-basic">
+        <h4>Basic</h4>
+        <div class="page-panel">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th scope="col">
+                            <label class="" for="select-all">
+                                <input name="checkbox" type="checkbox" id="select-all">
+                            </label>
+                        </th>
+                        <th scope="col">
+                            <span>Number</span>
+                        </th>
+                        <th scope="col">
+                            <span class="data-table-truncate">Date</span>
+                        </th>
+                        <th scope="col">
+                            <span class="data-table-truncate">Channel</span>
+                        </th>
+                        <th scope="col">
+                            <span class="data-table-truncate">Source</span>
+                        </th>
+                         <th scope="col">
+                            <span class="data-table-truncate">Account</span>
+                        </th>
+                        <th scope="col">
+                            <span class="data-table-truncate">Reference</span>
+                        </th>
+                        <th scope="col">
+                            <span class="data-table-truncate">Note</span>
+                        </th>
+                        <th scope="col">
+                            <span class="data-table-truncate">Summary</span>
+                        </th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="data-table-row-select">
+                            <label class="slds-checkbox" for="select-row1">
+                                <input name="select-row1" type="checkbox" id="select-row1" />
+                            </label>
+                        </td>
+                        <th data-label="opportunity-name" role="row">
+                            <a href="#" class="slds-truncate">WO201602039</a>
+                        </th>
+                        <td data-label="account">2016-02-01 14:15</td>
+                        <td data-label="activity">
+                            <span class="slds-truncate">Novadeals : bol.com	</span>
+                        </td>
+                        <td data-label="stage">
+                            <span class="slds-truncate">Publisher	</span>
+                        </td>
+                        <td data-label="confidence">
+                            <span class="slds-truncate">Bol.com</span>
+                        </td>
+                        <td data-label="amount">
+                            <span class="slds-truncate">8670744610</span>
+                        </td>
+                        <td data-label="contact">
+                            <span class="slds-truncate">--</span>
+                        </td>
+                        <td data-label="contact">
+                            <span class="slds-truncate">1× Verstelbare bestekbak Bambus 29 - 43 cm.</span>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td class="data-table-row-select">
+                            <label class="slds-checkbox" for="select-row1">
+                                <input name="select-row1" type="checkbox" id="select-row1" />
+                            </label>
+                        </td>
+                        <th data-label="opportunity-name" role="row">
+                            <a href="#" class="slds-truncate">WO201602039</a>
+                        </th>
+                        <td data-label="account">
+                            2016-02-01 10:20
+                        </td>
+                        <td data-label="activity">
+                            <span class="slds-truncate">Novadeals : bol.com	</span>
+                        </td>
+                        <td data-label="stage">
+                            <span class="slds-truncate">Publisher	</span>
+                        </td>
+                        <td data-label="confidence">
+                            <span class="slds-truncate">Bol.com</span>
+                        </td>
+                        <td data-label="amount">
+                            <span class="slds-truncate">8670744610</span>
+                        </td>
+                        <td data-label="contact">
+                            <span class="slds-truncate">--</span>
+                        </td>
+                        <td data-label="contact">
+                            <span class="slds-truncate">1× WALRA badgoed Walra set van 6 Washandjes 16x21 Dark Grey</span>
+                        </td>
+
+                    </tr>
+                    <tr class="data-table-row-selected">
+                        <td class="data-table-row-select">
+                            <label class="slds-checkbox" for="select-row1">
+                                <input name="select-row1" type="checkbox" id="select-row1" checked />
+                            </label>
+                        </td>
+                        <th data-label="opportunity-name" role="row">
+                            <a href="#" class="slds-truncate">WO201602039</a>
+                        </th>
+                        <td data-label="account">
+                            Feb. 1, 2016, 12:15 p.m.
+                        </td>
+                        <td data-label="activity">
+                            <span class="slds-truncate">Novadeals : bol.com	</span>
+                        </td>
+                        <td data-label="stage">
+                            <span class="slds-truncate">Publisher	</span>
+                        </td>
+                        <td data-label="confidence">
+                            <span class="slds-truncate">Bol.com</span>
+                        </td>
+                        <td data-label="amount">
+                            <span class="slds-truncate">8670744610</span>
+                        </td>
+                        <td data-label="contact">
+                            <span class="slds-truncate">--</span>
+                        </td>
+                        <td data-label="contact">
+                            <span class="slds-truncate">1× Verstelbare bestekbak Bambus 29 - 43 cm.</span>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td class="data-table-row-select">
+                            <label class="slds-checkbox" for="select-row1">
+                                <input name="select-row1" type="checkbox" id="select-row1" />
+                            </label>
+                        </td>
+                        <th data-label="opportunity-name" role="row">
+                            <a href="#" class="slds-truncate">WO201602039</a>
+                        </th>
+                        <td data-label="account">Feb. 1, 2016, 12:15 p.m.</td>
+                        <td data-label="activity">
+                            <span class="slds-truncate">Novadeals : bol.com	</span>
+                        </td>
+                        <td data-label="stage">
+                            <span class="slds-truncate">Publisher	</span>
+                        </td>
+                        <td data-label="confidence">
+                            <span class="slds-truncate">Bol.com</span>
+                        </td>
+                        <td data-label="amount">
+                            <span class="slds-truncate">8670744610</span>
+                        </td>
+                        <td data-label="contact">
+                            <span class="slds-truncate">--</span>
+                        </td>
+                        <td data-label="contact">
+                            <span class="slds-truncate">1× Verstelbare bestekbak Bambus 29 - 43 cm.</span>
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <br />
+    <br />
+
+    <section id="example-table-structured">
+        <h4>Structured</h4>
+        <p>A table can be formatted to display complex structured data</p>
+        <div class="page-panel">
+
+            <table class="data-table">
+      <thead>
+        <tr>
+          <th rowspan="2">Name</th>
+          <th rowspan="2">Type</th>
+          <th rowspan="2">Files</th>
+          <th colspan="3">Languages</th>
+        </tr>
+        <tr>
+          <th>Ruby</th>
+          <th>JavaScript</th>
+          <th>Python</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Alpha Team</td>
+          <td>Project 1</td>
+          <td>2</td>
+          <td>
+            <i class="large green checkmark icon"></i>
+          </td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td rowspan="3">Beta Team</td>
+          <td>Project 1</td>
+          <td>52</td>
+          <td>
+            <i class="large green checkmark icon"></i>
+          </td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Project 2</td>
+          <td class="right aligned">12</td>
+          <td></td>
+          <td>
+            <i class="large green checkmark icon"></i>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Project 3</td>
+          <td>21</td>
+          <td>
+            <i class="large green checkmark icon"></i>
+          </td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+
+        </div>
+    </section>
+
+    <section id="example-table-blankslade">
+        <h4>Blank Slate</h4>
+        <p></p>
+        <div class="page-panel">
+             <table class="data-table">
+                <thead>
+                    <tr>
+                        <th scope="col">
+                            <label class="" for="select-all">
+                                <input name="checkbox" type="checkbox" id="select-all">
+                            </label>
+                        </th>
+                        <th scope="col">
+                            <span>Number</span>
+                        </th>
+                        <th scope="col">
+                            <span class="data-table-truncate">Date</span>
+                        </th>
+                        <th scope="col">
+                            <span class="data-table-truncate">Channel</span>
+                        </th>
+                        <th scope="col">
+                            <span class="data-table-truncate">Source</span>
+                        </th>
+                         <th scope="col">
+                            <span class="data-table-truncate">Account</span>
+                        </th>
+                        <th scope="col">
+                            <span class="data-table-truncate">Reference</span>
+                        </th>
+                        <th scope="col">
+                            <span class="data-table-truncate">Note</span>
+                        </th>
+                        <th scope="col">
+                            <span class="data-table-truncate">Summary</span>
+                        </th>
+                        <th class="data-table-row-action" scope="col">
+
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="data-table-blankslade">
+                        <td colspan="10000">
+                            <h3>This is a blank slate</h3>
+                            <p>Use it to provide information when no dynamic content exists.</p>
+                        </td>
+                    <tr>
+                </tbody>
+             </table>
+        </div>
+    </section>
+
+    <br />
+    <section id="example-table-row-states">
+        <h4>States</h4>
+        <div class="page-panel">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th scope="col">
+                            X
+                        </th>
+                        <th scope="col">Column 1</th>
+                        <th scope="col">Column 2</th>
+                        <th scope="col">Column 3</th>
+                        <th scope="col">Column 4</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            X
+                        </td>
+                        <td>Normal</td>
+                        <td>Value A2</td>
+                        <td>Value A3</td>
+                        <td>Value A4</td>
+                    </tr>
+                    <tr class="data-table__selected">
+                        <td class="data-table-info">
+                            X
+                        </td>
+                        <td>Selected</td>
+                        <td>Value A2</td>
+                        <td>Value A3</td>
+                        <td>Value A4</td>
+                    </tr>
+                    <tr class="data-table__hover">
+                        <td class="data-table-info">
+                            X
+                        </td>
+                        <td>Hover</td>
+                        <td>Value A2</td>
+                        <td>Value A3</td>
+                        <td>Value A4</td>
+                    </tr>
+                    <tr class="data-table-info">
+                        <td>
+                            X
+                        </td>
+                        <td>Info</td>
+                        <td>Value A2</td>
+                        <td>Value A3</td>
+                        <td>Value A4</td>
+                    </tr>
+                    <tr class="data-table-success">
+                        <td>
+                           X
+                        </td>
+                        <td>Success</td>
+                        <td>Value A2</td>
+                        <td>Value A3</td>
+                        <td>Value A4</td>
+                    </tr>
+                    <tr class="data-table-warning">
+                        <td>
+                           X
+                        </td>
+                        <td>Warning</td>
+                        <td>Value A2</td>
+                        <td>Value A3</td>
+                        <td>Value A4</td>
+                    </tr>
+                    <tr class="data-table-danger">
+                        <td>
+                            X
+                        </td>
+                        <td>Danger</td>
+                        <td>Value A2</td>
+                        <td>Value A3</td>
+                        <td>Value A4</td>
+                    </tr>
+                    <tr class="data-table__disabled">
+                        <td>
+                            X
+                        </td>
+                        <td>Disabled</td>
+                        <td>Value A2</td>
+                        <td>Value A3</td>
+                        <td>Value A4</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </section>
+
+    <section>
+        <h4>Alignment</h4>
+        <p>A table header, row, or cell can adjust its vertical alignment</p>
+        <div class="page-panel">
+        <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Status</th>
+                  <th>Notes</th>
+                </tr>
+              </thead>
+          <tbody>
+            <tr class="top aligned">
+              <td>John</td>
+              <td>Approved</td>
+              <td class="top aligned">
+                Notes<br>
+                1<br>
+                2<br>
+              </td>
+            </tr>
+            <tr>
+              <td>Jamie</td>
+              <td class="bottom aligned">Approved</td>
+              <td>
+                Notes<br>
+                1<br>
+                2<br>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+    </section>
+
+{% endblock %}

@@ -73,14 +73,14 @@
 
 .message-error {
   background: #fff;
-  border-color: $error-bg-color;
+  border-color: $danger-bg-color;
   color: #333;
 
   :before {
-    background-color: $error-bg-color;
+    background-color: $danger-bg-color;
   }
   :after{
-    content: "\f06a";
+    content: "\f00d";
   }
 }
 

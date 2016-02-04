@@ -1,5 +1,5 @@
 body {
-  background-color: whitesmoke;
+  background-color: #f5f5f5;
 }
 
 /* Navigation */
@@ -41,7 +41,7 @@ body {
 #main-container {
   margin-left: 230px;
   margin-top: 41px;
-  background-color: whitesmoke;
+  background-color: #f5f5f5;
   padding: 2rem;
 }
 
@@ -219,6 +219,124 @@ body {
   border-top: 1px solid #CCC;
 }
 
+@keyframes spin-around {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+.btn {
+  position: relative;
+}
+.btn.btn--loading {
+  color: transparent;
+  pointer-events: none;
+}
+.btn.btn--loading:after {
+  left: 50%;
+  top: 50%;
+  position: absolute !important;
+  height: 1.0rem;
+  width: 1.0rem;
+  margin-left: -0.5rem;
+  margin-top: -0.5rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+  line-height: 1.5;
+  vertical-align: middle;
+}
+
+.btn.btn--loading:after {
+  animation: spin-around 500ms infinite linear;
+  border: 2px solid #d3d6db;
+  border-radius: 290486px;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  content: "";
+  display: block;
+  height: 1rem;
+  position: relative;
+  width: 1rem;
+}
+
+.data-table {
+  width: 100%;
+  background-color: #FFF;
+}
+.data-table tr, .data-table td {
+  padding: 0.75rem;
+  line-height: 1.5;
+  vertical-align: middle;
+  border-top: 1px solid #cccccc;
+}
+.data-table th {
+  padding: 0.5rem;
+  white-space: nowrap;
+  font-weight: 400;
+  border-top: 1px solid #cccccc;
+}
+.data-table tr > th:first-child,
+.data-table tr > td:first-child {
+  padding-left: 1.5rem;
+  width: 1%;
+}
+.data-table thead th {
+  text-transform: uppercase;
+  font-weight: 200;
+  color: #333333;
+  vertical-align: bottom;
+  padding: .75rem;
+  line-height: 1.5;
+  background-color: #ebf2f9;
+}
+.data-table thead label {
+  margin: 0;
+}
+.data-table tbody tr:nth-of-type(even) {
+  background-color: #f5f5f5;
+  background-color: #FFF;
+}
+.data-table tbody tr:nth-of-type(odd) {
+  background-color: #f5f5f5;
+  background-color: #FFF;
+}
+.data-table tbody tr:hover, .data-table tbody tr.data-table__hover {
+  background-color: #e8e8e8;
+  background-color: #f5f5f5;
+}
+.data-table tbody tr.data-table__selected {
+  background-color: #fff5df;
+}
+.data-table .data-table-blankslade td, .data-table .data-table-blankslade:hover {
+  padding: 50px;
+  text-align: center;
+  background-color: #f5f5f5;
+  background-color: #FFF;
+  color: #999999;
+}
+.data-table tr td:first-child {
+  margin-left: 2px;
+  border-top: 1px solid #cccccc;
+}
+.data-table tr.data-table-info td:first-child {
+  border-left: 3px solid #3572b0;
+  margin-left: 0;
+}
+.data-table tr.data-table-success td:first-child {
+  border-left: 3px solid #67ab49;
+  margin-left: 0;
+}
+.data-table tr.data-table-warning td:first-child {
+  border-left: 3px solid #f79232;
+  margin-left: 0;
+}
+.data-table tr.data-table-danger td:first-child {
+  border-left: 3px solid #d04437;
+  margin-left: 0;
+}
+
 .message {
   border-radius: 3px;
   border: 1px solid #3572b0;
@@ -288,7 +406,7 @@ body {
   background-color: #d04437;
 }
 .message-error :after {
-  content: "\f06a";
+  content: "\f00d";
 }
 
 .message-success {

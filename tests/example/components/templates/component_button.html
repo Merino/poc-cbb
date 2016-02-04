@@ -3,106 +3,113 @@
 {% block head_title %}Component Button{% endblock %}
 
 {% block content %}
-    <h1>Buttons</h1>
-
+    <h3>Buttons</h3>
 
     <section>
         <p>Bootstrap includes six predefined button styles, each serving its own semantic purpose.</p>
-
         <div class="example">
-            <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
             <button type="button" class="btn btn-primary">Primary</button>
-
-            <!-- Secondary, outline button -->
             <button type="button" class="btn btn-secondary">Secondary</button>
-
-            <!-- Indicates a successful or positive action -->
             <button type="button" class="btn btn-success">Success</button>
-
-            <!-- Contextual button for informational alert messages -->
             <button type="button" class="btn btn-info">Info</button>
-
-            <!-- Indicates caution should be taken with this action -->
             <button type="button" class="btn btn-warning">Warning</button>
-
-            <!-- Indicates a dangerous or potentially negative action -->
             <button type="button" class="btn btn-danger">Danger</button>
-
-            <!-- Deemphasize a button by making it look like a link while maintaining button behavior -->
             <button type="button" class="btn btn-link">Link</button>
         </div>
-
     </section>
 
     <br />
     <br />
 
-    <section>
-    <h4>Button Group</h4>
-    <div class="btn-group" role="group" aria-label="Basic example">
-  <button type="button" class="btn btn-secondary">Left</button>
-  <button type="button" class="btn btn-secondary">Middle</button>
-  <button type="button" class="btn btn-danger">Right</button>
-</div>
-        </section>
+    <section id="button-state-loading">
+        <h4>State: Loading</h4>
+        <div class="example">
+            <button type="button" class="btn btn-primary ">Save</button>
+            <button type="button" class="btn btn-primary btn--loading">Save</button>
+            <a role="button" class="btn btn-primary btn--loading">Save</a>
+            <a role="button" class="btn btn-danger btn--loading">Save</a>
 
-    <section>
-        <h3>Button with icons</h3>
+            <br />
+            <br />
 
+            <button type="button" class="btn btn-primary btn--loading">Primary</button>
+            <button type="button" class="btn btn-secondary btn--loading">Secondary</button>
+            <button type="button" class="btn btn-success btn--loading">Success</button>
+            <button type="button" class="btn btn-info btn--loading">Info</button>
+            <button type="button" class="btn btn-warning btn--loading">Warning</button>
+            <button type="button" class="btn btn-danger btn--loading">Danger</button>
+            <button type="button" class="btn btn-link btn--loading">Link</button>
+
+        </div>
+    </section>
+
+    <br />
+    <br />
+
+    <section id="button-state-disabled">
+        <h4>State: Disabled</h4>
+        <div class="example">
+            <button type="button" class="btn btn-primary" disabled>Primary button</button>
+            <button type="button" class="btn btn-secondary " disabled>Button</button>
+            <a role="button" href="#" class="btn btn-primary disabled">Primary link</a>
+            <a role="button" href="#" class="btn btn-danger disabled">Delete</a>
+
+            <br />
+            <br />
+
+            <button type="button" class="btn btn-primary" disabled>Primary</button>
+            <button type="button" class="btn btn-secondary" disabled>Secondary</button>
+            <button type="button" class="btn btn-success" disabled>Success</button>
+            <button type="button" class="btn btn-info" disabled>Info</button>
+            <button type="button" class="btn btn-warning" disabled>Warning</button>
+            <button type="button" class="btn btn-danger" disabled>Danger</button>
+            <button type="button" class="btn btn-link" disabled>Link</button>
+
+        </div>
+    </section>
+
+    <br />
+    <br />
+
+    <section id="button-icons">
+        <h4>Icons</h4>
         <div class="example">
 
-            <a class="btn btn-danger" href="#">
-                <i class="fa fa-trash-o fa-lg"></i> Delete
-            </a>
-
-            <a class="btn btn-success" href="#">
-                <i class="fa fa-plus"></i> Create Product
-            </a>
-
-            <a class="btn btn-success" href="#">
-                <i class="fa fa-plus fa-lg"></i> Create Product
-            </a>
-
-            <a class="btn btn-default btn-sm" href="#">
-                <i class="fa fa-cog"></i> Settings
-            </a>
-
-<a class="btn btn-lg btn-success" href="#">
-  <i class="fa fa-flag fa-2x pull-left"></i> Font Awesome<br>Version 4.5.0</a>
-
-<div class="btn-group">
-  <a class="btn btn-default" href="#"><i class="fa fa-align-left"></i></a>
-  <a class="btn btn-default" href="#"><i class="fa fa-align-center"></i></a>
-  <a class="btn btn-default" href="#"><i class="fa fa-align-right"></i></a>
-  <a class="btn btn-default" href="#"><i class="fa fa-align-justify"></i></a>
-</div>
-
-<div class="input-group margin-bottom-sm">
-  <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
-  <input class="form-control" type="text" placeholder="Email address">
-</div>
-<div class="input-group">
-  <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
-  <input class="form-control" type="password" placeholder="Password">
-</div>
-
-<div class="btn-group open">
-  <a class="btn btn-primary" href="#"><i class="fa fa-user fa-fw"></i> User</a>
-  <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
-    <span class="fa fa-caret-down"></span></a>
-  <ul class="dropdown-menu">
-    <li><a href="#"><i class="fa fa-pencil fa-fw"></i> Edit</a></li>
-    <li><a href="#"><i class="fa fa-trash-o fa-fw"></i> Delete</a></li>
-    <li><a href="#"><i class="fa fa-ban fa-fw"></i> Ban</a></li>
-    <li class="divider"></li>
-    <li><a href="#"><i class="i"></i> Make admin</a></li>
-  </ul>
-</div>
-
-
+            <button type="button" class="btn btn-primary">
+                <i class="fa fa-plus"></i> Primary
+            </button>
+            <button type="button" class="btn btn-secondary">
+                <i class="fa fa-print"></i> Secondary
+            </button>
+            <button type="button" class="btn btn-success">
+                <i class="fa fa-check"></i> Success
+            </button>
+            <button type="button" class="btn btn-info">
+                <i class="fa fa-info-circle"></i> Info
+            </button>
+            <button type="button" class="btn btn-warning">
+                <i class="fa fa-exclamation-triangle"></i> Warning
+            </button>
+            <button type="button" class="btn btn-danger">
+                <i class="fa fa-times"></i> Danger
+            </button>
+            <button type="button" class="btn btn-link">
+                <i class="fa fa-cog"></i> Link
+            </button>
         </div>
 
     </section>
 
+    <br />
+    <br />
+    <br />
+     <section>
+        <h3>Button Group</h3>
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-secondary">Left</button>
+            <button type="button" class="btn btn-secondary">Middle</button>
+            <button type="button" class="btn btn-danger">Right</button>
+        </div>
+     </section>
 
 {% endblock %}

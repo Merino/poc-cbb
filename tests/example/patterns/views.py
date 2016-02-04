@@ -4,8 +4,6 @@ from django.shortcuts import render
 from django.views.generic.base import TemplateView
 
 
-class PatternDashboard(TemplateView):
-    template_name = 'pattern_dashboard.html'
 
 
 class PatternLogin(TemplateView):

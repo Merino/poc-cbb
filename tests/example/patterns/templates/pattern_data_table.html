@@ -1,0 +1,102 @@
+{% extends "design_head.html" %}
+
+{% block head_title %}Pattern Data Table{% endblock %}
+
+{% block content %}
+
+    <div class="page-header">
+        <div class="page-header-title">
+            <h1>Artikelen</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">
+            <div class="page-panel">
+                <div class="page-panel__title">
+                    Choices
+                </div>
+                <div class="page-panel__content">
+                    <ul>
+                        <li><a href="#">Option A (12)</a></li>
+                        <li><a href="#">Second Option (5)</a></li>
+                        <li><a href="#">Another option (3)</a></li>
+                    </ul>
+                </div>
+                <div class="page-panel__content">
+                    <a href="#">Meer</a>
+                    <a href="#">Wis selectie</a>
+                </div>
+            </div>
+
+            <div class="page-panel">
+                <div class="page-panel__title">
+                    Lookup
+                </div>
+                <div class="page-panel__content">
+                    <select>
+                        <option>Lookup value A</option>
+                        <option>Lookup value B</option>
+                        <option>Lookup value C</option>
+                        <option>Lookup value D</option>
+                        <option>Lookup value E</option>
+                        <option>Lookup value F</option>
+                        <option>Lookup value G</option>
+                        <option>Lookup value H</option>
+                        <option>Lookup value I</option>
+                        <option>Lookup value J</option>
+                        <option>Lookup value K</option>
+                    </select>
+                    <ul>
+                        <li><a href="#">Lookup value B (12)</a></li>
+                    </ul>
+                </div>
+                <div class="page-panel__content">
+                    <a href="#">Wis selectie</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-10">
+            <div class="page-panel">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">
+                                <label class="" for="select-all">
+                                    <input name="checkbox" type="checkbox" id="select-all">
+                            </label>
+                            </th>
+                            <th>Colomn 1</th>
+                            <th>Colomn 2</th>
+                            <th>Colomn 3</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="data-table-row-select">
+                    <label class="slds-checkbox" for="select-row1">
+                        <input name="select-row1" type="checkbox" id="select-row1" />
+                    </label>
+                    </td>
+                            <td>Value A1</td>
+                            <td>Value A2</td>
+                            <td>Value A3</td>
+                        </tr>
+                        <tr>
+                            <td class="data-table-row-select">
+                    <label class="slds-checkbox" for="select-row1">
+                        <input name="select-row1" type="checkbox" id="select-row1" />
+                    </label>
+                    </td>
+                            <td>Value B1</td>
+                            <td>Value B2</td>
+                            <td>Value B3</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

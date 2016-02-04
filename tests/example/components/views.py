@@ -7,15 +7,20 @@ from django.views.generic.base import TemplateView
 class ComponentIndexView(TemplateView):
     template_name = 'component_index.html'
 
-
 class ComponentMessagesView(TemplateView):
     template_name = 'component_messages.html'
 
 class ComponentFormView(TemplateView):
     template_name = 'component_form.html'
 
-class ComponentFormButton(TemplateView):
+class ComponentButtonView(TemplateView):
     template_name = 'component_button.html'
 
-class ComponentPageHeader(TemplateView):
-    template_name = 'component_page_header.html'
+class ComponentTableView(TemplateView):
+    template_name = 'component_table.html'
+
+class ComponentLabelView(TemplateView):
+    template_name = 'component_label.html'
+
+
+
