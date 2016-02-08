@@ -1,0 +1,99 @@
+.message {
+
+  border-radius: 3px;
+  border: 1px solid $info-bg-color;
+
+  background: white;
+  position:relative;
+  word-wrap:break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+
+  padding-left:60px;
+  padding-right:40px;
+  padding-top:13px;
+  padding-bottom:13px;
+
+  margin-bottom:13px;
+
+  :before {
+    background-color: $info-bg-color;
+    bottom: 0;
+    content: '';
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 40px;
+  }
+
+  :after {
+    color: #ffffff;
+    content: "\f05a";
+    font-family: "FontAwesome";
+    font-size: 20px;
+    -webkit-font-smoothing: antialiased;
+    font-style: normal;
+    font-weight: normal;
+    left: 11px;
+    line-height: 1;
+    margin-top: -10px;
+    position: absolute;
+    speak: none;
+    top: 50%;
+  }
+
+  p{
+    margin:0;
+  }
+
+  p.title {
+    font-weight: bold;
+  }
+
+  p.title strong {
+    font-weight: inherit;
+  }
+
+}
+
+.message-warning {
+  background: #fff;
+  border-color: $warning-bg-color;
+  color: #333;
+
+
+  :before {
+    background-color: $warning-bg-color;
+  }
+
+  :after{
+    content: "\f071";
+  }
+}
+
+.message-error {
+  background: #fff;
+  border-color: $danger-bg-color;
+  color: #333;
+
+  :before {
+    background-color: $danger-bg-color;
+  }
+  :after{
+    content: "\f00d";
+  }
+}
+
+
+.message-success {
+  background: #fff;
+  border-color: $success-bg-color;
+  color: #333;
+
+  :before {
+    background-color: $success-bg-color;
+  }
+  :after{
+    content: "\f00c";
+  }
+}

@@ -10,6 +10,9 @@ class DesignColors(TemplateView):
 class DesignGrid(TemplateView):
     template_name = 'design_grid.html'
 
+class DesignBlocks(TemplateView):
+    template_name = 'design_blocks.html'
+
 class DesignIcons(TemplateView):
     template_name = 'design_icons.html'
 
@@ -23,4 +26,7 @@ class DesignMotions(TemplateView):
     template_name = 'design_motions.html'
 
 class DesignTypography(TemplateView):
+    template_name = 'design_typography.html'
+
+class DesignNavigation(TemplateView):
     template_name = 'design_typography.html'

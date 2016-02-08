@@ -15,21 +15,6 @@
         <link rel="stylesheet" href="/static/vesper/css/libs.css?{{ BUILD }}" type="text/css" />
         <link rel="stylesheet" href="/static/vesper/css/apps.css?{{ BUILD }}" type="text/css" />
 
-{#        <link rel="stylesheet" href="/static/vesper/css/apps.css?{{ BUILD }}" type="text/css" />#}
-
-{#        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">#}
-{#        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">#}
-{#        <link rel="stylesheet" href="/static/aui/css/aui.min.css" media="all">#}
-{#        <link rel="stylesheet" href="/static/aui/css/aui-experimental.min.css" media="all">#}
-{#        <link rel="stylesheet" href="/static/aui/custom.css" media="all">#}
-{##}
-{#        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>#}
-{#        <script src="/static/aui/js/aui.min.js"></script>#}
-{#        <script src="/static/aui/js/aui-experimental.min.js"></script>#}
-{#        <script src="/static/aui/js/aui-soy.min.js"></script>#}
-{##}
-{#        <script src="/static/turbolinks/turbolinks.js"></script>#}
-
         {% block header_css %}
         <link rel="stylesheet" href="/static/example/main.css?{{ BUILD }}" type="text/css" />
         {% endblock %}
@@ -42,19 +27,23 @@
         <![endif]-->
 
         <!-- Javascript -->
-{#        <script src="/static/javascript/libs.js?{{ BUILD }}"></script>#}
-{#        <script src="/static/javascript/apps.js?{{ BUILD }}"></script>#}
+        <script src="/static/vesper/javascript/libs.js?{{ BUILD }}"></script>
+        <script src="/static/vesper/javascript/apps.js?{{ BUILD }}"></script>
 
     </head>
     <body>
-        <div id="page-container">
+        <div id="page-container" class="navigation__left navigation__open">
             <aside id="sidebar-container">
                 Sidebar
             </aside>
             <nav id="navigation-container" role="navigation">
+
                 <ul>
                     <li>
-                        <a href="/">Dashboard</a>
+                        <a href="/" class="active">
+                            <span class="fa fa-fw fa-dashboard"></span>
+                            Dashboard
+                        </a>
                     </li>
                     <li>
                         <a href="/design/">Design</a>
@@ -62,31 +51,61 @@
                             <li>
                                 <a href="/design/colors/">Colors</a>
                             </li>
-                            <li><a href="/design/grid/">Grid</a></li>
+                            <li>
+                                <a href="/design/grid/">Grid</a>
+                            </li>
+                            <li>
+                                <a href="/design/blocks/">Blocks</a>
+                            </li>
                             <li><a href="/design/icons/">Icons</a></li>
                             <li><a href="/design/layout/">Layout</a></li>
+                            <li><a href="/design/navigation/">Navigation</a></li>
                             <li><a href="/design/motions/">Motions</a></li>
                             <li><a href="/design/typography/">Typography</a></li>
                         </ul>
                     </li>
                     <li>
                         <a href="/components/">Components</a>
+                        <ul>
+                            <li><a href="/components/button/">Buttons</a></li>
+                            <li><a href="/components/messages/">Messages</a></li>
+                            <li><a href="/components/form/">Form</a></li>
+                            <li><a href="/components/table/">Table</a></li>
+                            <li><a href="/components/label/">Label</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/patterns/">Patterns</a>
+                        <ul>
+                            <li><a href="/patterns/datatable/">Data Table</a></li>
+                            <li><a href="/patterns/pageheader/">Page Header</a></li>
+                        </ul>
                     </li>
                 </ul>
+
+                <div class="navigation--footer">
+                    <a href="#"><i class="fa fa-angle-double-right"></i></a>
+                </div>
+
             </nav>
-            <header id="header-container">
+            <header id="header-container" class="navbar navbar-fixed-top">
                 <div id="header-brand">
-                    <a href="/">Brameda</a>
+                    <a href="/"><i class="fa fa-cloud"></i> Brameda</a>
                 </div>
                 <div id="header-navigation">
-
+                    <button class="btn btn-link" type="button">
+                        <i class="fa fa-ellipsis-v"></i>
+                    </button>
                 </div>
             </header>
             <main id="main-container">
+                <div class="container-fluid">
                 {% block content %}
                     Dashboard
                 {% endblock %}
+                </div>
             </main>
+
             <footer id="footer-container">
                 WE &hearts; B2B Ecommerce
             </footer>

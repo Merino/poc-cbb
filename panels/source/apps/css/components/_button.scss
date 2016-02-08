@@ -1,0 +1,41 @@
+@keyframes spin-around { from { transform: rotate(0deg); }
+  to { transform: rotate(359deg); } }
+
+.btn {
+  position: relative;
+
+  &.btn--loading {
+    color: transparent;
+    pointer-events: none;
+
+    &:after{
+      left: 50%;
+      top: 50%;
+      position: absolute !important;
+      height:1.0rem;
+      width:1.0rem;
+      margin-left: -0.5rem;
+      margin-top: -0.5rem;
+      color:rgba(255,255,255,.5);
+      font-size: 12px;
+      line-height: 1.5;
+      vertical-align: middle;
+    }
+
+  }
+}
+
+
+.btn.btn--loading:after {
+  animation: spin-around 500ms infinite linear;
+  border: 2px solid #d3d6db;
+  border-radius: 290486px;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  content: "";
+  display: block;
+  height: 1rem;
+  position: relative;
+  width: 1rem;
+}
+

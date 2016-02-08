@@ -1,0 +1,115 @@
+{% extends "design_head.html" %}
+
+{% block head_title %}Component Button{% endblock %}
+
+{% block content %}
+    <h3>Buttons</h3>
+
+    <section>
+        <p>Bootstrap includes six predefined button styles, each serving its own semantic purpose.</p>
+        <div class="example">
+            <button type="button" class="btn btn-primary">Primary</button>
+            <button type="button" class="btn btn-secondary">Secondary</button>
+            <button type="button" class="btn btn-success">Success</button>
+            <button type="button" class="btn btn-info">Info</button>
+            <button type="button" class="btn btn-warning">Warning</button>
+            <button type="button" class="btn btn-danger">Danger</button>
+            <button type="button" class="btn btn-link">Link</button>
+        </div>
+    </section>
+
+    <br />
+    <br />
+
+    <section id="button-state-loading">
+        <h4>State: Loading</h4>
+        <div class="example">
+            <button type="button" class="btn btn-primary ">Save</button>
+            <button type="button" class="btn btn-primary btn--loading">Save</button>
+            <a role="button" class="btn btn-primary btn--loading">Save</a>
+            <a role="button" class="btn btn-danger btn--loading">Save</a>
+
+            <br />
+            <br />
+
+            <button type="button" class="btn btn-primary btn--loading">Primary</button>
+            <button type="button" class="btn btn-secondary btn--loading">Secondary</button>
+            <button type="button" class="btn btn-success btn--loading">Success</button>
+            <button type="button" class="btn btn-info btn--loading">Info</button>
+            <button type="button" class="btn btn-warning btn--loading">Warning</button>
+            <button type="button" class="btn btn-danger btn--loading">Danger</button>
+            <button type="button" class="btn btn-link btn--loading">Link</button>
+
+        </div>
+    </section>
+
+    <br />
+    <br />
+
+    <section id="button-state-disabled">
+        <h4>State: Disabled</h4>
+        <div class="example">
+            <button type="button" class="btn btn-primary" disabled>Primary button</button>
+            <button type="button" class="btn btn-secondary " disabled>Button</button>
+            <a role="button" href="#" class="btn btn-primary disabled">Primary link</a>
+            <a role="button" href="#" class="btn btn-danger disabled">Delete</a>
+
+            <br />
+            <br />
+
+            <button type="button" class="btn btn-primary" disabled>Primary</button>
+            <button type="button" class="btn btn-secondary" disabled>Secondary</button>
+            <button type="button" class="btn btn-success" disabled>Success</button>
+            <button type="button" class="btn btn-info" disabled>Info</button>
+            <button type="button" class="btn btn-warning" disabled>Warning</button>
+            <button type="button" class="btn btn-danger" disabled>Danger</button>
+            <button type="button" class="btn btn-link" disabled>Link</button>
+
+        </div>
+    </section>
+
+    <br />
+    <br />
+
+    <section id="button-icons">
+        <h4>Icons</h4>
+        <div class="example">
+
+            <button type="button" class="btn btn-primary">
+                <i class="fa fa-plus"></i> Primary
+            </button>
+            <button type="button" class="btn btn-secondary">
+                <i class="fa fa-print"></i> Secondary
+            </button>
+            <button type="button" class="btn btn-success">
+                <i class="fa fa-check"></i> Success
+            </button>
+            <button type="button" class="btn btn-info">
+                <i class="fa fa-info-circle"></i> Info
+            </button>
+            <button type="button" class="btn btn-warning">
+                <i class="fa fa-exclamation-triangle"></i> Warning
+            </button>
+            <button type="button" class="btn btn-danger">
+                <i class="fa fa-times"></i> Danger
+            </button>
+            <button type="button" class="btn btn-link">
+                <i class="fa fa-cog"></i> Link
+            </button>
+        </div>
+
+    </section>
+
+    <br />
+    <br />
+    <br />
+     <section>
+        <h3>Button Group</h3>
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-secondary">Left</button>
+            <button type="button" class="btn btn-secondary">Middle</button>
+            <button type="button" class="btn btn-danger">Right</button>
+        </div>
+     </section>
+
+{% endblock %}

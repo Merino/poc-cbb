@@ -1,9 +1,12 @@
 from django.conf.urls import url
 
-from .views import ComponentBreadcrumb, ComponentButtonGroupView, ComponentButtonView
+from .views import ComponentIndexView, ComponentMessagesView, ComponentFormView, ComponentButtonView, ComponentTableView, ComponentLabelView
 
 urlpatterns = [
-    url(r'^breadcrumb/', ComponentBreadcrumb.as_view()),
-    url(r'^buttons/', ComponentButtonView.as_view()),
-    url(r'^buttonsgroup/', ComponentButtonGroupView.as_view()),
+    url(r'^$', ComponentIndexView.as_view()),
+    url(r'^messages/', ComponentMessagesView.as_view()),
+    url(r'^form/', ComponentFormView.as_view()),
+    url(r'^button/', ComponentButtonView.as_view()),
+    url(r'^table/', ComponentTableView.as_view()),
+    url(r'^label/', ComponentLabelView.as_view()),
 ]

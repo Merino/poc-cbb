@@ -30,12 +30,12 @@ module.exports = function(grunt) {
         dist: {
             files: {
                 'panels/static/vesper/javascript/apps.js': [
-                    'panels/source/apps/javascript/_navigation.js'
+                    'panels/source/apps/javascript/_app.js'
                     ],
                 'panels/static/vesper/javascript/libs.js': [
-                    'panels/source/vendors/jquery/jquery-1.11.3.min.js',
-                    'panels/source/vendors/bootstrap/assets/javascripts/bootstrap.min.js',
-                    'panels/source/vendors/turbolinks/turbolinks.js'
+                    'panels/source/vendors/jquery/jquery-2.2.0.min.js',
+                    //'panels/source/vendors/bootstrap/assets/javascripts/bootstrap.min.js',
+                    //'panels/source/vendors/turbolinks/turbolinks.js'
                     ],
             },
         }
@@ -54,7 +54,7 @@ module.exports = function(grunt) {
             cwd: '.',
             src: [
                 'panels/source/vendors/bootstrap/dist/fonts/*',
-                'panels/source/vendors/font-awesome/fonts/*'],
+                'panels/source/vendors/font-awesome-4.5.0/fonts/*'],
             dest: 'panels/static/vesper/fonts/',
             filter: 'isFile',
             flatten: true
