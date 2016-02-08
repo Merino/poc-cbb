@@ -2,6 +2,26 @@ body {
   background-color: #f5f5f5;
 }
 
+/* Page Container */
+#page-container {
+  margin: 0 auto;
+  width: 100%;
+  min-width: 320px;
+  background-color: #f5f5f5;
+}
+#page-container.navigation__left.navigation__open {
+  padding-left: 230px;
+}
+#page-container.navigation__right.navigation__open {
+  padding-right: 230px;
+}
+#page-container.navigation__left.navigation__open.navigation-mini {
+  padding-left: 60px;
+}
+#page-container.navigation__left.navigation__open.navigation-mini {
+  padding-right: 60px;
+}
+
 /* Navigation */
 #navigation-container {
   width: 230px;
@@ -10,7 +30,7 @@ body {
   position: fixed;
   top: 41px;
   bottom: 0;
-  padding-top: 0;
+  padding-top: 1.8rem;
   overflow: hidden;
   overflow-y: auto;
 }
@@ -22,14 +42,39 @@ body {
 #navigation-container a {
   display: block;
   color: #d4dfd6;
-  padding: 6px 12px;
+  padding: 0.5rem 1rem 0.5rem 1.5rem;
   text-decoration: none;
 }
 #navigation-container a:hover {
   background-color: #414853;
 }
+#navigation-container ul ul {
+  margin: 0 0 1em;
+}
 #navigation-container li li a {
-  padding-left: 24px;
+  padding-left: 3rem;
+}
+#navigation-container .navigation--footer {
+  width: 230px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.navigation__left #navigation-container {
+  left: 0;
+  transform: translateX(-100%) translateY(0) translateZ(0);
+}
+.navigation__right #navigation-container {
+  right: 0;
+  transform: translateX(100%) translateY(0) translateZ(0);
+}
+.navigation__open #navigation-container {
+  transform: translateX(0) translateY(0) translateZ(0);
+}
+.navigation__left.navigation__open.navigation-mini #navigation-container {
+  -webkit-transform: translateX(-170px) translateY(0) translateZ(0);
+  -ms-transform: translateX(-170px) translateY(0);
+  transform: translateX(-170px) translateY(0) translateZ(0);
 }
 
 /* Sidebar */
@@ -39,7 +84,6 @@ body {
 
 /* Main */
 #main-container {
-  margin-left: 230px;
   margin-top: 41px;
   background-color: #f5f5f5;
   padding: 2rem;
@@ -61,15 +105,18 @@ body {
   width: 230px;
   background-color: #205081;
   border-bottom: 1px solid #2e3D54;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 200;
 }
 
 #header-brand a {
   display: block;
   height: 41px;
   color: #FFF;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 41px;
   padding: 0 12px;
+  text-decoration: none;
 }
 
 #header-navigation {

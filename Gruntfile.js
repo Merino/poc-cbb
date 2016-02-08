@@ -30,12 +30,12 @@ module.exports = function(grunt) {
         dist: {
             files: {
                 'panels/static/vesper/javascript/apps.js': [
-                    'panels/source/apps/javascript/_navigation.js'
+                    'panels/source/apps/javascript/_app.js'
                     ],
                 'panels/static/vesper/javascript/libs.js': [
-                    'panels/source/vendors/jquery/jquery-1.11.3.min.js',
-                    'panels/source/vendors/bootstrap/assets/javascripts/bootstrap.min.js',
-                    'panels/source/vendors/turbolinks/turbolinks.js'
+                    'panels/source/vendors/jquery/jquery-2.2.0.min.js',
+                    //'panels/source/vendors/bootstrap/assets/javascripts/bootstrap.min.js',
+                    //'panels/source/vendors/turbolinks/turbolinks.js'
                     ],
             },
         }

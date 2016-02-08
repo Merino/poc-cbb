@@ -2,6 +2,34 @@ body {
   background-color: $global-background-color;
 }
 
+/* Page Container */
+#page-container {
+  margin: 0 auto;
+  width: 100%;
+  min-width: 320px;
+  background-color: $global-background-color;
+
+    &.navigation__left.navigation__open {
+      padding-left: $navigation-width;
+    }
+
+    &.navigation__right.navigation__open {
+      padding-right: $navigation-width;
+    }
+
+    // Mini Sidebar
+    &.navigation__left.navigation__open.navigation-mini {
+      padding-left: $navigation-width-mini;
+    }
+
+    &.navigation__left.navigation__open.navigation-mini {
+      padding-right: $navigation-width-mini;
+    }
+}
+
+
+
+
 
 /* Navigation */
 #navigation-container {
@@ -11,9 +39,10 @@ body {
   position: fixed;
   top: $header-height;
   bottom: 0;
-  padding-top: 0;
+  padding-top: 1.8rem;
   overflow: hidden;
   overflow-y: auto;
+  //z-index: 1032;
 
   ul{
     margin: 0;
@@ -24,7 +53,7 @@ body {
   a {
     display: block;
     color: #d4dfd6;
-    padding: 6px 12px;
+    padding: 0.5rem 1rem 0.5rem 1.5rem;
     text-decoration: none;
   }
 
@@ -32,8 +61,39 @@ body {
     background-color:#414853;
   }
 
+  ul ul {
+    margin: 0 0 1em;
+  }
+
   li li a{
-    padding-left:24px;
+    padding-left:3rem;
+  }
+
+  .navigation--footer {
+    width: $navigation-width;
+    position:absolute;
+    bottom:0;
+    right:0;
+  }
+
+  .navigation__left & {
+    left:0;
+    transform: translateX(-100%) translateY(0) translateZ(0);
+  }
+
+  .navigation__right & {
+    right: 0;
+    transform: translateX(100%) translateY(0) translateZ(0);
+  }
+
+  .navigation__open & {
+    transform: translateX(0) translateY(0) translateZ(0);
+  }
+
+  .navigation__left.navigation__open.navigation-mini & {
+    -webkit-transform: translateX(-170px) translateY(0) translateZ(0);
+    -ms-transform: translateX(-170px) translateY(0);
+    transform: translateX(-170px) translateY(0) translateZ(0);
   }
 
 }
@@ -45,7 +105,7 @@ body {
 
 /* Main */
 #main-container {
-  margin-left: $navigation-width;
+  //margin-left: $navigation-width;
   margin-top: $header-height;
   background-color: $global-background-color;
   padding:2rem;
@@ -67,15 +127,18 @@ body {
   width: $navigation-width;
   background-color: $header-background-color;
   border-bottom: 1px solid #2e3D54;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 200;
 }
 
 #header-brand a{
   display: block;
   height: $header-height;
   color:#FFF;
-  font-size:14px;
+  font-size:18px;
   line-height: $header-height;
   padding:0 12px;
+  text-decoration: none;
 }
 
 #header-navigation {

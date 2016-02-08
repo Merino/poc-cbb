@@ -27,3 +27,6 @@ class DesignMotions(TemplateView):
 
 class DesignTypography(TemplateView):
     template_name = 'design_typography.html'
+
+class DesignNavigation(TemplateView):
+    template_name = 'design_typography.html'

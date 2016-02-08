@@ -42,19 +42,23 @@
         <![endif]-->
 
         <!-- Javascript -->
-{#        <script src="/static/javascript/libs.js?{{ BUILD }}"></script>#}
-{#        <script src="/static/javascript/apps.js?{{ BUILD }}"></script>#}
+        <script src="/static/vesper/javascript/libs.js?{{ BUILD }}"></script>
+        <script src="/static/vesper/javascript/apps.js?{{ BUILD }}"></script>
 
     </head>
     <body>
-        <div id="page-container">
+        <div id="page-container" class="navigation__left navigation__open navigation-mini">
             <aside id="sidebar-container">
                 Sidebar
             </aside>
             <nav id="navigation-container" role="navigation">
+
                 <ul>
                     <li>
-                        <a href="/">Dashboard</a>
+                        <a href="/">
+                            <span class="fa fa-fw fa-dashboard"></span>
+                            Dashboard
+                        </a>
                     </li>
                     <li>
                         <a href="/design/">Design</a>
@@ -70,6 +74,7 @@
                             </li>
                             <li><a href="/design/icons/">Icons</a></li>
                             <li><a href="/design/layout/">Layout</a></li>
+                            <li><a href="/design/navigation/">Navigation</a></li>
                             <li><a href="/design/motions/">Motions</a></li>
                             <li><a href="/design/typography/">Typography</a></li>
                         </ul>
@@ -92,13 +97,20 @@
                         </ul>
                     </li>
                 </ul>
+
+                <div class="navigation--footer">
+                    <a href="#">>></a>
+                </div>
+
             </nav>
             <header id="header-container" class="navbar navbar-fixed-top">
                 <div id="header-brand">
                     <a href="/">Brameda</a>
                 </div>
                 <div id="header-navigation">
-
+                    <button class="btn btn-link" type="button">
+                        <i class="fa fa-ellipsis-v"></i>
+                    </button>
                 </div>
             </header>
             <main id="main-container">

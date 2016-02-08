@@ -5939,7 +5939,7 @@ html {
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1rem;
   line-height: 1.5;
   color: #373a3c;
@@ -10438,7 +10438,7 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -10529,7 +10529,7 @@ button.close {
   display: block;
   max-width: 276px;
   padding: 1px;
-  font-family: Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
