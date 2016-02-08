@@ -42,7 +42,7 @@ body {
   padding-top: 1.8rem;
   overflow: hidden;
   overflow-y: auto;
-  //z-index: 1032;
+  transition: all 0.18s ease-out;
 
   ul{
     margin: 0;
@@ -78,22 +78,20 @@ body {
 
   .navigation__left & {
     left:0;
-    transform: translateX(-100%) translateY(0) translateZ(0);
+    @include translate3d(-100%, 0, 0);
   }
 
   .navigation__right & {
     right: 0;
-    transform: translateX(100%) translateY(0) translateZ(0);
+    @include translate3d(100%, 0, 0);
   }
 
   .navigation__open & {
-    transform: translateX(0) translateY(0) translateZ(0);
+     @include translate3d(0, 0, 0);
   }
 
   .navigation__left.navigation__open.navigation-mini & {
-    -webkit-transform: translateX(-170px) translateY(0) translateZ(0);
-    -ms-transform: translateX(-170px) translateY(0);
-    transform: translateX(-170px) translateY(0) translateZ(0);
+    @include translate3d($navigation-width-mini - $navigation-width, 0, 0);
   }
 
 }

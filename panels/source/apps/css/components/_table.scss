@@ -30,12 +30,13 @@
 
   thead th{
     text-transform: uppercase;
-    font-weight: 200;
+    font-weight: 500;
     color: $global-color-charcoal;
     vertical-align: bottom;
     padding: .75rem;
     line-height: 1.5;
     background-color: #ebf2f9;
+    background-color: #f9f9f9;
   }
 
   thead label{
