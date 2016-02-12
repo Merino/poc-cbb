@@ -1,6 +1,6 @@
 from django.conf.urls import patterns, include, url
 
-from example.layout.views import DashboardView
+from example.design.views import HomePage
 
 from django.contrib import admin
 admin.autodiscover()
@@ -17,5 +17,5 @@ urlpatterns = patterns('',
     url(r'^components/', include('example.components.urls')),
     url(r'^patterns/', include('example.patterns.urls')),
     #url(r'^views', include('example.views.urls')),
-    url(r'^$', DashboardView.as_view()),
+    url(r'^$', HomePage.as_view()),
 )

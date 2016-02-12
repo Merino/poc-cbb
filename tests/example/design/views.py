@@ -30,3 +30,6 @@ class DesignTypography(TemplateView):
 
 class DesignNavigation(TemplateView):
     template_name = 'design_typography.html'
+
+class HomePage(TemplateView):
+    template_name = 'vesper_home_page.html'

@@ -2,28 +2,32 @@ body {
   background-color: #f5f5f5;
 }
 
-/* Page Container */
-#page-container {
+/*
+// App
+*/
+#app {
   margin: 0 auto;
   width: 100%;
   min-width: 320px;
   background-color: #f5f5f5;
 }
-#page-container.navigation__left.navigation__open {
+#app.navigation__left.navigation__open {
   padding-left: 230px;
 }
-#page-container.navigation__right.navigation__open {
+#app.navigation__right.navigation__open {
   padding-right: 230px;
 }
-#page-container.navigation__left.navigation__open.navigation-mini {
+#app.navigation__left.navigation__open.navigation__mini {
   padding-left: 60px;
 }
-#page-container.navigation__left.navigation__open.navigation-mini {
+#app.navigation__right.navigation__open.navigation__mini {
   padding-right: 60px;
 }
 
-/* Navigation */
-#navigation-container {
+/*
+// Navigation
+*/
+#navigation {
   width: 230px;
   background-color: #151e2b;
   color: #FFF;
@@ -35,50 +39,63 @@ body {
   overflow-y: auto;
   transition: all 0.18s ease-out;
 }
-#navigation-container ul {
+.navigation__mini #navigation .navigation__wrapper {
+  -webkit-transform: translateX(170px) translateY(0) translateZ(0);
+  -ms-transform: translateX(170px) translateY(0);
+  transform: translateX(170px) translateY(0) translateZ(0);
+}
+#navigation ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-#navigation-container a {
+#navigation a {
   display: block;
   color: #d4dfd6;
-  padding: 0.5rem 1rem 0.5rem 1.5rem;
+  padding: 0.5rem 1rem 0.5rem 20px;
   text-decoration: none;
 }
-#navigation-container a:hover {
+#navigation a:hover {
   background-color: #414853;
 }
-#navigation-container ul ul {
+#navigation ul ul {
   margin: 0 0 1em;
 }
-#navigation-container li li a {
+#navigation li li a {
   padding-left: 3rem;
 }
-#navigation-container .navigation--footer {
-  width: 230px;
-  position: absolute;
-  bottom: 0;
-  right: 0;
+.navigation__mini #navigation li li a {
+  padding-left: 20px;
 }
-.navigation__left #navigation-container {
+#navigation .icon {
+  width: 20px;
+  text-align: center;
+}
+.navigation__mini #navigation .name {
+  opacity: 0;
+}
+#navigation .navigation__footer {
+  width: 230px;
+  background-color: green;
+}
+.navigation__left #navigation {
   left: 0;
   -webkit-transform: translateX(-100%) translateY(0) translateZ(0);
   -ms-transform: translateX(-100%) translateY(0);
   transform: translateX(-100%) translateY(0) translateZ(0);
 }
-.navigation__right #navigation-container {
+.navigation__right #navigation {
   right: 0;
   -webkit-transform: translateX(100%) translateY(0) translateZ(0);
   -ms-transform: translateX(100%) translateY(0);
   transform: translateX(100%) translateY(0) translateZ(0);
 }
-.navigation__open #navigation-container {
+.navigation__open #navigation {
   -webkit-transform: translateX(0) translateY(0) translateZ(0);
   -ms-transform: translateX(0) translateY(0);
   transform: translateX(0) translateY(0) translateZ(0);
 }
-.navigation__left.navigation__open.navigation-mini #navigation-container {
+.navigation__left.navigation__open.navigation__mini #navigation {
   -webkit-transform: translateX(-170px) translateY(0) translateZ(0);
   -ms-transform: translateX(-170px) translateY(0);
   transform: translateX(-170px) translateY(0) translateZ(0);
@@ -97,41 +114,46 @@ body {
 }
 
 /* Header */
-#header-container {
+#header {
   height: 41px;
   width: 100%;
   background-color: #205081;
   position: fixed;
+  padding: 0;
   top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
 }
-
-#header-brand {
-  position: fixed;
-  top: 0;
+#header .header__brand {
   height: 41px;
   width: 230px;
   background-color: #205081;
-  border-bottom: 1px solid #2e3D54;
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-weight: 200;
 }
-
-#header-brand a {
+#header .header__brand a {
   display: block;
   height: 41px;
   color: #FFF;
   font-size: 18px;
   line-height: 41px;
-  padding: 0 12px;
+  padding: 0 20px;
   text-decoration: none;
 }
-
-#header-navigation {
+.navigation__mini #header .header__brand {
+  width: 60px;
+}
+.navigation__mini #header .header__brand .header__title {
+  opacity: 0;
+}
+#header .header__navigation {
   position: fixed;
   top: 0;
-  margin-left: 230px;
   height: 41px;
-  border-bottom: 1px solid #2e3D54;
+  margin-left: 230px;
+}
+.navigation__mini #header .header__navigation {
+  margin-left: 60px;
 }
 
 /* Footer */

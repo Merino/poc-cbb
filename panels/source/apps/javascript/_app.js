@@ -8,7 +8,7 @@ var App = function() {
         // Set variables
         $lHtml = jQuery('html');
         $lBody = jQuery('body');
-        $lPage = jQuery('#page-container')
+        $lPage = jQuery('#app')
     };
 
     var uiLayoutApi = function($mode){
@@ -39,17 +39,17 @@ var App = function() {
                 break;
            case 'sidebar_mini_toggle':
                 if ($windowW > 991) {
-                    $lPage.toggleClass('navigation-mini');
+                    $lPage.toggleClass('navigation__mini');
                 }
                 break;
             case 'sidebar_mini_on':
                 if ($windowW > 991) {
-                    $lPage.addClass('navigation-mini');
+                    $lPage.addClass('navigation__mini');
                 }
                 break;
             case 'sidebar_mini_off':
                 if ($windowW > 991) {
-                    $lPage.removeClass('navigation-mini');
+                    $lPage.removeClass('navigation__mini');
                 }
                 break;
            default:
@@ -81,3 +81,21 @@ jQuery(function(){
         App.init();
     }
 });
+
+
+// Navigation Menu
+jQuery(function(){
+
+
+    // Call layout API on button click
+    jQuery('[data-toggle="layout"]').on('click', function(){
+                var $btn = jQuery(this);
+
+                App.layout($btn.data('action'));
+
+                if ($lHtml.hasClass('no-focus')) {
+                    $btn.blur();
+                }
+             });
+
+        });
