@@ -2,6 +2,10 @@ body {
   background-color: $global-background-color;
 }
 
+a {
+  color: $global-link-color;
+}
+
 /*
 // App
 */
@@ -36,7 +40,7 @@ body {
 #navigation {
   width: $navigation-width;
   background-color: $navigation-background-color;
-  color: #FFF;
+  color: $navigation-font-color;
   position: fixed;
   top: $header-height;
   bottom: 0;
@@ -44,6 +48,8 @@ body {
   overflow: hidden;
   overflow-y: auto;
   transition: all 0.18s ease-out;
+  border-right: 1px solid $navigation-border-color;
+
 
   .navigation__mini & .navigation__wrapper  {
      @include translate3d($navigation-width - $navigation-width-mini , 0, 0);
@@ -57,13 +63,22 @@ body {
 
   a {
     display: block;
-    color: #d4dfd6;
+
     padding: 0.5rem 1rem 0.5rem 20px;
     text-decoration: none;
+    font-size:14px;
+    color:#3572b0;
   }
 
   a:hover{
-    background-color:#414853;
+    background-color:$navigation-active-background-color;
+  }
+
+  a.navigation__active{
+    padding-left:16px;
+    border-left:4px solid $global-link-color;
+    font-weight: 600;
+    color: #333;
   }
 
   ul ul {
@@ -78,16 +93,29 @@ body {
     }
   }
 
-
-
-  .icon {
+  .navigation__icon {
     width:20px;
     text-align: center;
+    color: $navigation-icon-color;
+    font-size:14px;
+  }
+
+  a.navigation__active .navigation__icon{
+    color: #333;
+  }
+
+  .navigation__name{
+    font-size:13px
   }
 
 
-  .navigation__mini & .name{
+  .navigation__mini & .navigation__name{
     opacity: 0;
+  }
+
+  .navigation__divider {
+    border-top:1px solid $navigation-border-color;
+    height:1px;
   }
 
   .navigation__footer {

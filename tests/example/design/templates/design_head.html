@@ -32,7 +32,8 @@
 
     </head>
     <body>
-        <div id="app" class="navigation__left navigation__open">
+        {% block page %}
+        <div id="app" class="navigation__left navigation__open navigation__mini">
             <aside id="sidebar-container">
                 Sidebar
             </aside>
@@ -41,120 +42,141 @@
                     <div class="navigation__content">
                         <ul>
                             <li>
-                                <a href="/" class="active">
-                                    <span class="icon fa fa-dashboard"></span>
-                                    <span class="name">Dashboard</span>
+                                <a href="/" class="navigation__active">
+                                    <span class="navigation__icon fa fa-dashboard"></span>
+                                    <span class="navigation__name">Dashboard</span>
                                 </a>
                             </li>
                             <li>
+                                <a href="/">
+                                    <span class="navigation__icon fa fa-search"></span>
+                                    <span class="navigation__name">Search</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/" >
+                                    <span class="navigation__icon fa fa-tags"></span>
+                                    <span class="navigation__name">Products</span>
+                                </a>
+                            </li>
+
+
+                            <li>
                                 <a href="/design/">
-                                    <span class="name">Design</span></a>
+                                    <span class="navigation__icon fa fa-tags" aria-hidden="true"></span>
+                                    <span class="navigation__name">Design</span></a>
                                 <ul>
                                     <li>
                                         <a href="/design/colors/">
-                                            <span class="icon fa fa-dashboard"></span>
-                                            <span class="name">Colors</span>
+                                            <span class="navigation__icon fa fa-dashboard"></span>
+                                            <span class="navigation__name">Colors</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="/design/grid/">
-                                            <span class="icon fa fa-dashboard"></span>
-                                            <span class="name">Grid</span>
+                                            <span class="navigation__icon fa fa-dashboard"></span>
+                                            <span class="navigation__name">Grid</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="/design/blocks/">
-                                            <span class="icon fa fa-dashboard"></span>
-                                            <span class="name">Blocks</span>
+                                            <span class="navigation__icon fa fa-dashboard"></span>
+                                            <span class="navigation__name">Blocks</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="/design/icons/">
-                                            <span class="icon fa fa-dashboard"></span>
-                                            <span class="name">Icons</span>
+                                            <span class="navigation__icon fa fa-dashboard"></span>
+                                            <span class="navigation__name">Icons</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="/design/blocks/">
-                                            <span class="icon fa fa-dashboard"></span>
-                                            <span class="name">Layout</span>
+                                        <a href="/design/layout/">
+                                            <span class="navigation__icon fa fa-dashboard"></span>
+                                            <span class="navigation__name">Layout</span>
                                         </a>
                                     <li>
                                         <a href="/design/navigation/">
-                                            <span class="icon fa fa-dashboard"></span>
-                                            <span class="name">Navigation</span>
+                                            <span class="navigation__icon fa fa-dashboard"></span>
+                                            <span class="navigation__name">Navigation</span>
                                         </a>
                                     <li>
                                         <a href="/design/motions/">
-                                            <span class="icon fa fa-dashboard"></span>
-                                            <span class="name">Motions</span>
+                                            <span class="navigation__icon fa fa-dashboard"></span>
+                                            <span class="navigation__name">Motions</span>
                                         </a>
                                     <li>
                                         <a href="/design/typography/">
-                                            <span class="icon fa fa-dashboard"></span>
-                                            <span class="name">Typography</span>
+                                            <span class="navigation__icon fa fa-dashboard"></span>
+                                            <span class="navigation__name">Typography</span>
                                         </a>
                                     </li>
                                 </ul>
                             </li>
                             <li>
                                 <a href="/components/">
-                                    <span class="icon fa fa-dashboard"></span>
-                                    <span class="name">Components</span>
+                                    <span class="navigation__icon fa fa-dashboard"></span>
+                                    <span class="navigation__name">Components</span>
                                 </a>
                                 <ul>
                                     <li>
                                         <a href="/components/button/">
-                                            <span class="icon fa fa-dashboard"></span>
-                                            <span class="name">Buttons</span>
+                                            <span class="navigation__icon fa fa-dashboard"></span>
+                                            <span class="navigation__name">Buttons</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="/components/messages/">
-                                            <span class="icon fa fa-dashboard"></span>
-                                            <span class="name">Messages</span>
+                                            <span class="navigation__icon fa fa-dashboard"></span>
+                                            <span class="navigation__name">Messages</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="/components/form/">
-                                            <span class="icon fa fa-dashboard"></span>
-                                            <span class="name">Form</span>
+                                            <span class="navigation__icon fa fa-dashboard"></span>
+                                            <span class="navigation__name">Form</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="/components/table/">
-                                            <span class="icon fa fa-dashboard"></span>
-                                            <span class="name">Table</span>
+                                            <span class="navigation__icon fa fa-dashboard"></span>
+                                            <span class="navigation__name">Table</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="/components/label/">
-                                            <span class="icon fa fa-dashboard"></span>
-                                            <span class="name">Label</span>
+                                            <span class="navigation__icon fa fa-dashboard"></span>
+                                            <span class="navigation__name">Label</span>
                                         </a>
                                     </li>
                                 </ul>
                             </li>
-                            <li>
-                                <a href="/patterns/">
-                                    <span class="icon fa fa-dashboard"></span>
-                                    <span class="name">Patterns</span>
-                                </a>
-                                <ul>
-                                    <li>
-                                        <a href="/patterns/datatable/">
-                                            <span class="icon fa fa-dashboard"></span>
-                                            <span class="name">Data Table</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/patterns/pageheader/">
-                                            <span class="icon fa fa-dashboard"></span>
-                                            <span class="name">Page Header</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
+{#                            <li>#}
+{#                                <a href="/patterns/">#}
+{#                                    <span class="icon fa fa-dashboard"></span>#}
+{#                                    <span class="name">Patterns</span>#}
+{#                                </a>#}
+{#                                <ul>#}
+{#                                    <li>#}
+{#                                        <a href="/patterns/datatable/">#}
+{#                                            <span class="icon fa fa-dashboard"></span>#}
+{#                                            <span class="name">Data Table</span>#}
+{#                                        </a>#}
+{#                                    </li>#}
+{#                                    <li>#}
+{#                                        <a href="/patterns/pageheader/">#}
+{#                                            <span class="icon fa fa-dashboard"></span>#}
+{#                                            <span class="name">Page Header</span>#}
+{#                                        </a>#}
+{#                                    </li>#}
+{#                                    <li>#}
+{#                                        <a href="/patterns/login/">#}
+{#                                            <span class="icon fa fa-dashboard"></span>#}
+{#                                            <span class="name">Login</span>#}
+{#                                        </a>#}
+{#                                    </li>#}
+{#                                </ul>#}
+{#                            </li>#}
                         </ul>
                     </div>
                     <div class="navigation__footer">
@@ -170,9 +192,9 @@
                     </a>
                 </div>
                 <div class="header__navigation">
-                    <button class="btn btn-link" type="button">
-                        <i class="fa fa-ellipsis-v"></i>
-                    </button>
+{#                    <button class="btn btn-link" type="button">#}
+{#                        <i class="fa fa-plus" aria-hidden="true"></i>#}
+{#                    </button>#}
                 </div>
             </header>
             <main id="main-container">
@@ -187,6 +209,7 @@
                 WE &hearts; B2B Ecommerce
             </footer>
         </div>
+        {% endblock %}
     </body>
 </html>
 
