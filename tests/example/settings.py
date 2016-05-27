@@ -49,7 +49,7 @@ INSTALLED_APPS = (
     'crispy_forms',
 
     'example.layout',
-    'example.pages',
+    #'example.pages',
     'example.views',
     'example.design',
     'example.components',

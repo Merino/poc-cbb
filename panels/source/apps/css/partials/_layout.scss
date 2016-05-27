@@ -1,5 +1,7 @@
 body {
   background-color: $global-background-color;
+  min-height: 100%;
+  min-width: 100%;
 }
 
 a {
@@ -13,7 +15,7 @@ a {
   margin: 0 auto;
   width: 100%;
   min-width: 320px;
-  background-color: $global-background-color;
+  //background-color: $global-background-color;
 
     &.navigation__left.navigation__open {
       padding-left: $navigation-width;
@@ -50,6 +52,11 @@ a {
   transition: all 0.18s ease-out;
   border-right: 1px solid $navigation-border-color;
 
+  .navigation__wrapper{
+    height: 100%;
+  }
+
+
 
   .navigation__mini & .navigation__wrapper  {
      @include translate3d($navigation-width - $navigation-width-mini , 0, 0);
@@ -63,7 +70,6 @@ a {
 
   a {
     display: block;
-
     padding: 0.5rem 1rem 0.5rem 20px;
     text-decoration: none;
     font-size:14px;
@@ -113,6 +119,8 @@ a {
     opacity: 0;
   }
 
+
+
   .navigation__divider {
     border-top:1px solid $navigation-border-color;
     height:1px;
@@ -120,10 +128,9 @@ a {
 
   .navigation__footer {
     width: $navigation-width;
-    //position:absolute;
-    //bottom:0;
-    //left:0;
-    background-color: green;
+    position:fixed;
+    bottom:0;
+    border-top: 1px solid $navigation-border-color;
   }
 
   .navigation__left & {
@@ -211,7 +218,6 @@ a {
 
 /* Footer */
 #footer-container {
-  margin-left: $navigation-width;
   color: $footer-color;
   padding: 0 10px 21px;
   min-height: 44px;
