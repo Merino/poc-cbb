@@ -3,8 +3,26 @@
 {% block head_title %}Design Grid{% endblock %}
 
 {% block content %}
+    {% load pygmentify %}
 
-<p>The grid we use is based on the bootstrap 4 grid</p>
+    <h1>Grid</h1>
+    <p> The grid provides the foundation for a harmonious positioning of elements, while maintaining a consistent and
+        coherent look of a page as a whole. It brings calm to a page, and makes it easier for users to scan the content.<p>
+    <p>
+        In HTML, text flows in a vertical motion, and this creates the basic rhythm of our pages. This rhythm is
+        created by the space between each line of text, commonly named 'line height'. In visual terms, each line of
+        text defines a visual guideline (the text literally 'sits' on it). This line is called 'baseline', and will be
+        our common denominator in defining the grid. </p>
+
+    <p>Bootstrap includes a powerful mobile-first grid system for building layouts of all shapes and sizes.
+        It’s based on a 12 column layout and has multiple tiers, one for each media query range.</p>
+
+    <h2>Stacked-to-horizontal</h2>
+    <p>Using a single set of <code>.col-md-*</code> grid classes, you can create a basic grid system that starts out
+        stacked on mobile devices and tablet devices (the extra small to small range) before becoming horizontal on
+        desktop (medium) devices. Place grid columns in any <code>.row</code> .
+
+    </p>
 
     <div class="example-grid">
         <div class="row">
@@ -36,22 +54,60 @@
         </div>
     </div>
 
+{% pygment %}
+<pre lang="html">
+<div class="row">
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+</div>
+<div class="row">
+    <div class="col-md-8">.col-md-8</div>
+    <div class="col-md-4">.col-md-4</div>
+</div>
+<div class="row">
+    <div class="col-md-4">.col-md-4</div>
+    <div class="col-md-4">.col-md-4</div>
+    <div class="col-md-4">.col-md-4</div>
+</div>
+<div class="row">
+    <div class="col-md-6">.col-md-6</div>
+    <div class="col-md-6">.col-md-6</div>
+</div>
+</pre>
+{% endpygment %}
 
-    <p>Nesting columns</p>
+    <h2>Example: Mobile and desktop</h2>
+    <p>Don’t want your columns to simply stack in smaller devices? Use the extra small and medium device grid classes by adding .col-xs-* and .col-md-* to your columns. See the example below for a better idea of how it all works.</p>
+
     <div class="example-grid">
+        <!-- Stack the columns on mobile by making one full-width and the other half-width -->
         <div class="row">
-            <div class="col-sm-9">
-                Level 1: .col-sm-9
-            <div class="row">
-                <div class="col-xs-8 col-sm-6">
-                    Level 2: .col-xs-8 .col-sm-6
-                </div>
-                <div class="col-xs-4 col-sm-6">
-                    Level 2: .col-xs-4 .col-sm-6
-                </div>
-            </div>
+          <div class="col-xs-12 col-md-8">.col-xs-12 .col-md-8</div>
+          <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+        </div>
+
+        <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+        <div class="row">
+          <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+          <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+          <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+        </div>
+
+        <!-- Columns are always 50% wide, on mobile and desktop -->
+        <div class="row">
+          <div class="col-xs-6">.col-xs-6</div>
+          <div class="col-xs-6">.col-xs-6</div>
         </div>
     </div>
-
 
 {% endblock %}

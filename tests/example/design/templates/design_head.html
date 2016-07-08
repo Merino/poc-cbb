@@ -30,6 +30,13 @@
         <script src="/static/vesper/javascript/libs.js?{{ BUILD }}"></script>
         <script src="/static/vesper/javascript/apps.js?{{ BUILD }}"></script>
 
+
+        {% load staticfiles %}
+
+
+
+        <link rel="stylesheet" type="text/css" href="{% static 'django_pygments/css/pygments_default.css' %}" />
+        <link rel="stylesheet" type="text/css" href="https://raw.githubusercontent.com/richleland/pygments-css/master/github.css" />
     </head>
     <body>
         {% block page %}

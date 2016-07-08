@@ -44,9 +44,11 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'django_pygments',
     'turbolinks',
     'panels',
     'crispy_forms',
+
 
     'example.layout',
     #'example.pages',

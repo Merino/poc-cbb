@@ -4,7 +4,11 @@ from django.shortcuts import render
 from django.views.generic.base import TemplateView
 
 
+class PatternLayoutContentOnly(TemplateView):
+    template_name = 'pattern_layout_content_only.html'
 
+class PatternLayoutContentSidebar(TemplateView):
+    template_name = 'pattern_layout_content_sidebar.html'
 
 class PatternLogin(TemplateView):
     template_name = 'pattern_login.html'
