@@ -1,14 +1,20 @@
-from django.shortcuts import render
-
-# Create your views here.
 from django.views.generic.base import TemplateView
 
 
-class PatternLayoutContentOnly(TemplateView):
-    template_name = 'pattern_layout_content_only.html'
+class PatternLayoutBlank(TemplateView):
+    template_name = 'pattern_layout_blank.html'
 
-class PatternLayoutContentSidebar(TemplateView):
-    template_name = 'pattern_layout_content_sidebar.html'
+class PatternLayoutList(TemplateView):
+    template_name = 'pattern_layout_list.html'
+
+class PatternLayoutRecord(TemplateView):
+    template_name = 'pattern_layout_record.html'
+
+class PatternLayoutFocus(TemplateView):
+    template_name = 'pattern_layout_focus.html'
+
+
+
 
 class PatternLogin(TemplateView):
     template_name = 'pattern_login.html'

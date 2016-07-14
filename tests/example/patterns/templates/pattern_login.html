@@ -2,10 +2,12 @@
 
 {% block head_title %}Pattern - Login{% endblock %}
 
-{% block page %}
-<div id="app">
+{% block content %}
 
-    <div class="login-form">
+<div class="row">
+    <div class="center-block card col-md-3">
+
+
         <div class="text-xs-center">
             <div class="login-form__logo">
                 <span class="fa fa-cloud"></span>
@@ -23,7 +25,7 @@
                 </div>
             </div>
             <div class="form-group row">
-                <div class="col-sm-12 login-form__action">
+                <div class="col-sm-12">
                     <button class="btn btn-primary btn-lg btn-block">Sign In</button>
                 </div>
             </div>
@@ -37,9 +39,5 @@
         </div>
 
     </div>
-
-    <footer id="footer-container">
-        WE &hearts; B2B Ecommerce
-    </footer>
 </div>
 {% endblock %}

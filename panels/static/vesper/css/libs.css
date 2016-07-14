@@ -7833,7 +7833,7 @@ pre code {
   border: 0;
 }
 .form-control:focus {
-  border-color: #66afe9;
+  border-color: #59afe1;
   outline: none;
 }
 .form-control::placeholder {

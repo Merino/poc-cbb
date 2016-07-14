@@ -10,8 +10,16 @@ class ComponentIndexView(TemplateView):
 class ComponentMessagesView(TemplateView):
     template_name = 'component_messages.html'
 
-class ComponentFormView(TemplateView):
-    template_name = 'component_form.html'
+
+class ComponentFormInputView(TemplateView):
+    template_name = 'component_form_input.html'
+
+class ComponentFormValidationView(TemplateView):
+    template_name = 'component_form_validation.html'
+
+class ComponentFormLayoutView(TemplateView):
+    template_name = 'component_form_layout.html'
+
 
 class ComponentButtonView(TemplateView):
     template_name = 'component_button.html'
