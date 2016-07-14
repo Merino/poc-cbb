@@ -1,0 +1,38 @@
+{% extends "design_head.html" %}
+
+{% block head_title %}Pattern - Layout Content Only{% endblock %}
+
+{% block content %}
+
+    <style>
+
+        .test {
+            background: #FFF;
+        }
+
+    </style>
+
+    <section>
+        <h2>OBJECT DETAILS</h2>
+        <br />
+    </section>
+
+    <section class="test">
+        info object new content, info object new contentinfo object new content info object new content
+    </section>
+    <br />
+    <section class="test">
+        info object new content, info object new contentinfo object new content info object new content
+    </section>
+     <br />
+    <section class="test">
+        info object new content, info object new contentinfo object new content info object new content <br />
+        info object new content, info object new contentinfo object new content info object new content
+        info object new content, info object new contentinfo object new content info object new content
+    </section>
+     <br />
+    <section class="test">
+        info object new content, info object new contentinfo object new content info object new content
+    </section>
+
+{% endblock %}
