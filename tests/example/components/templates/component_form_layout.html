@@ -4,187 +4,315 @@
 
 {% block content %}
 
-    <h1>Form</h1>
-    <p>We just need them</p>
 
-    <div class="example">
+        <style>
 
+        section {
 
-    <form>
-  <div class="form-group row">
-    <label for="inputEmail3" class="col-sm-2 form-control-label">Email</label>
-    <div class="col-sm-10">
-      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="inputPassword3" class="col-sm-2 form-control-label">Password</label>
-    <div class="col-sm-10">
-      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label class="col-sm-2">Radios</label>
-    <div class="col-sm-10">
-      <div class="radio">
-        <label>
-          <input type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-          Option one is this and that&mdash;be sure to include why it's great
-        </label>
-      </div>
-      <div class="radio">
-        <label>
-          <input type="radio" name="gridRadios" id="gridRadios2" value="option2">
-          Option two can be something else and selecting it will deselect option one
-        </label>
-      </div>
-      <div class="radio disabled">
-        <label>
-          <input type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
-          Option three is disabled
-        </label>
-      </div>
-    </div>
-  </div>
-  <div class="form-group row">
-    <label class="col-sm-2">Checkbox</label>
-    <div class="col-sm-10">
-      <div class="checkbox">
-        <label>
-          <input type="checkbox"> Check me out
-        </label>
-      </div>
-    </div>
-  </div>
-  <div class="form-group row">
-    <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-secondary">Sign in</button>
-    </div>
-  </div>
-</form>
+            background: #fff;
+            border:1px solid #aaa;
+            padding:15px;
 
-    <section>
-        <h3>Static controls</h3>
-        <p>When you need to place plain text next to a form label within a form, use the .form-control-static class on a.</>
-        <div class="example">
+            border-radius: 0.25rem;
 
-            <form>
-              <div class="form-group row">
-                <label class="col-sm-2 form-control-label">Email</label>
+            margin-bottom: 25px;
+
+        }
+
+        .form-group .form-control-label {
+            text-align: right;
+            width: 100%;
+        }
+
+        .form-group .form-control-label .required {
+            color:#d04437;
+        }
+
+        .form-group.form-action {
+            border-top: 1px solid #ccc;
+            padding-top: 23px;
+        }
+
+    </style>
+
+    <section class="block">
+
+        <form>
+            <h3>Create a project</h3>
+            <p> Projects are where your repositories live. They are contrainers you
+                can group similar repositories in for better code organisations</p>
+
+            <div class="form-group row">
+                <div class="col-sm-2">
+                    <label for="inputProjectName" class="form-control-label">
+                        Project name <span class="required">*</span>
+                    </label>
+                </div>
                 <div class="col-sm-10">
-                  <p class="form-control-static">email@example.com</p>
+                    <input type="email" class="form-control" id="inputProjectName">
                 </div>
-              </div>
-              <div class="form-group row">
-                <label for="inputPassword" class="col-sm-2 form-control-label">Password</label>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-sm-2">
+                    <label for="inputKey" class="form-control-label">
+                        Key <span class="required">*</span>
+                    </label>
+                </div>
                 <div class="col-sm-10">
-                  <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                    <input type="email" class="form-control" id="inputKey" placeholder="Eg. AT (project named Atlassian)">
+                    <small>Input must be a unique value</small>
                 </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-sm-2">
+                    <label for="inputDescription" class="form-control-label">
+                        Description
+                    </label>
+                </div>
+                <div class="col-sm-10">
+                    <textarea id="inputDescription" class="form-control"></textarea>
+                </div>
+            </div>
+
+
+            <h5>Project permissions</h5>
+
+            <div class="form-group row">
+                <div class="col-sm-2">
+                    <label for="inputDescription" class="form-control-label">
+                        All active users can
+                    </label>
+                </div>
+                <div class="col-sm-10">
+                    <div class="radio">
+                <label>
+                  <input type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                  Read and write
+                </label>
               </div>
-            </form>
-
-        </div>
-    </section>
-
-
-    <section>
-        <h3>Disabled states</h3>
-        <p>Add the disabled boolean attribute on an input to prevent user interactions. Disabled inputs appear lighter and add a not-allowed cursor.</p>
-
-        <div class="example">
-
-            <form>
-              <fieldset disabled>
-                <div class="form-group">
-                  <label for="disabledTextInput">Disabled input</label>
-                  <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input">
+              <div class="radio">
+                <label>
+                  <input type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                  Read only
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="gridRadios" id="gridRadios3" value="option3">
+                  No access
+                </label>
+              </div>
                 </div>
-                <div class="form-group">
-                  <label for="disabledSelect">Disabled select menu</label>
-                  <select id="disabledSelect" class="form-control">
-                    <option>Disabled select</option>
-                  </select>
+            </div>
+
+
+
+            <div class="form-group form-action row">
+                <div class="col-sm-2">
+                    <br />
                 </div>
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> Can't check this
-                  </label>
+                <div class="col-sm-10">
+
+                    <button type="submit" class="btn btn-primary">Create project</button> <a class="btn btn-link">Cancel</a>
+
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </fieldset>
-            </form>
 
-        </div>
-    </section>
 
-    <section>
-        <h3>Disabled states</h3>
-        <p>Add the readonly boolean attribute on an input to prevent modification of the input’s value. Read-only
-            inputs appear lighter (just like disabled inputs), but retain the standard cursor.</p>
+            </div>
 
-        <div class="example">
-            <input class="form-control" type="text" placeholder="Readonly input here…" readonly>
-        </div>
+        </form>
+
+
+
 
     </section>
 
-    <section>
-        <h3>Help text</h3>
-        <p>No official help text classes exist in Bootstrap 4 (previously we had .help-block in v3), but thanks to our
-            utility classes like .text-muted, you can create much more flexible help text as you need it. </p>
-        <p>Inline text can use any typical inline HTML element (be it a small, span, or something else).</p>
-
-        <div class="example">
-
-            <small class="text-muted">
-                Some inline text with a small tag looks like this.
-            </small>
-
-        </div>
-    </section>
 
 
-    <section>
-        <h3>Validation</h3>
-        <p>Bootstrap includes validation styles for danger, warning, and success states on form controls. To use,
-            add .has-warning, .has-danger, or .has-success to the parent element. Any .form-control-label,
-            .form-control, and .text-help within that element will receive the validation styles.
-        </p>
 
-        <div class="example">
+    <!--<h1>Form</h1>-->
+    <!--<p>We just need them</p>-->
 
-            <div class="form-group has-success">
-              <label class="form-control-label" for="inputSuccess1">Input with success</label>
-              <input type="text" class="form-control form-control-success" id="inputSuccess1">
-            </div>
-            <div class="form-group has-warning">
-              <label class="form-control-label" for="inputWarning1">Input with warning</label>
-              <input type="text" class="form-control form-control-warning" id="inputWarning1">
-            </div>
-            <div class="form-group has-danger">
-              <label class="form-control-label" for="inputDanger1">Input with danger</label>
-              <input type="text" class="form-control form-control-danger" id="inputDanger1">
-            </div>
+    <!--<div class="example">-->
 
-            <div class="checkbox has-success">
-              <label>
-                <input type="checkbox" id="checkboxSuccess" value="option1">
-                Checkbox with success
-              </label>
-            </div>
-            <div class="checkbox has-warning">
-              <label>
-                <input type="checkbox" id="checkboxWarning" value="option1">
-                Checkbox with warning
-              </label>
-            </div>
-            <div class="checkbox has-danger">
-              <label>
-                <input type="checkbox" id="checkboxDanger" value="option1">
-                Checkbox with danger
-              </label>
-            </div>
 
-        </div>
+    <!--<form>-->
+  <!--<div class="form-group row">-->
+    <!--<label for="inputEmail3" class="col-sm-2 form-control-label">Email</label>-->
+    <!--<div class="col-sm-10">-->
+      <!--<input type="email" class="form-control" id="inputEmail3" placeholder="Email">-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div class="form-group row">-->
+    <!--<label for="inputPassword3" class="col-sm-2 form-control-label">Password</label>-->
+    <!--<div class="col-sm-10">-->
+      <!--<input type="password" class="form-control" id="inputPassword3" placeholder="Password">-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div class="form-group row">-->
+    <!--<label class="col-sm-2">Radios</label>-->
+    <!--<div class="col-sm-10">-->
+      <!--<div class="radio">-->
+        <!--<label>-->
+          <!--<input type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>-->
+          <!--Option one is this and that&mdash;be sure to include why it's great-->
+        <!--</label>-->
+      <!--</div>-->
+      <!--<div class="radio">-->
+        <!--<label>-->
+          <!--<input type="radio" name="gridRadios" id="gridRadios2" value="option2">-->
+          <!--Option two can be something else and selecting it will deselect option one-->
+        <!--</label>-->
+      <!--</div>-->
+      <!--<div class="radio disabled">-->
+        <!--<label>-->
+          <!--<input type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>-->
+          <!--Option three is disabled-->
+        <!--</label>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div class="form-group row">-->
+    <!--<label class="col-sm-2">Checkbox</label>-->
+    <!--<div class="col-sm-10">-->
+      <!--<div class="checkbox">-->
+        <!--<label>-->
+          <!--<input type="checkbox"> Check me out-->
+        <!--</label>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div class="form-group row">-->
+    <!--<div class="col-sm-offset-2 col-sm-10">-->
+      <!--<button type="submit" class="btn btn-secondary">Sign in</button>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</form>-->
+
+    <!--<section>-->
+        <!--<h3>Static controls</h3>-->
+        <!--<p>When you need to place plain text next to a form label within a form, use the .form-control-static class on a.</>-->
+        <!--<div class="example">-->
+
+            <!--<form>-->
+              <!--<div class="form-group row">-->
+                <!--<label class="col-sm-2 form-control-label">Email</label>-->
+                <!--<div class="col-sm-10">-->
+                  <!--<p class="form-control-static">email@example.com</p>-->
+                <!--</div>-->
+              <!--</div>-->
+              <!--<div class="form-group row">-->
+                <!--<label for="inputPassword" class="col-sm-2 form-control-label">Password</label>-->
+                <!--<div class="col-sm-10">-->
+                  <!--<input type="password" class="form-control" id="inputPassword" placeholder="Password">-->
+                <!--</div>-->
+              <!--</div>-->
+            <!--</form>-->
+
+        <!--</div>-->
+    <!--</section>-->
+
+
+    <!--<section>-->
+        <!--<h3>Disabled states</h3>-->
+        <!--<p>Add the disabled boolean attribute on an input to prevent user interactions. Disabled inputs appear lighter and add a not-allowed cursor.</p>-->
+
+        <!--<div class="example">-->
+
+            <!--<form>-->
+              <!--<fieldset disabled>-->
+                <!--<div class="form-group">-->
+                  <!--<label for="disabledTextInput">Disabled input</label>-->
+                  <!--<input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input">-->
+                <!--</div>-->
+                <!--<div class="form-group">-->
+                  <!--<label for="disabledSelect">Disabled select menu</label>-->
+                  <!--<select id="disabledSelect" class="form-control">-->
+                    <!--<option>Disabled select</option>-->
+                  <!--</select>-->
+                <!--</div>-->
+                <!--<div class="checkbox">-->
+                  <!--<label>-->
+                    <!--<input type="checkbox"> Can't check this-->
+                  <!--</label>-->
+                <!--</div>-->
+                <!--<button type="submit" class="btn btn-primary">Submit</button>-->
+              <!--</fieldset>-->
+            <!--</form>-->
+
+        <!--</div>-->
+    <!--</section>-->
+
+    <!--<section>-->
+        <!--<h3>Disabled states</h3>-->
+        <!--<p>Add the readonly boolean attribute on an input to prevent modification of the input’s value. Read-only-->
+            <!--inputs appear lighter (just like disabled inputs), but retain the standard cursor.</p>-->
+
+        <!--<div class="example">-->
+            <!--<input class="form-control" type="text" placeholder="Readonly input here…" readonly>-->
+        <!--</div>-->
+
+    <!--</section>-->
+
+    <!--<section>-->
+        <!--<h3>Help text</h3>-->
+        <!--<p>No official help text classes exist in Bootstrap 4 (previously we had .help-block in v3), but thanks to our-->
+            <!--utility classes like .text-muted, you can create much more flexible help text as you need it. </p>-->
+        <!--<p>Inline text can use any typical inline HTML element (be it a small, span, or something else).</p>-->
+
+        <!--<div class="example">-->
+
+            <!--<small class="text-muted">-->
+                <!--Some inline text with a small tag looks like this.-->
+            <!--</small>-->
+
+        <!--</div>-->
+    <!--</section>-->
+
+
+    <!--<section>-->
+        <!--<h3>Validation</h3>-->
+        <!--<p>Bootstrap includes validation styles for danger, warning, and success states on form controls. To use,-->
+            <!--add .has-warning, .has-danger, or .has-success to the parent element. Any .form-control-label,-->
+            <!--.form-control, and .text-help within that element will receive the validation styles.-->
+        <!--</p>-->
+
+        <!--<div class="example">-->
+
+            <!--<div class="form-group has-success">-->
+              <!--<label class="form-control-label" for="inputSuccess1">Input with success</label>-->
+              <!--<input type="text" class="form-control form-control-success" id="inputSuccess1">-->
+            <!--</div>-->
+            <!--<div class="form-group has-warning">-->
+              <!--<label class="form-control-label" for="inputWarning1">Input with warning</label>-->
+              <!--<input type="text" class="form-control form-control-warning" id="inputWarning1">-->
+            <!--</div>-->
+            <!--<div class="form-group has-danger">-->
+              <!--<label class="form-control-label" for="inputDanger1">Input with danger</label>-->
+              <!--<input type="text" class="form-control form-control-danger" id="inputDanger1">-->
+            <!--</div>-->
+
+            <!--<div class="checkbox has-success">-->
+              <!--<label>-->
+                <!--<input type="checkbox" id="checkboxSuccess" value="option1">-->
+                <!--Checkbox with success-->
+              <!--</label>-->
+            <!--</div>-->
+            <!--<div class="checkbox has-warning">-->
+              <!--<label>-->
+                <!--<input type="checkbox" id="checkboxWarning" value="option1">-->
+                <!--Checkbox with warning-->
+              <!--</label>-->
+            <!--</div>-->
+            <!--<div class="checkbox has-danger">-->
+              <!--<label>-->
+                <!--<input type="checkbox" id="checkboxDanger" value="option1">-->
+                <!--Checkbox with danger-->
+              <!--</label>-->
+            <!--</div>-->
+
+        <!--</div>-->
 
 {% endblock %}

@@ -1,0 +1,47 @@
+{% extends "design_head.html" %}
+
+{% block head_title %}Form{% endblock %}
+
+{% block content %}
+
+    <style>
+
+        section {
+
+            background: #fff;
+            border:1px solid #aaa;
+            padding:15px;
+
+            border-radius: 0.25rem;
+
+            margin-bottom: 25px;
+
+        }
+
+    </style>
+
+
+    <section class="block">
+        <div class="form-group">
+            <label class="form-control-label" for="inputSuccess1">Normal input</label>
+            <input type="text" class="form-control form-control-success" id="inputSuccess1">
+        </div>
+        <div class="form-group has-success">
+            <label class="form-control-label" for="inputSuccess1">Input with success</label>
+            <input type="text" class="form-control form-control-success" id="inputSuccess1">
+        </div>
+        <div class="form-group has-warning">
+            <label class="form-control-label" for="inputWarning1">Input with warning</label>
+            <input type="text" class="form-control form-control-warning" id="inputWarning1">
+        </div>
+        <div class="form-group has-danger">
+            <label class="form-control-label" for="inputDanger1">Input with danger</label>
+            <input type="text" class="form-control form-control-danger" id="inputDanger1">
+            <small class="text-muted">
+                Message of the error
+            </small>
+        </div>
+
+    </section>
+
+{% endblock %}

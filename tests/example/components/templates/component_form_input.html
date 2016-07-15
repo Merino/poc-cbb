@@ -14,9 +14,61 @@
 
             border-radius: 0.25rem;
 
+            margin-bottom: 25px;
+
         }
 
+        .form-group label {
+
+        }
+
+        .form-group label .required {
+            color:#d04437;
+        }
+
+
     </style>
+
+    <section class="block">
+        <h4>Labels</h4>
+
+        <div class="form-group">
+            <label for="labelExample">Field label</label>
+            <input type="text" id="labelExample" class="form-control" placeholder="e.g Project name">
+        </div>
+
+        <div class="form-group">
+            <label for="labelExampleRequired">Field label <span class="required">*</span></label>
+            <input type="text" id="labelExampleRequired" class="form-control" placeholder="Disabled input">
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-2">Radios</label>
+            <div class="col-sm-10">
+              <div class="radio">
+                <label>
+                  <input type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                  Option one is this and that&mdash;be sure to include why it's great
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                  Option two can be something else and selecting it will deselect option one
+                </label>
+              </div>
+              <div class="radio disabled">
+                <label>
+                  <input type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
+                  Option three is disabled
+                </label>
+              </div>
+            </div>
+        </div>
+
+    </section>
+
+
 
     <section class="block">
 
@@ -54,6 +106,8 @@
           <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
           <span class="input-group-addon">.00</span>
         </div>
+        <br />
+        <p class="form-control-static">email@example.com</p>
 
     </section>
 
