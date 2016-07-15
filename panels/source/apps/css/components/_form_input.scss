@@ -1,0 +1,9 @@
+
+
+
+.form-control {
+    &.form-control__focus{
+      border-color: $input-border-focus;
+      outline: none;
+    }
+}
