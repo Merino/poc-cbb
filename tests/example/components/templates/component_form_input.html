@@ -18,96 +18,264 @@
 
         }
 
-        .form-group label {
-
-        }
-
-        .form-group label .required {
-            color:#d04437;
-        }
 
 
     </style>
 
     <section class="block">
-        <h4>Labels</h4>
+        <h4>Basic Elements</h4>
 
-        <div class="form-group">
-            <label for="labelExample">Field label</label>
-            <input type="text" id="labelExample" class="form-control" placeholder="e.g Project name">
-        </div>
+        <form class="form-horizontal">
 
-        <div class="form-group">
-            <label for="labelExampleRequired">Field label <span class="required">*</span></label>
-            <input type="text" id="labelExampleRequired" class="form-control" placeholder="Disabled input">
-        </div>
-
-        <div class="form-group row">
-            <label class="col-sm-2">Radios</label>
-            <div class="col-sm-10">
-              <div class="radio">
-                <label>
-                  <input type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-                  Option one is this and that&mdash;be sure to include why it's great
+        <div class="form-element">
+            <div class="form-element__label">
+                <label for="inputLabel">
+                    Field label
                 </label>
-              </div>
-              <div class="radio">
-                <label>
-                  <input type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                  Option two can be something else and selecting it will deselect option one
-                </label>
-              </div>
-              <div class="radio disabled">
-                <label>
-                  <input type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
-                  Option three is disabled
-                </label>
-              </div>
+            </div>
+            <div class="form-element__control">
+                <input type="email" class="form-control" id="inputLabel">
             </div>
         </div>
 
-    </section>
-
-
-
-    <section class="block">
-
-        <h4>Input</h4>
-
-        <p>Basic element</p>
-
-        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter email here" />
-        <br />
-        <input type="text" class="form-control form-control__focus" id="exampleInputEmail1" placeholder="Focus input here" />
-        <br />
-        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter email here" value="info@example.org"/>
-        <br />
-        <input type="text" class="form-control" id="readOnlyInput" value="Readonly input here…" readonly />
-        <br />
-        <input type="text" class="form-control" id="disabledInput"  placeholder="Disabled input here..." disabled />
-        <br />
-        <div class="input-group">
-              <span class="input-group-addon" id="basic-addon1">@</span>
-              <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+        <div class="form-element">
+            <div class="form-element__label">
+                <label for="inputLabelRequired">
+                    Field label required <span class="form-element__label--required">*</span>
+                </label>
+            </div>
+            <div class="form-element__control">
+                <input type="email" class="form-control" id="inputLabelRequired">
+            </div>
         </div>
-        <br>
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Recipient's username" aria-describedby="basic-addon2">
-          <span class="input-group-addon" id="basic-addon2">@example.com</span>
+
+
+
+        <div class="form-element">
+            <div class="form-element__label">
+                <label>
+                    Static
+                </label>
+            </div>
+            <div class="form-element__control">
+               <p class="form-control-static">email@example.com</p>
+            </div>
         </div>
-        <br>
-        <div class="input-group">
-          <span class="input-group-addon" id="basic-addon3">https://example.com/users/</span>
-          <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+
+        <div class="form-element">
+            <div class="form-element__label">
+                <label for="inputValue">
+                    Value
+                </label>
+            </div>
+            <div class="form-element__control">
+                <input type="email" class="form-control" id="inputValue" value="value from database">
+            </div>
         </div>
-        <br>
-        <div class="input-group">
-          <span class="input-group-addon">$</span>
-          <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-          <span class="input-group-addon">.00</span>
+
+        <div class="form-element">
+            <div class="form-element__label">
+                <label for="inputPlaceholder">
+                    Placeholder
+                </label>
+            </div>
+            <div class="form-element__control">
+                <input type="email" class="form-control" id="inputPlaceholder" placeholder="eg. name">
+            </div>
         </div>
-        <br />
-        <p class="form-control-static">email@example.com</p>
+
+        <div class="form-element">
+            <div class="form-element__label">
+                <label for="inputFocus">
+                    Focus
+                </label>
+            </div>
+            <div class="form-element__control">
+                <input type="email" class="form-control form-control__focus" id="inputFocus" placeholder="eg. name">
+            </div>
+        </div>
+
+        <div class="form-element">
+            <div class="form-element__label">
+                <label for="inputReadonly">
+                    Readonly
+                </label>
+            </div>
+            <div class="form-element__control">
+                <input type="text" class="form-control" id="inputReadonly" value="Readonly input here…" readonly />
+            </div>
+        </div>
+
+        <div class="form-element">
+            <div class="form-element__label">
+                <label for="inputDisabled">
+                    Disabled
+                </label>
+            </div>
+            <div class="form-element__control">
+                <input type="text" class="form-control" id="inputDisabled" value="Disabled input here…" disabled />
+            </div>
+        </div>
+
+        <div class="form-element">
+            <div class="form-element__label">
+                <label for="inputDisabled">
+                    Disabled
+                </label>
+            </div>
+            <div class="form-element__control">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Recipient's username" aria-describedby="basic-addon2">
+                    <span class="input-group-addon" id="basic-addon2">@example.com</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-element">
+            <div class="form-element__label">
+                <label for="inputDisabled">
+                    Disabled
+                </label>
+            </div>
+            <div class="form-element__control">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">@</span>
+                    <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-element">
+            <div class="form-element__label">
+                <label for="inputDisabled">
+                    Disabled
+                </label>
+            </div>
+            <div class="form-element__control">
+                <div class="input-group">
+                    <span class="input-group-addon">$</span>
+                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                    <span class="input-group-addon">.00</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-element">
+            <div class="form-element__label">
+                <label for="inputDisabled">
+                    Icon left
+                </label>
+            </div>
+            <div class="form-element__control">
+                <span class="input-group-addon form-control__icon-left">$</span>
+                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+            </div>
+        </div>
+
+            <style>
+
+
+                .form-control__icon-left{
+
+    position: absolute;
+    margin-top: 1px;
+    margin-left: 1px;
+    height: 27px;
+    border: none;
+
+                }
+
+            </style>
+
+        <div class="form-element">
+            <div class="form-element__label">
+                <label for="inputDisabled">
+                    Icon right
+                </label>
+            </div>
+            <div class="form-element__control">
+                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                <span class="input-group-addon">.00</span>
+            </div>
+        </div>
+
+
+
+        <div class="form-element">
+            <div class="form-element__label">
+                <label for="inputFocus">
+                    Select
+                </label>
+            </div>
+            <div class="form-element__control">
+                <select class="form-control" id="exampleSelect1">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-element">
+            <div class="form-element__label">
+                 <label>
+                     Radios
+                 </label>
+            </div>
+            <div class="form-element__control">
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                        Option one is this and that&mdash;be sure to include why it's great
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                        Option two can be something else and selecting it will deselect option one
+                    </label>
+                </div>
+                <div class="radio disabled">
+                    <label>
+                        <input type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
+                        Option three is disabled
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-element">
+            <div class="form-element__label">
+                <label for="inputFocus">
+                    Checkbox
+                </label>
+            </div>
+            <div class="form-element__control">
+                <div class="checkbox">
+                    <label>
+                      <input type="checkbox"> Check me out
+                    </label>
+                  </div>
+            </div>
+        </div>
+
+
+        <div class="form-element">
+            <div class="form-element__label">
+                <label for="inputFocus">
+                    Textarea
+                </label>
+            </div>
+            <div class="form-element__control">
+                <div class="checkbox">
+                    <textarea id="inputDescription" class="form-control"></textarea>
+                </div>
+            </div>
+        </div>
+
+        </form>
 
     </section>
 

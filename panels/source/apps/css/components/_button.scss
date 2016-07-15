@@ -3,13 +3,27 @@
 
 .btn {
   position: relative;
+  padding: 0.375rem 1.4rem;
 
   &.btn--loading {
-    color: transparent;
+    //color: transparent;
     pointer-events: none;
 
+    padding: 0.375rem 1.4rem;
+    padding-left: 1.9rem;
+    padding-right: 0.9rem;
+
+    opacity:0.85;
+    //color:rgba(255,255,255,.5);
+
+    //background-size: 30px;
+    //background-position: 15px center;
+    //background-repeat: no-repeat;
+    ////padding-left: 55px;
+    //background-image: url(https://login.mailchimp.com/release/11.2.53/images/buttons/loading-gif-button-dark.png);
+
     &:after{
-      left: 50%;
+      left:1rem;
       top: 50%;
       position: absolute !important;
       height:1.0rem;
