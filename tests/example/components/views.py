@@ -20,6 +20,8 @@ class ComponentFormValidationView(TemplateView):
 class ComponentFormLayoutView(TemplateView):
     template_name = 'component_form_layout.html'
 
+class ComponentHeaderView(TemplateView):
+    template_name = 'component_header.html'
 
 class ComponentButtonView(TemplateView):
     template_name = 'component_button.html'
@@ -29,6 +31,13 @@ class ComponentTableView(TemplateView):
 
 class ComponentLabelView(TemplateView):
     template_name = 'component_label.html'
+
+class ComponentPanelView(TemplateView):
+    template_name = 'component_panel.html'
+
+
+class ComponentBreadcrumbView(TemplateView):
+    template_name = 'component_breadcrumb.html'
 
 
 

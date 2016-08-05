@@ -5,12 +5,14 @@
 @import "mixins";
 
 @import "partials/layout";
-@import "partials/page";
 @import "partials/blocks";
 
 @import "components/button";
+@import "components/chart";
 @import "components/form_input";
+@import "components/header";
 @import "components/table";
 @import "components/messages";
+@import "components/layout";
 
 @import "pattern/login";

@@ -49,13 +49,13 @@ INSTALLED_APPS = (
     'panels',
     'crispy_forms',
 
-
-    'example.layout',
     #'example.pages',
-    'example.views',
-    'example.design',
+    'example.foundation',
     'example.components',
     'example.patterns',
+
+    'example.layout',
+    'example.views',
 
 )
 

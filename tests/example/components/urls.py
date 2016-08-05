@@ -1,6 +1,8 @@
 from django.conf.urls import url
 
-from .views import ComponentIndexView, ComponentMessagesView, ComponentFormInputView, ComponentFormLayoutView, ComponentFormValidationView, ComponentButtonView, ComponentTableView, ComponentLabelView
+from .views import ComponentIndexView, ComponentMessagesView, ComponentFormInputView, ComponentFormLayoutView, \
+    ComponentFormValidationView, ComponentButtonView, ComponentTableView, ComponentLabelView, ComponentHeaderView, \
+    ComponentPanelView, ComponentBreadcrumbView
 
 urlpatterns = [
     url(r'^$', ComponentIndexView.as_view()),
@@ -9,6 +11,9 @@ urlpatterns = [
     url(r'^form-validation/', ComponentFormValidationView.as_view()),
     url(r'^form-layout/', ComponentFormLayoutView.as_view()),
     url(r'^button/', ComponentButtonView.as_view()),
+    url(r'^header/', ComponentHeaderView.as_view()),
     url(r'^table/', ComponentTableView.as_view()),
     url(r'^label/', ComponentLabelView.as_view()),
+     url(r'^panel/', ComponentPanelView.as_view()),
+    url(r'^breadcrumb', ComponentBreadcrumbView.as_view()),
 ]
