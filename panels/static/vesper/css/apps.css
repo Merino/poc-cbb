@@ -418,16 +418,28 @@ form .form-element__control {
   display: table;
   table-layout: auto;
   width: 100%;
-  margin-bottom: 20px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   padding: 2rem;
   background: lightpink;
 }
-.page-header .breadcrumbs {
+.page-header--small {
+  padding: 0.5rem 2rem;
+}
+.page-header .breadcrumb {
   padding: 0;
 }
-.page-header--small .page-header .breadcrumbs {
-  display: none;
+.page-header--small .page-header .breadcrumb {
+  font-size: 0.8rem;
+}
+.page-header--icon {
+  display: table-cell;
+  box-sizing: border-box;
+  vertical-align: middle;
+  text-align: center;
+  width: 48px;
+  height: 48px;
+  margin-right: 8px;
+  background-color: #00A000;
 }
 .page-header--title {
   box-sizing: border-box;
@@ -453,6 +465,9 @@ form .form-element__control {
 }
 .page-header--record-name {
   font-size: 2rem;
+}
+.page-header--small .page-header--record-name {
+  font-size: 1.8rem;
 }
 
 .page-content {
