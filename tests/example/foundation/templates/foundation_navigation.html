@@ -1,0 +1,79 @@
+{% extends "design_head.html" %}
+
+{% block head_title %}Design Navigation{% endblock %}
+
+{% block content %}
+
+    <table class="table">
+        <tr>
+            <td>Action</td>
+            <td>Mode</td>
+        </tr>
+        <tr>
+            <td><button type="button" class="btn btn-primary" data-toggle="layout" data-action="sidebar_toggle">Toggle Navigation</button></td>
+            <td>
+                <p></p>
+            </td>
+        </tr>
+        <tr>
+            <td><button type="button" class="btn btn-primary" data-toggle="layout" data-action="sidebar_open">Open Navigation</button></td>
+            <td>
+                <p></p>
+            </td>
+        </tr>
+        <tr>
+            <td><button type="button" class="btn btn-primary" data-toggle="layout" data-action="sidebar_close">Close Navigation</button></td>
+            <td>
+                <p></p>
+            </td>
+        </tr>
+    </table>
+
+        MINI SIDEBAR MODE SCREEN WIDTH GREATER THAN 991PX
+    <table class="table">
+        <tr>
+            <td>Action</td>
+            <td>Mode</td>
+        </tr>
+        <tr>
+            <td><button type="button" class="btn btn-warning" data-toggle="layout" data-action="sidebar_mini_toggle">Toggle Mini Navigation</button></td>
+            <td>
+                <p></p>
+            </td>
+        </tr>
+        <tr>
+            <td><button type="button" class="btn btn-warning" data-toggle="layout" data-action="sidebar_mini_on">Enable Mini Navigation</button></td>
+            <td>
+                <p></p>
+            </td>
+        </tr>
+        <tr>
+            <td><button type="button" class="btn btn-warning" data-toggle="layout" data-action="sidebar_mini_off">Close Mini Navigation</button></td>
+            <td>
+                <p></p>
+            </td>
+        </tr>
+    </table>
+
+
+    <script>
+
+        jQuery(function(){
+
+
+            // Call layout API on button click
+            jQuery('[data-toggle="layout"]').on('click', function(){
+                var $btn = jQuery(this);
+
+                App.layout($btn.data('action'));
+
+                if ($lHtml.hasClass('no-focus')) {
+                    $btn.blur();
+                }
+             });
+
+        });
+
+    </script>
+
+{% endblock %}

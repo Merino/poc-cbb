@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="imagetoolbar" content="no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="noindex,nofollow" />
+
+        <title>Vesper - {% block head_title %}{% endblock %}</title>
+
+        <link rel="shortcut icon" type="image/x-icon" href="/static/vesper/image/vesper-icon.png"/>
+
+        <!-- Styles -->
+        <link rel="stylesheet" href="/static/vesper/css/libs.css?{{ BUILD }}" type="text/css" />
+        <link rel="stylesheet" href="/static/vesper/css/apps.css?{{ BUILD }}" type="text/css" />
+        {% block header_css %}
+        <link rel="stylesheet" href="/static/example/main.css?{{ BUILD }}" type="text/css" />
+        {% endblock %}
+
+        <!-- Javascript -->
+        <script src="/static/vesper/javascript/libs.js?{{ BUILD }}"></script>
+        <script src="/static/vesper/javascript/apps.js?{{ BUILD }}"></script>
+
+
+        {% load staticfiles %}
+
+        <link rel="stylesheet" type="text/css" href="{% static 'django_pygments/css/pygments_default.css' %}" />
+        <link rel="stylesheet" type="text/css" href="https://raw.githubusercontent.com/richleland/pygments-css/master/github.css" />
+    </head>
+    <body>
+        {% block page %}
+        <div id="app" class="navigation__left navigation__open navigation__mini">
+            <aside id="sidebar-container">
+                Sidebar
+            </aside>
+            <nav id="navigation" role="navigation">
+                <div class="navigation__wrapper">
+                    <div class="navigation__content">
+                        <ul>
+                            <li>
+                                <a href="/" >
+                                    <span class="navigation__icon fa fa-dashboard"></span>
+                                    <span class="navigation__name">Dashboard</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="/foundation/" class="navigation__active">
+                                    <span class="navigation__icon fa fa-object-group" aria-hidden="true"></span>
+                                    <span class="navigation__name">Foundation</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="/components/">
+                                    <span class="navigation__icon fa fa-clone"></span>
+                                    <span class="navigation__name">Components</span>
+                                </a>
+                            </li>
+{#                            <li>#}
+{#                                <a href="/patterns/">#}
+{#                                    <span class="icon fa fa-dashboard"></span>#}
+{#                                    <span class="name">Patterns</span>#}
+{#                                </a>#}
+{#                                <ul>#}
+{#                                    <li>#}
+{#                                        <a href="/patterns/datatable/">#}
+{#                                            <span class="icon fa fa-dashboard"></span>#}
+{#                                            <span class="name">Data Table</span>#}
+{#                                        </a>#}
+{#                                    </li>#}
+{#                                    <li>#}
+{#                                        <a href="/patterns/pageheader/">#}
+{#                                            <span class="icon fa fa-dashboard"></span>#}
+{#                                            <span class="name">Page Header</span>#}
+{#                                        </a>#}
+{#                                    </li>#}
+{#                                    <li>#}
+{#                                        <a href="/patterns/login/">#}
+{#                                            <span class="icon fa fa-dashboard"></span>#}
+{#                                            <span class="name">Login</span>#}
+{#                                        </a>#}
+{#                                    </li>#}
+{#                                </ul>#}
+{#                            </li>#}
+                        </ul>
+                    </div>
+                    <div class="navigation__footer">
+                        <a href="#" data-toggle="layout" data-action="sidebar_mini_toggle"><i class="fa fa-angle-double-right"></i></a>
+                    </div>
+                </div>
+            </nav>
+            <header id="header" class="">
+                <div class="header__brand">
+                    <a href="/">
+                        <span class="fa fa-cloud"></span>
+                        <span class="header__title">Brameda</span>
+                    </a>
+                </div>
+                <div class="header__navigation">
+{#                    <button class="btn btn-link" type="button">#}
+{#                        <i class="fa fa-plus" aria-hidden="true"></i>#}
+{#                    </button>#}
+                </div>
+            </header>
+            <main id="page">
+                {% block content %}
+
+                    <div class="page-header">
+                        {% block page-header %}
+
+                        {% endblock %}
+                    </div>
+                    <div class="page-content">
+                        {% block page-content %}
+
+                        {% endblock %}
+                    </div>
+
+                {% endblock %}
+            </main>
+
+            <footer id="footer-container">
+                WE &hearts; B2B Ecommerce
+            </footer>
+        </div>
+        {% endblock %}
+    </body>
+</html>
+
+
+
+
+

@@ -1,0 +1,165 @@
+{% extends "design_head.html" %}
+
+{% block head_title %}
+    Design Layout
+{% endblock %}
+
+{% block page-header %}
+
+    <h1>Layout</h1>
+
+{% endblock %}
+{% block page-content %}
+    <p>
+        A layout is a structural template that supports consistency across applications by defining visual grids,
+        spacing, and sections.
+    </p>
+
+    <p>
+        Before selecting a layout, review these guidelines:
+        <ul>
+            <li>
+                <strong>Know your use case.</strong> Understand how the information on the page will be used.
+            </li>
+            <li>
+                <strong>Prioritize your content.</strong> Organize your content to highlight the most important
+                information.
+            </li>
+            <li>
+                <strong>Group related content together.</strong> Make it efficient for users to work with the content.
+            </li>
+        </ul>
+    </p>
+
+    <br />
+    <br />
+
+    <h2>Record Layouts</h2>
+    <p>
+        Record layouts consist of a page header, a main content area and a sidebar. The content that should appear in
+        each of these areas depends on the primary use case you are solving for.
+    </p>
+
+    <p>
+        The page header above the content area extends across the entire viewport. When the user scrolls, the panel is
+        fixed to provide locational context, but it shrinks to preserve vertical real estate.
+    </p>
+
+    <p>Applications need at least one layout scheme, and may use more than one throughout, depending on the context. This guide aims to outline when the various layouts are most appropriate. <br />
+        <ul>
+            <li><a target="_blank" href="/patterns/layout-blank/">Blank</a></li>
+            <li><a target="_blank" href="/patterns/layout-record/">Record</a></li>
+            <li><a target="_blank" href="/patterns/layout-list/">List</a></li>
+            <li><a target="_blank" href="/patterns/layout-focus/">Focus</a></li>
+        </ul>
+
+
+
+
+{#    <h2>Page layouts</h2>#}
+{#    <p>Applications should only use one page alignment overall, to avoid an inconsistent and jarring experience.</p>#}
+{##}
+{#    <div class="row">#}
+{#        <div class="col-md-4">#}
+{#            <img src="https://design.atlassian.com/images/layouts/example-layout-fluid.png">#}
+{#        </div>#}
+{#        <div class="col-md-8">#}
+{#            <h3>Fluid</h3>#}
+{#            <p>The fluid page layout is the default page layout for Atlassian applications. It provides maximum space#}
+{#                for content in all sizes, and leaves control over the size of the UI to the user by automatically#}
+{#                adjusting to fit the size of their browser. An issue to be aware of is that some types of content#}
+{#                (like large bodies of text) can become hard to read due to excessively long line lengths if nothing is#}
+{#                done to mitigate this.</p>#}
+{#        </div>#}
+{#    </div>#}
+{##}
+{#    <h2>Content layouts</h2>#}
+
+{#    <div class="row">#}
+{#        <div class="col-md-4">#}
+{#            <a href="/patterns/layout-contentonly/">#}
+{#                 <img src="https://design.atlassian.com/images/layouts/example-layout-contentonly.png">#}
+{#            </a>#}
+{#        </div>#}
+{#        <div class="col-md-8">#}
+{#            <h3>Content only</h3>#}
+{#            <p>The content only layout maximises the space available for content. It provides more horizontal space#}
+{#                than the other layouts, and is therefore ideal for displaying wide tables and other large user#}
+{#                interface elements. Conversely, it doesn't provide any structure for grouping and separating elements.#}
+{#            </p>#}
+{#            <p>#}
+{#                <a href="/patterns/layout-contentonly/">Example</a>#}
+{#            </p>#}
+{#        </div>#}
+{#    </div>#}
+{##}
+{##}
+{#    <div class="row">#}
+{#        <div class="col-md-4">#}
+{#            <a href="/patterns/layout-contentonly/">#}
+{#                 <img src="https://design.atlassian.com/images/layouts/example-layout-contentonly.png">#}
+{#            </a>#}
+{#        </div>#}
+{#        <div class="col-md-8">#}
+{#            <h3>Content only</h3>#}
+{#            <p>The content only layout maximises the space available for content. It provides more horizontal space#}
+{#                than the other layouts, and is therefore ideal for displaying wide tables and other large user#}
+{#                interface elements. Conversely, it doesn't provide any structure for grouping and separating elements.#}
+{#            </p>#}
+{#            <p>#}
+{#                <a href="/patterns/layout-contentonly/">Example</a>#}
+{#            </p>#}
+{#        </div>#}
+{#    </div>#}
+{#    <div class="row">#}
+{#        <div class="col-md-4">#}
+{#            <img src="https://design.atlassian.com/images/layouts/example-layout-navcontent.png">#}
+{#        </div>#}
+{#        <div class="col-md-8">#}
+{#            <h3>Sidebar and content</h3>#}
+{#            <p>The sidebar and content layout has a column for vertical navigation to the left of the content area,#}
+{#                which is useful for when a long list of navigation links is necessary. See Vertical navigation and#}
+{#                Horizontal navigation for more detail.#}
+{#            </p>#}
+{#            <p>#}
+{#                <a href="/patterns/layout-content-sidebar/">Example</a>#}
+{#            </p>#}
+{#        </div>#}
+{#    </div>#}
+{#    <div class="row">#}
+{#        <div class="col-md-4">#}
+{#            <img src="https://design.atlassian.com/images/layouts/example-layout-contentsidebar.png">#}
+{#        </div>#}
+{#        <div class="col-md-8">#}
+{#            <h3>Content and aside</h3>#}
+{#            <p>The content and aside layout has a column to the right of the content area. The sidebar is used for#}
+{#                supplementary content, which would otherwise interrupt the flow of content in the main content area.#}
+{#            </p>#}
+{#        </div>#}
+{#    </div>#}
+{#    <div class="row">#}
+{#        <div class="col-md-4">#}
+{#            <img src="https://design.atlassian.com/images/layouts/example-layout-navcontentsidebar.png">#}
+{#        </div>#}
+{#        <div class="col-md-8">#}
+{#            <h3>Sidebar, content and aside</h3>#}
+{#            <p>The sidebar, content and aside layout is a combination of the three layouts mentioned above.#}
+{#                This layout can be used when a Vertical navigation is required as well as a two column structure in#}
+{#                the content area.#}
+{#            </p>#}
+{#        </div>#}
+{#    </div>#}
+{#    <div class="row">#}
+{#        <div class="col-md-4">#}
+{#            <img src="https://design.atlassian.com/images/layouts/example-layout-focusedtask.png">#}
+{#        </div>#}
+{#        <div class="col-md-8">#}
+{#            <h3>Focused task</h3>#}
+{#            <p>The focused task layout has a smaller, fixed width content area that is horizontally centered on the#}
+{#                page regardless of which page alignment is applied. See Focused task page for more details.#}
+{#            </p>#}
+{#        </div>#}
+{#    </div>#}
+
+
+{% endblock %}

@@ -18,4 +18,6 @@ urlpatterns = patterns('',
     url(r'^patterns/', include('example.patterns.urls')),
     url(r'^views', include('example.views.urls')),
     url(r'^$', FoundationIndex.as_view()),
+
+    url(r'^admin/', admin.site.urls),
 )

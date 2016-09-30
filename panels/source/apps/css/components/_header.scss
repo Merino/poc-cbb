@@ -1,0 +1,84 @@
+#page {
+  margin-top: $header-height;
+  background-color: $global-background-color;
+  //padding:2rem;
+}
+
+.page-header {
+  border-spacing: 0;
+  box-sizing: border-box;
+  display: table;
+  table-layout: auto;
+  width: 100%;
+  border-bottom: 1px solid rgba(0,0,0,.2);
+  padding:2rem;
+
+  background: lightpink;
+
+  &--small{
+    padding:0.5rem 2rem;
+  }
+
+  .breadcrumb {
+    padding: 0;
+
+    .page-header--small & {
+      font-size: 0.8rem;
+    }
+  }
+
+  .page-header--small .breadcrumb{
+    //font-size: 1rem;
+  }
+
+  &--icon {
+    display: table-cell;
+    box-sizing: border-box;
+    vertical-align: middle;
+    text-align: center;
+    width:48px;
+    height:48px;
+    margin-right: 8px;
+    background-color: #00A000;
+  }
+
+  &--title{
+    box-sizing: border-box;
+    display: table-cell;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    vertical-align: middle;
+  }
+
+  &--actions{
+    text-align: right;
+    vertical-align: middle;
+    box-sizing: border-box;
+    display: table-cell;
+    margin: 0;
+    padding: 0;
+  }
+
+  &--record-type{
+    font-size:1.4rem;
+
+    .page-header--small & {
+      display: none;
+    }
+  }
+
+  &--record-name{
+    font-size:2rem;
+
+    .page-header--small & {
+      font-size:1.8rem;
+    }
+
+  }
+
+}
+
+.page-content {
+  padding:2rem;
+}
