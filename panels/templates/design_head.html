@@ -27,9 +27,10 @@
 
         <link rel="stylesheet" type="text/css" href="{% static 'django_pygments/css/pygments_default.css' %}" />
         <link rel="stylesheet" type="text/css" href="https://raw.githubusercontent.com/richleland/pygments-css/master/github.css" />
+
     </head>
     <body>
-        {% block page %}
+        {% block app %}
         <div id="app" class="navigation__left navigation__open navigation__mini">
             <aside id="sidebar-container">
                 Sidebar
@@ -104,22 +105,24 @@
 {#                    </button>#}
                 </div>
             </header>
+            {% block content %}
             <main id="page">
-                {% block content %}
+                {% block page %}
+                    <div class="page-header--fixed">
+                        <div class="page-header page-header--small">
+                            {% block page-header %}
 
-                    <div class="page-header">
-                        {% block page-header %}
+                            {% endblock %}
+                        </div>
+                        <div class="page-content">
+                            {% block page-content %}
 
-                        {% endblock %}
+                            {% endblock %}
+                        </div>
                     </div>
-                    <div class="page-content">
-                        {% block page-content %}
-
-                        {% endblock %}
-                    </div>
-
                 {% endblock %}
             </main>
+            {% endblock %}
 
             <footer id="footer-container">
                 WE &hearts; B2B Ecommerce

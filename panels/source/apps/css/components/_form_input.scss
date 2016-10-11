@@ -5,25 +5,28 @@ form {
     // reset margin-bottom 0.5rem
     margin:0;
   }
+}
 
-  & .form-element {
+// Element (Row)
+.form-element {
     display: flex;
     flex-wrap: wrap;
-    margin-left: -0.9375rem;
-    margin-right: -0.9375rem;
+    margin-left: -15px;
+    margin-right: -15px;
     margin-bottom: 1rem;
-  }
 
-  & .form-element__label{
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem;
-  }
+    & .form-element__label {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
 
-  & .form-element__control {
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem;
-  }
+    & .form-element__control {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
 }
+
+
 
 
 .form-stacked, .form-horizontal {
@@ -79,13 +82,14 @@ form {
 }
 
 
-// Element (Row)
+
 .form-element {
 
-  color: #707070;
+  //color: #707070;
 
   & .form-element__label label{
     position: relative;
+    font-weight: 600;
   }
 
   & .form-element__label--required {

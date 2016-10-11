@@ -1,7 +1,10 @@
 #page {
   margin-top: $header-height;
   background-color: $global-background-color;
+  width: 100%;
+  position: relative;
   //padding:2rem;
+  //border: 1px solid red;
 }
 
 .page-header {
@@ -12,11 +15,36 @@
   width: 100%;
   border-bottom: 1px solid rgba(0,0,0,.2);
   padding:2rem;
-
-  background: lightpink;
+  background-color: #ffffff;
+  height: 85px;
 
   &--small{
     padding:0.5rem 2rem;
+  }
+
+  .page-header--fixed &{
+    position: fixed;
+    margin-left:0;
+    margin-top:0;
+    width:calc(100% - 60px);
+    //width: 100%;
+    //background-color: #ffffff;
+    //top: 100px;
+    //left:0px;
+    //padding:0;
+    //margin-left:30px;
+    //transform: translateX(90%);
+    ////top: 0;
+    ////float: left;
+    //
+    //background-color:#ddd;
+    //position: fixed;
+    //padding: 2em;
+    //left: 50%;
+    //top: 0%;
+    //transform: translateX(-50%);
+    //width:inherit
+
   }
 
   .breadcrumb {
@@ -38,8 +66,9 @@
     text-align: center;
     width:48px;
     height:48px;
-    margin-right: 8px;
-    background-color: #00A000;
+    padding-right: 8px;
+    //background-color: #00A000;
+    font-size: 48px;
   }
 
   &--title{
@@ -58,6 +87,17 @@
     display: table-cell;
     margin: 0;
     padding: 0;
+  }
+
+  &--transparent {
+    background: transparent;
+    border:0;
+    font-size:1rem;
+
+    //& .page-header--record-name {
+    //  font-size:1rem;
+    //}
+
   }
 
   &--record-type{
@@ -81,4 +121,9 @@
 
 .page-content {
   padding:2rem;
+
+  .page-header--fixed & {
+    padding-top:109px;
+  }
+
 }
