@@ -1,98 +1,409 @@
+// Copyright (c) 2015, salesforce.com, inc. All rights reserved.
+
+// Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+// Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+// Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+// Neither the name of salesforce.com, inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+$css-prefix : 'data-table-';
+$color-background-alt :#f9f9f9;
+
+$color-background-row-even: #fff;
+$color-background-row-odd: #f9f9f9;
+
+$color-background-row-hover: rgba(0, 0, 0, 0.2);
+$color-background-row-selected: #ebf2f9;
+
+$spacing-x-small: 0.5rem;
+$spacing-large: 2rem;
+
+$font-weight-regular: normal;
+$border-width-thin: 1px;
+$color-border: rgba(0, 0, 0, 0.1);
+$color-text-link: #eee;
 
 .data-table {
-  width: 100%;
-  background-color: #FFF;
-  //border-bottom: 1px solid $global-color-ash-gray;
-  //border-left:1px solid $global-color-ash-gray;
-  //border-right:1px solid $global-color-ash-gray;
+  // scss-lint:disable SelectorDepth
+  background-color: #ffffff;
 
-  tr, td{
-    padding: 0.75rem;
-    line-height: 1.5;
-    vertical-align: middle;
-    border-top: 1px solid $global-color-ash-gray;
-  }
-
-  th{
-    padding: 0.5rem;
+  // Cells
+  th,
+  td {
+    padding: $spacing-x-small;
     white-space: nowrap;
-    font-weight: 400;
-    border-top: 1px solid $global-color-ash-gray;
+    position: relative;
   }
 
-  tr>th:first-child,
-  tr>td:first-child
-  {
-    padding-left: 1.5rem;
+  // Table Heading Cells
+  th {
+    font-weight: 400;
+  }
+
+  thead th{
+    font-weight: 700;
+    padding:1rem 0.5rem;
+  }
+
+  // Default Table Row Hover
+  &:not(.data-table-no-row-hover) tbody tr:hover {
+    > td,
+    > th {
+      background-color: #ebf2f9;
+    }
+  }
+
+  // Selected Table Row + Hover
+  tbody tr.data-table-is-selected,
+  &:not(.data-table-no-row-hover) tr.data-table-is-selected:hover {
+
+    > td,
+    > th {
+      background-color: $color-background-row-selected;
+    }
+  }
+
+  // By default, nowrap is applied
+  .data-table-cell-wrap {
+    white-space: normal;
+  }
+
+  // Reduce cell to the width of its content, if space is available
+  .data-table-cell-shrink {
     width: 1%;
   }
 
+  // Use to add a left padding buffer to cells, @todo will need to reset for responsive
+  .data-table-cell-buffer--left {
+    padding-left: $spacing-large;
+  }
 
-  thead th{
-    text-transform: uppercase;
-    font-weight: 500;
-    color: $global-color-charcoal;
-    vertical-align: bottom;
-    padding: .75rem;
-    line-height: 1.5;
-    background-color: #ebf2f9;
+  .data-table-cell-buffer--right {
+    padding-right: $spacing-large;
+  }
+}
+
+// Add left and right padding to the first and last cells of a table
+.data-table-table--cell-buffer {
+
+  tr > th:first-child,
+  tr > td:first-child {
+    padding-left: $spacing-large;
+  }
+
+  tr > th:last-child,
+  tr > td:last-child {
+    padding-right: $spacing-large;
+  }
+}
+
+// Add vertical borders to a table
+.data-table--bordered {
+  // scss-lint:disable SelectorDepth
+  border: {
+    top: $border-width-thin solid $color-border;
+    bottom: $border-width-thin solid $color-border;
+  }
+
+  // More than one row in thead
+  thead > tr + tr > th {
+    border-top: $border-width-thin solid $color-border;
+  }
+
+  // Cells
+  tbody td,
+  tbody th {
+    border-top: $border-width-thin solid $color-border;
+  }
+
+  // Default Table Row Hover
+  //
+  // Checks if .no-row-hover is applied to parent table
+  // Applies hovers to only <th> and <td> within <tbody>
+  // Also checks that the <th> and <td> do not have the class .is-selected
+  // This retains the selected state when a row is hovered
+  //
+  // Box shadow used to eliminate jumpiness on hover
+  &:not(.data-table-no-row-hover) tbody tr:hover > td:not(.data-table-is-selected),
+  &:not(.data-table-no-row-hover) tbody tr:hover > th:not(.data-table-is-selected) {
+    box-shadow: #ebf2f9 0 ($border-width-thin * -1) 0 inset,
+                #ebf2f9 0 ($border-width-thin) 0 inset;
+  }
+}
+
+// Add column borders
+.data-table--col-bordered {
+
+  td + td,
+  th + th,
+  th + td,
+  td + th {
+    border-left: $border-width-thin solid $color-border;
+  }
+}
+
+// Add alternating strips to rows
+.data-table--striped {
+  // scss-lint:disable SelectorDepth
+  tbody tr:nth-of-type(odd) > td,
+  tbody tr:nth-of-type(odd) > th {
     background-color: #f9f9f9;
   }
-
-  thead label{
-    margin:0;
-  }
-
-  tbody tr:nth-of-type(even){
-    background-color: #f5f5f5;
-    background-color: #FFF;
-  }
-  tbody tr:nth-of-type(odd){
-    background-color: #f5f5f5;
-    background-color: #FFF;
-  }
-
-  tbody tr:hover, tbody tr.data-table__hover{
-    background-color: #e8e8e8;
-    background-color: #f5f5f5;
-  }
-
-  tbody tr.data-table__selected{
-    background-color: #fff5df;
-
-  }
-
-  .data-table-blankslade td, .data-table-blankslade:hover{
-    padding:50px;
-    text-align: center;
-    background-color: #f5f5f5;
-    background-color:#FFF;
-    color:$global-color-gray;
-  }
-
-  tr td:first-child {
-    margin-left:2px;
-    border-top: 1px solid $global-color-ash-gray;
-  }
-
-  tr.data-table-info td:first-child{
-    border-left:3px solid $info-bg-color;
-    margin-left:0;
-  }
-
-  tr.data-table-success td:first-child{
-    border-left:3px solid $success-bg-color;
-    margin-left:0;
-  }
-
-  tr.data-table-warning td:first-child{
-    border-left:3px solid $warning-bg-color;
-    margin-left:0;
-  }
-
-  tr.data-table-danger td:first-child{
-    border-left:3px solid $danger-bg-color;
-    margin-left:0;
-  }
-
 }
+
+.data-table--striped {
+  // scss-lint:disable SelectorDepth
+  tbody tr:nth-of-type(even) > td,
+  tbody tr:nth-of-type(even) > th {
+    background-color: #fff;
+  }
+}
+
+// Applies move cursor to moveable cell
+th.data-table-is-sortable {
+  cursor: pointer;
+  padding: 0; // Reset padding so actionable link bleeds to edge
+
+  //@include deprecate('4.0.0', 'The entire cell is hyperlinked now, no need for the button') {
+  //  .#{$css-prefix}button {
+  //    visibility: hidden;
+  //    margin-left: $spacing-x-small;
+  //  }
+  //
+  //  .#{$css-prefix}button__icon {
+  //    fill: $color-text-link;
+  //  }
+  //
+  //  &:hover {
+  //    background-color: $color-background-row-hover;
+  //    color: $color-text-link;
+  //
+  //    .#{$css-prefix}button {
+  //      visibility: visible;
+  //    }
+  //  }
+  //}
+}
+
+// Actionable area inside th
+.data-table-th__action {
+  display: flex;
+  padding: $spacing-x-small;
+
+  &:focus,
+  &:hover {
+    outline: 0;
+    background-color: $color-background-row-hover;
+
+    .data-table-is-sortable__icon {
+      display: inline-block;
+    }
+  }
+}
+
+// Icon inside sortable th
+//.#{$css-prefix}is-sortable__icon {
+//  @include square($square-icon-small-content);
+//  margin-left: $spacing-xx-small;
+//  display: none;
+//}
+
+// Active state of sorted column
+.data-table-is-sorted {
+
+  .data-table-is-sortable__icon {
+    display: inline-block;
+  }
+
+  // Change direction of arrow
+  &--asc .data-table-is-sortable__icon {
+    transform: rotate(180deg);
+  }
+}
+
+// Provide an indicator that resizing is available
+//.#{$css-prefix}is-resizable {
+//
+//  .#{$css-prefix}th__action:hover,
+//  .#{$css-prefix}th__action:focus {
+//    box-shadow: $color-border-separator-alt ($spacing-xx-small * -1) 0 0 inset;
+//  }
+//}
+
+// Resizable handle
+//.#{$css-prefix}resizable {
+//  max-width: 100%;
+//
+//  &__handle {
+//    position: absolute;
+//    right: 0;
+//    top: 0;
+//    width: $spacing-xx-small;
+//    height: 100%;
+//    background: $color-background-button-brand;
+//    display: block;
+//    cursor: col-resize;
+//    opacity: 0;
+//    z-index: $z-index-popup;
+//
+//    &:hover,
+//    &:focus,
+//    &:active {
+//      opacity: 1;
+//    }
+//  }
+//
+//  &__divider {
+//    position: absolute;
+//    right: 0;
+//    height: 100vh;
+//    width: 1px;
+//    background: $color-background-button-brand;
+//  }
+//
+//  &__input:focus ~ .#{$css-prefix}resizable__handle {
+//    opacity: 1;
+//  }
+//}
+//
+//// Resizable data table columns
+////
+//// Set table to use fixed layout for width and truncation purposes
+.data-table--fixed-layout {
+  table-layout: fixed;
+  width: 100%;
+  white-space: nowrap;
+
+  thead {
+    background-color: #FFF;
+  }
+
+  //.data-table--cell-shrink {
+  //  width: $square-icon-large-boundary;
+  //
+  //  &:nth-child(n) {
+  //    padding: {
+  //      left: 0;
+  //      right: 0;
+  //    }
+  //  }
+  //
+  //  &:first-child {
+  //    text-align: right;
+  //    padding-right: $spacing-x-small;
+  //  }
+  //
+  //  &:last-child {
+  //    text-align: left;
+  //    padding-left: $spacing-x-small;
+  //  }
+  //}
+}
+//
+//.#{$css-prefix}table--compact {
+//
+//  th,
+//  td {
+//    padding: $spacing-xx-small $spacing-x-small;
+//  }
+//}
+
+//
+//.data-table {
+//  width: 100%;
+//  background-color: #FFF;
+//  //border-bottom: 1px solid $global-color-ash-gray;
+//  //border-left:1px solid $global-color-ash-gray;
+//  //border-right:1px solid $global-color-ash-gray;
+//
+//  tr, td{
+//    padding: 0.75rem;
+//    line-height: 1.5;
+//    vertical-align: middle;
+//    border-top: 1px solid $global-color-ash-gray;
+//  }
+//
+//  th{
+//    padding: 0.5rem;
+//    white-space: nowrap;
+//    font-weight: 400;
+//    border-top: 1px solid $global-color-ash-gray;
+//  }
+//
+//  tr>th:first-child,
+//  tr>td:first-child
+//  {
+//    padding-left: 1.5rem;
+//    width: 1%;
+//  }
+//
+//
+//  thead th{
+//    text-transform: uppercase;
+//    font-weight: 500;
+//    color: $global-color-charcoal;
+//    vertical-align: bottom;
+//    padding: .75rem;
+//    line-height: 1.5;
+//    background-color: #ebf2f9;
+//    background-color: #f9f9f9;
+//  }
+//
+//  thead label{
+//    margin:0;
+//  }
+//
+//  tbody tr:nth-of-type(even){
+//    background-color: #f5f5f5;
+//    background-color: #FFF;
+//  }
+//  tbody tr:nth-of-type(odd){
+//    background-color: #f5f5f5;
+//    background-color: #FFF;
+//  }
+//
+//  tbody tr:hover, tbody tr.data-table__hover{
+//    background-color: #e8e8e8;
+//    background-color: #f5f5f5;
+//  }
+//
+//  tbody tr.data-table__selected{
+//    background-color: #fff5df;
+//
+//  }
+//
+//  .data-table-blankslade td, .data-table-blankslade:hover{
+//    padding:50px;
+//    text-align: center;
+//    background-color: #f5f5f5;
+//    background-color:#FFF;
+//    color:$global-color-gray;
+//  }
+//
+//  tr td:first-child {
+//    margin-left:2px;
+//    border-top: 1px solid $global-color-ash-gray;
+//  }
+//
+//  tr.data-table-info td:first-child{
+//    border-left:3px solid $info-bg-color;
+//    margin-left:0;
+//  }
+//
+//  tr.data-table-success td:first-child{
+//    border-left:3px solid $success-bg-color;
+//    margin-left:0;
+//  }
+//
+//  tr.data-table-warning td:first-child{
+//    border-left:3px solid $warning-bg-color;
+//    margin-left:0;
+//  }
+//
+//  tr.data-table-danger td:first-child{
+//    border-left:3px solid $danger-bg-color;
+//    margin-left:0;
+//  }
+//
+//}

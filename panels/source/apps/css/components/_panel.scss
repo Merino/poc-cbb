@@ -2,7 +2,12 @@
 /*
 // Panels
 */
-.panel-deck {
+
+$block-background-color : #FFF;
+$block-border-color: rgba(0, 0, 0, 0.2);
+
+
+.block-deck {
   // copy from bootstrap
   display: flex;
   flex-wrap: wrap;
@@ -16,38 +21,64 @@
   }
 }
 
-.panel {
-  background: #FFF;
-  border: 1px solid rgba(0, 0, 0, .2);
-  border-radius: 3px;
+.block {
+  position: relative;
+  background: $block-background-color;
+  border: 1px solid $block-border-color;
+  border-radius: 5px;
   width: 100%;
   height: 100%;
 
-  & .panel__title {
-    font-size: 1.25rem;
-    font-weight: 600;
+  & .block__header {
+    float: left;
+    width: 100%;
     padding: 1rem 1rem 0 1rem;
-    //height: 42px;
 
-    & h2 {
+    & .block__title {
+      float:left;
+
       font-size: 1.25rem;
       font-weight: 600;
-      margin: 0;
+
+      & h2 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin: 0;
+      }
+
+      & p {
+        color: #7F8FA4;
+        font-size: 0.75rem;
+        font-weight: 400;
+        margin: 0;
+      }
     }
 
-    & p {
-      color: #7F8FA4;
-      font-size: 0.75rem;
-      font-weight: 400;
-      margin: 0;
+    & .block__options{
+      float: right;
+      position: relative;
     }
   }
 
-  & .panel__content {
+  & .block__body {
     margin: 0 auto;
     padding: 1rem 1rem 1rem;
     max-width: 100%;
     overflow-x: visible;
+  }
+
+  & .block__footer {
+    padding: 1rem 1rem 1rem;
+  }
+
+  & .block__loading {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, .5);
+    border-radius: 5px;
   }
 }
 

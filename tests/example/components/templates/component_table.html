@@ -2,8 +2,221 @@
 
 {% block head_title %}Component Data Table{% endblock %}
 
-{% block content %}
+{% block page %}
+
+<div class="page-content">
     <h3>Table</h3>
+
+    <div class="row">
+
+        <div class="col-sm-9">
+    <div class="block">
+        <div class="block__header">
+            <div class="block__title">
+                <h2>Table</h2>
+            </div>
+        </div>
+        <div class="block__body">
+
+
+    <table class="data-table data-table--bordered data-table--striped data-table--fixed-layout">
+        <thead>
+            <tr class="text-title--caps">
+               <th scope="col">
+                    <div class="text-truncate" title="Opportunity Name">Opportunity Name</div>
+               </th>
+                <th scope="col">
+                    <div class="text-truncate" title="Account Name">Account Name</div>
+                </th>
+                <th scope="col">
+                    <div class="text-truncate" title="Close Date">Close Date</div>
+                </th>
+                <th scope="col">
+                    <div class="text-truncate" title="Stage">Stage</div>
+                </th>
+                <th scope="col">
+                    <div class="text-truncate" title="Confidence">Confidence</div>
+                </th>
+                <th scope="col">
+                    <div class="text-truncate" title="Amount">Amount</div>
+                </th>
+                <th scope="col">
+                    <div class="text-truncate" title="Contact">Contact</div>
+                </th>
+                <th scope="col">
+                    <div class="text-truncate" title="Actions">Actions</div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row" data-label="Opportunity Name">
+                    <div class="slds-truncate" title="Cloudhub"><a href="javascript:void(0);">Cloudhub</a></div>
+                  </th>
+                  <td data-label="Account Name">
+                    <div class="slds-truncate" title="Cloudhub">Cloudhub</div>
+                  </td>
+                  <td data-label="Close Date">
+                    <div class="slds-truncate" title="4/14/2015">4/14/2015</div>
+                  </td>
+                  <td data-label="Prospecting">
+                    <div class="slds-truncate" title="Prospecting">Prospecting</div>
+                  </td>
+                  <td data-label="Confidence">
+                    <div class="slds-truncate" title="20%">20%</div>
+                  </td>
+                  <td data-label="Amount">
+                    <div class="slds-truncate" title="$25k">$25k</div>
+                  </td>
+                  <td data-label="Contact">
+                    <div class="slds-truncate" title="jrogers@cloudhub.com"><a href="javascript:void(0);">jrogers@cloudhub.com</a></div>
+                  </td>
+                  <td data-label="Actions">
+                      <a href="" tabindex="1" class="btn btn-primary">Action</a>
+                  </td>
+            </tr>
+            <tr>
+                <th scope="row" data-label="Opportunity Name">
+                    <div class="slds-truncate" title="Cloudhub"><a href="javascript:void(0);">Cloudhub</a></div>
+                  </th>
+                  <td data-label="Account Name">
+                    <div class="slds-truncate" title="Cloudhub">Cloudhub</div>
+                  </td>
+                  <td data-label="Close Date">
+                    <div class="slds-truncate" title="4/14/2015">4/14/2015</div>
+                  </td>
+                  <td data-label="Prospecting">
+                    <div class="slds-truncate" title="Prospecting">Prospecting</div>
+                  </td>
+                  <td data-label="Confidence">
+                    <div class="slds-truncate" title="20%">20%</div>
+                  </td>
+                  <td data-label="Amount">
+                    <div class="slds-truncate" title="$25k">$25k</div>
+                  </td>
+                  <td data-label="Contact">
+                    <div class="slds-truncate" title="jrogers@cloudhub.com"><a href="javascript:void(0);">jrogers@cloudhub.com</a></div>
+                  </td>
+                  <td data-label="Actions">
+                      <a href="" tabindex="1" class="btn btn-primary">Action</a>
+                  </td>
+            </tr>
+            <tr>
+                <th scope="row" data-label="Opportunity Name">
+                    <div class="slds-truncate" title="Cloudhub"><a href="javascript:void(0);">Cloudhub</a></div>
+                  </th>
+                  <td data-label="Account Name">
+                    <div class="slds-truncate" title="Cloudhub">Cloudhub</div>
+                  </td>
+                  <td data-label="Close Date">
+                    <div class="slds-truncate" title="4/14/2015">4/14/2015</div>
+                  </td>
+                  <td data-label="Prospecting">
+                    <div class="slds-truncate" title="Prospecting">Prospecting</div>
+                  </td>
+                  <td data-label="Confidence">
+                    <div class="slds-truncate" title="20%">20%</div>
+                  </td>
+                  <td data-label="Amount">
+                    <div class="slds-truncate" title="$25k">$25k</div>
+                  </td>
+                  <td data-label="Contact">
+                    <div class="slds-truncate" title="jrogers@cloudhub.com"><a href="javascript:void(0);">jrogers@cloudhub.com</a></div>
+                  </td>
+                  <td data-label="Actions">
+                      <a href="" tabindex="1" class="btn btn-primary">Action</a>
+                  </td>
+            </tr>
+            <tr>
+                <th scope="row" data-label="Opportunity Name">
+                    <div class="slds-truncate" title="Cloudhub"><a href="javascript:void(0);">Cloudhub</a></div>
+                  </th>
+                  <td data-label="Account Name">
+                    <div class="slds-truncate" title="Cloudhub">Cloudhub</div>
+                  </td>
+                  <td data-label="Close Date">
+                    <div class="slds-truncate" title="4/14/2015">4/14/2015</div>
+                  </td>
+                  <td data-label="Prospecting">
+                    <div class="slds-truncate" title="Prospecting">Prospecting</div>
+                  </td>
+                  <td data-label="Confidence">
+                    <div class="slds-truncate" title="20%">20%</div>
+                  </td>
+                  <td data-label="Amount">
+                    <div class="slds-truncate" title="$25k">$25k</div>
+                  </td>
+                  <td data-label="Contact">
+                    <div class="slds-truncate" title="jrogers@cloudhub.com"><a href="javascript:void(0);">jrogers@cloudhub.com</a></div>
+                  </td>
+                  <td data-label="Actions">
+                      <a href="" tabindex="1" class="btn btn-primary">Action</a>
+                  </td>
+            </tr>
+            <tr>
+                <th scope="row" data-label="Opportunity Name">
+                    <div class="slds-truncate" title="Cloudhub"><a href="javascript:void(0);">Cloudhub</a></div>
+                  </th>
+                  <td data-label="Account Name">
+                    <div class="slds-truncate" title="Cloudhub">Cloudhub</div>
+                  </td>
+                  <td data-label="Close Date">
+                    <div class="slds-truncate" title="4/14/2015">4/14/2015</div>
+                  </td>
+                  <td data-label="Prospecting">
+                    <div class="slds-truncate" title="Prospecting">Prospecting</div>
+                  </td>
+                  <td data-label="Confidence">
+                    <div class="slds-truncate" title="20%">20%</div>
+                  </td>
+                  <td data-label="Amount">
+                    <div class="slds-truncate" title="$25k">$25k</div>
+                  </td>
+                  <td data-label="Contact">
+                    <div class="slds-truncate" title="jrogers@cloudhub.com"><a href="javascript:void(0);">jrogers@cloudhub.com</a></div>
+                  </td>
+                  <td data-label="Actions">
+                      <a href="" tabindex="1" class="btn btn-primary">Action</a>
+                  </td>
+            </tr>
+        </tbody>
+
+    </table>
+
+        </div>
+    </div>
+    </div>
+        </div>
+
+    <br />
+    <div class="block">
+        <div class="block-body">
+            <p>sss</p>
+            <br />
+            <br />
+            <table class="data-table data-table--bordered data-table--striped data-table--fixed-layout">
+                <thead>
+                    <tr class="text-title--caps">
+                        <td>A</td>
+                        <td>B</td>
+                        <td>C</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>A1</td>
+                        <td>B1</td>
+                        <td>C1</td>
+                    </tr>
+                    <tr>
+                        <td>A2</td>
+                        <td>B2</td>
+                        <td>C2</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 
     <section id="example-table-basic">
         <h4>Basic</h4>
@@ -423,5 +636,5 @@
         </table>
         </div>
     </section>
-
+</div>
 {% endblock %}
