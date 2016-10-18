@@ -1,19 +1,6 @@
+// Vesper Design System
 
+@import 'foundation/globals';
 
-@import "foundation/globals";
-
-@import "mixins";
-
-@import "partials/layout";
-
-
-@import "components/button";
-@import "components/chart";
-@import "components/form_input";
-@import "components/header";
-@import "components/table";
-@import "components/messages";
-@import "components/panel";
-@import "components/layout";
-
-@import "pattern/login";
+@import 'components/layout';
+@import 'components/sidebar';

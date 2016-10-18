@@ -1,0 +1,39 @@
+// LAYOUT
+// ------------
+
+// Global App
+$vds-layout-app-background-color: #EDEFF0;;
+
+// Global Header
+$vds-layout-header-background-color: $vds-color-navy;
+$vds-layout-header-height: 3rem;
+
+// Global Navigation
+$vds-layout-sidebar-width: 60px;
+$vds-layout-sidebar-navigation-height: 32px;
+
+// Light Sidebar
+//$vds-layout-sidebar-background-color: #f6f6f6;
+//$vds-layout-sidebar-border-color: $vds-color-ash-gray;
+//$vds-layout-sidebar-font-color:$vds-color-medium-grey;
+//$vds-layout-sidebar-navigation-active-color: $vds-color-blue;
+//$vds-layout-sidebar-navigation-hover-color: #e6e6e6;
+
+// Dark Sidebar
+$vds-layout-sidebar-background-color:#151e2b;
+$vds-layout-sidebar-border-color: $vds-color-ash-gray;
+$vds-layout-sidebar-font-color:#FFF;
+$vds-layout-sidebar-navigation-hover-color: $vds-color-charcoal;
+$vds-layout-sidebar-navigation-active-color: $vds-color-blue;
+
+// Global Sidepanel
+$vds-layout-sidepanel-background-color:#FFF;
+$vds-layout-sidepanel-width-open: 230px;
+
+// Global Page
+
+// PAGE
+// ------------
+// App Title
+
+// App Content

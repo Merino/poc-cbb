@@ -4,15 +4,15 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
-    uglify: {
-      options: {
-        banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
-      },
-      build: {
-        src: 'panels/source/apps/javascript/demo.js',
-        dest: 'panels/static/javascript/panels.js'
-      }
-    },
+    //uglify: {
+    //  options: {
+    //    banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+    //  },
+    //  build: {
+    //    src: 'panels/source/apps/javascript/demo.js',
+    //    dest: 'panels/static/javascript/panels.js'
+    //  }
+    //},
 
     sass: {
         dist: {
@@ -44,7 +44,26 @@ module.exports = function(grunt) {
     watch: {
         css: {
             files: 'panels/source/**/*.scss',
-            tasks: ['sass:dist'],
+            tasks: ['sass:dist', 'postcss'],
+        }
+    },
+
+    postcss: {
+        options: {
+          map: true, // inline sourcemaps
+
+          // or
+          //map: {
+          //    inline: false, // save all sourcemaps as separate files...
+          //    annotation: 'dist/css/maps/' // ...to the specified directory
+          //},
+
+          processors: [
+            require('postcss-slds-prefix')('vds'), // add fallbacks for rem units
+          ]
+        },
+        dist: {
+          src: 'panels/static/vesper/css/*.css'
         }
     },
 
@@ -78,8 +97,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-postcss');
 
   // Default task(s).
   grunt.registerTask('default', ['watch']);
-  grunt.registerTask('build', ['sass', 'copy', 'concat']);
+  grunt.registerTask('build', ['sass', 'postcss', 'copy', 'concat']);
 };

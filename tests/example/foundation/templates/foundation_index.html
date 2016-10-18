@@ -4,16 +4,69 @@
 
 {% block page-header %}
 
-    <h1>Foundation Index</h1>
+<div class="vds-page-header" role="banner">
+      <div class="vds-grid">
+        <div class="vds-col vds-has-flexi-truncate">
+
+          <div class="vds-media vds-no-space vds-grow">
+            <div class="vds-media__figure">
+              <svg aria-hidden="true" class="vds-icon vds-icon-standard-user">
+                <use xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#user"></use>
+              </svg>
+            </div>
+            <div class="vds-media__body">
+              <p class="vds-text-title--caps vds-line-height--reset">Product</p>
+              <h1 class="vds-page-header__title vds-m-right--small vds-align-middle vds-truncate" title="this should match the Record Title">Products</h1>
+              <nav class="vds-m-bottom--xx-small" role="navigation" aria-label="Breadcrumbs">
+                <ol class="vds-breadcrumb vds-list--horizontal">
+                  <li class="vds-breadcrumb__item vds-text-title--caps"><a href="javascript:void(0);">Accounts</a></li>
+                  <li class="vds-breadcrumb__item vds-text-title--caps"><a href="javascript:void(0);">Company One</a></li>
+                </ol>
+                </nav>
+            </div>
+          </div>
+        </div>
+        <div class="vds-col vds-no-flex vds-grid vds-align-top">
+          <button class="vds-button vds-button--neutral vds-not-selected" aria-live="assertive">
+            <span class="vds-text-not-selected">
+              <svg aria-hidden="true" class="vds-button__icon--stateful vds-button__icon--left">
+                <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#add"></use>
+              </svg>Follow</span>
+            <span class="vds-text-selected">
+              <svg aria-hidden="true" class="vds-button__icon--stateful vds-button__icon--left">
+                <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#check"></use>
+              </svg>Following</span>
+            <span class="vds-text-selected-focus">
+              <svg aria-hidden="true" class="vds-button__icon--stateful vds-button__icon--left">
+                <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+              </svg>Unfollow</span>
+          </button>
+          <div class="vds-button-group" role="group">
+            <button class="vds-button vds-button--neutral">Edit</button>
+            <button class="vds-button vds-button--neutral">Delete</button>
+            <button class="vds-button vds-button--neutral">Clone</button>
+            <div class="vds-dropdown-trigger vds-dropdown-trigger--click vds-button--last" aria-expanded="false">
+              <button class="vds-button vds-button--icon-border-filled" aria-haspopup="true">
+                <svg aria-hidden="true" class="vds-button__icon">
+                  <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#down"></use>
+                </svg>
+                <span class="vds-assistive-text">More Actions</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
 {% endblock %}
 
 {% block page-content %}
 
 
+
     <p>
         Reference UI
-        <ul>
+        <ul class="vds-list--dotted">
             <li><a target="_blank" href="https://www.lightningdesignsystem.com/">Salesforce Lighting Design</a></li>
             <li><a target="_blank" href="https://design.atlassian.com/product/">Atlassian Design</a></li>
             <li><a target="_blank" href="https://docs.atlassian.com/aui/latest/">Atlassian UI</a></li>
@@ -30,7 +83,7 @@
 
     <p>
         Foundation
-        <ul>
+        <ul class="vds-list--dotted">
             <li>[OKE] <a href="/foundation/colors/">Colors</a></li>
             <li><a href="/foundation/grid/">Grid</a></li>
             <li><a href="/foundation/layout/">Layout</a></li>
@@ -46,7 +99,7 @@
 
     <p>
         Components
-        <ul>
+        <ul class="vds-list--dotted">
             <li><a href="/components/chart/">Chart</a></li>
             <li><a href="/components/breadcrumb/">Breadcrumb</a></li>
             <li><a href="/components/button/">Button</a></li>
@@ -76,7 +129,7 @@
 
     <p>
         Patterns
-        <ul>
+        <ul class="vds-list--dotted">
             <li><a href="/patterns/blank/">Blank Page</a></li>
             <li><a href="/patterns/login/">Login</a></li>
             <li><a href="/patterns/dashboard/">Dashboard</a></li>
@@ -91,7 +144,7 @@
 
     <p>
         Views
-        <ul>
+        <ul class="vds-list--dotted">
             <li><a href="/views/login/">Login</a></li>
         </ul>
     </p>

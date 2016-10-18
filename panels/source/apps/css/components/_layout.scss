@@ -1,15 +1,100 @@
-// LAYOUT
-// --------
+// Layout
+// ------------
 
-body {
-  background-color: $global-background-color;
+html {
+  font-size: 92%;
+}
+
+// App
+.vds-app {
+  width: 100%;
   min-height: 100%;
-  min-width: 100%;
 }
 
-a {
-  color: $global-link-color;
+// App Sidebar
+.vds-app-sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  background-color: $vds-layout-sidebar-background-color;
+  width: $vds-layout-sidebar-width;
+
+  &-header {
+    height: $vds-layout-header-height;
+    width: 100%;
+    background:  $vds-layout-header-background-color;
+  }
+
+}
+
+// App Content
+.vds-app-container{
+  width: 100%;
+  padding-left: $vds-layout-sidebar-width;
 }
 
 
+// App Sidepanel
+.vds-app-sidepanel {
+  display: none;
+  top:0;
+  bottom:0;
+  position: fixed;
+  right: 0;
+  width:$vds-layout-sidepanel-width-open;
+  background-color: $vds-layout-sidepanel-background-color;
+}
 
+
+// App Header
+.vds-app-header{
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  top: 0;
+  left: 0;
+
+  padding-left: $vds-layout-sidebar-width;
+
+  .vds-global-header {
+    background-color: $vds-layout-header-background-color;
+    height: $vds-layout-header-height;
+  }
+}
+
+.vds-page {
+  padding-top:$vds-layout-header-height;
+}
+
+.vds-page-title{
+  &-fixed & {
+    position: fixed;
+    width: 100%;
+    padding-right: $vds-layout-sidebar-width;
+  }
+}
+
+// Screen Small
+@media (max-width: 992px)  {
+  .vds-app-sidebar {
+    float: left;
+    position: relative;
+    width: 100%;
+    display: none;
+    left: auto;
+    right: auto;
+  }
+
+  .vds-app-container{
+    padding-left: 0;
+  }
+
+  .vds-app-header{
+    padding-left:0;
+  }
+
+  .vds-page-title-fixed .vds-page-title{
+    padding-right: 0;
+  }
+
+}
