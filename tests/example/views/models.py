@@ -11,6 +11,8 @@ class ListData(models.Model):
     decimal = models.DecimalField(decimal_places=2, max_digits=5)
     boolean = models.BooleanField(default=True)
 
+    def __unicode__(self):
+        return self.name
 
 """
     Model to demonstrate the inlines

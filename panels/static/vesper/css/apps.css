@@ -47,6 +47,14 @@ html {
   background-color: #205081;
   height: 3rem;
 }
+.vds-app-header .vds-global-header__item {
+  padding: 0 0.75rem;
+}
+@media (min-width: 48em) {
+  .vds-app-header .vds-global-header__item {
+    padding: 0 1.5rem;
+  }
+}
 
 .vds-page {
   padding-top: 3rem;
@@ -58,28 +66,31 @@ html {
   padding-right: 60px;
 }
 
-@media (max-width: 992px) {
-  .vds-app-sidebar {
-    float: left;
-    position: relative;
-    width: 100%;
-    display: none;
-    left: auto;
-    right: auto;
-  }
-
-  .vds-app-container {
-    padding-left: 0;
-  }
-
-  .vds-app-header {
-    padding-left: 0;
-  }
-
-  .vds-page-title-fixed .vds-page-title {
-    padding-right: 0;
-  }
+.vds-page-title-fixed .vds-page-content {
+  padding-top: 63px;
 }
+
+.vds-app-sidebar {
+  float: left;
+  position: relative;
+  width: 100%;
+  display: none;
+  left: auto;
+  right: auto;
+}
+
+.vds-app-container {
+  padding-left: 0;
+}
+
+.vds-app-header {
+  padding-left: 0;
+}
+
+.vds-page-title-fixed .vds-page-title {
+  padding-right: 0;
+}
+
 .vds-app-sidebar-header {
   height: 3rem;
   width: 100%;
@@ -110,6 +121,29 @@ html {
 .vds-app-sidebar-navigation a.active {
   border-left: 0.3rem solid #3572b0;
   padding-left: 0.7rem;
+}
+
+.vds-page-title .vds-page-header {
+  background: #FFF;
+  height: 63px;
+}
+
+.vds-tabs--default__nav {
+  padding: 0 0.75rem;
+}
+
+.vds-tabs--default__content {
+  padding: 0 0.75rem;
+}
+
+@media (min-width: 48em) {
+  .vds-tabs--default__nav {
+    padding: 0 1.5rem;
+  }
+
+  .vds-tabs--default__content {
+    padding: 0 1.5rem;
+  }
 }
 
 /*# sourceMappingURL=apps.css.map */

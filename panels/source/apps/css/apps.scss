@@ -2,5 +2,12 @@
 
 @import 'foundation/globals';
 
+// Application
 @import 'components/layout';
-@import 'components/sidebar';
+@import 'components/layout_sidebar';
+@import 'components/page';
+@import 'components/page_header';
+
+// Components
+@import 'components/tabs';
+

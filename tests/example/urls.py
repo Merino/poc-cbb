@@ -16,8 +16,8 @@ urlpatterns = patterns('',
     url(r'^foundation/', include('example.foundation.urls')),
     url(r'^components/', include('example.components.urls')),
     url(r'^patterns/', include('example.patterns.urls')),
-    url(r'^views', include('example.views.urls')),
+    #url(r'^views', include('example.views.urls')),
     url(r'^$', FoundationIndex.as_view()),
 
-    url(r'^admin/', admin.site.urls),
+    url(r'^views/', admin.site.urls),
 )

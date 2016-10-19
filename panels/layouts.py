@@ -1,8 +1,17 @@
 from django.template.loader import render_to_string
 
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Layout, Fieldset, ButtonHolder, Submit, HTML, LayoutObject, Field
+from crispy_forms.layout import Layout, Fieldset, ButtonHolder, Submit, HTML, LayoutObject, Field, Fieldset, Button
 from crispy_forms.bootstrap import TabHolder, Tab
+
+
+TEMPLATE_PACK = 'vesper'
+
+class TabHolder(TabHolder):
+    pass
+
+class Tab(Tab):
+    pass
 
 
 class Inline(LayoutObject):

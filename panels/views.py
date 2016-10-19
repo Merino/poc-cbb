@@ -15,7 +15,7 @@ from .layouts import FormHelper, Layout, TabHolder, Tab, Fieldset, Field
 
 
 
-#import nested_admin
+import nested_admin
 
 #from .models import Product, Category, CategoryItem, Author, Genre, Book, Chapter, Section
 
@@ -27,13 +27,13 @@ from .layouts import FormHelper, Layout, TabHolder, Tab, Fieldset, Field
 
 
 
-class CategoryAdmin(nested_admin.NestedModelAdmin):
-    pass
-
-
-class CategoryItemAdminInline(nested_admin.NestedStackedInline):
-    model = CategoryItem
-    extra = 0
+# class CategoryAdmin(nested_admin.NestedModelAdmin):
+#     pass
+#
+#
+# class CategoryItemAdminInline(nested_admin.NestedStackedInline):
+#     model = CategoryItem
+#     extra = 0
 
 
 
@@ -44,8 +44,15 @@ class BaseAdmin(nested_admin.NestedModelAdmin):
     list_actions = []
     list_search = []
 
+    detail_layout = [
+
+    ]
+
     detail_actions = [
     ]
+
+    # Templates
+    change_form_template = 'vds_object_edit.html'
 
     def get_form_layout(self, request, obj=None, **kwargs):
         """

@@ -48,6 +48,7 @@ INSTALLED_APPS = (
     'turbolinks',
     'panels',
     'crispy_forms',
+    'nested_admin',
 
     #'example.pages',
     'example.foundation',

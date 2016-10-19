@@ -60,6 +60,18 @@ html {
     background-color: $vds-layout-header-background-color;
     height: $vds-layout-header-height;
   }
+
+  // Outline the items more with the App Title
+  .vds-global-header__item{
+    padding:0 0.75rem;
+  }
+
+  @media (min-width: 48em){
+    .vds-global-header__item{
+      padding:0 1.5rem;
+    }
+  }
+
 }
 
 .vds-page {
@@ -74,8 +86,12 @@ html {
   }
 }
 
+.vds-page-title-fixed .vds-page-content{
+    padding-top: $vds-app-title-height;
+  }
+
 // Screen Small
-@media (max-width: 992px)  {
+//@media (max-width: 992px)  {
   .vds-app-sidebar {
     float: left;
     position: relative;
@@ -97,4 +113,4 @@ html {
     padding-right: 0;
   }
 
-}
+//}
