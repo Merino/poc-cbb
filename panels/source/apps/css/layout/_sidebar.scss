@@ -1,0 +1,46 @@
+// Sidebar
+// ------------
+
+.vds-app-sidebar {
+
+  &-header {
+    height: $vds-layout-header-height;
+    width: 100%;
+    background:  $vds-layout-header-background-color;
+
+    text-align: center;
+    font-size: 1.8rem;
+    padding-top: 0.2rem;
+    color: #FFF;
+
+  }
+
+  &-container {
+    height: 100%;
+    border-right: 1px solid $vds-layout-sidebar-border-color;
+  }
+
+  &-navigation {
+    padding-top: 1rem;
+    text-align: center;
+
+    & a{
+      display: block;
+      padding: 0.5rem 1rem 0.5rem 1rem;
+      text-decoration: none;
+      color: $vds-layout-sidebar-font-color;
+
+      height: $vds-layout-sidebar-navigation-height;
+
+      &:hover{
+        background-color: $vds-layout-sidebar-navigation-hover-color;
+      }
+
+      &.active {
+        border-left:0.3rem solid $vds-layout-sidebar-navigation-active-color;
+        padding-left: 0.7rem;
+      }
+    }
+
+  }
+}

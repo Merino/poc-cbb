@@ -20,6 +20,12 @@ class ListDataAdmin(BaseAdmin):
                 Field('boolean'),
             )
         ),
+        Tab('Info',
+            Fieldset('Time',
+                Field('datetime'),
+                Field('decimal'),
+            ),
+        ),
     ]
 
 

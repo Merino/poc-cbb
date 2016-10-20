@@ -2,7 +2,8 @@
 // ------------
 
 // Global App
-$vds-layout-app-background-color: #EDEFF0;;
+//$vds-layout-app-background-color: #EDEFF0;
+$vds-layout-app-background-color:#FFF;
 
 // Global Header
 $vds-layout-header-background-color: $vds-color-navy;
@@ -35,6 +36,9 @@ $vds-layout-sidepanel-width-open: 230px;
 // PAGE
 // ------------
 // App Title
-$vds-app-title-height: 63px;
+$vds-app-title-height: 84px;
+//$vds-app-title-background-color:#FFF;
+$vds-app-title-background-color:#EDEFF0;
+$vds-app-title-border-color:#CCC;
 
 // App Content

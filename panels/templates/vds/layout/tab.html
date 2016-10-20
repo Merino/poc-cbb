@@ -1,0 +1,6 @@
+<div class="vds-tabs--default">
+    <ul{% if tabs.css_id %} id="{{ tabs.css_id }}"{% endif %} class="vds-tabs--default__nav" role="tablist">
+        {{ links|safe }}
+    </ul>
+    {{ content|safe }}
+</div>

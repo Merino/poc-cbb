@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="imagetoolbar" content="no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="noindex,nofollow" />
+
+        <title>Vesper - {% block head_title %}{% endblock %}</title>
+
+        <link rel="shortcut icon" type="image/x-icon" href="/static/vesper/image/vesper-icon.png"/>
+
+        <!-- Styles -->
+        <link rel="stylesheet" href="/static/vesper/css/libs.css?{{ BUILD }}" type="text/css" />
+        <link rel="stylesheet" href="/static/vesper/css/apps.css?{{ BUILD }}" type="text/css" />
+        {% block header_css %}
+        <link rel="stylesheet" href="/static/example/main.css?{{ BUILD }}" type="text/css" />
+        {% endblock %}
+
+        <!-- Javascript -->
+        <script src="/static/vesper/javascript/libs.js?{{ BUILD }}"></script>
+        <script src="/static/vesper/javascript/apps.js?{{ BUILD }}"></script>
+
+        {% load staticfiles %}
+    </head>
+    <body>
+
+    {% block app %}
+        <div class="vds-app">
+
+            <!-- Sidebar -->
+            <div class="vds-app-sidebar">
+                <div class="vds-app-sidebar-header">
+                    <i class="fa fa-cloud" aria-hidden="true"></i>
+                </div>
+                <div class="vds-app-sidebar-container">
+                    <ul class="vds-app-sidebar-navigation">
+                        <li>
+                            <a href="/" >
+                                <span>
+                                    <i class="fa fa-tachometer" aria-hidden="true"></i>
+                                </span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/foundation/" class="active">
+                                <span>
+                                    <i class="fa fa-object-group" aria-hidden="true"></i>
+                                </span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/components/">
+                                <span>
+                                    <i class="fa fa-sticky-note-o" aria-hidden="true"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="vds-app-container">
+
+                <div class="vds-app-header">
+                    <!--- HEADER -->
+                    <div class="vds-global-header vds-grid vds-grid--align-spread">
+                        <div class="vds-global-header__item">
+                          <div class="vds-global-header__logo">
+
+                          </div>
+                        </div>
+
+                        <!--<div class="vds-global-header__item vds-global-header__item&#45;&#45;search">-->
+                          <!--<div class="vds-form-element vds-lookup">-->
+                            <!--<label class="vds-assistive-text" for="global-search-01">Search Vesper</label>-->
+                            <!--<div class="vds-form-element__control vds-input-has-icon vds-input-has-icon&#45;&#45;left">-->
+                              <!--<svg aria-hidden="true" class="vds-input__icon">-->
+                                <!--<use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#search"></use>-->
+                              <!--</svg>-->
+                              <!--<input id="global-search-01" class="vds-input vds-lookup__search-input" type="search" placeholder="Search Vesper" />-->
+                            <!--</div>-->
+                          <!--</div>-->
+                        <!--</div>-->
+
+                        <ul class="vds-global-header__item vds-grid vds-grid--vertical-align-center">
+                          <li class="vds-dropdown-trigger vds-dropdown-trigger--click vds-m-left--x-small">
+                            <button class="vds-button" title="person name" aria-haspopup="true">
+                              <span class="vds-avatar vds-avatar--circle vds-avatar--medium">
+                                <img src="https://www.lightningdesignsystem.com/assets/images/avatar2.jpg" alt="person name" />
+                              </span>
+                            </button>
+                          </li>
+                        </ul>
+                    </div>
+                    <!-- HEADER[END] -->
+                </div>
+
+                <div class="vds-page vds-page-title-fixed">
+                    {% block page %}
+                    <div class="vds-page-title">
+                        {% block page-header %}
+                            Titel
+                        {% endblock %}
+                    </div>
+                    <div class="vds-page-content">
+                        {% block page-content %}
+                            Content
+                        {% endblock %}
+                    </div>
+                    {% endblock %}
+                </div>
+            </div>
+            <div class="vds-app-sidepanel">
+                Side Panel
+            </div>
+        </div>
+
+        {% endblock %}
+    </body>
+</html>
+
+
+
+
+

@@ -2,12 +2,13 @@
 
 @import 'foundation/globals';
 
-// Application
-@import 'components/layout';
-@import 'components/layout_sidebar';
-@import 'components/page';
-@import 'components/page_header';
+// Layout
+@import 'layout/base';
+@import 'layout/sidebar';
+@import 'layout/page';
+@import 'layout/page_header';
 
 // Components
+@import 'components/blocks';
 @import 'components/tabs';
-
+@import 'components/buttons';

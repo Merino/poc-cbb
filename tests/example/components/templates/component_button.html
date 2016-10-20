@@ -2,39 +2,15 @@
 
 {% block head_title %}Component Button{% endblock %}
 
-{% block content %}
-
-    <style>
-
-        section {
-
-            background: #fff;
-            border:1px solid #aaa;
-            padding:15px;
-
-            border-radius: 0.25rem;
-
-            margin-bottom: 25px;
-
-        }
-
-
-
-    </style>
-
+{% block page %}
 
     <h3>Buttons</h3>
-
     <section>
         <p>Bootstrap includes six predefined button styles, each serving its own semantic purpose.</p>
         <div class="example">
-            <button type="button" class="btn btn-primary">Primary</button>
-            <button type="button" class="btn btn-secondary">Secondary</button>
-            <button type="button" class="btn btn-success">Success</button>
-            <button type="button" class="btn btn-info">Info</button>
-            <button type="button" class="btn btn-warning">Warning</button>
-            <button type="button" class="btn btn-danger">Danger</button>
-            <button type="button" class="btn btn-link">Link</button>
+            <button class="vds-button vds-button--neutral">Primary</button>
+            <button class="vds-button vds-button--brand">Button Brand</button>
+            <button class="vds-button vds-button--destructive">Button Destructive</button>
         </div>
     </section>
 

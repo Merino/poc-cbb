@@ -67,7 +67,7 @@ html {
 }
 
 .vds-page-title-fixed .vds-page-content {
-  padding-top: 63px;
+  padding-top: 84px;
 }
 
 .vds-app-sidebar {
@@ -124,16 +124,92 @@ html {
 }
 
 .vds-page-title .vds-page-header {
+  background: #EDEFF0;
+  height: 84px;
+  border-bottom: 1px solid #CCC;
+}
+
+@media (min-width: 48em) {
+  .vds-page-header {
+    padding: 1.75rem 1.5rem;
+  }
+}
+/*
+// Panels
+*/
+.block-deck {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.block-deck > [class^="col-"] {
+  margin-bottom: 30px;
+}
+
+.block {
+  position: relative;
   background: #FFF;
-  height: 63px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+}
+.block .block__header {
+  float: left;
+  width: 100%;
+  padding: 1rem 1rem 0 1rem;
+}
+.block .block__header .block__title {
+  float: left;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.block .block__header .block__title h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+}
+.block .block__header .block__title p {
+  color: #7F8FA4;
+  font-size: 0.75rem;
+  font-weight: 400;
+  margin: 0;
+}
+.block .block__header .block__options {
+  float: right;
+  position: relative;
+}
+.block .block__body {
+  margin: 0 auto;
+  padding: 1rem 1rem 1rem;
+  max-width: 100%;
+  overflow-x: visible;
+}
+.block .block__footer {
+  padding: 1rem 1rem 1rem;
+}
+.block .block__loading {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
 }
 
 .vds-tabs--default__nav {
   padding: 0 0.75rem;
+  margin-bottom: 1rem;
 }
 
 .vds-tabs--default__content {
   padding: 0 0.75rem;
+}
+
+.vds-tabs--default__item.vds-active {
+  font-weight: bold;
 }
 
 @media (min-width: 48em) {
