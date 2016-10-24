@@ -7,8 +7,8 @@ from django.views.generic.base import TemplateView
 class ComponentIndexView(TemplateView):
     template_name = 'component_index.html'
 
-class ComponentMessagesView(TemplateView):
-    template_name = 'component_messages.html'
+class ComponentNotificationView(TemplateView):
+    template_name = 'component_notification.html'
 
 
 class ComponentFormInputView(TemplateView):

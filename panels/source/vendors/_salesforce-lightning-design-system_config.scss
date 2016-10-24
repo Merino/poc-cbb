@@ -5,3 +5,25 @@ $font-family : $vds-font-family;
 //$font-size-medium : 0.75rem;
 
 $color-background-alt: $vds-layout-app-background-color;
+
+//
+// Buttons
+//
+
+// Button Primary
+$color-background-button-brand : $vds-button-primary-background-color;
+$color-background-button-brand-active: darken($color-background-button-brand, 10%);
+$color-border-button-brand: $vds-button-primary-border-color;
+$color-text-button-brand: $vds-button-primary-text-color;
+
+// Button Destructive
+$color-background-destructive : $vds-button-danger-background-color;
+$color-background-destructive-hover: darken($color-background-destructive, 10%);
+$color-border-button-destructive: $vds-button-danger-border-color;
+$color-text-button-destructive: $vds-button-danger-text-color;
+
+
+// Forms
+$color-text-error : $vds-form-label-required-color;
+$color-text-label : $vds-form-label-font-color;
+$color-border-input: $vds-form-input-border-color;

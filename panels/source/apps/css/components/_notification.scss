@@ -1,0 +1,98 @@
+// Notification
+//
+
+.vds-notify {
+  border-radius: 3px;
+  border: 1px solid $vds-status-info;
+
+  background: white;
+  position: relative;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+
+  padding-left: 60px;
+  padding-right: 40px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+
+  margin-bottom: 13px;
+
+  color: #333;
+
+  & h2{
+    font-weight: 600;
+  }
+
+  &__content{
+    padding-top: 0;
+  }
+
+  &:before {
+    background-color: $vds-status-info;
+    bottom: 0;
+    content: '';
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 40px;
+  }
+
+  &:after {
+    color: #ffffff;
+    content: "\f05a";
+    font-family: "FontAwesome";
+    font-size: 20px;
+    -webkit-font-smoothing: antialiased;
+    font-style: normal;
+    font-weight: normal;
+    left: 11px;
+    line-height: 1;
+    margin-top: -10px;
+    position: absolute;
+    speak: none;
+    top: 50%;
+  }
+
+  &--success {
+    background: #fff;
+    border-color: $vds-status-success;
+    color: #333;
+
+    &:before {
+      background-color: $vds-status-success;
+    }
+    &:after{
+      content: "\f00c";
+    }
+  }
+
+  &--warning {
+    background: #fff;
+    border-color: $vds-status-warning;
+    color: #333;
+
+    &:before {
+      background-color: $vds-status-warning;
+    }
+
+    &:after {
+      content: "\f071";
+    }
+  }
+
+  &--danger {
+    background: #fff;
+    border-color: $vds-status-danger;
+    color: #333;
+
+    &:before {
+      background-color: $vds-status-danger;
+    }
+    &:after{
+      content: "\f06a";
+    }
+
+  }
+
+}

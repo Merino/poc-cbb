@@ -2,6 +2,11 @@
 .vds-tabs--default__nav {
   padding:0 0.75rem;
   margin-bottom: 1rem;
+
+  .vds-tabs--default__link {
+    color: #666;
+  }
+
 }
 
 .vds-tabs--default__content{
@@ -9,8 +14,15 @@
 }
 
 .vds-tabs--default__item.vds-active {
-  font-weight: bold;
+
+  .vds-tabs--default__link {
+    border-color: $vds-link-color;
+    color: #000;
+  }
 }
+
+
+
 
 @media (min-width: 48em){
     .vds-tabs--default__nav{

@@ -144,10 +144,12 @@ class Field(LayoutObject):
 
         Field('field_name', style="color: #333;", css_class="whatever", id="field_name")
     """
-    template = "%s/field.html"
+    template = "%s/layout/field.html"
 
     def __init__(self, *args, **kwargs):
         self.fields = list(args)
+        self.attrs = {}
+        self.attrs['class'] = 'vds-input'
 
         if not hasattr(self, 'attrs'):
             self.attrs = {}

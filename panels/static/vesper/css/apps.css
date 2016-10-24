@@ -1,5 +1,6 @@
 html {
   font-size: 92%;
+  color: #333;
 }
 
 .vds-app {
@@ -124,7 +125,7 @@ html {
 }
 
 .vds-page-title .vds-page-header {
-  background: #EDEFF0;
+  background: #f0ede7;
   height: 84px;
   border-bottom: 1px solid #CCC;
 }
@@ -199,17 +200,213 @@ html {
   border-radius: 5px;
 }
 
+.vds-button {
+  vertical-align: middle;
+}
+.vds-button--neutral {
+  color: #000;
+  background-color: #FFF;
+  border-color: #CCC;
+}
+.vds-button--neutral:hover {
+  color: #000;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+.vds-button--neutral:focus, .vds-button--neutral.focus {
+  color: #000;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+.vds-button--neutral:active, .vds-button--neutral.active, .open > .vds-button--neutral.dropdown-toggle {
+  color: #000;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+  background-image: none;
+}
+.vds-button--neutral:active:hover, .vds-button--neutral:active:focus, .vds-button--neutral:active.focus, .vds-button--neutral.active:hover, .vds-button--neutral.active:focus, .vds-button--neutral.active.focus, .open > .vds-button--neutral.dropdown-toggle:hover, .open > .vds-button--neutral.dropdown-toggle:focus, .open > .vds-button--neutral.dropdown-toggle.focus {
+  color: #000;
+  background-color: #d4d4d4;
+  border-color: #8c8c8c;
+}
+.vds-button--neutral.disabled:focus, .vds-button--neutral.disabled.focus, .vds-button--neutral:disabled:focus, .vds-button--neutral:disabled.focus {
+  background-color: #FFF;
+  border-color: #CCC;
+}
+.vds-button--neutral.disabledhover, .vds-button--neutral:disabledhover {
+  background-color: #FFF;
+  border-color: #CCC;
+}
+.vds-button--brand {
+  color: #FFF;
+  background-color: #3572b0;
+  border-color: #3572b0;
+}
+.vds-button--brand:hover {
+  color: #FFF;
+  background-color: #295989;
+  border-color: #275481;
+}
+.vds-button--brand:focus, .vds-button--brand.focus {
+  color: #FFF;
+  background-color: #295989;
+  border-color: #275481;
+}
+.vds-button--brand:active, .vds-button--brand.active, .open > .vds-button--brand.dropdown-toggle {
+  color: #FFF;
+  background-color: #295989;
+  border-color: #275481;
+  background-image: none;
+}
+.vds-button--brand:active:hover, .vds-button--brand:active:focus, .vds-button--brand:active.focus, .vds-button--brand.active:hover, .vds-button--brand.active:focus, .vds-button--brand.active.focus, .open > .vds-button--brand.dropdown-toggle:hover, .open > .vds-button--brand.dropdown-toggle:focus, .open > .vds-button--brand.dropdown-toggle.focus {
+  color: #FFF;
+  background-color: #21476d;
+  border-color: #17334e;
+}
+.vds-button--brand.disabled:focus, .vds-button--brand.disabled.focus, .vds-button--brand:disabled:focus, .vds-button--brand:disabled.focus {
+  background-color: #3572b0;
+  border-color: #3572b0;
+}
+.vds-button--brand.disabledhover, .vds-button--brand:disabledhover {
+  background-color: #3572b0;
+  border-color: #3572b0;
+}
+.vds-button--destructive {
+  color: #FFF;
+  background-color: #d04437;
+  border-color: #d04437;
+}
+.vds-button--destructive:hover {
+  color: #FFF;
+  background-color: #ac3328;
+  border-color: #a33126;
+}
+.vds-button--destructive:focus, .vds-button--destructive.focus {
+  color: #FFF;
+  background-color: #ac3328;
+  border-color: #a33126;
+}
+.vds-button--destructive:active, .vds-button--destructive.active, .open > .vds-button--destructive.dropdown-toggle {
+  color: #FFF;
+  background-color: #ac3328;
+  border-color: #a33126;
+  background-image: none;
+}
+.vds-button--destructive:active:hover, .vds-button--destructive:active:focus, .vds-button--destructive:active.focus, .vds-button--destructive.active:hover, .vds-button--destructive.active:focus, .vds-button--destructive.active.focus, .open > .vds-button--destructive.dropdown-toggle:hover, .open > .vds-button--destructive.dropdown-toggle:focus, .open > .vds-button--destructive.dropdown-toggle.focus {
+  color: #FFF;
+  background-color: #8f2b22;
+  border-color: #6e211a;
+}
+.vds-button--destructive.disabled:focus, .vds-button--destructive.disabled.focus, .vds-button--destructive:disabled:focus, .vds-button--destructive:disabled.focus {
+  background-color: #d04437;
+  border-color: #d04437;
+}
+.vds-button--destructive.disabledhover, .vds-button--destructive:disabledhover {
+  background-color: #d04437;
+  border-color: #d04437;
+}
+
+.vds-form-element {
+  margin-bottom: 1rem;
+}
+.vds-form-element__label {
+  margin-bottom: 0.5rem;
+}
+
+.vds-notify {
+  border-radius: 3px;
+  border: 1px solid #3572b0;
+  background: white;
+  position: relative;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  padding-left: 60px;
+  padding-right: 40px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  margin-bottom: 13px;
+  color: #333;
+}
+.vds-notify h2 {
+  font-weight: 600;
+}
+.vds-notify__content {
+  padding-top: 0;
+}
+.vds-notify:before {
+  background-color: #3572b0;
+  bottom: 0;
+  content: '';
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 40px;
+}
+.vds-notify:after {
+  color: #ffffff;
+  content: "\f05a";
+  font-family: "FontAwesome";
+  font-size: 20px;
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  left: 11px;
+  line-height: 1;
+  margin-top: -10px;
+  position: absolute;
+  speak: none;
+  top: 50%;
+}
+.vds-notify--success {
+  background: #fff;
+  border-color: #8eb021;
+  color: #333;
+}
+.vds-notify--success:before {
+  background-color: #8eb021;
+}
+.vds-notify--success:after {
+  content: "\f00c";
+}
+.vds-notify--warning {
+  background: #fff;
+  border-color: #f6c342;
+  color: #333;
+}
+.vds-notify--warning:before {
+  background-color: #f6c342;
+}
+.vds-notify--warning:after {
+  content: "\f071";
+}
+.vds-notify--danger {
+  background: #fff;
+  border-color: #d04437;
+  color: #333;
+}
+.vds-notify--danger:before {
+  background-color: #d04437;
+}
+.vds-notify--danger:after {
+  content: "\f06a";
+}
+
 .vds-tabs--default__nav {
   padding: 0 0.75rem;
   margin-bottom: 1rem;
+}
+.vds-tabs--default__nav .vds-tabs--default__link {
+  color: #666;
 }
 
 .vds-tabs--default__content {
   padding: 0 0.75rem;
 }
 
-.vds-tabs--default__item.vds-active {
-  font-weight: bold;
+.vds-tabs--default__item.vds-active .vds-tabs--default__link {
+  border-color: #3572b0;
+  color: #000;
 }
 
 @media (min-width: 48em) {

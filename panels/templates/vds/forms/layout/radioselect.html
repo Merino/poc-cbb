@@ -2,7 +2,7 @@
 {% load l10n %}
 
 <div class="controls {{ field_class }}"{% if flat_attrs %} {{ flat_attrs|safe }}{% endif %}>
-    {% include 'vds/layout/field_errors_block.html' %}
+    {% include 'vds/forms/layout/field_errors_block.html' %}
 
     {% for choice in field.field.choices %}
       {% if not inline_class %}<div class="radio">{% endif %}
@@ -12,5 +12,5 @@
       {% if not inline_class %}</div>{% endif %}
     {% endfor %}
 
-    {% include 'vds/layout/help_text.html' %}
+    {% include 'vds/forms/layout/help_text.html' %}
 </div>

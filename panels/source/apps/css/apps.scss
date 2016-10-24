@@ -3,12 +3,14 @@
 @import 'foundation/globals';
 
 // Layout
-@import 'layout/base';
-@import 'layout/sidebar';
-@import 'layout/page';
-@import 'layout/page_header';
+@import "layout/base";
+@import "layout/sidebar";
+@import "layout/page";
+@import "layout/page_header";
 
 // Components
-@import 'components/blocks';
-@import 'components/tabs';
-@import 'components/buttons';
+@import "components/blocks";
+@import "components/buttons";
+@import "components/forms";
+@import "components/notification";
+@import "components/tabs";

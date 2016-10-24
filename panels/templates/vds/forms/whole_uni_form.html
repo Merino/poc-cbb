@@ -6,9 +6,9 @@
         {% csrf_token %}
     {% endif %}
 
-    {% include "vds/display_form.html" %}
+    {% include "vds/forms/display_form.html" %}
 
-    {% include "vds/inputs.html" %}
+    {% include "vds/forms/inputs.html" %}
 
 {% if form_tag %}</form>{% endif %}
 {% endspecialspaceless %}

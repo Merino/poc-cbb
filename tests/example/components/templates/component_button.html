@@ -8,14 +8,34 @@
     <section>
         <p>Bootstrap includes six predefined button styles, each serving its own semantic purpose.</p>
         <div class="example">
-            <button class="vds-button vds-button--neutral">Primary</button>
-            <button class="vds-button vds-button--brand">Button Brand</button>
-            <button class="vds-button vds-button--destructive">Button Destructive</button>
+            <button class="vds-button vds-button--neutral">Button Normal (Secondary)</button>
+            <button class="vds-button vds-button--brand">Button Brand (Primary)</button>
+            <button class="vds-button vds-button--destructive">Button Destructive (Danger)</button>
+            <button class="vds-button">Button (Link)</button>
         </div>
     </section>
 
     <br />
     <br />
+
+    <section>
+        <p></p>
+
+        <div class="vds-button-group" role="group">
+            <button class="vds-button vds-button--neutral">Refresh</button>
+            <button class="vds-button vds-button--neutral">Edit</button>
+            <button class="vds-button vds-button--neutral">Save</button>
+        </div>
+
+        <br />
+
+        <div class="vds-button-group" role="group">
+            <button class="vds-button vds-button--neutral">Refresh</button>
+            <button class="vds-button vds-button--brand">Edit</button>
+            <button class="vds-button vds-button--destructive">Delete</button>
+        </div>
+
+    </section>
 
     <section id="button-state-loading">
         <h4>State: Loading</h4>
@@ -87,25 +107,25 @@
         <h4>Icons</h4>
         <div class="example">
 
-            <button type="button" class="btn btn-primary">
+            <button type="button" class="vds-button vds-button--brand">
                 <i class="fa fa-plus"></i> Primary
             </button>
-            <button type="button" class="btn btn-secondary">
+            <button type="button" class="vds-button vds-button--neutral">
                 <i class="fa fa-print"></i> Secondary
             </button>
-            <button type="button" class="btn btn-success">
+            <button type="button" class="vds-button vds-button--neutral">
                 <i class="fa fa-check"></i> Success
             </button>
-            <button type="button" class="btn btn-info">
+            <button type="button" class="vds-button vds-button--neutral">
                 <i class="fa fa-info-circle"></i> Info
             </button>
-            <button type="button" class="btn btn-warning">
+            <button type="button" class="vds-button vds-button--neutral">
                 <i class="fa fa-exclamation-triangle"></i> Warning
             </button>
-            <button type="button" class="btn btn-danger">
+            <button type="button" class="vds-button vds-button--destructive">
                 <i class="fa fa-times"></i> Danger
             </button>
-            <button type="button" class="btn btn-link">
+            <button type="button" class="vds-button">
                 <i class="fa fa-cog"></i> Link
             </button>
         </div>

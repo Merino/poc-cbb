@@ -1,0 +1,24 @@
+
+<div class="block">
+    {% if legend %}
+    <div class="block__header">
+        <div class="block__title">
+            {{ legend|safe }}
+        </div>
+    </div>
+    {% endif %}
+    <div class="block__body">
+         {{ fields|safe }}
+    </div>
+</div>
+
+<br />
+<br />
+
+{##}
+{#<fieldset {% if fieldset.css_id %}id="{{ fieldset.css_id }}"{% endif %}#}
+{#    {% if fieldset.css_class or form_style %}class="{{ fieldset.css_class }} {{ form_style }}"{% endif %}#}
+{#    {{ fieldset.flat_attrs|safe }}>#}
+{#    {% if legend %}<legend>{{ legend|safe }}</legend>{% endif %}#}
+{#    {{ fields|safe }} #}
+{#</fieldset>#}

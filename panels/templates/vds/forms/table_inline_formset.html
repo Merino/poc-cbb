@@ -33,19 +33,19 @@
         <tbody>
             {% for form in formset %}
                 {% if form_show_errors and not form.is_extra %}
-                    {% include "vds/errors.html" %}
+                    {% include "vds/forms/errors.html" %}
                 {% endif %}
 
                 <tr>
                     {% for field in form %}
-                        {% include 'vds/field.html' with tag="th" form_show_labels=False %}
+                        {% include 'vds/forms/field.html' with tag="th" form_show_labels=False %}
                     {% endfor %}
                 </tr>
             {% endfor %}
         </tbody>
     </table>
 
-    {% include "vds/inputs.html" %}
+    {% include "vds/forms/inputs.html" %}
 
 {% if formset_tag %}</form>{% endif %}
 {% endspecialspaceless %}

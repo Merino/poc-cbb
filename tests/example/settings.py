@@ -142,6 +142,3 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 THEME = 'default'
-
-CRISPY_ALLOWED_TEMPLATE_PACKS = ('bootstrap', 'uni_form', 'bootstrap3', 'vds')
-CRISPY_TEMPLATE_PACK = 'vds'

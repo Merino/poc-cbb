@@ -3,9 +3,9 @@
 {% specialspaceless %}
     {{ form.media }}
     {% if form_show_errors %}
-        {% include "vds/errors.html" %}
+        {% include "vds/forms/errors.html" %}
     {% endif %}
     {% for field in form %}
-        {% include "vds/field.html" %}
+        {% include "vds/forms/field.html" %}
     {% endfor %}
 {% endspecialspaceless %}

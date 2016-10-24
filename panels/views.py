@@ -72,6 +72,7 @@ class BaseAdmin(nested_admin.NestedModelAdmin):
         form.helper = FormHelper()
         form.helper.form_tag = False
         form.helper.layout = self.get_form_layout(request, obj, **kwargs)
+        form.helper.template_pack = 'vds/forms'
 
         return form
 

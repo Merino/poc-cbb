@@ -1,0 +1,79 @@
+// Button variants
+//
+// Easily pump out default styles, as well as :hover, :focus, :active,
+// and disabled options for all buttons
+
+@mixin button-variant($color, $background, $border) {
+  $active-background: darken($background, 10%);
+  $active-border: darken($border, 12%);
+
+  color: $color;
+  background-color: $background;
+  border-color: $border;
+  //@include box-shadow($btn-box-shadow);
+
+  &:hover {
+    color: $color;
+    background-color: $active-background;
+        border-color: $active-border;
+  }
+
+  &:focus,
+  &.focus {
+    color: $color;
+    background-color: $active-background;
+        border-color: $active-border;
+  }
+
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    color: $color;
+    background-color: $active-background;
+        border-color: $active-border;
+    // Remove the gradient for the pressed/active state
+    background-image: none;
+    //@include box-shadow($btn-active-box-shadow);
+
+    &:hover,
+    &:focus,
+    &.focus {
+      color: $color;
+      background-color: darken($background, 17%);
+          border-color: darken($border, 25%);
+    }
+  }
+
+  &.disabled,
+  &:disabled {
+    &:focus,
+    &.focus {
+      background-color: $background;
+          border-color: $border;
+    }
+    &hover {
+      background-color: $background;
+          border-color: $border;
+    }
+  }
+}
+
+
+
+.vds-button{
+  // Some how this is only assigned to the buttons with a style
+  vertical-align: middle;
+
+  &--neutral{
+     @include button-variant($vds-button-secondary-text-color, $vds-button-secondary-background-color, $vds-button-secondary-border-color);
+  }
+
+  &--brand{
+     @include button-variant($vds-button-primary-text-color, $vds-button-primary-background-color, $vds-button-primary-border-color);
+  }
+
+  &--destructive{
+     @include button-variant($vds-button-danger-text-color, $vds-button-danger-background-color, $vds-button-danger-border-color);
+  }
+
+}

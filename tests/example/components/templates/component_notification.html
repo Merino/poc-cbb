@@ -1,0 +1,139 @@
+{% extends "design_head.html" %}
+
+{% block head_title %}Component Messages{% endblock %}
+
+{% block page-content %}
+    <h1>Messages</h1>
+
+    <h3>Inline notifications</h3>
+    <p>Inline notifications are part of the content of a user interface, and are used to alert users of a particular
+        screen area that needs user action. These notifications can appear within a page or dialog. They are not
+        dismissible, and only disappear once the issue has been resolved.</p>
+
+
+    <div class="example">
+
+<div class="vds-notify_container">
+
+{#  <div class="vds-notify vds-notify--toast vds-notify--info" role="alert">#}
+{#    <span class="vds-assistive-text">Error</span>#}
+{#    <button class="vds-button vds-notify__close vds-button--icon-inverse">#}
+{#      <svg aria-hidden="true" class="vds-button__icon vds-button__icon--large">#}
+{#        <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>#}
+{#      </svg>#}
+{#      <span class="vds-assistive-text">Close</span>#}
+{#    </button>#}
+{#    <div class="vds-notify__content vds-grid">#}
+{#      <div class="vds-col vds-align-middle">#}
+{#        <h2 class="vds-text-heading--small">You&#x27;ve encountered some errors when trying to save edits to Samuel Smith.</h2>#}
+{#        <p>Here&#x27;s some detail of what happened, being very descriptive and transparent.</p>#}
+{#      </div>#}
+{#    </div>#}
+{#  </div>#}
+
+
+  <div class="vds-notify vds-notify--toast vds-notify--danger" role="alert">
+    <span class="vds-assistive-text">Error</span>
+    <button class="vds-button vds-notify__close vds-button--icon-inverse">
+      <svg aria-hidden="true" class="vds-button__icon vds-button__icon--large">
+        <use xlink:href="https://www.lightningdesignsystem.com/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+      </svg>
+      <span class="vds-assistive-text">Close</span>
+    </button>
+    <div class="vds-notify__content vds-grid">
+      <div class="vds-col vds-align-middle">
+        <h2 class="vds-text-heading--small">Validation errors</h2>
+        <p>User niet opgeslagen, herstel de fouten hieronder.</p>
+      </div>
+    </div>
+  </div>
+
+
+
+
+{#  <div class="vds-notify vds-notify--toast vds-notify--warning" role="alert">#}
+{#    <span class="vds-assistive-text">Error</span>#}
+{#    <button class="vds-button vds-notify__close vds-button--icon-inverse">#}
+{#      <svg aria-hidden="true" class="vds-button__icon vds-button__icon--large">#}
+{#        <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>#}
+{#      </svg>#}
+{#      <span class="vds-assistive-text">Close</span>#}
+{#    </button>#}
+{#    <div class="vds-notify__content vds-grid">#}
+{#      <div class="vds-col vds-align-middle">#}
+{#        <h2 class="vds-text-heading--small">You&#x27;ve encountered some errors when trying to save edits to Samuel Smith.</h2>#}
+{#        <p>Here&#x27;s some detail of what happened, being very descriptive and transparent.</p>#}
+{#      </div>#}
+{#    </div>#}
+{#  </div>#}
+
+
+{#  <div class="vds-notify vds-notify--toast vds-notify--danger" role="alert">#}
+{#    <span class="vds-assistive-text">Error</span>#}
+{#    <button class="vds-button vds-notify__close vds-button--icon-inverse">#}
+{#      <svg aria-hidden="true" class="vds-button__icon vds-button__icon--large">#}
+{#        <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>#}
+{#      </svg>#}
+{#      <span class="vds-assistive-text">Close</span>#}
+{#    </button>#}
+{#    <div class="vds-notify__content vds-grid">#}
+{#      <div class="vds-col vds-align-middle">#}
+{#        <h2 class="vds-text-heading--small">Product verwijderd</h2>#}
+{#        <p>You&#x27;ve deleted product 'SKU:00014' by Merijn Bertels</p>#}
+{#      </div>#}
+{#    </div>#}
+{#  </div>#}
+</div>
+        <div class="message">
+            <p class="title">
+                <strong>Backup stale</strong>
+            </p>
+            <p>This instance was last backed up on Thursday, 18 September 2011.</p>
+        </div>
+
+        <div class="message message-warning">
+            <p class="title">
+                <strong>Backing up attachments</strong>
+            </p>
+            <p>Attachments will not be backed up. This needs to be done manually.</p>
+        </div>
+
+        <div class="message message-error">
+            <p class="title">
+                <strong>Destructive operation!</strong>
+            </p>
+            <p>Data import will wipe all existing content - make sure you backup first!</p>
+        </div>
+
+
+        <div class="message message-success">
+            <p class="title">
+                <strong>Success!</strong>
+            </p>
+            <p>You have backed up your system to C:/backups/filename.xml.</p>
+        </div>
+
+        <div class="message message-hint">
+            <p class="title">
+                <strong>Backup stale</strong>
+            </p>
+            <p>This instance was last backed up on Thursday, 18 September 2011.</p>
+        </div>
+
+    </div>
+
+    <h3>Message Actions</h3>
+
+    <div class="example">
+
+        <div class="message message-warning">
+            <p><strong>License expires</strong> in 14 days. If the license expires, access to your instance will be restricted.</p>
+            <ul class="nav-actions-list">
+                <li><a href="#">Renew license</a></li>
+                <li><a href="#">Remind me later</a></li>
+            </ul>
+        <span class="aui-icon icon-close" role="button" tabindex="0"></span></div>
+
+    </div>
+
+{% endblock %}
