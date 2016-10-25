@@ -31,4 +31,4 @@ class FoundationNavigation(TemplateView):
     template_name = 'foundation_navigation.html'
 
 class FoundationVoiceAndTone(TemplateView):
-    template_name = 'foundation_voice_and_tone.html'
+    template_name =  'foundation_voice_and_tone.html'

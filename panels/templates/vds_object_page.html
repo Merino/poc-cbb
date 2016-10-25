@@ -1,0 +1,62 @@
+{% extends "vds_base.html" %}
+{% load i18n admin_urls static admin_modify crispy_forms_tags crispy_forms_field %}
+
+{% block page %}
+<form {% if has_file_field %}enctype="multipart/form-data" {% endif %}action="{{ form_url }}" method="post" id="{{ opts.model_name }}_form" novalidate>{% csrf_token %}
+    <div class="vds-page vds-page-title-fixed">
+        <div class="vds-page-title">
+
+            <div class="vds-page-header" role="banner">
+
+                <div class="vds-grid">
+                    <div class="vds-col vds-has-flexi-truncate">
+
+                        <div class="vds-media vds-media--center vds-no-space vds-grow">
+
+                        {% if detail_header.icon %}
+                            <div class="vds-media__figure">
+                                <div class="vds-icon vds-icon-standard-user">
+                                    <i class="fa fa-{{ detail_header.icon }}" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        {%  endif %}
+
+                        <div class="vds-media__body">
+                            <p class="vds-page-header__title vds-m-right--small vds-align-middle vds-truncate" title="{{ detail_header.subtitle }}">{{ detail_header.title }}</p>
+
+                        {% if detail_header.subtitle %}
+                            <p class="vds-text-title--caps vds-line-height--reset">{{ detail_header.subtitle }}</p>
+                        {%  endif %}
+
+                        {#                      <nav class="vds-m-bottom--xx-small" role="navigation" aria-label="Breadcrumbs">#}
+{#                        <ol class="vds-breadcrumb vds-list--horizontal">#}
+{#                          <li class="vds-breadcrumb__item vds-text-title--caps"><a href="javascript:void(0);">Dashboard</a></li>#}
+{#                          <li class="vds-breadcrumb__item vds-text-title--caps"><a href="javascript:void(0);">PIM</a></li>#}
+{#                          <li class="vds-breadcrumb__item vds-text-title--caps"><a href="javascript:void(0);">Products</a></li>#}
+{#                        </ol>#}
+{#                        </nav>#}
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="vds-col vds-no-flex vds-grid vds-align-top">
+                    {% for button in detail_actions %}
+                        {{ button }}
+                    {% endfor %}
+                </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="vds-page-content">
+            {% block page-content %}
+
+            {% endblock %}
+        </div>
+
+    </div>
+</form>
+{% endblock %}

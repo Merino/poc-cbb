@@ -10,6 +10,9 @@ from vesper.forms import Field
 
 from django.contrib import admin
 from django.core import urlresolvers
+from django.conf.urls import patterns, url
+from django.views.generic.base import TemplateView
+from django.views.generic.edit import FormView
 
 from .layouts import FormHelper, Layout, TabHolder, Tab, Fieldset, Field
 
@@ -35,8 +38,32 @@ from .layouts import Button
 #     extra = 0
 
 
+class BaseAdmin(TemplateView):
+    pass
 
-class BaseAdmin(nested_admin.NestedModelAdmin):
+
+class EditAdmin(TemplateView):
+
+    def __init__(self, **kwargs):
+        super(TemplateView, self).__init__(**kwargs)
+
+        self.model = self.admin.model
+
+    def get(self, request, object_id, *args, **kwargs):
+        obj = self.admin.get_object(request=request, object_id=object_id)
+
+        header = self.admin.get_detail_header(request, obj=obj)
+        header.subtitle = 'Mail Payment'
+
+        context = {
+            'detail_header': header,
+            'detail_actions': ['ss']
+        }
+
+        return super(EditAdmin, self).get(request, **context)
+
+
+class ModelAdmin(nested_admin.NestedModelAdmin):
 
     # List View
     list_fields = []
@@ -48,15 +75,38 @@ class BaseAdmin(nested_admin.NestedModelAdmin):
     detail_layout = []
     detail_actions = []
 
+    # Extra Views
+    views = []
+
     # Templates
     change_form_template = 'vds_object_edit.html'
 
-    # def __init__(self, *args, **kwargs):
-    #     #self.detail_actions = []
-    #     #self.detail_layout = []
-    #
-    #     super(BaseAdmin, self).__init__(*args, **kwargs)
+    #   Views Functions
+    # ---------------------
+    def get_urls(self):
+        urls = super(ModelAdmin, self).get_urls()
+        extra_urls = []
+        for view in self.views:
+            name = '%s_%s_%s' % (self.model._meta.app_label, self.model._meta.model_name, view.name)
 
+            extra_urls.append(
+                url(view._regex, view._callback.as_view(admin=self), name=name)
+            )
+
+        my_urls = patterns('',
+            *extra_urls
+        )
+        return my_urls + urls
+
+    def get_url_reverse(self, name, *args):
+        info = self.model._meta.app_label, self.model._meta.model_name, name
+        return urlresolvers.reverse('admin:%s_%s_%s' % info, args=args)
+
+    #   List Functions
+    # ---------------------
+
+    #   Detail Functions
+    # ---------------------
     def get_form_layout(self, request, obj=None, **kwargs):
         """
         """
@@ -70,7 +120,7 @@ class BaseAdmin(nested_admin.NestedModelAdmin):
     def get_form(self, request, obj=None, **kwargs):
         """
         """
-        form = super(BaseAdmin, self).get_form(request, obj, **kwargs)
+        form = super(ModelAdmin, self).get_form(request, obj, **kwargs)
 
         form.helper = FormHelper()
         form.helper.form_tag = False
@@ -82,13 +132,22 @@ class BaseAdmin(nested_admin.NestedModelAdmin):
     def get_detail_header(self, request, obj=None, **kwargs):
         """
         """
-        detail_header = {
-            'title': 'JUB',
-            'subtitle': False,
-            'icon': 'True'
-        }
+        class Header(object):
+            title = None
+            subtitle = None
+            icon = None
 
-        return detail_header
+        header = Header()
+
+        if obj:
+            header.title = obj
+        else:
+            header.title = 'Add %s' % self.model._meta
+
+        header.subtitle = False
+        header.icon = "flag"
+
+        return header
 
     def get_detail_actions(self, request, obj=None, **kwargs):
         """
@@ -110,11 +169,12 @@ class BaseAdmin(nested_admin.NestedModelAdmin):
             detail_actions.append(
                 Button('delete', 'Delete', url_delete, 'danger', icon='trash')
             )
-        detail_actions += copy.copy(self.get_detail_actions(request=request, obj=obj))
         url_index = urlresolvers.reverse('admin:%s_%s_changelist' % info)
         detail_actions.append(
             Button('cancel', 'Back', url_index, icon='close')
         )
+
+        detail_actions += copy.copy(self.get_detail_actions(request=request, obj=obj))
         detail_actions.append(
             Button('_continue', 'Save', 'submit', 'primary', icon='save')
         )
@@ -134,13 +194,12 @@ class BaseAdmin(nested_admin.NestedModelAdmin):
             'detail_actions': detail_actions_context,
         }
 
-        response = super(BaseAdmin, self).changeform_view(
-                                                    request=request,
-                                                    object_id=object_id,
-                                                    form_url='',
-                                                    extra_context=extra_context
-                                                    )
-
+        response = super(ModelAdmin, self).changeform_view(
+                                                request=request,
+                                                object_id=object_id,
+                                                form_url='',
+                                                extra_context=extra_context
+                                            )
         return response
 
 

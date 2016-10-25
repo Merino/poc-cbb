@@ -1,4 +1,28 @@
 @charset "UTF-8";
+.vds-icon {
+  width: 2rem;
+  height: 2rem;
+  line-height: 1.6rem;
+  border-radius: 0.25rem;
+  color: #FFF;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1.6rem;
+  padding: 0.2rem;
+}
+
+.vds-icon {
+  width: 2rem;
+  height: 2rem;
+  line-height: 1.6rem;
+  border-radius: 0.25rem;
+  color: #FFF;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1.6rem;
+  padding: 0.2rem;
+}
+
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;

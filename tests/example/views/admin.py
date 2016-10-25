@@ -1,16 +1,26 @@
 from django.contrib import admin
-from .models import ListData
+from django.conf.urls import patterns, url
+from django.core import urlresolvers
 
 
 # from vesper.apps import site
 # from vesper.views import ModelAdmin
 from panels.layouts import Tab, Fieldset, Field, Button
-from panels.views import BaseAdmin
+from panels.views import ModelAdmin, BaseAdmin, EditAdmin
 
 
-class ListDataAdmin(BaseAdmin):
+from .models import ListData
 
-   detail_layout = [
+
+class ExtraViewAdmin(EditAdmin):
+    admin = None
+    template_name = 'views/extra.html'
+
+
+
+class ListDataAdmin(ModelAdmin):
+
+    detail_layout = [
         Tab('General',
             Fieldset('Name',
                 Field('name'),
@@ -28,6 +38,29 @@ class ListDataAdmin(BaseAdmin):
             ),
         ),
     ]
+
+    views = [
+        url(r'^(.+)/action/create-shipment/$', ExtraViewAdmin, name='action_shipment'),
+    ]
+
+    def get_detail_actions(self, request, obj):
+        actions = []
+
+        if obj:
+            actions.append(
+                Button('create-shipment', 'Markt as Payt', self.get_url_reverse('action_shipment', obj.pk), icon='envelope')
+            )
+
+        return actions
+
+    # def get_detail_header(self, request, obj):
+    #     header = super(ListDataAdmin, self).get_detail_header(request, obj)
+    #     if obj:
+    #         header.title = obj.pk
+    #         header.subtitle = 'WeStockLots - Website'
+    #         header.title = 'WO20180012002'
+    #     header.icon = 'pro'
+    #     return header
 
 
 
