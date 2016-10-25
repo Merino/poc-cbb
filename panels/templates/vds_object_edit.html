@@ -13,11 +13,17 @@
                 <div class="vds-col vds-has-flexi-truncate">
 
                   <div class="vds-media vds-no-space vds-grow">
+
+                    {% if detail_header.icon %}
+
                     <div class="vds-media__figure">
                       <svg aria-hidden="true" class="vds-icon vds-icon-standard-user">
                         <use xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#user"></use>
                       </svg>
                     </div>
+
+                    {%  endif %}
+
                     <div class="vds-media__body">
                       <p class="vds-text-title--caps vds-line-height--reset">0001455.01</p>
                       <h1 class="vds-page-header__title vds-m-right--small vds-align-middle vds-truncate" title="this should match the Record Title">{% if add %}{% blocktrans with name=opts.verbose_name %}Add {{ name }}{% endblocktrans %}{% else %}{{ original|truncatewords:"18" }}{% endif %}</h1>

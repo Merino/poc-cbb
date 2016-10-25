@@ -9,7 +9,7 @@ from vesper.forms import Field
 """
 
 from django.contrib import admin
-
+from django.core import urlresolvers
 
 from .layouts import FormHelper, Layout, TabHolder, Tab, Fieldset, Field
 
@@ -79,24 +79,47 @@ class BaseAdmin(nested_admin.NestedModelAdmin):
 
         return form
 
+    def get_detail_header(self, request, obj=None, **kwargs):
+        """
+        """
+        detail_header = {
+            'title': 'JUB',
+            'subtitle': False,
+            'icon': 'True'
+        }
+
+        return detail_header
+
     def get_detail_actions(self, request, obj=None, **kwargs):
+        """
+        """
         return self.detail_actions
 
-
     def changeform_view(self, request, object_id=None, form_url='', extra_context=None):
+        # Get Object
+        obj = self.get_object(request=request, object_id=object_id)
 
-        # Render Detail Actions
-        detail_actions = copy.copy(self.get_detail_actions(request=request, obj=None))
+        # Detail Header
+        detail_header = self.get_detail_header(request=request, obj=obj)
+
+        # Detail Actions
+        info = self.model._meta.app_label, self.model._meta.model_name
+        detail_actions = []
+        if obj:
+            url_delete = urlresolvers.reverse('admin:%s_%s_delete' % info, args=[object_id])
+            detail_actions.append(
+                Button('delete', 'Delete', url_delete, 'danger', icon='trash')
+            )
+        detail_actions += copy.copy(self.get_detail_actions(request=request, obj=obj))
+        url_index = urlresolvers.reverse('admin:%s_%s_changelist' % info)
         detail_actions.append(
-            Button('cancel', 'Back', '/admin/ssss/sssss/sss/', icon='close')
+            Button('cancel', 'Back', url_index, icon='close')
         )
         detail_actions.append(
             Button('_continue', 'Save', 'submit', 'primary', icon='save')
         )
-        detail_actions.append(
-            Button('delete', 'Delete', '/danger/ss/', 'danger', icon='trash')
-        )
 
+        # Render View
         detail_actions_context = []
         for button in detail_actions:
             detail_actions_context.append(
@@ -106,9 +129,8 @@ class BaseAdmin(nested_admin.NestedModelAdmin):
                     Context({})
                 )
             )
-
-        # Render View
         extra_context = {
+            'detail_header': detail_header,
             'detail_actions': detail_actions_context,
         }
 
