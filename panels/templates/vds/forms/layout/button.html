@@ -1,1 +1,14 @@
-<button {{ button.flat_attrs|safe }}>{{ button.content|safe }}</button>
+{% if button.input_type == 'a' %}
+<a {{ button.flat_attrs|safe }}>
+        {% if button.icon %}
+        <i class="fa fa-{{button.icon}}"></i>
+        {% endif %}
+        {{ button.value|safe }}
+</a>
+{% else %}
+<button {{ button.flat_attrs|safe }}>
+    {% if button.icon %}
+    <i class="fa fa-{{button.icon}}"></i>
+    {% endif %}
+{{ button.value|safe }}</button>
+{% endif %}

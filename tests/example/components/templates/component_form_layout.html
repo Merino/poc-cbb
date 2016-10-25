@@ -2,24 +2,77 @@
 
 {% block head_title %}Form{% endblock %}
 
-{% block content %}
+{% block page-content %}
 
 
-        <style>
-
-{#        section {#}
-{##}
-{#            background: #fff;#}
-{#            border:1px solid #aaa;#}
-{#            padding:15px;#}
-{##}
-{#            border-radius: 0.25rem;#}
-{##}
-{#            margin-bottom: 25px;#}
-{##}
-{#        }#}
-
-    </style>
+    <div class="block">
+        <div class="block__header">
+            
+        </div>
+        <div class="block__body">
+            
+            <div class="vds-form--horizontal">
+              <div class="vds-form-element">
+                <label class="vds-form-element__label" for="inputSample2">Text Input</label>
+                <div class="vds-form-element__control">
+                  <input id="inputSample2" class="vds-input" type="text" placeholder="Placeholder Text" />
+                </div>
+              </div>
+              <div class="vds-form-element">
+                <label class="vds-form-element__label" for="textareaSample2">Textarea Label</label>
+                <div class="vds-form-element__control">
+                  <textarea id="textareaSample2" class="vds-textarea"></textarea>
+                </div>
+              </div>
+              <fieldset class="vds-form-element">
+                <legend class="vds-form-element__legend vds-form-element__label">Checkbox Group label</legend>
+                <div class="vds-form-element__control">
+                  <label class="vds-checkbox" for="opportunities-ownership">
+                    <input name="default" type="checkbox" id="opportunities-ownership" />
+                    <span class="vds-checkbox--faux"></span>
+                    <span class="vds-form-element__label">All opportunities owned by you</span>
+                  </label>
+                  <label class="vds-checkbox" for="contact-ownership">
+                    <input name="default" type="checkbox" id="contact-ownership" />
+                    <span class="vds-checkbox--faux"></span>
+                    <span class="vds-form-element__label">All contacts in the account owned by you</span>
+                  </label>
+                </div>
+              </fieldset>
+              <fieldset class="vds-form-element">
+                <legend class="vds-form-element__legend vds-form-element__label">Radio Group label</legend>
+                <div class="vds-form-element__control">
+                  <label class="vds-radio" for="lead">
+                    <input type="radio" name="options" id="lead" />
+                    <span class="vds-radio--faux"></span>
+                    <span class="vds-form-element__label">Lead Generation</span>
+                  </label>
+                  <label class="vds-radio" for="education">
+                    <input type="radio" name="options" id="education" />
+                    <span class="vds-radio--faux"></span>
+                    <span class="vds-form-element__label">Education Leads</span>
+                  </label>
+                </div>
+              </fieldset>
+              <div class="vds-form-element">
+                <div class="vds-form-element__control">
+                  <label class="vds-checkbox" for="agree">
+                    <input name="default" type="checkbox" id="agree" />
+                    <span class="vds-checkbox--faux"></span>
+                    <span class="vds-form-element__label">I agree to the Terms &amp; Service</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            
+            
+            
+            
+        </div>
+        
+    </div>
+        
+        
 
     <section class="block">
         <form class="form-horizontal">

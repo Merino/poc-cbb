@@ -1,5 +1,5 @@
-
-
+import copy
+from django.template import Context
 """
 
 from vesper.views import ModelAdmin
@@ -24,8 +24,7 @@ import nested_admin
 # from vesper.layouts import Tab, FieldSet, Field
 
 # Register your models here.
-
-
+from .layouts import Button
 
 # class CategoryAdmin(nested_admin.NestedModelAdmin):
 #     pass
@@ -39,20 +38,24 @@ import nested_admin
 
 class BaseAdmin(nested_admin.NestedModelAdmin):
 
+    # List View
     list_fields = []
     list_filters = []
     list_actions = []
     list_search = []
 
-    detail_layout = [
-
-    ]
-
-    detail_actions = [
-    ]
+    # Detail View
+    detail_layout = []
+    detail_actions = []
 
     # Templates
     change_form_template = 'vds_object_edit.html'
+
+    # def __init__(self, *args, **kwargs):
+    #     #self.detail_actions = []
+    #     #self.detail_layout = []
+    #
+    #     super(BaseAdmin, self).__init__(*args, **kwargs)
 
     def get_form_layout(self, request, obj=None, **kwargs):
         """
@@ -75,6 +78,48 @@ class BaseAdmin(nested_admin.NestedModelAdmin):
         form.helper.template_pack = 'vds/forms'
 
         return form
+
+    def get_detail_actions(self, request, obj=None, **kwargs):
+        return self.detail_actions
+
+
+    def changeform_view(self, request, object_id=None, form_url='', extra_context=None):
+
+        # Render Detail Actions
+        detail_actions = copy.copy(self.get_detail_actions(request=request, obj=None))
+        detail_actions.append(
+            Button('cancel', 'Back', '/admin/ssss/sssss/sss/', icon='close')
+        )
+        detail_actions.append(
+            Button('_continue', 'Save', 'submit', 'primary', icon='save')
+        )
+        detail_actions.append(
+            Button('delete', 'Delete', '/danger/ss/', 'danger', icon='trash')
+        )
+
+        detail_actions_context = []
+        for button in detail_actions:
+            detail_actions_context.append(
+                button.render(
+                    None,
+                    None,
+                    Context({})
+                )
+            )
+
+        # Render View
+        extra_context = {
+            'detail_actions': detail_actions_context,
+        }
+
+        response = super(BaseAdmin, self).changeform_view(
+                                                    request=request,
+                                                    object_id=object_id,
+                                                    form_url='',
+                                                    extra_context=extra_context
+                                                    )
+
+        return response
 
 
 # class ProductAdmin(BaseAdmin):

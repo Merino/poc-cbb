@@ -1,5 +1,5 @@
 {% extends "vds_base.html" %}
-{% load i18n admin_urls static admin_modify crispy_forms_tags %}
+{% load i18n admin_urls static admin_modify crispy_forms_tags crispy_forms_field %}
 
 {% block page %}
 
@@ -60,8 +60,17 @@
         {#            </div>#}
         {#          </div>#}
 
-                     <a class="vds-button vds-button--neutral" href="/">Cancel</a>
-                     <button class="vds-button vds-button--brand" type="submit"><i class="fa fa-floppy-o"></i> Save</button>
+
+                    {% for e in elements %}
+                        {{ e }}
+                    {% endfor %}
+
+                    {% for button in detail_actions %}
+                        {{ button }}
+                    {% endfor %}
+
+                     <!--<a class="vds-button vds-button--neutral" href="/">Cancel</a>-->
+                     <!--<button class="vds-button vds-button--brand" type="submit"><i class="fa fa-floppy-o"></i> Save</button>-->
 
                 </div>
               </div>
@@ -71,9 +80,6 @@
 
 
         <div class="vds-page-content">
-
-
-
              {% crispy adminform.form %}
         </div>
 

@@ -5,11 +5,12 @@ class ListData(models.Model):
     """
         Model to demonstrate the ListView
     """
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=50, help_text='Get a unique name')
     date = models.DateField()
     datetime = models.DateTimeField()
     decimal = models.DecimalField(decimal_places=2, max_digits=5)
-    boolean = models.BooleanField(default=True)
+    boolean = models.BooleanField(default=True, help_text='True or False')
+    select = models.CharField(choices=[('10', '10'), ('20', '20'), ('30', 'Dertig'), ('40', '40')], default=40, max_length=8)
 
     def __unicode__(self):
         return self.name

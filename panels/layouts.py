@@ -5,13 +5,14 @@ from django.template.loader import render_to_string
 from django.utils.html import conditional_escape
 
 from crispy_forms.compatibility import text_type
-from crispy_forms.utils import flatatt, TEMPLATE_PACK
+from crispy_forms.utils import flatatt
 
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import LayoutObject, Layout, Field, Button
 from crispy_forms.bootstrap import ContainerHolder, Container
 
 
+TEMPLATE_PACK = 'vds/forms'
 
 
 class TabHolder(ContainerHolder):
@@ -149,7 +150,12 @@ class Field(LayoutObject):
     def __init__(self, *args, **kwargs):
         self.fields = list(args)
         self.attrs = {}
-        self.attrs['class'] = 'vds-input'
+
+        print self.fields
+        print self.__dict__
+
+
+        #self.attrs['class'] = 'vds-input vds-select'
 
         if not hasattr(self, 'attrs'):
             self.attrs = {}
@@ -183,6 +189,13 @@ class Field(LayoutObject):
 
         self.errors = self._has_errors(form=form)
 
+        field_class =  form.fields.get(self.fields[0])
+
+        if 'choices' in field_class.widget.__dict__:
+            self.attrs['class'] = 'vds-select'
+        else:
+            self.attrs['class'] = 'vds-input '
+
         return self.get_rendered_fields(
             form, form_style, context, template_pack,
             template=template, attrs=self.attrs, extra_context=extra_context,
@@ -205,4 +218,64 @@ class Inline(LayoutObject):
 
 
 class Button(Button):
-    pass
+    """
+        Button("id", "name", "type")
+        Button("id-cnl", "Cancel", "/sss/")
+
+        Button('id-save', _("Save"), "submit", "primary")
+        Button('id-cancel', _("Cancel"), "/action/delete", style="primary")
+
+        Button('id-cancel', _("Cancel"), "/action/delete", style="danger", icon="danger")
+    """
+    template = '%s/layout/button.html'
+    input_type = 'button'
+
+    def __init__(self, name, value, link, style='secondary', *args, **kwargs):
+
+        super(Button, self).__init__(name=name, value=value, *args, **kwargs)
+
+        # Link
+        if link == 'submit':
+            self.input_type = 'submit'
+        else:
+            self.input_type = 'a'
+            self.attrs = {
+                'href': link
+            }
+
+        # Style
+        self.field_classes = 'vds-button'
+        if style == 'secondary':
+            self.field_classes += ' vds-button--neutral'
+
+        if style == 'primary':
+            self.field_classes += ' vds-button--brand'
+
+        if style == 'danger':
+            self.field_classes += ' vds-button--destructive'
+
+        # Icon
+        try:
+            self.icon = kwargs['icon']
+        except:
+            self.icon = False
+
+    def render(self, form, form_style, context, template_pack=TEMPLATE_PACK, **kwargs):
+        """
+        Renders an `<button />` if container is used as a Layout object.
+        Input button value can be a variable in context.
+        """
+        self.value = Template(text_type(self.value)).render(context)
+        template = self.get_template_name(template_pack)
+
+        self.attrs.update({
+            'class': self.field_classes,
+            'value': self.value,
+            'name': self.name,
+        })
+
+        self.flat_attrs = flatatt(self.attrs)
+
+        print kwargs
+
+        return render_to_string(template, {'button': self}, context)
