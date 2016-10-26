@@ -1,6 +1,11 @@
 {% extends "vds_object_page.html" %}
 {% load crispy_forms_tags crispy_forms_field %}
 
+{% block extrahead %}{{ block.super }}
+<script type="text/javascript" src="{% url 'admin:jsi18n' %}"></script>
+{{ media }}
+{% endblock %}
+
 {% block page-content %}
     {% crispy adminform.form %}
 {% endblock %}

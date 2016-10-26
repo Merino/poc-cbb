@@ -33,7 +33,7 @@ module.exports = function(grunt) {
                     'panels/source/apps/javascript/_apps.js'
                     ],
                 'panels/static/vesper/javascript/libs.js': [
-                    'panels/source/vendors/jquery/jquery-2.2.0.min.js',
+                    'panels/source/vendors/jquery/jquery-3.1.1.min.js',
                     //'panels/source/vendors/bootstrap/assets/javascripts/bootstrap.min.js',
                     //'panels/source/vendors/turbolinks/turbolinks.js'
                     ],
@@ -87,6 +87,14 @@ module.exports = function(grunt) {
             dest: 'panels/static/vesper/image/',
             filter: 'isFile',
             flatten: true
+        },
+        tinymce: {
+            expand: true,
+            cwd: 'panels/source/vendors/tinymce-4.4.3/js/tinymce/',
+            src: [
+                '**',
+            ],
+            dest: 'panels/static/vesper/libs/tinymce/',
         }
     }
   });

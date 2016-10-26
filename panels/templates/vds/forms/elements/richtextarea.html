@@ -1,0 +1,12 @@
+<textarea {{ attrs|safe }}>{{ value }}</textarea>
+<script type="text/javascript">
+
+tinymce.init({
+  selector: 'textarea#{{ id }}',
+  plugins:['table', 'code'],
+  toolbar: 'bold italic underline | bullist numlist | undo redo | table | code',
+  menubar: false,
+  statusbar: false
+});
+
+</script>

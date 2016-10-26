@@ -10,12 +10,13 @@ from vesper.forms import Field
 
 from django.contrib import admin
 from django.core import urlresolvers
-from django.conf.urls import patterns, url
+from django.conf.urls import url
+from django.db import models
 from django.views.generic.base import TemplateView
 from django.views.generic.edit import FormView
 
 from .layouts import FormHelper, Layout, TabHolder, Tab, Fieldset, Field
-
+from .widgets import ForeignKeyWidget
 
 
 import nested_admin
@@ -36,6 +37,15 @@ from .layouts import Button
 # class CategoryItemAdminInline(nested_admin.NestedStackedInline):
 #     model = CategoryItem
 #     extra = 0
+
+class StackedInlineAdmin(nested_admin.NestedStackedInline):
+    template = 'vds_inline_stacked.html'
+
+    extra = 0
+
+    formfield_overrides = {
+        models.ForeignKey: {'widget': ForeignKeyWidget},
+    }
 
 
 class BaseAdmin(TemplateView):
@@ -81,6 +91,10 @@ class ModelAdmin(nested_admin.NestedModelAdmin):
     # Templates
     change_form_template = 'vds_object_edit.html'
 
+    formfield_overrides = {
+        models.ForeignKey: {'widget': ForeignKeyWidget},
+    }
+
     #   Views Functions
     # ---------------------
     def get_urls(self):
@@ -93,10 +107,7 @@ class ModelAdmin(nested_admin.NestedModelAdmin):
                 url(view._regex, view._callback.as_view(admin=self), name=name)
             )
 
-        my_urls = patterns('',
-            *extra_urls
-        )
-        return my_urls + urls
+        return extra_urls + urls
 
     def get_url_reverse(self, name, *args):
         info = self.model._meta.app_label, self.model._meta.model_name, name
@@ -154,6 +165,20 @@ class ModelAdmin(nested_admin.NestedModelAdmin):
         """
         return self.detail_actions
 
+    def _render_buttons(self, buttons):
+        render_buttons = []
+        for button in buttons:
+            render_buttons.append(
+                button.render(
+                    None,
+                    None,
+                    Context({})
+                )
+            )
+
+        return render_buttons
+
+
     def changeform_view(self, request, object_id=None, form_url='', extra_context=None):
         # Get Object
         obj = self.get_object(request=request, object_id=object_id)
@@ -162,14 +187,13 @@ class ModelAdmin(nested_admin.NestedModelAdmin):
         detail_header = self.get_detail_header(request=request, obj=obj)
 
         # Detail Actions
-        info = self.model._meta.app_label, self.model._meta.model_name
         detail_actions = []
         if obj:
-            url_delete = urlresolvers.reverse('admin:%s_%s_delete' % info, args=[object_id])
+            url_delete = self.get_url_reverse('delete', obj.pk)
             detail_actions.append(
                 Button('delete', 'Delete', url_delete, 'danger', icon='trash')
             )
-        url_index = urlresolvers.reverse('admin:%s_%s_changelist' % info)
+        url_index = self.get_url_reverse('changelist')
         detail_actions.append(
             Button('cancel', 'Back', url_index, icon='close')
         )
@@ -180,18 +204,9 @@ class ModelAdmin(nested_admin.NestedModelAdmin):
         )
 
         # Render View
-        detail_actions_context = []
-        for button in detail_actions:
-            detail_actions_context.append(
-                button.render(
-                    None,
-                    None,
-                    Context({})
-                )
-            )
         extra_context = {
             'detail_header': detail_header,
-            'detail_actions': detail_actions_context,
+            'detail_actions': self._render_buttons(buttons=detail_actions),
         }
 
         response = super(ModelAdmin, self).changeform_view(

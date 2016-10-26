@@ -24,6 +24,9 @@
         <script src="/static/vesper/javascript/libs.js?{{ BUILD }}"></script>
         <script src="/static/vesper/javascript/apps.js?{{ BUILD }}"></script>
 
+        {% block extrahead %}
+        {% endblock %}
+
         {% load staticfiles %}
     </head>
     <body>

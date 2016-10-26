@@ -325,6 +325,10 @@ html {
   margin-bottom: 0.5rem;
 }
 
+.related-widget-wrapper-link {
+  display: none;
+}
+
 .vds-notify {
   border-radius: 3px;
   border: 1px solid #3572b0;

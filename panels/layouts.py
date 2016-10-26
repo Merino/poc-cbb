@@ -151,12 +151,6 @@ class Field(LayoutObject):
         self.fields = list(args)
         self.attrs = {}
 
-        print self.fields
-        print self.__dict__
-
-
-        #self.attrs['class'] = 'vds-input vds-select'
-
         if not hasattr(self, 'attrs'):
             self.attrs = {}
 
@@ -207,6 +201,7 @@ class Inline(LayoutObject):
 
     def __init__(self, name, **kwargs):
         self.name = name
+        self.errors = False
         super(LayoutObject, self).__init__(**kwargs)
 
     def render(self, form, form_style, context, template_pack=None, **kwargs):
@@ -275,7 +270,5 @@ class Button(Button):
         })
 
         self.flat_attrs = flatatt(self.attrs)
-
-        print kwargs
 
         return render_to_string(template, {'button': self}, context)

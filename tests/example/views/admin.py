@@ -5,11 +5,11 @@ from django.core import urlresolvers
 
 # from vesper.apps import site
 # from vesper.views import ModelAdmin
-from panels.layouts import Tab, Fieldset, Field, Button
-from panels.views import ModelAdmin, BaseAdmin, EditAdmin
+from panels.layouts import Tab, Fieldset, Field, Button, Inline
+from panels.views import ModelAdmin, BaseAdmin, EditAdmin, StackedInlineAdmin
 
 
-from .models import ListData
+from .models import ListData, GlobalA, GlobalB, NestedA, NestedB1
 
 
 class ExtraViewAdmin(EditAdmin):
@@ -18,7 +18,11 @@ class ExtraViewAdmin(EditAdmin):
 
 
 
+
+
 class ListDataAdmin(ModelAdmin):
+
+
 
     detail_layout = [
         Tab('General',
@@ -35,6 +39,7 @@ class ListDataAdmin(ModelAdmin):
             Fieldset('Time',
                 Field('datetime'),
                 Field('decimal'),
+                Field('description'),
             ),
         ),
     ]
@@ -63,5 +68,36 @@ class ListDataAdmin(ModelAdmin):
     #     return header
 
 
+class NestedB1InlineAdmin(StackedInlineAdmin):
+    model = NestedB1
 
+
+
+class NestedAAdmin(ModelAdmin):
+
+    inlines = [
+        NestedB1InlineAdmin
+    ]
+
+    detail_layout = [
+        Tab('General',
+             Fieldset('Name',
+                Field('name'),
+                Field('global_a'),
+                Field('decimal'),
+                Field('boolean'),
+            ),
+            Fieldset('Inline',
+                Inline('NestedB1InlineAdmin')
+            )
+        )
+    ]
+
+
+# Field Test
 admin.site.register(ListData, ListDataAdmin)
+
+# Relation Test
+admin.site.register(GlobalA)
+admin.site.register(GlobalB)
+admin.site.register(NestedA, NestedAAdmin)
