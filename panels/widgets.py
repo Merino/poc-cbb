@@ -2,7 +2,15 @@ from django.forms.widgets import Textarea, Input, Select
 from django.forms.utils import flatatt
 from django.template.loader import render_to_string
 
-from django.contrib.admin.widgets import ForeignKeyRawIdWidget
+
+class InputWidget(Input):
+    """
+    """
+    def __init__(self, attrs=None):
+        super(InputWidget, self).__init__(attrs)
+        self.attrs.update({
+            'class': 'vds-input'
+        })
 
 
 class ForeignKeyWidget(Select):

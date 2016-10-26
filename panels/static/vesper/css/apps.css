@@ -329,6 +329,11 @@ html {
   display: none;
 }
 
+.djn-tr .original {
+  position: absolute;
+  left: -100%;
+}
+
 .vds-notify {
   border-radius: 3px;
   border: 1px solid #3572b0;

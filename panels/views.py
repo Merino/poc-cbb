@@ -16,7 +16,7 @@ from django.views.generic.base import TemplateView
 from django.views.generic.edit import FormView
 
 from .layouts import FormHelper, Layout, TabHolder, Tab, Fieldset, Field
-from .widgets import ForeignKeyWidget
+from .widgets import ForeignKeyWidget, InputWidget
 
 
 import nested_admin
@@ -38,6 +38,16 @@ from .layouts import Button
 #     model = CategoryItem
 #     extra = 0
 
+class TabularInlineAdmin(nested_admin.NestedTabularInline):
+    extra = 0
+
+    template = 'vds_inline_tabular.html'
+
+    formfield_overrides = {
+        models.ForeignKey: {'widget': ForeignKeyWidget},
+        models.CharField: {'widget': InputWidget},
+    }
+
 class StackedInlineAdmin(nested_admin.NestedStackedInline):
     template = 'vds_inline_stacked.html'
 
@@ -45,6 +55,7 @@ class StackedInlineAdmin(nested_admin.NestedStackedInline):
 
     formfield_overrides = {
         models.ForeignKey: {'widget': ForeignKeyWidget},
+        models.CharField: {'widget': InputWidget},
     }
 
 

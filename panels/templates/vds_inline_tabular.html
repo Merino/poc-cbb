@@ -1,5 +1,6 @@
 {% load admin_urlname admin_urlquote from admin_urls %}
 {% load i18n nested_admin %}
+{% load crispy_forms_tags crispy_forms_field %}
 {% with inline_admin_formset.formset.is_nested as is_nested %}
 
 {% with inline_admin_formset.opts as inline_opts %}
@@ -11,16 +12,18 @@
     <div class="tabular inline-related">
     <fieldset class="module {{ inline_admin_formset.classes }}">
 
-    <h2>
-        {% if inline_admin_formset.opts.title %}{{ inline_admin_formset.opts.title }}{% else %}{{ inline_admin_formset.opts.verbose_name_plural|capfirst }}{% endif %}
-    </h2>
+    <!--<h2>-->
+        <!--{% if inline_admin_formset.opts.title %}{{ inline_admin_formset.opts.title }}{% else %}{{ inline_admin_formset.opts.verbose_name_plural|capfirst }}{% endif %}-->
+    <!--</h2>-->
 
     {{ inline_admin_formset.formset.management_form }}
     {{ inline_admin_formset.formset.non_form_errors }}
 
-    <table class="djn-items inline-related djn-table{% ifsuit %} table table-bordered table-condensed table-striped{% else %} tabular{% endifsuit %}">
+
+
+    <table class="djn-items inline-related djn-table{% ifsuit %} table table-bordered table-condensed table-striped{% else %} tabular{% endifsuit %} vds-table vds-table--bordered vds-table--cell-buffer">
       <thead class="djn-module djn-thead djn-item">
-          <tr>
+          <tr class="vds-text-title--caps">
               {% ifdj110 %}<th class="original"></th>{% endifdj110 %}
               {% for field in inline_admin_formset.fields %}
                   {% if not field.widget.is_hidden %}
@@ -41,6 +44,8 @@
                 data-is-initial="{% if inline_admin_form.pk_field.field.value %}true{% else %}false{% endif %}"
                 {% endif %}
                 id="{{ inline_admin_formset.formset.prefix }}-{% if forloop.last %}empty{% else %}{%if is_nested %}{% endif %}{{ inline_admin_form.form|form_index }}{% endif %}">
+
+
 
             {% if inline_admin_form.form.non_field_errors %}
             <tr><td class="djn-td" colspan="{{ inline_admin_form|cell_count }}">
@@ -72,14 +77,17 @@
                 {% for fieldset in inline_admin_form %}
                     {% for line in fieldset %}
                         {% for field in line %}
-                            {% if field.field.is_hidden %} {{ field.field }} {% endif %}
+                            {% if field.field.is_hidden %} {{ field.field }} HERE {% crispy_field field.field %} {% endif %}
                         {% endfor %}
                     {% endfor %}
                 {% endfor %}
                 {% endspaceless %}
                 </td>
 
+
+
                 {% for fieldset in inline_admin_form %}
+
                     {% for line in fieldset %}
                         {% for field in line %}
                             {% if not field.field.is_hidden %}
@@ -94,7 +102,7 @@
                                             {{ field.field.errors.as_ul }}
                                         {% endifsuit %}
                                         {% endif %}
-                                        {{ field.field }}
+                                            {{ field.field }}
                                     {% endif %}
                                 </td>
                             {% endif %}
@@ -126,7 +134,7 @@
                 <tbody>
                     <tr class="add-row">
                         <td colspan="{{ inline_admin_form|cell_count }}" class="djn-add-item">
-                            <a href="javascript://" class="add-handler djn-add-handler {{ inline_admin_formset.handler_classes|join:" " }}">{% blocktrans with inline_admin_formset.opts.verbose_name|strip_parent_name:inline_opts.verbose_name|title as verbose_name %}Add another {{ verbose_name }}{% endblocktrans %}</a>
+                            <a href="javascript://" class="add-handler djn-add-handler {{ inline_admin_formset.handler_classes|join:" " }} vds-button vds-button--brand">{% blocktrans with inline_admin_formset.opts.verbose_name|strip_parent_name:inline_opts.verbose_name|title as verbose_name %}Add another {{ verbose_name }}{% endblocktrans %}</a>
                         </td>
                     </tr>
                 </tbody>

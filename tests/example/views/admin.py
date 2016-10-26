@@ -6,10 +6,10 @@ from django.core import urlresolvers
 # from vesper.apps import site
 # from vesper.views import ModelAdmin
 from panels.layouts import Tab, Fieldset, Field, Button, Inline
-from panels.views import ModelAdmin, BaseAdmin, EditAdmin, StackedInlineAdmin
+from panels.views import ModelAdmin, BaseAdmin, EditAdmin, StackedInlineAdmin, TabularInlineAdmin
 
 
-from .models import ListData, GlobalA, GlobalB, NestedA, NestedB1
+from .models import ListData, GlobalA, GlobalB, NestedA, NestedB1, NestedC1
 
 
 class ExtraViewAdmin(EditAdmin):
@@ -68,8 +68,15 @@ class ListDataAdmin(ModelAdmin):
     #     return header
 
 
-class NestedB1InlineAdmin(StackedInlineAdmin):
+class NestedC1InlineAdmin(TabularInlineAdmin):
+    model = NestedC1
+
+class NestedB1InlineAdmin(TabularInlineAdmin):
     model = NestedB1
+
+    inlines = [
+        NestedC1InlineAdmin
+    ]
 
 
 

@@ -20,4 +20,5 @@ urlpatterns = patterns('',
     url(r'^$', FoundationIndex.as_view()),
 
     url(r'^views/', admin.site.urls),
+    url(r'^nested_admin/', include('nested_admin.urls')),
 )

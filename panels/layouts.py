@@ -183,12 +183,15 @@ class Field(LayoutObject):
 
         self.errors = self._has_errors(form=form)
 
+
         field_class =  form.fields.get(self.fields[0])
+
 
         if 'choices' in field_class.widget.__dict__:
             self.attrs['class'] = 'vds-select'
         else:
-            self.attrs['class'] = 'vds-input '
+            self.attrs['class'] = 'vds-input'
+
 
         return self.get_rendered_fields(
             form, form_style, context, template_pack,
@@ -200,6 +203,7 @@ class Field(LayoutObject):
 class Inline(LayoutObject):
 
     def __init__(self, name, **kwargs):
+        self.fields = list()
         self.name = name
         self.errors = False
         super(LayoutObject, self).__init__(**kwargs)
