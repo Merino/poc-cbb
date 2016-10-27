@@ -38,6 +38,32 @@ from .layouts import Button
 #     model = CategoryItem
 #     extra = 0
 
+
+# class HeaderAdminMixin(object):
+#     """
+#     """
+#
+#     page_title = None
+#
+#     header_title = None
+#     header_subtitle = None
+#     header_icon = None
+#     header_icon_color = None
+#
+#     header_actions = []
+#
+#     def get_header(self, request, obj=None, actions=[], **kwargs):
+#         pass
+#
+#     def _render_header(self, render):
+#
+#         context = {}
+#
+#         return context
+#
+
+
+
 class TabularInlineAdmin(nested_admin.NestedTabularInline):
     extra = 0
 
@@ -59,29 +85,110 @@ class StackedInlineAdmin(nested_admin.NestedStackedInline):
     }
 
 
+
 class BaseAdmin(TemplateView):
+    """
+    """
     pass
 
 
-class EditAdmin(TemplateView):
+class EditAdmin(FormView):
+    """
+    """
 
     def __init__(self, **kwargs):
-        super(TemplateView, self).__init__(**kwargs)
-
+        super(EditAdmin, self).__init__(**kwargs)
         self.model = self.admin.model
 
-    def get(self, request, object_id, *args, **kwargs):
-        obj = self.admin.get_object(request=request, object_id=object_id)
+    def get_form_layout(self):
+        """
+        """
+        return self.form_layout
 
-        header = self.admin.get_detail_header(request, obj=obj)
+    def get_form(self, form_class=None):
+        """
+        Returns an instance of the form to be used in this view.
+        """
+        if form_class is None:
+            form_class = self.get_form_class()
+        form = form_class(**self.get_form_kwargs())
+
+        #form = super(EditAdmin, self).get_form()
+
+        form.helper = FormHelper()
+        form.helper.form_tag = False
+        form.helper.layout = self.get_form_layout()
+        form.helper.template_pack = 'vds/forms'
+
+        return form
+
+    def get_success_url(self):
+        return self.admin.get_url_reverse('change', self.object.pk)
+
+    def get_object(self, request, object_id):
+        """
+        """
+        return self.admin.get_object(request=request, object_id=object_id)
+
+    def get_context_data(self, request=None, **kwargs):
+
+        header = self.admin.get_detail_header(request, obj=self.object)
         header.subtitle = 'Mail Payment'
+
+        buttons = [
+            Button(name='submit', value='Submit', link='submit', style='primary'),
+            Button(name='submit', value='Submit', link='submit', style='brand'),
+        ]
 
         context = {
             'detail_header': header,
-            'detail_actions': ['ss']
+            'detail_actions': self._render_buttons(buttons),
+            'object': self.object
         }
 
-        return super(EditAdmin, self).get(request, **context)
+        kwargs.update(context)
+
+        context = super(EditAdmin, self).get_context_data(**kwargs)
+
+        return context
+
+    def get(self, request, object_id, *args, **kwargs):
+        """
+        """
+        self.object = self.get_object(request=request, object_id=object_id)
+
+
+
+        context = self.get_context_data(request=request)
+
+        print context
+
+        return self.render_to_response(context)
+
+        #return super(EditAdmin, self).get(request, **context)
+
+    def post(self, request, object_id, *args, **kwargs):
+        """
+        """
+        self.object = self.get_object(request=request, object_id=object_id)
+
+        kwargs = self.get_context_data(request=request)
+
+        return super(EditAdmin, self).post(request, *args, **kwargs)
+
+
+    def _render_buttons(self, buttons):
+        render_buttons = []
+        for button in buttons:
+            render_buttons.append(
+                button.render(
+                    None,
+                    None,
+                    Context({})
+                )
+            )
+
+        return render_buttons
 
 
 class ModelAdmin(nested_admin.NestedModelAdmin):

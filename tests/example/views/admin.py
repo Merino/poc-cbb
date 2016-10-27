@@ -5,17 +5,52 @@ from django.core import urlresolvers
 
 # from vesper.apps import site
 # from vesper.views import ModelAdmin
-from panels.layouts import Tab, Fieldset, Field, Button, Inline
+from panels.layouts import Tab, Fieldset, Field, Button, Inline, Layout
 from panels.views import ModelAdmin, BaseAdmin, EditAdmin, StackedInlineAdmin, TabularInlineAdmin
 
 
 from .models import ListData, GlobalA, GlobalB, NestedA, NestedB1, NestedC1
+from .forms import CreateShipmentForm
 
 
 class ExtraViewAdmin(EditAdmin):
     admin = None
     template_name = 'views/extra.html'
+    form_class = CreateShipmentForm
+    form_layout = Layout(
+                Fieldset('Shipment',
+                    Field('channel'),
+                    Field('shipment_number'),
+                    Field('parcels'),
+                    Field('reference'),
 
+                )
+            )
+
+    def get_form_initial(self):
+        """
+        """
+        initial = {
+            'reference': self.object.name,
+        }
+
+        return initial
+
+    def get_form_kwargs(self):
+        """
+        """
+        kwargs = {
+            'choices_channel': [(1, 'Channel 1'), (2, 'Channel 2')],
+            'choices_shipment_method': [(2, 'Shipment Method A'), (100, 'Shipment Method B')]
+        }
+
+        return kwargs
+
+    def form_valid(self, form):
+        """
+        """
+
+        return super(ExtraViewAdmin, self).form_valid(form)
 
 
 
