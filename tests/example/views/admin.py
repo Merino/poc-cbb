@@ -10,7 +10,7 @@ from panels.views import ModelAdmin, BaseAdmin, EditAdmin, StackedInlineAdmin, T
 
 
 from .models import ListData, GlobalA, GlobalB, NestedA, NestedB1, NestedC1
-from .forms import CreateShipmentForm
+from .forms import CreateShipmentForm, CreatePackageForm
 
 
 class ExtraViewAdmin(EditAdmin):
@@ -26,6 +26,10 @@ class ExtraViewAdmin(EditAdmin):
 
                 )
             )
+
+    inlines = [
+        CreatePackageForm
+    ]
 
     def get_form_initial(self):
         """

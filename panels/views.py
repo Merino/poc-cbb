@@ -12,6 +12,7 @@ from django.contrib import admin
 from django.core import urlresolvers
 from django.conf.urls import url
 from django.db import models
+from django.forms import formset_factory
 from django.views.generic.base import TemplateView
 from django.views.generic.edit import FormView
 
@@ -96,6 +97,8 @@ class EditAdmin(FormView):
     """
     """
 
+    inlines = []
+
     def __init__(self, **kwargs):
         super(EditAdmin, self).__init__(**kwargs)
         self.model = self.admin.model
@@ -149,6 +152,17 @@ class EditAdmin(FormView):
         kwargs.update(context)
 
         context = super(EditAdmin, self).get_context_data(**kwargs)
+
+        formsets = []
+
+        if self.inlines:
+            for inline in self.inlines:
+                formset = formset_factory(inline, extra=0)
+                formsets.append(formset())
+
+        context.update({
+            'formsets':formsets
+        })
 
         return context
 

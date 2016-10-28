@@ -4,4 +4,11 @@
 
 {% block page-content %}
     {% crispy form %}
+
+    {% for formset in formsets %}
+        {{ formset.empty_form|crispy }}
+        {% crispy formset %}
+    {% endfor %}
+
+
 {% endblock %}
