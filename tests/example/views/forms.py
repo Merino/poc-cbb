@@ -18,6 +18,7 @@ class CreateShipmentForm(forms.Form):
         self.fields['channel'].choices = choices_channel
         self.fields['shipment_method'].choices = choices_shipment_method
 
+
 class CreatePackageForm(forms.Form):
     BOX = 'BOX'
     PALLET = 'PALLET'

@@ -12,6 +12,7 @@ from django.contrib import admin
 from django.core import urlresolvers
 from django.conf.urls import url
 from django.db import models
+from django.http import HttpResponseRedirect
 from django.forms import formset_factory
 from django.views.generic.base import TemplateView
 from django.views.generic.edit import FormView
@@ -125,6 +126,18 @@ class EditAdmin(FormView):
 
         return form
 
+    def get_inlines(self):
+        """
+        """
+        inlines = []
+
+        if self.inlines:
+            for inline in self.inlines:
+                instance = inline(request=self.request)
+                inlines.append(instance)
+
+        return inlines
+
     def get_success_url(self):
         return self.admin.get_url_reverse('change', self.object.pk)
 
@@ -133,9 +146,9 @@ class EditAdmin(FormView):
         """
         return self.admin.get_object(request=request, object_id=object_id)
 
-    def get_context_data(self, request=None, **kwargs):
+    def get_context_data(self, **kwargs):
 
-        header = self.admin.get_detail_header(request, obj=self.object)
+        header = self.admin.get_detail_header(request=self.request, obj=self.object)
         header.subtitle = 'Mail Payment'
 
         buttons = [
@@ -146,7 +159,7 @@ class EditAdmin(FormView):
         context = {
             'detail_header': header,
             'detail_actions': self._render_buttons(buttons),
-            'object': self.object
+            'object': self.object,
         }
 
         kwargs.update(context)
@@ -155,13 +168,10 @@ class EditAdmin(FormView):
 
         formsets = []
 
-        if self.inlines:
-            for inline in self.inlines:
-                formset = formset_factory(inline, extra=0)
-                formsets.append(formset())
+        inlines = self.get_inlines()
 
         context.update({
-            'formsets':formsets
+            'inline_formsets': inlines
         })
 
         return context
@@ -173,7 +183,7 @@ class EditAdmin(FormView):
 
 
 
-        context = self.get_context_data(request=request)
+        context = self.get_context_data()
 
         print context
 
@@ -186,9 +196,36 @@ class EditAdmin(FormView):
         """
         self.object = self.get_object(request=request, object_id=object_id)
 
-        kwargs = self.get_context_data(request=request)
+        kwargs = self.get_context_data()
 
-        return super(EditAdmin, self).post(request, *args, **kwargs)
+        form = self.get_form()
+        formsets = [inline.get_formset() for inline in self.get_inlines()]
+
+        if form.is_valid() and all([f.is_valid() for f in formsets]):
+
+            for f in formsets:
+                form.cleaned_data[f.prefix] = f.cleaned_data
+
+            return self.form_valid(form=form)
+        else:
+            return self.form_invalid(form=form)
+
+
+    # def form_valid(self, form, formsets):
+    #     """
+    #     If the form is valid, redirect to the supplied URL.
+    #     """
+    #
+    #     print form.cleaned_data
+    #
+    #     return HttpResponseRedirect(self.get_success_url())
+    #
+    # def form_invalid(self, form, formsets):
+    #     """
+    #     If the form is invalid, re-render the context data with the
+    #     data-filled form and errors.
+    #     """
+    #     return self.render_to_response(self.get_context_data())
 
 
     def _render_buttons(self, buttons):

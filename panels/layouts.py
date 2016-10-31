@@ -209,11 +209,19 @@ class Inline(LayoutObject):
         super(LayoutObject, self).__init__(**kwargs)
 
     def render(self, form, form_style, context, template_pack=None, **kwargs):
-        for inline_admin_formset in context['inline_admin_formsets']:
-            if self.name == inline_admin_formset.opts.__class__.__name__:
-                context['inline_admin_formset'] = inline_admin_formset
-                self.template = inline_admin_formset.opts.template
-                return render_to_string(self.template, context)
+
+        try:
+            for inline_admin_formset in context['inline_admin_formsets']:
+                if self.name == inline_admin_formset.opts.__class__.__name__:
+                    context['inline_admin_formset'] = inline_admin_formset
+                    self.template = inline_admin_formset.opts.template
+                    return render_to_string(self.template, context)
+        except:
+            for inline_formset in context['inline_formsets']:
+                if self.name == inline_formset.name:
+                    context['formset'] = inline_formset.get_formset()
+                    self.template = inline_formset.template_name
+                    return render_to_string(self.template, context)
 
 
 class Button(Button):
