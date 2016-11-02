@@ -186,7 +186,6 @@ class Field(LayoutObject):
 
         field_class =  form.fields.get(self.fields[0])
 
-
         if 'choices' in field_class.widget.__dict__:
             self.attrs['class'] = 'vds-select'
         else:
@@ -201,6 +200,8 @@ class Field(LayoutObject):
 
 
 class Inline(LayoutObject):
+    """
+    """
 
     def __init__(self, name, **kwargs):
         self.fields = list()
@@ -219,8 +220,13 @@ class Inline(LayoutObject):
         except:
             for inline_formset in context['inline_formsets']:
                 if self.name == inline_formset.name:
-                    context['formset'] = inline_formset.get_formset()
-                    self.template = inline_formset.template_name
+                    formset = inline_formset.get_formset()
+
+                    print formset.__dict__
+
+                    context['inline_formset'] = formset
+
+                    self.template = 'vds/forms/inline/base.html'
                     return render_to_string(self.template, context)
 
 

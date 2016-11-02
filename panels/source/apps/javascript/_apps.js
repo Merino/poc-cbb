@@ -1,19 +1,7 @@
-//// Back Cash of every thing
-//$(function() {
-//    $( document ).ready(function() {
-//        $(window).bind("pageshow", function(event) {
-//            if (event.originalEvent.persisted) {
-//                window.location.reload()
-//            }
-//        });
-//    });
-//});
 
 // JavaScript Tabs
 $(function() {
     $( document ).ready(function() {
-
-
 
         $('.vds-tabs--default .vds-tabs--default__item').on('click', function () {
             // Hide all tabs

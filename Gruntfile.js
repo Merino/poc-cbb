@@ -34,6 +34,7 @@ module.exports = function(grunt) {
                     ],
                 'panels/static/vesper/javascript/libs.js': [
                     'panels/source/vendors/jquery/jquery-3.1.1.min.js',
+                    'panels/source/vendors/django-1.9/javascript/inlines.js',
                     //'panels/source/vendors/bootstrap/assets/javascripts/bootstrap.min.js',
                     //'panels/source/vendors/turbolinks/turbolinks.js'
                     ],

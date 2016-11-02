@@ -16,7 +16,7 @@ class InputWidget(Input):
 class ForeignKeyWidget(Select):
     """
     """
-    template_name = 'vds/forms/elements/foreignkey.html'
+    template_name = 'vds/forms/widgets/foreignkey.html'
 
     def render(self, name, value, attrs=None):
 
@@ -27,13 +27,12 @@ class ForeignKeyWidget(Select):
         html = super(ForeignKeyWidget, self).render(name, value, attrs)
 
         return html
-    #
-    #     print self.__dict__
+
 
 class RichTextareaWidget(Textarea):
     """
     """
-    template_name = 'vds/forms/elements/richtextarea.html'
+    template_name = 'vds/forms/widgets/richtextarea.html'
 
     class Media:
         js = (

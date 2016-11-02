@@ -1,8 +1,21 @@
 {% load crispy_forms_tags crispy_forms_field %}
+{% load i18n admin_urls admin_static %}
 
-<div class="form-empty">
-    {{ formset.empty_from }}
-</div>
-<div class="empty">
- {%  crispy formset formset.helper %}
+<div class="js-inline-admin-formset inline-group"
+     id="{{ inline_formset.prefix }}-group"
+     data-inline-type="tabular"
+     data-inline-formset="{{ inline_formset.data_inline_formset }}">
+
+    <div id="{{ inline_formset.prefix }}-group" class="tabular inline-related">
+
+        <!-- Management Form -->
+        {{ inline_formset.management_form }}
+
+
+
+        <div class="in">
+            {% crispy inline_formset inline_formset.helper %}
+        </div>
+    </div>
+
 </div>

@@ -1,106 +1,51 @@
+from __future__ import unicode_literals
+
+
+import json
+
 from django.contrib import admin
 from django.conf.urls import patterns, url
 from django.core import urlresolvers
+from django.template.defaultfilters import capfirst
+from django.utils.translation import ugettext, ugettext_lazy as _
 
 
 # from vesper.apps import site
 # from vesper.views import ModelAdmin
 from panels.layouts import Tab, Fieldset, Field, Button, Inline, Layout, FormHelper
-from panels.views import ModelAdmin, BaseAdmin, EditAdmin, StackedInlineAdmin, TabularInlineAdmin
+from panels.views import ModelAdminView, TabularModelAdminInline, FormAdminView, TabularFormAdminInline, TemplateAdminView
 
 
 from .models import ListData, GlobalA, GlobalB, NestedA, NestedB1, NestedC1
 from .forms import CreateShipmentForm, CreatePackageForm
 
-from django.forms import formset_factory
 
 
-class FormsetView(object):
+class PageAdminView(TemplateAdminView):
+    admin = None
+    template_name = 'views/base.html'
+
+
+class CreatePackageInline(TabularFormAdminInline):
     """
-        Base Inline form view
     """
-    name = None
-    template_name = 'vds/forms/inline/base.html'
-    form_class = None
-    form_layout = None
-    extra = 1
-
-    can_order = False
-    can_delete = False
-
-    def __init__(self, request):
-        """
-        """
-        self.request = request
-
-    def get_formset_kwarg(self, **kwargs):
-        """
-        """
-
-        if self.request.method in ('POST', 'PUT'):
-            kwargs.update({
-                'data': self.request.POST,
-                'files': self.request.FILES,
-            })
-
-        return kwargs
-
-    def get_formset_initial(self):
-        """
-        """
-        return [
-            {'packages': ''}
-        ]
-
-    def get_formset_class(self):
-        """
-        """
-        formset_class = formset_factory(
-                    form=self.form_class,
-                    extra=self.extra,
-        )
-
-        return formset_class
-
-    def get_formset(self, **kwargs):
-        """
-        """
-        kwargs = self.get_formset_kwarg()
-        kwargs['initial'] = self.get_formset_initial()
-        kwargs['prefix'] = self.name
-
-        formset_class = self.get_formset_class()
-
-        formset_instance = formset_class(**kwargs)
-        formset_instance.helper = FormHelper()
-        formset_instance.helper.form_tag = False
-        formset_instance.helper.layout = self.get_formset_layout()
-        formset_instance.helper.template_pack = 'vds/forms'
-
-        return formset_instance
-
-    def get_formset_layout(self):
-        """
-        """
-        return self.form_layout
-
-
-
-class CreatePackageInline(FormsetView):
     name = 'packages'
 
     form_class = CreatePackageForm
-    from_layout = Layout(
+    form_layout = Layout(
         Field('length'),
-        Field('width')
+        Field('width'),
+        Field('height'),
+        Field('weight')
     )
 
 
-class ExtraViewAdmin(EditAdmin):
-    admin = None
+class ExtraViewAdmin(FormAdminView):
+    """
+    """
     template_name = 'views/extra.html'
     form_class = CreateShipmentForm
-    form_layout =   Layout(
+    form_layout =  Layout(
                         Fieldset('Shipment',
                             Field('channel'),
                             Field('shipment_number'),
@@ -111,7 +56,7 @@ class ExtraViewAdmin(EditAdmin):
                         Fieldset('Packages',
                             Inline('packages')
                         )
-                    )
+                  )
 
     inlines = [
         CreatePackageInline
@@ -140,13 +85,15 @@ class ExtraViewAdmin(EditAdmin):
     def form_valid(self, form):
         """
         """
-
         print form.cleaned_data
 
-        return super(ExtraViewAdmin, self).form_valid(form=form)
+        return self.form_invalid(form=form)
 
 
-class ListDataAdmin(ModelAdmin):
+
+
+
+class ListDataAdmin(ModelAdminView):
 
 
 
@@ -171,6 +118,7 @@ class ListDataAdmin(ModelAdmin):
     ]
 
     views = [
+        url(r'page/$', PageAdminView, name='page'),
         url(r'^(.+)/action/create-shipment/$', ExtraViewAdmin, name='action_shipment'),
     ]
 
@@ -194,10 +142,10 @@ class ListDataAdmin(ModelAdmin):
     #     return header
 
 
-class NestedC1InlineAdmin(TabularInlineAdmin):
+class NestedC1InlineAdmin(TabularModelAdminInline):
     model = NestedC1
 
-class NestedB1InlineAdmin(TabularInlineAdmin):
+class NestedB1InlineAdmin(TabularModelAdminInline):
     model = NestedB1
 
     inlines = [
@@ -206,7 +154,7 @@ class NestedB1InlineAdmin(TabularInlineAdmin):
 
 
 
-class NestedAAdmin(ModelAdmin):
+class NestedAAdmin(ModelAdminView):
 
     inlines = [
         NestedB1InlineAdmin
