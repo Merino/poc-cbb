@@ -11,7 +11,9 @@ from django.utils.translation import ugettext, ugettext_lazy as _
 
 
 # from vesper.apps import site
+# from vds.apps import site
 # from vesper.views import ModelAdmin
+
 from panels.layouts import Tab, Fieldset, Field, Button, Inline, Layout, FormHelper
 from panels.views import ModelAdminView, TabularModelAdminInline, FormAdminView, TabularFormAdminInline, TemplateAdminView
 
@@ -43,7 +45,7 @@ class CreatePackageInline(TabularFormAdminInline):
 class ExtraViewAdmin(FormAdminView):
     """
     """
-    template_name = 'views/extra.html'
+    #template_name = 'views/extra.html'
     form_class = CreateShipmentForm
     form_layout =  Layout(
                         Fieldset('Shipment',

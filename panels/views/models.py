@@ -1,3 +1,4 @@
+import copy
 import json
 
 from django.contrib import admin
@@ -12,6 +13,7 @@ from django.views.generic.edit import FormView
 from django.contrib import admin
 from django.conf.urls import patterns, url
 from django.core import urlresolvers
+from django.template import Context
 from django.template.defaultfilters import capfirst
 from django.utils.translation import ugettext, ugettext_lazy as _
 
@@ -25,7 +27,7 @@ import nested_admin
 class TabularModelAdminInline(nested_admin.NestedTabularInline):
     extra = 0
 
-    template = 'vds_inline_tabular.html'
+    template = 'vds/models/inlines/tabular.html'
 
     formfield_overrides = {
         models.ForeignKey: {'widget': ForeignKeyWidget},
@@ -33,7 +35,7 @@ class TabularModelAdminInline(nested_admin.NestedTabularInline):
     }
 
 class StackedModelAdminInline(nested_admin.NestedStackedInline):
-    template = 'vds_inline_stacked.html'
+    template = 'vds/models/inlines/stacked.html'
 
     extra = 0
 
@@ -58,7 +60,7 @@ class ModelAdminView(nested_admin.NestedModelAdmin):
     views = []
 
     # Templates
-    change_form_template = 'vds_object_edit.html'
+    change_form_template = 'vds/models/object_edit.html'
 
     formfield_overrides = {
         models.ForeignKey: {'widget': ForeignKeyWidget},

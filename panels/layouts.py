@@ -221,12 +221,8 @@ class Inline(LayoutObject):
             for inline_formset in context['inline_formsets']:
                 if self.name == inline_formset.name:
                     formset = inline_formset.get_formset()
-
-                    print formset.__dict__
-
                     context['inline_formset'] = formset
-
-                    self.template = 'vds/forms/inline/base.html'
+                    self.template = 'vds/forms/inlines/base.html'
                     return render_to_string(self.template, context)
 
 

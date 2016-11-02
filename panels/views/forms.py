@@ -35,7 +35,7 @@ class BaseFormAdminInline(object):
         Base Inline form view
     """
     name = None
-    template_name = 'vds/forms/inline/table.html'
+    template_name = 'vds/forms/inlines/tabular.html'
     form_class = None
     form_layout = None
     extra = 1
@@ -125,6 +125,7 @@ class TabularFormAdminInline(BaseFormAdminInline):
 class FormAdminView(FormView):
     """
     """
+    template_name = 'vds/forms/object_edit.html'
 
     inlines = []
     admin = None
