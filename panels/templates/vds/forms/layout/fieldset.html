@@ -1,19 +1,20 @@
 
-<div class="block">
-    {% if legend %}
-    <div class="block__header">
-        <div class="block__title">
-            {{ legend|safe }}
+<div class="vds-p-horizontal--small vds-p-bottom--large {{ fieldset.css_class }}">
+
+    <div class="block ">
+        {% if legend %}
+        <div class="block__header">
+            <div class="block__title">
+                {{ legend|safe }}
+            </div>
+        </div>
+        {% endif %}
+        <div class="block__body">
+             {{ fields|safe }}
         </div>
     </div>
-    {% endif %}
-    <div class="block__body">
-         {{ fields|safe }}
-    </div>
-</div>
 
-<br />
-<br />
+</div>
 
 {##}
 {#<fieldset {% if fieldset.css_id %}id="{{ fieldset.css_id }}"{% endif %}#}

@@ -1,114 +1,181 @@
-{% extends "design_head.html" %}
+{% extends "vds/base.html" %}
 
 {% block head_title %}Design Grid{% endblock %}
 
-{% block page %}
+{% block page-header %}
+    GRID TITLE
+{% endblock %}
+
+{% block page-content %}
 <div class="page-content">
-    {% load pygmentify %}
 
-    <h1>Grid</h1>
-    <p> The grid provides the foundation for a harmonious positioning of elements, while maintaining a consistent and
-        coherent look of a page as a whole. It brings calm to a page, and makes it easier for users to scan the content.<p>
-    <p>
-        In HTML, text flows in a vertical motion, and this creates the basic rhythm of our pages. This rhythm is
-        created by the space between each line of text, commonly named 'line height'. In visual terms, each line of
-        text defines a visual guideline (the text literally 'sits' on it). This line is called 'baseline', and will be
-        our common denominator in defining the grid. </p>
-
-    <p>Bootstrap includes a powerful mobile-first grid system for building layouts of all shapes and sizes.
-        It’s based on a 12 column layout and has multiple tiers, one for each media query range.</p>
-
-    <h2>Stacked-to-horizontal</h2>
-    <p>Using a single set of <code>.col-md-*</code> grid classes, you can create a basic grid system that starts out
-        stacked on mobile devices and tablet devices (the extra small to small range) before becoming horizontal on
-        desktop (medium) devices. Place grid columns in any <code>.row</code> .
-
-    </p>
-
-    <div class="example-grid">
-        <div class="row">
-            <div class="col-md-1">.col-md-1</div>
-            <div class="col-md-1">.col-md-1</div>
-            <div class="col-md-1">.col-md-1</div>
-            <div class="col-md-1">.col-md-1</div>
-            <div class="col-md-1">.col-md-1</div>
-            <div class="col-md-1">.col-md-1</div>
-            <div class="col-md-1">.col-md-1</div>
-            <div class="col-md-1">.col-md-1</div>
-            <div class="col-md-1">.col-md-1</div>
-            <div class="col-md-1">.col-md-1</div>
-            <div class="col-md-1">.col-md-1</div>
-            <div class="col-md-1">.col-md-1</div>
+    <div class="vds-grid vds-grid--pull-padded-medium">
+        <div class="vds-col vds-p-horizontal--medium">
+            <div class="vds-box vds-theme--shade vds-text-align--center">
+                col
+            </div>
         </div>
-        <div class="row">
-            <div class="col-md-8">.col-md-8</div>
-            <div class="col-md-4">.col-md-4</div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">.col-md-4</div>
-            <div class="col-md-4">.col-md-4</div>
-            <div class="col-md-4">.col-md-4</div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">.col-md-6</div>
-            <div class="col-md-6">.col-md-6</div>
+        <div class="vds-col vds-p-horizontal--medium">
+            <div class="vds-box vds-theme--shade vds-text-align--center">
+                col
+            </div>
         </div>
     </div>
 
-{% pygment %}
-<pre lang="html">
-<div class="row">
-    <div class="col-md-1">.col-md-1</div>
-    <div class="col-md-1">.col-md-1</div>
-    <div class="col-md-1">.col-md-1</div>
-    <div class="col-md-1">.col-md-1</div>
-    <div class="col-md-1">.col-md-1</div>
-    <div class="col-md-1">.col-md-1</div>
-    <div class="col-md-1">.col-md-1</div>
-    <div class="col-md-1">.col-md-1</div>
-    <div class="col-md-1">.col-md-1</div>
-    <div class="col-md-1">.col-md-1</div>
-    <div class="col-md-1">.col-md-1</div>
-    <div class="col-md-1">.col-md-1</div>
-</div>
-<div class="row">
-    <div class="col-md-8">.col-md-8</div>
-    <div class="col-md-4">.col-md-4</div>
-</div>
-<div class="row">
-    <div class="col-md-4">.col-md-4</div>
-    <div class="col-md-4">.col-md-4</div>
-    <div class="col-md-4">.col-md-4</div>
-</div>
-<div class="row">
-    <div class="col-md-6">.col-md-6</div>
-    <div class="col-md-6">.col-md-6</div>
-</div>
-</pre>
-{% endpygment %}
+    <p> By default, the grid items within a .vds-grid do not stretch to take up that available white-space on the main 
+        axis. Apply .vds-col to a grid item, it will stretch across the main axis. The width of each grid item will be 
+        determined by the content within that region. </p>
 
-    <h2>Example: Mobile and desktop</h2>
-    <p>Don’t want your columns to simply stack in smaller devices? Use the extra small and medium device grid classes by adding .col-xs-* and .col-md-* to your columns. See the example below for a better idea of how it all works.</p>
+    <p> To apply gutters between each grid item, the following spacing classes are available to add your intended 
+        gutters, .vds-p-horizontal--small, .vds-p-horizontal--medium, .vds-p-horizontal--large, .vds-p-around--small, 
+        .vds-p-around--medium and .vds-p-around--large. </p>
 
-    <div class="example-grid">
-        <!-- Stack the columns on mobile by making one full-width and the other half-width -->
-        <div class="row">
-          <div class="col-xs-12 col-md-8">.col-xs-12 .col-md-8</div>
-          <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+    <p> You may need to pull the grid items back to their original grid boundaries of the grid container, apply the 
+        classes .vds-grid--pull-padded, .vds-grid--pull-padded-medium or .vds-grid--pull-padded-large to the 
+        .vds-grid. </p>
+    
+    <div class="vds-grid vds-wrap vds-grid--pull-padded">
+        <div class="vds-p-horizontal--small vds-p-bottom--large vds-size--1-of-1">
+            <div class="vds-box vds-theme--shade vds-text-align--center">1</div>
         </div>
-
-        <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
-        <div class="row">
-          <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
-          <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
-          <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+        <div class="vds-p-horizontal--small vds-p-bottom--large vds-size--1-of-2 vds-medium-size--5-of-6 vds-large-size--8-of-12">
+            <div class="vds-box vds-theme--shade vds-text-align--center">2</div>
         </div>
-
-        <!-- Columns are always 50% wide, on mobile and desktop -->
-        <div class="row">
-          <div class="col-xs-6">.col-xs-6</div>
-          <div class="col-xs-6">.col-xs-6</div>
+        <div class="vds-p-horizontal--small vds-p-bottom--large vds-size--1-of-2 vds-medium-size--1-of-6 vds-large-size--4-of-12">
+            <div class="vds-box vds-theme--shade vds-text-align--center">3</div>
+        </div>
+        <div class="vds-p-horizontal--small vds-p-bottom--large vds-size--1-of-1 vds-medium-size--1-of-2 vds-large-size--1-of-3">
+            <div class="vds-box vds-theme--shade vds-text-align--center">4</div>
+        </div>
+        <div class="vds-p-horizontal--small vds-p-bottom--large vds-size--1-of-1 vds-medium-size--1-of-2 vds-large-size--1-of-3">
+            <div class="vds-box vds-theme--shade vds-text-align--center">5</div>
+        </div>
+        <div class="vds-p-horizontal--small vds-p-bottom--large vds-size--1-of-1 vds-large-size--1-of-3">
+            <div class="vds-grid vds-wrap vds-grid--pull-padded">
+                <div class="vds-p-horizontal--small vds-size--1-of-2 vds-medium-size--1-of-1 vds-large-size--1-of-2">
+                    <div class="vds-box vds-theme--shade vds-text-align--center">6</div>
+                </div>
+                <div class="vds-p-horizontal--small vds-size--1-of-2 vds-medium-size--1-of-1 vds-large-size--1-of-2">
+                    <div class="vds-box vds-theme--shade vds-text-align--center">7</div>
+                </div>
+            </div>
         </div>
     </div>
+
+
+    <h2>Container Frame</h2>
+
+{#    <div class="vds-grid vds-grid--frame" style="height:100px; margin:-1rem;">#}
+{#        <div class="vds-col vds-grid vds-grid--align-center vds-grid--vertical-align-center">App Content</div>#}
+{#    </div>#}
+
+
 </div>
+    {#    {% load pygmentify %}#}
+{##}
+{#    <h1>Grid</h1>#}
+{#    <p> The grid provides the foundation for a harmonious positioning of elements, while maintaining a consistent and#}
+{#        coherent look of a page as a whole. It brings calm to a page, and makes it easier for users to scan the content.<p>#}
+{#    <p>#}
+{#        In HTML, text flows in a vertical motion, and this creates the basic rhythm of our pages. This rhythm is#}
+{#        created by the space between each line of text, commonly named 'line height'. In visual terms, each line of#}
+{#        text defines a visual guideline (the text literally 'sits' on it). This line is called 'baseline', and will be#}
+{#        our common denominator in defining the grid. </p>#}
+{##}
+{#    <p>Bootstrap includes a powerful mobile-first grid system for building layouts of all shapes and sizes.#}
+{#        It’s based on a 12 column layout and has multiple tiers, one for each media query range.</p>#}
+{##}
+{#    <h2>Stacked-to-horizontal</h2>#}
+{#    <p>Using a single set of <code>.col-md-*</code> grid classes, you can create a basic grid system that starts out#}
+{#        stacked on mobile devices and tablet devices (the extra small to small range) before becoming horizontal on#}
+{#        desktop (medium) devices. Place grid columns in any <code>.row</code> .#}
+{##}
+{#    </p>#}
+{##}
+{#    <div class="example-grid">#}
+{#        <div class="row">#}
+{#            <div class="col-md-1">.col-md-1</div>#}
+{#            <div class="col-md-1">.col-md-1</div>#}
+{#            <div class="col-md-1">.col-md-1</div>#}
+{#            <div class="col-md-1">.col-md-1</div>#}
+{#            <div class="col-md-1">.col-md-1</div>#}
+{#            <div class="col-md-1">.col-md-1</div>#}
+{#            <div class="col-md-1">.col-md-1</div>#}
+{#            <div class="col-md-1">.col-md-1</div>#}
+{#            <div class="col-md-1">.col-md-1</div>#}
+{#            <div class="col-md-1">.col-md-1</div>#}
+{#            <div class="col-md-1">.col-md-1</div>#}
+{#            <div class="col-md-1">.col-md-1</div>#}
+{#        </div>#}
+{#        <div class="row">#}
+{#            <div class="col-md-8">.col-md-8</div>#}
+{#            <div class="col-md-4">.col-md-4</div>#}
+{#        </div>#}
+{#        <div class="row">#}
+{#            <div class="col-md-4">.col-md-4</div>#}
+{#            <div class="col-md-4">.col-md-4</div>#}
+{#            <div class="col-md-4">.col-md-4</div>#}
+{#        </div>#}
+{#        <div class="row">#}
+{#            <div class="col-md-6">.col-md-6</div>#}
+{#            <div class="col-md-6">.col-md-6</div>#}
+{#        </div>#}
+{#    </div>#}
+{##}
+{#{% pygment %}#}
+{#<pre lang="html">#}
+{#<div class="row">#}
+{#    <div class="col-md-1">.col-md-1</div>#}
+{#    <div class="col-md-1">.col-md-1</div>#}
+{#    <div class="col-md-1">.col-md-1</div>#}
+{#    <div class="col-md-1">.col-md-1</div>#}
+{#    <div class="col-md-1">.col-md-1</div>#}
+{#    <div class="col-md-1">.col-md-1</div>#}
+{#    <div class="col-md-1">.col-md-1</div>#}
+{#    <div class="col-md-1">.col-md-1</div>#}
+{#    <div class="col-md-1">.col-md-1</div>#}
+{#    <div class="col-md-1">.col-md-1</div>#}
+{#    <div class="col-md-1">.col-md-1</div>#}
+{#    <div class="col-md-1">.col-md-1</div>#}
+{#</div>#}
+{#<div class="row">#}
+{#    <div class="col-md-8">.col-md-8</div>#}
+{#    <div class="col-md-4">.col-md-4</div>#}
+{#</div>#}
+{#<div class="row">#}
+{#    <div class="col-md-4">.col-md-4</div>#}
+{#    <div class="col-md-4">.col-md-4</div>#}
+{#    <div class="col-md-4">.col-md-4</div>#}
+{#</div>#}
+{#<div class="row">#}
+{#    <div class="col-md-6">.col-md-6</div>#}
+{#    <div class="col-md-6">.col-md-6</div>#}
+{#</div>#}
+{#</pre>#}
+{#{% endpygment %}#}
+{##}
+{#    <h2>Example: Mobile and desktop</h2>#}
+{#    <p>Don’t want your columns to simply stack in smaller devices? Use the extra small and medium device grid classes by adding .col-xs-* and .col-md-* to your columns. See the example below for a better idea of how it all works.</p>#}
+{##}
+{#    <div class="example-grid">#}
+{#        <!-- Stack the columns on mobile by making one full-width and the other half-width -->#}
+{#        <div class="row">#}
+{#          <div class="col-xs-12 col-md-8">.col-xs-12 .col-md-8</div>#}
+{#          <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>#}
+{#        </div>#}
+{##}
+{#        <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->#}
+{#        <div class="row">#}
+{#          <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>#}
+{#          <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>#}
+{#          <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>#}
+{#        </div>#}
+{##}
+{#        <!-- Columns are always 50% wide, on mobile and desktop -->#}
+{#        <div class="row">#}
+{#          <div class="col-xs-6">.col-xs-6</div>#}
+{#          <div class="col-xs-6">.col-xs-6</div>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
 {% endblock %}

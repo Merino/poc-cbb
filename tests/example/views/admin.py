@@ -104,10 +104,12 @@ class ListDataAdmin(ModelAdminView):
             Fieldset('Name',
                 Field('name'),
                 Field('date'),
+                    css_class='vds-size--1-of-2'
             ),
             Fieldset('Status',
                 Field('boolean'),
                 Field('select'),
+                    css_class='vds-size--1-of-2'
             )
         ),
         Tab('Info',

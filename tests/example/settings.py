@@ -50,14 +50,11 @@ INSTALLED_APPS = (
     'crispy_forms',
     'nested_admin',
 
-    #'example.pages',
     'example.foundation',
     'example.components',
     'example.patterns',
 
-    'example.layout',
     'example.views',
-
 )
 
 MIDDLEWARE_CLASSES = (
