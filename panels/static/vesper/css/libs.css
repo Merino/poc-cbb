@@ -2930,7 +2930,7 @@ a.slds-button--inverse:focus {
 }
 .vds-form-element__label {
   display: inline-block;
-  color: #070707;
+  color: #707070;
   font-size: 0.75rem;
   line-height: 1.5;
   margin-right: 0.75rem;
@@ -3390,7 +3390,7 @@ a.slds-button--inverse:focus {
 }
 .vds-checkbox--toggle [type="checkbox"] + .vds-checkbox--faux_container {
   font-size: 0.625rem;
-  color: #070707;
+  color: #707070;
 }
 .vds-checkbox--toggle [type="checkbox"] + .vds-checkbox--faux_container .vds-checkbox--off {
   display: block;
@@ -4754,7 +4754,7 @@ a.slds-button--inverse:focus {
 .vds-datepicker th {
   padding: 0.5rem;
   font-weight: 400;
-  color: #070707;
+  color: #707070;
 }
 .vds-datepicker td {
   padding: 0.25rem;
