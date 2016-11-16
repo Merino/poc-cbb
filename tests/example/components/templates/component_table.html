@@ -2,26 +2,15 @@
 
 {% block head_title %}Component Data Table{% endblock %}
 
-{% block page %}
+{% block page-header %}
+    Table
+{% endblock %}
 
-<div class="page-content">
-    <h3>Table</h3>
-
-    <div class="row">
-
-        <div class="col-sm-9">
-    <div class="block">
-        <div class="block__header">
-            <div class="block__title">
-                <h2>Table</h2>
-            </div>
-        </div>
-        <div class="block__body">
-
-
-    <table class="data-table data-table--bordered data-table--striped data-table--fixed-layout">
+{% block page-content %}
+    
+    <table class="vds-table vds-table--bordered vds-table--cell-buffer">
         <thead>
-            <tr class="text-title--caps">
+            <tr class="vds-text-title--caps">
                <th scope="col">
                     <div class="text-truncate" title="Opportunity Name">Opportunity Name</div>
                </th>
@@ -51,25 +40,25 @@
         <tbody>
             <tr>
                 <th scope="row" data-label="Opportunity Name">
-                    <div class="slds-truncate" title="Cloudhub"><a href="javascript:void(0);">Cloudhub</a></div>
+                    <div class="vds-truncate" title="Cloudhub"><a href="javascript:void(0);">Cloudhub</a></div>
                   </th>
                   <td data-label="Account Name">
-                    <div class="slds-truncate" title="Cloudhub">Cloudhub</div>
+                    <div class="vds-truncate" title="Cloudhub">Cloudhub</div>
                   </td>
                   <td data-label="Close Date">
-                    <div class="slds-truncate" title="4/14/2015">4/14/2015</div>
+                    <div class="vds-truncate" title="4/14/2015">4/14/2015</div>
                   </td>
                   <td data-label="Prospecting">
-                    <div class="slds-truncate" title="Prospecting">Prospecting</div>
+                    <div class="vds-truncate" title="Prospecting">Prospecting</div>
                   </td>
                   <td data-label="Confidence">
-                    <div class="slds-truncate" title="20%">20%</div>
+                    <div class="vds-truncate" title="20%">20%</div>
                   </td>
                   <td data-label="Amount">
-                    <div class="slds-truncate" title="$25k">$25k</div>
+                    <div class="vds-truncate" title="$25k">$25k</div>
                   </td>
                   <td data-label="Contact">
-                    <div class="slds-truncate" title="jrogers@cloudhub.com"><a href="javascript:void(0);">jrogers@cloudhub.com</a></div>
+                    <div class="vds-truncate" title="jrogers@cloudhub.com"><a href="javascript:void(0);">jrogers@cloudhub.com</a></div>
                   </td>
                   <td data-label="Actions">
                       <a href="" tabindex="1" class="btn btn-primary">Action</a>
@@ -77,25 +66,25 @@
             </tr>
             <tr>
                 <th scope="row" data-label="Opportunity Name">
-                    <div class="slds-truncate" title="Cloudhub"><a href="javascript:void(0);">Cloudhub</a></div>
+                    <div class="vds-truncate" title="Cloudhub"><a href="javascript:void(0);">Cloudhub</a></div>
                   </th>
                   <td data-label="Account Name">
-                    <div class="slds-truncate" title="Cloudhub">Cloudhub</div>
+                    <div class="vds-truncate" title="Cloudhub">Cloudhub</div>
                   </td>
                   <td data-label="Close Date">
-                    <div class="slds-truncate" title="4/14/2015">4/14/2015</div>
+                    <div class="vds-truncate" title="4/14/2015">4/14/2015</div>
                   </td>
                   <td data-label="Prospecting">
-                    <div class="slds-truncate" title="Prospecting">Prospecting</div>
+                    <div class="vds-truncate" title="Prospecting">Prospecting</div>
                   </td>
                   <td data-label="Confidence">
-                    <div class="slds-truncate" title="20%">20%</div>
+                    <div class="vds-truncate" title="20%">20%</div>
                   </td>
                   <td data-label="Amount">
-                    <div class="slds-truncate" title="$25k">$25k</div>
+                    <div class="vds-truncate" title="$25k">$25k</div>
                   </td>
                   <td data-label="Contact">
-                    <div class="slds-truncate" title="jrogers@cloudhub.com"><a href="javascript:void(0);">jrogers@cloudhub.com</a></div>
+                    <div class="vds-truncate" title="jrogers@cloudhub.com"><a href="javascript:void(0);">jrogers@cloudhub.com</a></div>
                   </td>
                   <td data-label="Actions">
                       <a href="" tabindex="1" class="btn btn-primary">Action</a>
@@ -103,25 +92,25 @@
             </tr>
             <tr>
                 <th scope="row" data-label="Opportunity Name">
-                    <div class="slds-truncate" title="Cloudhub"><a href="javascript:void(0);">Cloudhub</a></div>
+                    <div class="vds-truncate" title="Cloudhub"><a href="javascript:void(0);">Cloudhub</a></div>
                   </th>
                   <td data-label="Account Name">
-                    <div class="slds-truncate" title="Cloudhub">Cloudhub</div>
+                    <div class="vds-truncate" title="Cloudhub">Cloudhub</div>
                   </td>
                   <td data-label="Close Date">
-                    <div class="slds-truncate" title="4/14/2015">4/14/2015</div>
+                    <div class="vds-truncate" title="4/14/2015">4/14/2015</div>
                   </td>
                   <td data-label="Prospecting">
-                    <div class="slds-truncate" title="Prospecting">Prospecting</div>
+                    <div class="vds-truncate" title="Prospecting">Prospecting</div>
                   </td>
                   <td data-label="Confidence">
-                    <div class="slds-truncate" title="20%">20%</div>
+                    <div class="vds-truncate" title="20%">20%</div>
                   </td>
                   <td data-label="Amount">
-                    <div class="slds-truncate" title="$25k">$25k</div>
+                    <div class="vds-truncate" title="$25k">$25k</div>
                   </td>
                   <td data-label="Contact">
-                    <div class="slds-truncate" title="jrogers@cloudhub.com"><a href="javascript:void(0);">jrogers@cloudhub.com</a></div>
+                    <div class="vds-truncate" title="jrogers@cloudhub.com"><a href="javascript:void(0);">jrogers@cloudhub.com</a></div>
                   </td>
                   <td data-label="Actions">
                       <a href="" tabindex="1" class="btn btn-primary">Action</a>
@@ -129,25 +118,25 @@
             </tr>
             <tr>
                 <th scope="row" data-label="Opportunity Name">
-                    <div class="slds-truncate" title="Cloudhub"><a href="javascript:void(0);">Cloudhub</a></div>
+                    <div class="vds-truncate" title="Cloudhub"><a href="javascript:void(0);">Cloudhub</a></div>
                   </th>
                   <td data-label="Account Name">
-                    <div class="slds-truncate" title="Cloudhub">Cloudhub</div>
+                    <div class="vds-truncate" title="Cloudhub">Cloudhub</div>
                   </td>
                   <td data-label="Close Date">
-                    <div class="slds-truncate" title="4/14/2015">4/14/2015</div>
+                    <div class="vds-truncate" title="4/14/2015">4/14/2015</div>
                   </td>
                   <td data-label="Prospecting">
-                    <div class="slds-truncate" title="Prospecting">Prospecting</div>
+                    <div class="vds-truncate" title="Prospecting">Prospecting</div>
                   </td>
                   <td data-label="Confidence">
-                    <div class="slds-truncate" title="20%">20%</div>
+                    <div class="vds-truncate" title="20%">20%</div>
                   </td>
                   <td data-label="Amount">
-                    <div class="slds-truncate" title="$25k">$25k</div>
+                    <div class="vds-truncate" title="$25k">$25k</div>
                   </td>
                   <td data-label="Contact">
-                    <div class="slds-truncate" title="jrogers@cloudhub.com"><a href="javascript:void(0);">jrogers@cloudhub.com</a></div>
+                    <div class="vds-truncate" title="jrogers@cloudhub.com"><a href="javascript:void(0);">jrogers@cloudhub.com</a></div>
                   </td>
                   <td data-label="Actions">
                       <a href="" tabindex="1" class="btn btn-primary">Action</a>
@@ -155,25 +144,25 @@
             </tr>
             <tr>
                 <th scope="row" data-label="Opportunity Name">
-                    <div class="slds-truncate" title="Cloudhub"><a href="javascript:void(0);">Cloudhub</a></div>
+                    <div class="vds-truncate" title="Cloudhub"><a href="javascript:void(0);">Cloudhub</a></div>
                   </th>
                   <td data-label="Account Name">
-                    <div class="slds-truncate" title="Cloudhub">Cloudhub</div>
+                    <div class="vds-truncate" title="Cloudhub">Cloudhub</div>
                   </td>
                   <td data-label="Close Date">
-                    <div class="slds-truncate" title="4/14/2015">4/14/2015</div>
+                    <div class="vds-truncate" title="4/14/2015">4/14/2015</div>
                   </td>
                   <td data-label="Prospecting">
-                    <div class="slds-truncate" title="Prospecting">Prospecting</div>
+                    <div class="vds-truncate" title="Prospecting">Prospecting</div>
                   </td>
                   <td data-label="Confidence">
-                    <div class="slds-truncate" title="20%">20%</div>
+                    <div class="vds-truncate" title="20%">20%</div>
                   </td>
                   <td data-label="Amount">
-                    <div class="slds-truncate" title="$25k">$25k</div>
+                    <div class="vds-truncate" title="$25k">$25k</div>
                   </td>
                   <td data-label="Contact">
-                    <div class="slds-truncate" title="jrogers@cloudhub.com"><a href="javascript:void(0);">jrogers@cloudhub.com</a></div>
+                    <div class="vds-truncate" title="jrogers@cloudhub.com"><a href="javascript:void(0);">jrogers@cloudhub.com</a></div>
                   </td>
                   <td data-label="Actions">
                       <a href="" tabindex="1" class="btn btn-primary">Action</a>
@@ -183,458 +172,454 @@
 
     </table>
 
-        </div>
-    </div>
-    </div>
-        </div>
-
-    <br />
-    <div class="block">
-        <div class="block-body">
-            <p>sss</p>
-            <br />
-            <br />
-            <table class="data-table data-table--bordered data-table--striped data-table--fixed-layout">
-                <thead>
-                    <tr class="text-title--caps">
-                        <td>A</td>
-                        <td>B</td>
-                        <td>C</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>A1</td>
-                        <td>B1</td>
-                        <td>C1</td>
-                    </tr>
-                    <tr>
-                        <td>A2</td>
-                        <td>B2</td>
-                        <td>C2</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <section id="example-table-basic">
-        <h4>Basic</h4>
-        <div class="page-panel">
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th scope="col">
-                            <label class="" for="select-all">
-                                <input name="checkbox" type="checkbox" id="select-all">
-                            </label>
-                        </th>
-                        <th scope="col">
-                            <span>Number</span>
-                        </th>
-                        <th scope="col">
-                            <span class="data-table-truncate">Date</span>
-                        </th>
-                        <th scope="col">
-                            <span class="data-table-truncate">Channel</span>
-                        </th>
-                        <th scope="col">
-                            <span class="data-table-truncate">Source</span>
-                        </th>
-                         <th scope="col">
-                            <span class="data-table-truncate">Account</span>
-                        </th>
-                        <th scope="col">
-                            <span class="data-table-truncate">Reference</span>
-                        </th>
-                        <th scope="col">
-                            <span class="data-table-truncate">Note</span>
-                        </th>
-                        <th scope="col">
-                            <span class="data-table-truncate">Summary</span>
-                        </th>
-
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="data-table-row-select">
-                            <label class="slds-checkbox" for="select-row1">
-                                <input name="select-row1" type="checkbox" id="select-row1" />
-                            </label>
-                        </td>
-                        <th data-label="opportunity-name" role="row">
-                            <a href="#" class="slds-truncate">WO201602039</a>
-                        </th>
-                        <td data-label="account">2016-02-01 14:15</td>
-                        <td data-label="activity">
-                            <span class="slds-truncate">Novadeals : bol.com	</span>
-                        </td>
-                        <td data-label="stage">
-                            <span class="slds-truncate">Publisher	</span>
-                        </td>
-                        <td data-label="confidence">
-                            <span class="slds-truncate">Bol.com</span>
-                        </td>
-                        <td data-label="amount">
-                            <span class="slds-truncate">8670744610</span>
-                        </td>
-                        <td data-label="contact">
-                            <span class="slds-truncate">--</span>
-                        </td>
-                        <td data-label="contact">
-                            <span class="slds-truncate">1× Verstelbare bestekbak Bambus 29 - 43 cm.</span>
-                        </td>
-
-                    </tr>
-                    <tr>
-                        <td class="data-table-row-select">
-                            <label class="slds-checkbox" for="select-row1">
-                                <input name="select-row1" type="checkbox" id="select-row1" />
-                            </label>
-                        </td>
-                        <th data-label="opportunity-name" role="row">
-                            <a href="#" class="slds-truncate">WO201602039</a>
-                        </th>
-                        <td data-label="account">
-                            2016-02-01 10:20
-                        </td>
-                        <td data-label="activity">
-                            <span class="slds-truncate">Novadeals : bol.com	</span>
-                        </td>
-                        <td data-label="stage">
-                            <span class="slds-truncate">Publisher	</span>
-                        </td>
-                        <td data-label="confidence">
-                            <span class="slds-truncate">Bol.com</span>
-                        </td>
-                        <td data-label="amount">
-                            <span class="slds-truncate">8670744610</span>
-                        </td>
-                        <td data-label="contact">
-                            <span class="slds-truncate">--</span>
-                        </td>
-                        <td data-label="contact">
-                            <span class="slds-truncate">1× WALRA badgoed Walra set van 6 Washandjes 16x21 Dark Grey</span>
-                        </td>
-
-                    </tr>
-                    <tr class="data-table-row-selected">
-                        <td class="data-table-row-select">
-                            <label class="slds-checkbox" for="select-row1">
-                                <input name="select-row1" type="checkbox" id="select-row1" checked />
-                            </label>
-                        </td>
-                        <th data-label="opportunity-name" role="row">
-                            <a href="#" class="slds-truncate">WO201602039</a>
-                        </th>
-                        <td data-label="account">
-                            Feb. 1, 2016, 12:15 p.m.
-                        </td>
-                        <td data-label="activity">
-                            <span class="slds-truncate">Novadeals : bol.com	</span>
-                        </td>
-                        <td data-label="stage">
-                            <span class="slds-truncate">Publisher	</span>
-                        </td>
-                        <td data-label="confidence">
-                            <span class="slds-truncate">Bol.com</span>
-                        </td>
-                        <td data-label="amount">
-                            <span class="slds-truncate">8670744610</span>
-                        </td>
-                        <td data-label="contact">
-                            <span class="slds-truncate">--</span>
-                        </td>
-                        <td data-label="contact">
-                            <span class="slds-truncate">1× Verstelbare bestekbak Bambus 29 - 43 cm.</span>
-                        </td>
-
-                    </tr>
-                    <tr>
-                        <td class="data-table-row-select">
-                            <label class="slds-checkbox" for="select-row1">
-                                <input name="select-row1" type="checkbox" id="select-row1" />
-                            </label>
-                        </td>
-                        <th data-label="opportunity-name" role="row">
-                            <a href="#" class="slds-truncate">WO201602039</a>
-                        </th>
-                        <td data-label="account">Feb. 1, 2016, 12:15 p.m.</td>
-                        <td data-label="activity">
-                            <span class="slds-truncate">Novadeals : bol.com	</span>
-                        </td>
-                        <td data-label="stage">
-                            <span class="slds-truncate">Publisher	</span>
-                        </td>
-                        <td data-label="confidence">
-                            <span class="slds-truncate">Bol.com</span>
-                        </td>
-                        <td data-label="amount">
-                            <span class="slds-truncate">8670744610</span>
-                        </td>
-                        <td data-label="contact">
-                            <span class="slds-truncate">--</span>
-                        </td>
-                        <td data-label="contact">
-                            <span class="slds-truncate">1× Verstelbare bestekbak Bambus 29 - 43 cm.</span>
-                        </td>
-
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
-
-    <br />
-    <br />
-
-    <section id="example-table-structured">
-        <h4>Structured</h4>
-        <p>A table can be formatted to display complex structured data</p>
-        <div class="page-panel">
-
-            <table class="data-table">
-      <thead>
-        <tr>
-          <th rowspan="2">Name</th>
-          <th rowspan="2">Type</th>
-          <th rowspan="2">Files</th>
-          <th colspan="3">Languages</th>
-        </tr>
-        <tr>
-          <th>Ruby</th>
-          <th>JavaScript</th>
-          <th>Python</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Alpha Team</td>
-          <td>Project 1</td>
-          <td>2</td>
-          <td>
-            <i class="large green checkmark icon"></i>
-          </td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td rowspan="3">Beta Team</td>
-          <td>Project 1</td>
-          <td>52</td>
-          <td>
-            <i class="large green checkmark icon"></i>
-          </td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Project 2</td>
-          <td class="right aligned">12</td>
-          <td></td>
-          <td>
-            <i class="large green checkmark icon"></i>
-          </td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Project 3</td>
-          <td>21</td>
-          <td>
-            <i class="large green checkmark icon"></i>
-          </td>
-          <td></td>
-          <td></td>
-        </tr>
-      </tbody>
-    </table>
-
-        </div>
-    </section>
-
-    <section id="example-table-blankslade">
-        <h4>Blank Slate</h4>
-        <p></p>
-        <div class="page-panel">
-             <table class="data-table">
-                <thead>
-                    <tr>
-                        <th scope="col">
-                            <label class="" for="select-all">
-                                <input name="checkbox" type="checkbox" id="select-all">
-                            </label>
-                        </th>
-                        <th scope="col">
-                            <span>Number</span>
-                        </th>
-                        <th scope="col">
-                            <span class="data-table-truncate">Date</span>
-                        </th>
-                        <th scope="col">
-                            <span class="data-table-truncate">Channel</span>
-                        </th>
-                        <th scope="col">
-                            <span class="data-table-truncate">Source</span>
-                        </th>
-                         <th scope="col">
-                            <span class="data-table-truncate">Account</span>
-                        </th>
-                        <th scope="col">
-                            <span class="data-table-truncate">Reference</span>
-                        </th>
-                        <th scope="col">
-                            <span class="data-table-truncate">Note</span>
-                        </th>
-                        <th scope="col">
-                            <span class="data-table-truncate">Summary</span>
-                        </th>
-                        <th class="data-table-row-action" scope="col">
-
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="data-table-blankslade">
-                        <td colspan="10000">
-                            <h3>This is a blank slate</h3>
-                            <p>Use it to provide information when no dynamic content exists.</p>
-                        </td>
-                    <tr>
-                </tbody>
-             </table>
-        </div>
-    </section>
-
-    <br />
-    <section id="example-table-row-states">
-        <h4>States</h4>
-        <div class="page-panel">
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th scope="col">
-                            X
-                        </th>
-                        <th scope="col">Column 1</th>
-                        <th scope="col">Column 2</th>
-                        <th scope="col">Column 3</th>
-                        <th scope="col">Column 4</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            X
-                        </td>
-                        <td>Normal</td>
-                        <td>Value A2</td>
-                        <td>Value A3</td>
-                        <td>Value A4</td>
-                    </tr>
-                    <tr class="data-table__selected">
-                        <td class="data-table-info">
-                            X
-                        </td>
-                        <td>Selected</td>
-                        <td>Value A2</td>
-                        <td>Value A3</td>
-                        <td>Value A4</td>
-                    </tr>
-                    <tr class="data-table__hover">
-                        <td class="data-table-info">
-                            X
-                        </td>
-                        <td>Hover</td>
-                        <td>Value A2</td>
-                        <td>Value A3</td>
-                        <td>Value A4</td>
-                    </tr>
-                    <tr class="data-table-info">
-                        <td>
-                            X
-                        </td>
-                        <td>Info</td>
-                        <td>Value A2</td>
-                        <td>Value A3</td>
-                        <td>Value A4</td>
-                    </tr>
-                    <tr class="data-table-success">
-                        <td>
-                           X
-                        </td>
-                        <td>Success</td>
-                        <td>Value A2</td>
-                        <td>Value A3</td>
-                        <td>Value A4</td>
-                    </tr>
-                    <tr class="data-table-warning">
-                        <td>
-                           X
-                        </td>
-                        <td>Warning</td>
-                        <td>Value A2</td>
-                        <td>Value A3</td>
-                        <td>Value A4</td>
-                    </tr>
-                    <tr class="data-table-danger">
-                        <td>
-                            X
-                        </td>
-                        <td>Danger</td>
-                        <td>Value A2</td>
-                        <td>Value A3</td>
-                        <td>Value A4</td>
-                    </tr>
-                    <tr class="data-table__disabled">
-                        <td>
-                            X
-                        </td>
-                        <td>Disabled</td>
-                        <td>Value A2</td>
-                        <td>Value A3</td>
-                        <td>Value A4</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-    </section>
-
-    <section>
-        <h4>Alignment</h4>
-        <p>A table header, row, or cell can adjust its vertical alignment</p>
-        <div class="page-panel">
-        <table class="data-table">
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Status</th>
-                  <th>Notes</th>
-                </tr>
-              </thead>
-          <tbody>
-            <tr class="top aligned">
-              <td>John</td>
-              <td>Approved</td>
-              <td class="top aligned">
-                Notes<br>
-                1<br>
-                2<br>
-              </td>
-            </tr>
-            <tr>
-              <td>Jamie</td>
-              <td class="bottom aligned">Approved</td>
-              <td>
-                Notes<br>
-                1<br>
-                2<br>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        </div>
-    </section>
-</div>
+{#  #}
+{##}
+{#    <br />#}
+{#    <div class="block">#}
+{#        <div class="block-body">#}
+{#            <p>sss</p>#}
+{#            <br />#}
+{#            <br />#}
+{#            <table class="data-table data-table--bordered data-table--striped data-table--fixed-layout">#}
+{#                <thead>#}
+{#                    <tr class="text-title--caps">#}
+{#                        <td>A</td>#}
+{#                        <td>B</td>#}
+{#                        <td>C</td>#}
+{#                    </tr>#}
+{#                </thead>#}
+{#                <tbody>#}
+{#                    <tr>#}
+{#                        <td>A1</td>#}
+{#                        <td>B1</td>#}
+{#                        <td>C1</td>#}
+{#                    </tr>#}
+{#                    <tr>#}
+{#                        <td>A2</td>#}
+{#                        <td>B2</td>#}
+{#                        <td>C2</td>#}
+{#                    </tr>#}
+{#                </tbody>#}
+{#            </table>#}
+{#        </div>#}
+{#    </div>#}
+{##}
+{#    <section id="example-table-basic">#}
+{#        <h4>Basic</h4>#}
+{#        <div class="page-panel">#}
+{#            <table class="data-table">#}
+{#                <thead>#}
+{#                    <tr>#}
+{#                        <th scope="col">#}
+{#                            <label class="" for="select-all">#}
+{#                                <input name="checkbox" type="checkbox" id="select-all">#}
+{#                            </label>#}
+{#                        </th>#}
+{#                        <th scope="col">#}
+{#                            <span>Number</span>#}
+{#                        </th>#}
+{#                        <th scope="col">#}
+{#                            <span class="data-table-truncate">Date</span>#}
+{#                        </th>#}
+{#                        <th scope="col">#}
+{#                            <span class="data-table-truncate">Channel</span>#}
+{#                        </th>#}
+{#                        <th scope="col">#}
+{#                            <span class="data-table-truncate">Source</span>#}
+{#                        </th>#}
+{#                         <th scope="col">#}
+{#                            <span class="data-table-truncate">Account</span>#}
+{#                        </th>#}
+{#                        <th scope="col">#}
+{#                            <span class="data-table-truncate">Reference</span>#}
+{#                        </th>#}
+{#                        <th scope="col">#}
+{#                            <span class="data-table-truncate">Note</span>#}
+{#                        </th>#}
+{#                        <th scope="col">#}
+{#                            <span class="data-table-truncate">Summary</span>#}
+{#                        </th>#}
+{##}
+{#                    </tr>#}
+{#                </thead>#}
+{#                <tbody>#}
+{#                    <tr>#}
+{#                        <td class="data-table-row-select">#}
+{#                            <label class="vds-checkbox" for="select-row1">#}
+{#                                <input name="select-row1" type="checkbox" id="select-row1" />#}
+{#                            </label>#}
+{#                        </td>#}
+{#                        <th data-label="opportunity-name" role="row">#}
+{#                            <a href="#" class="vds-truncate">WO201602039</a>#}
+{#                        </th>#}
+{#                        <td data-label="account">2016-02-01 14:15</td>#}
+{#                        <td data-label="activity">#}
+{#                            <span class="vds-truncate">Novadeals : bol.com	</span>#}
+{#                        </td>#}
+{#                        <td data-label="stage">#}
+{#                            <span class="vds-truncate">Publisher	</span>#}
+{#                        </td>#}
+{#                        <td data-label="confidence">#}
+{#                            <span class="vds-truncate">Bol.com</span>#}
+{#                        </td>#}
+{#                        <td data-label="amount">#}
+{#                            <span class="vds-truncate">8670744610</span>#}
+{#                        </td>#}
+{#                        <td data-label="contact">#}
+{#                            <span class="vds-truncate">--</span>#}
+{#                        </td>#}
+{#                        <td data-label="contact">#}
+{#                            <span class="vds-truncate">1× Verstelbare bestekbak Bambus 29 - 43 cm.</span>#}
+{#                        </td>#}
+{##}
+{#                    </tr>#}
+{#                    <tr>#}
+{#                        <td class="data-table-row-select">#}
+{#                            <label class="vds-checkbox" for="select-row1">#}
+{#                                <input name="select-row1" type="checkbox" id="select-row1" />#}
+{#                            </label>#}
+{#                        </td>#}
+{#                        <th data-label="opportunity-name" role="row">#}
+{#                            <a href="#" class="vds-truncate">WO201602039</a>#}
+{#                        </th>#}
+{#                        <td data-label="account">#}
+{#                            2016-02-01 10:20#}
+{#                        </td>#}
+{#                        <td data-label="activity">#}
+{#                            <span class="vds-truncate">Novadeals : bol.com	</span>#}
+{#                        </td>#}
+{#                        <td data-label="stage">#}
+{#                            <span class="vds-truncate">Publisher	</span>#}
+{#                        </td>#}
+{#                        <td data-label="confidence">#}
+{#                            <span class="vds-truncate">Bol.com</span>#}
+{#                        </td>#}
+{#                        <td data-label="amount">#}
+{#                            <span class="vds-truncate">8670744610</span>#}
+{#                        </td>#}
+{#                        <td data-label="contact">#}
+{#                            <span class="vds-truncate">--</span>#}
+{#                        </td>#}
+{#                        <td data-label="contact">#}
+{#                            <span class="vds-truncate">1× WALRA badgoed Walra set van 6 Washandjes 16x21 Dark Grey</span>#}
+{#                        </td>#}
+{##}
+{#                    </tr>#}
+{#                    <tr class="data-table-row-selected">#}
+{#                        <td class="data-table-row-select">#}
+{#                            <label class="vds-checkbox" for="select-row1">#}
+{#                                <input name="select-row1" type="checkbox" id="select-row1" checked />#}
+{#                            </label>#}
+{#                        </td>#}
+{#                        <th data-label="opportunity-name" role="row">#}
+{#                            <a href="#" class="vds-truncate">WO201602039</a>#}
+{#                        </th>#}
+{#                        <td data-label="account">#}
+{#                            Feb. 1, 2016, 12:15 p.m.#}
+{#                        </td>#}
+{#                        <td data-label="activity">#}
+{#                            <span class="vds-truncate">Novadeals : bol.com	</span>#}
+{#                        </td>#}
+{#                        <td data-label="stage">#}
+{#                            <span class="vds-truncate">Publisher	</span>#}
+{#                        </td>#}
+{#                        <td data-label="confidence">#}
+{#                            <span class="vds-truncate">Bol.com</span>#}
+{#                        </td>#}
+{#                        <td data-label="amount">#}
+{#                            <span class="vds-truncate">8670744610</span>#}
+{#                        </td>#}
+{#                        <td data-label="contact">#}
+{#                            <span class="vds-truncate">--</span>#}
+{#                        </td>#}
+{#                        <td data-label="contact">#}
+{#                            <span class="vds-truncate">1× Verstelbare bestekbak Bambus 29 - 43 cm.</span>#}
+{#                        </td>#}
+{##}
+{#                    </tr>#}
+{#                    <tr>#}
+{#                        <td class="data-table-row-select">#}
+{#                            <label class="vds-checkbox" for="select-row1">#}
+{#                                <input name="select-row1" type="checkbox" id="select-row1" />#}
+{#                            </label>#}
+{#                        </td>#}
+{#                        <th data-label="opportunity-name" role="row">#}
+{#                            <a href="#" class="vds-truncate">WO201602039</a>#}
+{#                        </th>#}
+{#                        <td data-label="account">Feb. 1, 2016, 12:15 p.m.</td>#}
+{#                        <td data-label="activity">#}
+{#                            <span class="vds-truncate">Novadeals : bol.com	</span>#}
+{#                        </td>#}
+{#                        <td data-label="stage">#}
+{#                            <span class="vds-truncate">Publisher	</span>#}
+{#                        </td>#}
+{#                        <td data-label="confidence">#}
+{#                            <span class="vds-truncate">Bol.com</span>#}
+{#                        </td>#}
+{#                        <td data-label="amount">#}
+{#                            <span class="vds-truncate">8670744610</span>#}
+{#                        </td>#}
+{#                        <td data-label="contact">#}
+{#                            <span class="vds-truncate">--</span>#}
+{#                        </td>#}
+{#                        <td data-label="contact">#}
+{#                            <span class="vds-truncate">1× Verstelbare bestekbak Bambus 29 - 43 cm.</span>#}
+{#                        </td>#}
+{##}
+{#                    </tr>#}
+{#                </tbody>#}
+{#            </table>#}
+{#        </div>#}
+{#    </section>#}
+{##}
+{#    <br />#}
+{#    <br />#}
+{##}
+{#    <section id="example-table-structured">#}
+{#        <h4>Structured</h4>#}
+{#        <p>A table can be formatted to display complex structured data</p>#}
+{#        <div class="page-panel">#}
+{##}
+{#            <table class="data-table">#}
+{#      <thead>#}
+{#        <tr>#}
+{#          <th rowspan="2">Name</th>#}
+{#          <th rowspan="2">Type</th>#}
+{#          <th rowspan="2">Files</th>#}
+{#          <th colspan="3">Languages</th>#}
+{#        </tr>#}
+{#        <tr>#}
+{#          <th>Ruby</th>#}
+{#          <th>JavaScript</th>#}
+{#          <th>Python</th>#}
+{#        </tr>#}
+{#      </thead>#}
+{#      <tbody>#}
+{#        <tr>#}
+{#          <td>Alpha Team</td>#}
+{#          <td>Project 1</td>#}
+{#          <td>2</td>#}
+{#          <td>#}
+{#            <i class="large green checkmark icon"></i>#}
+{#          </td>#}
+{#          <td></td>#}
+{#          <td></td>#}
+{#        </tr>#}
+{#        <tr>#}
+{#          <td rowspan="3">Beta Team</td>#}
+{#          <td>Project 1</td>#}
+{#          <td>52</td>#}
+{#          <td>#}
+{#            <i class="large green checkmark icon"></i>#}
+{#          </td>#}
+{#          <td></td>#}
+{#          <td></td>#}
+{#        </tr>#}
+{#        <tr>#}
+{#          <td>Project 2</td>#}
+{#          <td class="right aligned">12</td>#}
+{#          <td></td>#}
+{#          <td>#}
+{#            <i class="large green checkmark icon"></i>#}
+{#          </td>#}
+{#          <td></td>#}
+{#        </tr>#}
+{#        <tr>#}
+{#          <td>Project 3</td>#}
+{#          <td>21</td>#}
+{#          <td>#}
+{#            <i class="large green checkmark icon"></i>#}
+{#          </td>#}
+{#          <td></td>#}
+{#          <td></td>#}
+{#        </tr>#}
+{#      </tbody>#}
+{#    </table>#}
+{##}
+{#        </div>#}
+{#    </section>#}
+{##}
+{#    <section id="example-table-blankslade">#}
+{#        <h4>Blank Slate</h4>#}
+{#        <p></p>#}
+{#        <div class="page-panel">#}
+{#             <table class="data-table">#}
+{#                <thead>#}
+{#                    <tr>#}
+{#                        <th scope="col">#}
+{#                            <label class="" for="select-all">#}
+{#                                <input name="checkbox" type="checkbox" id="select-all">#}
+{#                            </label>#}
+{#                        </th>#}
+{#                        <th scope="col">#}
+{#                            <span>Number</span>#}
+{#                        </th>#}
+{#                        <th scope="col">#}
+{#                            <span class="data-table-truncate">Date</span>#}
+{#                        </th>#}
+{#                        <th scope="col">#}
+{#                            <span class="data-table-truncate">Channel</span>#}
+{#                        </th>#}
+{#                        <th scope="col">#}
+{#                            <span class="data-table-truncate">Source</span>#}
+{#                        </th>#}
+{#                         <th scope="col">#}
+{#                            <span class="data-table-truncate">Account</span>#}
+{#                        </th>#}
+{#                        <th scope="col">#}
+{#                            <span class="data-table-truncate">Reference</span>#}
+{#                        </th>#}
+{#                        <th scope="col">#}
+{#                            <span class="data-table-truncate">Note</span>#}
+{#                        </th>#}
+{#                        <th scope="col">#}
+{#                            <span class="data-table-truncate">Summary</span>#}
+{#                        </th>#}
+{#                        <th class="data-table-row-action" scope="col">#}
+{##}
+{#                        </th>#}
+{#                    </tr>#}
+{#                </thead>#}
+{#                <tbody>#}
+{#                    <tr class="data-table-blankslade">#}
+{#                        <td colspan="10000">#}
+{#                            <h3>This is a blank slate</h3>#}
+{#                            <p>Use it to provide information when no dynamic content exists.</p>#}
+{#                        </td>#}
+{#                    <tr>#}
+{#                </tbody>#}
+{#             </table>#}
+{#        </div>#}
+{#    </section>#}
+{##}
+{#    <br />#}
+{#    <section id="example-table-row-states">#}
+{#        <h4>States</h4>#}
+{#        <div class="page-panel">#}
+{#            <table class="data-table">#}
+{#                <thead>#}
+{#                    <tr>#}
+{#                        <th scope="col">#}
+{#                            X#}
+{#                        </th>#}
+{#                        <th scope="col">Column 1</th>#}
+{#                        <th scope="col">Column 2</th>#}
+{#                        <th scope="col">Column 3</th>#}
+{#                        <th scope="col">Column 4</th>#}
+{#                    </tr>#}
+{#                </thead>#}
+{#                <tbody>#}
+{#                    <tr>#}
+{#                        <td>#}
+{#                            X#}
+{#                        </td>#}
+{#                        <td>Normal</td>#}
+{#                        <td>Value A2</td>#}
+{#                        <td>Value A3</td>#}
+{#                        <td>Value A4</td>#}
+{#                    </tr>#}
+{#                    <tr class="data-table__selected">#}
+{#                        <td class="data-table-info">#}
+{#                            X#}
+{#                        </td>#}
+{#                        <td>Selected</td>#}
+{#                        <td>Value A2</td>#}
+{#                        <td>Value A3</td>#}
+{#                        <td>Value A4</td>#}
+{#                    </tr>#}
+{#                    <tr class="data-table__hover">#}
+{#                        <td class="data-table-info">#}
+{#                            X#}
+{#                        </td>#}
+{#                        <td>Hover</td>#}
+{#                        <td>Value A2</td>#}
+{#                        <td>Value A3</td>#}
+{#                        <td>Value A4</td>#}
+{#                    </tr>#}
+{#                    <tr class="data-table-info">#}
+{#                        <td>#}
+{#                            X#}
+{#                        </td>#}
+{#                        <td>Info</td>#}
+{#                        <td>Value A2</td>#}
+{#                        <td>Value A3</td>#}
+{#                        <td>Value A4</td>#}
+{#                    </tr>#}
+{#                    <tr class="data-table-success">#}
+{#                        <td>#}
+{#                           X#}
+{#                        </td>#}
+{#                        <td>Success</td>#}
+{#                        <td>Value A2</td>#}
+{#                        <td>Value A3</td>#}
+{#                        <td>Value A4</td>#}
+{#                    </tr>#}
+{#                    <tr class="data-table-warning">#}
+{#                        <td>#}
+{#                           X#}
+{#                        </td>#}
+{#                        <td>Warning</td>#}
+{#                        <td>Value A2</td>#}
+{#                        <td>Value A3</td>#}
+{#                        <td>Value A4</td>#}
+{#                    </tr>#}
+{#                    <tr class="data-table-danger">#}
+{#                        <td>#}
+{#                            X#}
+{#                        </td>#}
+{#                        <td>Danger</td>#}
+{#                        <td>Value A2</td>#}
+{#                        <td>Value A3</td>#}
+{#                        <td>Value A4</td>#}
+{#                    </tr>#}
+{#                    <tr class="data-table__disabled">#}
+{#                        <td>#}
+{#                            X#}
+{#                        </td>#}
+{#                        <td>Disabled</td>#}
+{#                        <td>Value A2</td>#}
+{#                        <td>Value A3</td>#}
+{#                        <td>Value A4</td>#}
+{#                    </tr>#}
+{#                </tbody>#}
+{#            </table>#}
+{#        </div>#}
+{##}
+{#    </section>#}
+{##}
+{#    <section>#}
+{#        <h4>Alignment</h4>#}
+{#        <p>A table header, row, or cell can adjust its vertical alignment</p>#}
+{#        <div class="page-panel">#}
+{#        <table class="data-table">#}
+{#              <thead>#}
+{#                <tr>#}
+{#                  <th>Name</th>#}
+{#                  <th>Status</th>#}
+{#                  <th>Notes</th>#}
+{#                </tr>#}
+{#              </thead>#}
+{#          <tbody>#}
+{#            <tr class="top aligned">#}
+{#              <td>John</td>#}
+{#              <td>Approved</td>#}
+{#              <td class="top aligned">#}
+{#                Notes<br>#}
+{#                1<br>#}
+{#                2<br>#}
+{#              </td>#}
+{#            </tr>#}
+{#            <tr>#}
+{#              <td>Jamie</td>#}
+{#              <td class="bottom aligned">Approved</td>#}
+{#              <td>#}
+{#                Notes<br>#}
+{#                1<br>#}
+{#                2<br>#}
+{#              </td>#}
+{#            </tr>#}
+{#          </tbody>#}
+{#        </table>#}
+{#        </div>#}
+{#    </section>#}
 {% endblock %}

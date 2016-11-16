@@ -443,6 +443,11 @@ html {
   content: "\f06a";
 }
 
+.vds-table thead th {
+  color: #333333;
+  font-weight: 700;
+}
+
 .vds-tabs--default__nav {
   padding: 0 0.75rem;
   margin-bottom: 1rem;
