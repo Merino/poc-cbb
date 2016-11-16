@@ -105,25 +105,28 @@
                     <!-- HEADER[END] -->
                 </div>
 
+                <div class="vds-app-view">
                 {% block page %}
-                <div class="vds-page vds-page-title-fixed">
-                    <div class="vds-page-title">
-                        {% block page-header %}
-                            Titel
-                        {% endblock %}
+                    <div class="vds-page vds-page-title-fixed">
+                        <div class="vds-page-title">
+                            {% block page-header %}
+                                Titel
+                            {% endblock %}
+                        </div>
+                        <div class="vds-page-content">
+                            {% block page-content %}
+                                Content
+                            {% endblock %}
+                        </div>
                     </div>
-                    <div class="vds-page-content">
-                        {% block page-content %}
-                            Content
-                        {% endblock %}
-                    </div>
-
-                </div>
                 {% endblock %}
+                </div>
             </div>
-            <div class="vds-app-sidepanel">
-                Side Panel
-            </div>
+
+        </div>
+
+        <div class="vds-app-sidepanel">
+            Side Panel
         </div>
 
         {% endblock %}

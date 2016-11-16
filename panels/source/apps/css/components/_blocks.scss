@@ -20,7 +20,7 @@ $block-border-color: rgba(0, 0, 0, 0.2);
   }
 }
 
-.block {
+.vds-block {
   position: relative;
   background: $block-background-color;
   border: 1px solid $block-border-color;
@@ -28,12 +28,12 @@ $block-border-color: rgba(0, 0, 0, 0.2);
   width: 100%;
   height: 100%;
 
-  & .block__header {
+  & .vds-block__header {
     float: left;
     width: 100%;
     padding: 1rem 1rem 0 1rem;
 
-    & .block__title {
+    & .vds-block__title {
       float:left;
 
       font-size: 1.25rem;
@@ -53,24 +53,24 @@ $block-border-color: rgba(0, 0, 0, 0.2);
       }
     }
 
-    & .block__options{
+    & .vds-block__options{
       float: right;
       position: relative;
     }
   }
 
-  & .block__body {
+  & .vds-block__body {
     margin: 0 auto;
     padding: 1rem 1rem 1rem;
     max-width: 100%;
     overflow-x: visible;
   }
 
-  & .block__footer {
+  & .vds-block__footer {
     padding: 1rem 1rem 1rem;
   }
 
-  & .block__loading {
+  & .vds-block__loading {
     position: absolute;
     left: 0;
     top: 0;

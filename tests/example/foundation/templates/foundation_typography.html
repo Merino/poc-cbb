@@ -2,7 +2,7 @@
 
 {% block head_title %}Design Typography{% endblock %}
 
-{% block content %}
+{% block page %}
     <p>
         All HTML headings, <code>h1</code> through <code>h6</code>, are available. .h1 through .h6 classes are also
         available, for when you want to match the font styling of a heading but still want your text to be displayed
@@ -118,5 +118,52 @@ This value is known as baseline, as it sets the distance between each line where
 
     To switch directories, type <kbd>cd</kbd> followed by the name of the directory.<br>
 To edit settings, press <kbd>ctrl</kbd> + <kbd>,</kbd>
+
+
+     <h2>Sections</h2>
+     <p></p>
+
+     <div class="vds-section vds-is-open">
+         <div class="vds-section__title">
+             Name of the section
+         </div>
+         <div class="vds-section__content">
+             <div class="vds-grid vds-grid-gutters">
+                 <div class="vds-col">
+
+                     <div class="vds-block">
+                        <div class="vds-block__head">
+                            <div class="vds-block__title">
+                                Title
+                            </div>
+                        </div>
+                        <div class="vds-block__body">Body</div>
+                        <div class="vds-block__footer">Footer</div>
+                    </div>
+
+                 </div>
+
+                 <div class="vds-col">
+
+                    <div class="vds-block">
+                        <div class="vds-block__head">Head</div>
+                        <div class="vds-block__body">Body</div>
+                        <div class="vds-block__footer">Footer</div>
+                    </div>
+
+                 </div>
+
+                 <div class="vds-col">
+
+                    <div class="vds-block">
+                        <div class="vds-block__head">Head</div>
+                        <div class="vds-block__body">Body</div>
+                        <div class="vds-block__footer">Footer</div>
+                    </div>
+
+                 </div>
+             </div>
+         </div>
+     </div>
 
 {% endblock %}

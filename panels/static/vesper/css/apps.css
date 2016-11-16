@@ -1,3 +1,9 @@
+.vds-section__title {
+  font-size: 1.3rem;
+  color: #333;
+  border-bottom: 1px solid #e9e9e9;
+}
+
 .vds-icon {
   width: 2rem;
   height: 2rem;
@@ -8,6 +14,14 @@
   vertical-align: middle;
   font-size: 1.6rem;
   padding: 0.2rem;
+}
+
+/* Grid */
+.vds-grid-gutters {
+  margin: -2em 0 1em -2em;
+}
+.vds-grid-gutters > div {
+  padding: 2em 0 0 2em;
 }
 
 html {
@@ -50,7 +64,6 @@ html {
 
 .vds-app-header {
   position: fixed;
-  z-index: 100;
   width: 100%;
   top: 0;
   left: 0;
@@ -148,7 +161,7 @@ html {
   }
 }
 /*
-// Panels
+// Blocks
 */
 .block-deck {
   display: flex;
@@ -160,7 +173,7 @@ html {
   margin-bottom: 30px;
 }
 
-.block {
+.vds-block {
   position: relative;
   background: #FFF;
   border: 1px solid rgba(0, 0, 0, 0.2);
@@ -168,41 +181,41 @@ html {
   width: 100%;
   height: 100%;
 }
-.block .block__header {
+.vds-block .vds-block__header {
   float: left;
   width: 100%;
   padding: 1rem 1rem 0 1rem;
 }
-.block .block__header .block__title {
+.vds-block .vds-block__header .vds-block__title {
   float: left;
   font-size: 1.25rem;
   font-weight: 600;
 }
-.block .block__header .block__title h2 {
+.vds-block .vds-block__header .vds-block__title h2 {
   font-size: 1.25rem;
   font-weight: 600;
   margin: 0;
 }
-.block .block__header .block__title p {
+.vds-block .vds-block__header .vds-block__title p {
   color: #7F8FA4;
   font-size: 0.75rem;
   font-weight: 400;
   margin: 0;
 }
-.block .block__header .block__options {
+.vds-block .vds-block__header .vds-block__options {
   float: right;
   position: relative;
 }
-.block .block__body {
+.vds-block .vds-block__body {
   margin: 0 auto;
   padding: 1rem 1rem 1rem;
   max-width: 100%;
   overflow-x: visible;
 }
-.block .block__footer {
+.vds-block .vds-block__footer {
   padding: 1rem 1rem 1rem;
 }
-.block .block__loading {
+.vds-block .vds-block__loading {
   position: absolute;
   left: 0;
   top: 0;
