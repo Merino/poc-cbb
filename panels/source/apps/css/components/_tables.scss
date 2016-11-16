@@ -4,3 +4,7 @@
     font-weight: 700;
   }
 }
+
+// Copy from source - remove strange hover effect
+.vds-table--bordered:not(.vds-no-row-hover) tbody tr:hover > td:not(.vds-is-selected), .vds-table--bordered:not(.vds-no-row-hover) tbody tr:hover > th:not(.vds-is-selected)
+{ box-shadow: none; }

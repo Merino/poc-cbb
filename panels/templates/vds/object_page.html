@@ -26,19 +26,22 @@
                         {%  endif %}
 
                         <div class="vds-media__body">
+
+                            <nav class="vds-m-bottom--xx-small" role="navigation" aria-label="Breadcrumbs">
+                                <ol class="vds-breadcrumb vds-list--horizontal">
+                                    <li class="vds-breadcrumb__item vds-text-title--caps"><a href="javascript:void(0);">Dashboard</a></li>
+                                    <li class="vds-breadcrumb__item vds-text-title--caps"><a href="javascript:void(0);">PIM</a></li>
+                                    <li class="vds-breadcrumb__item vds-text-title--caps"><a href="javascript:void(0);">Products</a></li>
+                                </ol>
+                            </nav>
+
                             <p class="vds-page-header__title vds-m-right--small vds-align-middle vds-truncate" title="{{ detail_header.subtitle }}">{{ detail_header.title }}</p>
 
                         {% if detail_header.subtitle %}
                             <p class="vds-text-title--caps vds-line-height--reset">{{ detail_header.subtitle }}</p>
                         {%  endif %}
 
-                        {#                      <nav class="vds-m-bottom--xx-small" role="navigation" aria-label="Breadcrumbs">#}
-{#                        <ol class="vds-breadcrumb vds-list--horizontal">#}
-{#                          <li class="vds-breadcrumb__item vds-text-title--caps"><a href="javascript:void(0);">Dashboard</a></li>#}
-{#                          <li class="vds-breadcrumb__item vds-text-title--caps"><a href="javascript:void(0);">PIM</a></li>#}
-{#                          <li class="vds-breadcrumb__item vds-text-title--caps"><a href="javascript:void(0);">Products</a></li>#}
-{#                        </ol>#}
-{#                        </nav>#}
+
 
                         </div>
                     </div>
