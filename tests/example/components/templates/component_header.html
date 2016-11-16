@@ -2,7 +2,54 @@
 
 {% block head_title %}Header{% endblock %}
 
-{% block content %}
+{% block page-header %}
+
+    <div class="vds-page-header" role="banner">
+
+                <div class="vds-grid">
+                    <div class="vds-col vds-has-flexi-truncate">
+
+                        <div class="vds-media vds-media--center vds-no-space vds-grow">
+
+
+                            <div class="vds-media__figure">
+                                <div class="vds-icon vds-icon-standard-user">
+                                    <i class="fa fa-{{ detail_header.icon }}" aria-hidden="true"></i>
+                                </div>
+                            </div>
+
+
+                        <div class="vds-media__body">
+                            <p class="vds-page-header__title vds-m-right--small vds-align-middle vds-truncate" title="{{ detail_header.subtitle }}">Header</p>
+
+
+                            <p class="vds-text-title--caps vds-line-height--reset">Sub Title</p>
+
+
+                        {#                      <nav class="vds-m-bottom--xx-small" role="navigation" aria-label="Breadcrumbs">#}
+{#                        <ol class="vds-breadcrumb vds-list--horizontal">#}
+{#                          <li class="vds-breadcrumb__item vds-text-title--caps"><a href="javascript:void(0);">Dashboard</a></li>#}
+{#                          <li class="vds-breadcrumb__item vds-text-title--caps"><a href="javascript:void(0);">PIM</a></li>#}
+{#                          <li class="vds-breadcrumb__item vds-text-title--caps"><a href="javascript:void(0);">Products</a></li>#}
+{#                        </ol>#}
+{#                        </nav>#}
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="vds-col vds-no-flex vds-grid vds-align-top">
+                    {% for button in detail_actions %}
+                        {{ button }}
+                    {% endfor %}
+                </div>
+
+                </div>
+            </div>
+
+{% endblock %}
+
+{% block page-content %}
 
      <div class="page-header">
         <div class="page-header--icon">

@@ -1,1 +1,48 @@
 
+.vds-page{
+
+}
+
+.vds-page-title{
+  position: fixed;
+  z-index:1000;
+  height: 60px;
+  width: 100%;
+  background-color: $vds-page-title-background-color;
+  border-bottom: 1px solid $vds-page-title-border-color;
+}
+
+
+.vds-page-header {
+  background-color: transparent;
+  border: none;
+}
+
+.vds-page-content {
+  position: relative;
+  top: 60px;
+  background-color: #FFF;
+  padding: 0.75rem
+}
+
+@media (min-width: 48em) {
+  .vds-page-title {
+    height: $vds-page-title-height;
+  }
+
+  .vds-page-header {
+    padding: 1.75rem 1.5rem;
+  }
+
+  .vds-page-content{
+    top: $vds-page-title-height;
+    padding: 1.5rem
+  }
+}
+
+
+
+
+
+
+

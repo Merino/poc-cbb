@@ -63,7 +63,6 @@ void 0!==c?null===c?void r.removeAttr(a,b):e&&"set"in e&&void 0!==(d=e.set(a,c,b
                 addButton = $this.filter(":last").next().find("a");
             }
             addButton.click(function(e) {
-                alert('test');
                 e.preventDefault();
                 var template = $("#" + options.prefix + "-empty");
                 var row = template.clone(true);

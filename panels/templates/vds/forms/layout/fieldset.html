@@ -1,15 +1,15 @@
 
-<div class="vds-p-horizontal--small vds-p-bottom--large {{ fieldset.css_class }}">
+<div class="{{ fieldset.css_class }}">
 
-    <div class="block ">
+    <div class="vds-block">
         {% if legend %}
-        <div class="block__header">
-            <div class="block__title">
+        <div class="vds-block__header">
+            <div class="vds-block__title">
                 {{ legend|safe }}
             </div>
         </div>
         {% endif %}
-        <div class="block__body">
+        <div class="vds-block__body">
              {{ fields|safe }}
         </div>
     </div>
