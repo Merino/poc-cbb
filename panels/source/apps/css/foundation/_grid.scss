@@ -1,0 +1,9 @@
+/* Grid */
+
+.vds-grid-gutters {
+  margin: -2em 0 1em -2em;
+
+  &>div {
+    padding: 2em 0 0 2em;
+  }
+}
