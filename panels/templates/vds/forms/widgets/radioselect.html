@@ -1,0 +1,7 @@
+{% for choice in choices %}
+<label class="vds-radio" for="{{ choice.id_for_label }}">
+    {{ choice.tag }}
+    <span class="vds-radio--faux"></span>
+    <span class="vds-form-element__label">{{ choice.choice_label }}</span>
+</label>
+{% endfor %}

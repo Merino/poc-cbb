@@ -19,7 +19,7 @@ from panels.views import ModelAdminView, TabularModelAdminInline, FormAdminView,
 
 
 from .models import ListData, GlobalA, GlobalB, NestedA, NestedB1, NestedC1
-from .forms import CreateShipmentForm, CreatePackageForm
+from .forms import CreateShipmentForm, CreatePackageForm, FieldsForm
 
 
 
@@ -45,19 +45,20 @@ class CreatePackageInline(TabularFormAdminInline):
 class ExtraViewAdmin(FormAdminView):
     """
     """
-    #template_name = 'views/extra.html'
     form_class = CreateShipmentForm
-    form_layout =  Layout(
-                        Fieldset('Shipment',
-                            Field('channel'),
-                            Field('shipment_number'),
-                            Field('parcels'),
-                            Field('reference'),
-                            Field('shipment_method'),
-                        ),
-                        Fieldset('Packages',
-                            Inline('packages')
-                        )
+    form_layout = Layout(
+                    Fieldset('Fields',
+                        Field('channel'),
+                        Field('shipment_method'),
+                        Field('shipment_number'),
+                        Field('parcels'),
+                        Field('reference'),
+                        Field('print_labels')
+                    ),
+                    Fieldset('Extra',
+                        Inline('packages'),
+                        css_id='fieldset-extra'
+                    )
                   )
 
     inlines = [
@@ -70,7 +71,6 @@ class ExtraViewAdmin(FormAdminView):
         initial = {
             'reference': self.object.name,
         }
-
         return initial
 
     def get_form_kwargs(self, **kwargs):
@@ -88,7 +88,6 @@ class ExtraViewAdmin(FormAdminView):
         """
         """
         print form.cleaned_data
-
         return self.form_invalid(form=form)
 
 

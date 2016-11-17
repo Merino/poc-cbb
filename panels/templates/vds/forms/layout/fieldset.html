@@ -1,6 +1,4 @@
-
-<div class="{{ fieldset.css_class }}">
-
+<div {% if fieldset.css_id %}id="{{ fieldset.css_id }}"{% endif %} class="vds-fieldset{% if fieldset.css_class %} {{ fieldset.css_class }}{%endif %}">
     <div class="vds-block">
         {% if legend %}
         <div class="vds-block__header">
@@ -10,16 +8,9 @@
         </div>
         {% endif %}
         <div class="vds-block__body">
-             {{ fields|safe }}
+            <div class="vds-form--horizontal">
+                {{ fields|safe }}
+            </div>
         </div>
     </div>
-
 </div>
-
-{##}
-{#<fieldset {% if fieldset.css_id %}id="{{ fieldset.css_id }}"{% endif %}#}
-{#    {% if fieldset.css_class or form_style %}class="{{ fieldset.css_class }} {{ form_style }}"{% endif %}#}
-{#    {{ fieldset.flat_attrs|safe }}>#}
-{#    {% if legend %}<legend>{{ legend|safe }}</legend>{% endif %}#}
-{#    {{ fields|safe }} #}
-{#</fieldset>#}

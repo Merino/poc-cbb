@@ -8,6 +8,7 @@ from django.http import HttpResponseRedirect
 from django.forms import formset_factory
 from django.views.generic.base import TemplateView
 from django.views.generic.edit import FormView
+from django.template import Context
 
 from django.contrib import admin
 from django.conf.urls import patterns, url
@@ -63,7 +64,7 @@ class BaseFormAdminInline(object):
     def get_formset_initial(self):
         """
         """
-        return []
+        return {}
 
     def get_formset_class(self):
         """
@@ -129,6 +130,8 @@ class FormAdminView(FormView):
 
     inlines = []
     admin = None
+
+    form_layout = None
 
     def __init__(self, **kwargs):
         super(FormAdminView, self).__init__(**kwargs)
@@ -223,7 +226,6 @@ class FormAdminView(FormView):
         formsets = [inline.get_formset() for inline in self.get_inlines()]
 
         if form.is_valid() and all([f.is_valid() for f in formsets]):
-
             for f in formsets:
                 form.cleaned_data[f.prefix] = f.cleaned_data
 
@@ -232,4 +234,14 @@ class FormAdminView(FormView):
             return self.form_invalid(form=form)
 
     def _render_buttons(self, buttons):
-        return 'html'
+        render_buttons = []
+        for button in buttons:
+            render_buttons.append(
+                button.render(
+                    None,
+                    None,
+                    Context({})
+                )
+            )
+
+        return render_buttons

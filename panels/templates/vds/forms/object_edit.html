@@ -5,9 +5,36 @@
 {% block page-content %}
     {% crispy form %}
 
-    {% for formset in formsets %}
-        {{ formset.empty_form|crispy }}
-        {% crispy formset %}
-    {% endfor %}
+
+    <script type="text/javascript">
+    // JavaScript Tabs
+    $(function() {
+        $( document ).ready(function() {
+
+            shipment_lookup = {
+                '2': {
+                    'details': true
+                },
+                '1': {
+                    'details': false
+                }
+            };
+
+            $("input[name=shipment_method]:radio").change(function(){
+                alert('change');
+           });
+
+
+           var form_init = function(){
+
+           }
+
+           $('#fieldset-extra').hide();
+           $('#field-parcels').hide();
+
+        });
+    });
+
+    </script>
 
 {% endblock %}

@@ -1,9 +1,26 @@
 from django import forms
 
+from panels.widgets import InputWidget, RadioSelectWidget
+
+CHOICES = [
+    ('1', 'Value 1'),
+    ('2', 'Value 2'),
+    ('3', 'Value 3'),
+]
+
+class FieldsForm(forms.Form):
+    input = forms.CharField(required=True, widget=InputWidget)
+    select = forms.ChoiceField(choices=CHOICES, required=True)
+    radio = forms.ChoiceField(choices=CHOICES, widget=RadioSelectWidget, required=True)
+    check = forms.BooleanField(required=True)
+    textarea = forms.CharField(widget=forms.Textarea)
+    #date = forms.DateField(required=True)
+    email = forms.EmailField(required=True)
+
 
 class CreateShipmentForm(forms.Form):
-    channel = forms.ChoiceField(choices=[], widget=forms.RadioSelect, required=True)
-    shipment_method = forms.ChoiceField(choices=[], widget=forms.RadioSelect, required=True)
+    channel = forms.ChoiceField(choices=[], widget=RadioSelectWidget, required=True)
+    shipment_method = forms.ChoiceField(choices=[], widget=RadioSelectWidget, required=True)
     shipment_number = forms.CharField(max_length=100, required=False)
     parcels = forms.IntegerField(initial=1, required=True, help_text='Number of parcels')
     reference = forms.CharField(max_length=100, required=False, initial=None, help_text='If empty copies reference from each order')

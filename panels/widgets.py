@@ -1,4 +1,6 @@
-from django.forms.widgets import Textarea, Input, Select
+from itertools import chain
+
+from django.forms.widgets import Textarea, Input, Select, RadioSelect, RadioChoiceInput
 from django.forms.utils import flatatt
 from django.template.loader import render_to_string
 
@@ -11,6 +13,28 @@ class InputWidget(Input):
         self.attrs.update({
             'class': 'vds-input'
         })
+
+
+class RadioSelectWidget(RadioSelect):
+    """
+    """
+    template_name = 'vds/forms/widgets/radioselect.html'
+
+    def render(self, name, value, attrs=None, choices=()):
+        choices = []
+        index = 0
+
+        for choice in list(chain(self.choices, choices)):
+            widget = RadioChoiceInput(name=name, value=value, attrs=attrs.copy(), choice=choice, index=index)
+            choices.append(widget)
+            index = index + 1
+
+        context = {
+            'name': name,
+            'choices': choices
+        }
+
+        return render_to_string(self.template_name, context=context)
 
 
 class ForeignKeyWidget(Select):

@@ -7,18 +7,20 @@
 
     {% if field|is_checkbox %}
 
-    <div class="vds-form-element">
+    <div id="field-{{ field.name }}" class="vds-form-element">
+        <label for="{{ field.id_for_label }}" class="vds-form-element__label {{ label_class }}">
+            {{ field.label|safe }} {% if field.field.required %}<abbr class="vds-required" title="required">*</abbr>{% endif %}
+        </label>
         <div class="vds-form-element__control">
             <label class="vds-checkbox" for="{{ field.id_for_label }}">
                 {% crispy_field field %}
                 <span class="vds-checkbox--faux"></span>
-                <span class="vds-form-element__label">{{ field.label|safe }} {% if field.field.required %}<abbr class="vds-required" title="required">*</abbr>{% endif %}</span>
             </label>
         </div>
      </div>
     {% else %}
 
-    <div class="vds-form-element {% if field.errors %}vds-has-error{% endif %}">
+    <div id="field-{{ field.name }}" class="vds-form-element {% if field.errors %}vds-has-error{% endif %}">
         <label for="{{ field.id_for_label }}" class="vds-form-element__label {{ label_class }}">
             {{ field.label|safe }} {% if field.field.required %}<abbr class="vds-required" title="required">*</abbr>{% endif %}
         </label>
