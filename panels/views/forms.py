@@ -227,7 +227,11 @@ class FormAdminView(FormView):
 
         if form.is_valid() and all([f.is_valid() for f in formsets]):
             for f in formsets:
-                form.cleaned_data[f.prefix] = f.cleaned_data
+                cleaned_data = []
+                for formset in f.cleaned_data:
+                    if formset:
+                        cleaned_data.append(formset)
+                form.cleaned_data[f.prefix] = cleaned_data
 
             return self.form_valid(form=form)
         else:

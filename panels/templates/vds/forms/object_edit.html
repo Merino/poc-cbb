@@ -10,28 +10,32 @@
     // JavaScript Tabs
     $(function() {
         $( document ).ready(function() {
+            function constrain_shipment_method(shipment_method_pk){
+               shipment_method = shipment_lookup[shipment_method_pk];
 
-            shipment_lookup = {
+               if (shipment_method['details'] == true){
+                   $('#fieldset-extra').show();
+                   $('#field-parcels').hide();
+
+               } else {
+                   $('#fieldset-extra').hide();
+                   $('#field-parcels').show();
+               }
+           };
+
+           var shipment_lookup = {
                 '2': {
                     'details': true
                 },
-                '1': {
+                '100': {
                     'details': false
                 }
-            };
+           };
 
-            $("input[name=shipment_method]:radio").change(function(){
-                alert('change');
+           $("input[name=shipment_method]:radio").change(function(){
+               shipment_method_pk = $(this).val();
+               constrain_shipment_method(shipment_method_pk);
            });
-
-
-           var form_init = function(){
-
-           }
-
-           $('#fieldset-extra').hide();
-           $('#field-parcels').hide();
-
         });
     });
 

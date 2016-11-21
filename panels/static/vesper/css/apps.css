@@ -147,11 +147,13 @@ html {
   width: 100%;
   background-color: #f5f5f5;
   border-bottom: 1px solid #cccccc;
+  padding: 0.5rem 0.75rem;
 }
 
 .vds-page-header {
   background-color: transparent;
   border: none;
+  padding: 0 !important;
 }
 
 .vds-page-content {
@@ -164,6 +166,7 @@ html {
 @media (min-width: 48em) {
   .vds-page-title {
     height: 84px;
+    padding: 1rem 1.5rem;
   }
 
   .vds-page-header {

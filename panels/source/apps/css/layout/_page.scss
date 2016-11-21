@@ -10,18 +10,14 @@
   width: 100%;
   background-color: $vds-page-title-background-color;
   border-bottom: 1px solid $vds-page-title-border-color;
-  //padding:0.75rem;
-
-  //& h1{
-  //  font-size:32px;
-  //  line-height: 32px;
-  //}
+  padding:0.5rem 0.75rem;
 }
 
 
 .vds-page-header {
   background-color: transparent;
   border: none;
+  padding:0 !important;
 }
 
 .vds-page-content {
@@ -34,7 +30,7 @@
 @media (min-width: 48em) {
   .vds-page-title {
     height: $vds-page-title-height;
-  //  padding: 0.75rem 1.5rem;
+    padding: 1rem 1.5rem;
   }
 
   .vds-page-header {

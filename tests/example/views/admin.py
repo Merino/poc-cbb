@@ -51,7 +51,7 @@ class ExtraViewAdmin(FormAdminView):
                         Field('channel'),
                         Field('shipment_method'),
                         Field('shipment_number'),
-                        Field('parcels'),
+                        Field('parcels', css_class='vds-hide'),
                         Field('reference'),
                         Field('print_labels')
                     ),
@@ -88,6 +88,13 @@ class ExtraViewAdmin(FormAdminView):
         """
         """
         print form.cleaned_data
+
+        if form.cleaned_data['shipment_method'] == '2':
+            print 'start here'
+            # if len(form.cleaned_data['packages']) != 1:
+            #     print 'error'
+            form.add_error('shipment_method', 'We need a error')
+
         return self.form_invalid(form=form)
 
 
