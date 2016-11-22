@@ -6,7 +6,7 @@
 .vds-page-title{
   position: fixed;
   z-index:1000;
-  height: 60px;
+  height: 54px;
   width: 100%;
   background-color: $vds-page-title-background-color;
   border-bottom: 1px solid $vds-page-title-border-color;
@@ -18,11 +18,21 @@
   background-color: transparent;
   border: none;
   padding:0 !important;
+
+  .vds-icon {
+      width:2rem;
+      height:2rem;
+      padding:0;
+  }
+
+  &__title {
+    font-size:1.3rem;
+  }
 }
 
 .vds-page-content {
   position: relative;
-  top: 60px;
+  top: 54px;
   background-color: #FFF;
   padding: 0.75rem
 }
@@ -35,6 +45,16 @@
 
   .vds-page-header {
     padding: 1.75rem 1.5rem;
+
+    .vds-icon {
+      width: 3.7rem;
+      height: 3.7rem;
+    }
+
+    &__title {
+      font-size:2.2rem;
+    }
+
   }
 
   .vds-page-content{

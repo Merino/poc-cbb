@@ -226,63 +226,116 @@ class Inline(LayoutObject):
                     return render_to_string(self.template, context)
 
 
-class Button(Button):
+# class Button(Button):
+#     """
+#         Button("id", "name", "type")
+#         Button("id-cnl", "Cancel", "/sss/")
+#
+#         Button('id-save', _("Save"), "submit", "primary")
+#         Button('id-cancel', _("Cancel"), "/action/delete", style="primary")
+#
+#         Button('id-cancel', _("Cancel"), "/action/delete", style="danger", icon="danger")
+#     """
+#     template = '%s/layout/button.html'
+#     input_type = 'button'
+#
+#     def __init__(self, name, value, link, style='secondary', *args, **kwargs):
+#
+#         super(Button, self).__init__(name=name, value=value, *args, **kwargs)
+#
+#         # Link
+#         if link == 'submit':
+#             self.input_type = 'submit'
+#         else:
+#             self.input_type = 'a'
+#             self.attrs = {
+#                 'href': link
+#             }
+#
+#         # Style
+#         self.field_classes = 'vds-button'
+#         if style == 'secondary':
+#             self.field_classes += ' vds-button--neutral'
+#
+#         if style == 'primary':
+#             self.field_classes += ' vds-button--brand'
+#
+#         if style == 'danger':
+#             self.field_classes += ' vds-button--destructive'
+#
+#         # Icon
+#         try:
+#             self.icon = kwargs['icon']
+#         except:
+#             self.icon = False
+#
+#     def render(self, form, form_style, context, template_pack=TEMPLATE_PACK, **kwargs):
+#         """
+#         Renders an `<button />` if container is used as a Layout object.
+#         Input button value can be a variable in context.
+#         """
+#         self.value = Template(text_type(self.value)).render(context)
+#         template = self.get_template_name(template_pack)
+#
+#         self.attrs.update({
+#             'class': self.field_classes,
+#             'value': self.value,
+#             'name': self.name,
+#         })
+#
+#         self.flat_attrs = flatatt(self.attrs)
+#
+#         return render_to_string(template, {'button': self}, context)
+
+
+class Button(object):
     """
-        Button("id", "name", "type")
-        Button("id-cnl", "Cancel", "/sss/")
-
-        Button('id-save', _("Save"), "submit", "primary")
-        Button('id-cancel', _("Cancel"), "/action/delete", style="primary")
-
-        Button('id-cancel', _("Cancel"), "/action/delete", style="danger", icon="danger")
     """
-    template = '%s/layout/button.html'
-    input_type = 'button'
+    def __init__(self, name, value, link='/', style='secondary', *args, **kwargs):
+        self.name = name
+        self.value = value
+        self.link = link
 
-    def __init__(self, name, value, link, style='secondary', *args, **kwargs):
-
-        super(Button, self).__init__(name=name, value=value, *args, **kwargs)
-
-        # Link
-        if link == 'submit':
-            self.input_type = 'submit'
-        else:
-            self.input_type = 'a'
-            self.attrs = {
-                'href': link
-            }
-
-        # Style
-        self.field_classes = 'vds-button'
         if style == 'secondary':
-            self.field_classes += ' vds-button--neutral'
+            self.style = 'neutral'
 
         if style == 'primary':
-            self.field_classes += ' vds-button--brand'
+            self.style = 'brand'
 
         if style == 'danger':
-            self.field_classes += ' vds-button--destructive'
+            self.style = 'destructive'
 
-        # Icon
-        try:
-            self.icon = kwargs['icon']
-        except:
-            self.icon = False
-
-    def render(self, form, form_style, context, template_pack=TEMPLATE_PACK, **kwargs):
+    def render(self):
         """
-        Renders an `<button />` if container is used as a Layout object.
-        Input button value can be a variable in context.
         """
-        self.value = Template(text_type(self.value)).render(context)
-        template = self.get_template_name(template_pack)
+        context = {
+            "value": self.value,
+            "link": self.link,
+            "name": self.name,
+            "style": self.style,
+        }
 
-        self.attrs.update({
-            'class': self.field_classes,
-            'value': self.value,
-            'name': self.name,
-        })
+        if self.link == 'submit':
+            html = '<button class="vds-button vds-button--{style} type="submit" name="{name}">{value}</button>'.format(**context)
+        else:
+            html = '<a class="vds-button vds-button--{style}" href="{link}">{value}</a>'.format(**context)
 
-        self.flat_attrs = flatatt(self.attrs)
+        return html
 
-        return render_to_string(template, {'button': self}, context)
+
+class Breadcrumb(object):
+    """
+    """
+    def __init__(self, title, href):
+        self.title = title
+        self.href= href
+
+
+class Header(object):
+    """
+    """
+    def __init__(self):
+        self.title = None
+        self.icon = None
+        self.actions = []
+        self.navigation = []

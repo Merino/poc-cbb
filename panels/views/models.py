@@ -17,7 +17,7 @@ from django.template import Context
 from django.template.defaultfilters import capfirst
 from django.utils.translation import ugettext, ugettext_lazy as _
 
-from ..layouts import FormHelper, Layout, TabHolder, Tab, Fieldset, Field, Button
+from ..layouts import FormHelper, Layout, TabHolder, Tab, Fieldset, Field, Button, Header, Breadcrumb
 from ..widgets import ForeignKeyWidget, InputWidget
 
 
@@ -111,73 +111,69 @@ class ModelAdminView(nested_admin.NestedModelAdmin):
 
         return form
 
-    def get_detail_header(self, request, obj=None, **kwargs):
+    def get_detail_title(self, request, obj=None, **kwargs):
         """
         """
-        class Header(object):
-            title = None
-            subtitle = None
-            icon = None
+        if obj:
+            return str(obj)
+        else:
+            return 'Add %s' % self.model._meta
 
-        header = Header()
+    def get_detail_navigation(self, request, obj=None, **kwargs):
+        """
+        """
+        navigation = []
+        navigation.append(Breadcrumb(title='Dashboard', href='/views/'))
+        navigation.append(Breadcrumb(title='App', href='/views/views/'))
 
         if obj:
-            header.title = obj
-        else:
-            header.title = 'Add %s' % self.model._meta
+            navigation.append(Breadcrumb(title='Model', href='/views/views/listdata/'))
 
-        header.subtitle = False
-        header.icon = "flag"
-
-        return header
+        return navigation
 
     def get_detail_actions(self, request, obj=None, **kwargs):
         """
         """
         return self.detail_actions
 
-    def _render_buttons(self, buttons):
-        render_buttons = []
-        for button in buttons:
-            render_buttons.append(
-                button.render(
-                    None,
-                    None,
-                    Context({})
-                )
-            )
+    def _get_detail_action(self, request, obj=None, **kwargs):
+        """
+            Wrapper function around 'get_detail_actions' to control the form.
+        """
+        actions = []
 
-        return render_buttons
+        url_index = self.get_url_reverse('changelist')
 
 
-    def changeform_view(self, request, object_id=None, form_url='', extra_context=None):
-        # Get Object
-        obj = self.get_object(request=request, object_id=object_id)
-
-        # Detail Header
-        detail_header = self.get_detail_header(request=request, obj=obj)
-
-        # Detail Actions
-        detail_actions = []
         if obj:
             url_delete = self.get_url_reverse('delete', obj.pk)
-            detail_actions.append(
+            actions.append(
                 Button('delete', 'Delete', url_delete, 'danger', icon='trash')
             )
-        url_index = self.get_url_reverse('changelist')
-        detail_actions.append(
+
+        actions.append(
             Button('cancel', 'Back', url_index, icon='close')
         )
 
-        detail_actions += copy.copy(self.get_detail_actions(request=request, obj=obj))
-        detail_actions.append(
+        actions += copy.copy(self.get_detail_actions(request=request, obj=obj))
+        actions.append(
             Button('_continue', 'Save', 'submit', 'primary', icon='save')
         )
 
-        # Render View
+        return actions
+
+    def changeform_view(self, request, object_id=None, form_url='', extra_context=None):
+        # Object
+        obj = self.get_object(request=request, object_id=object_id)
+
+        # Header
+        header = Header()
+        header.title = self.get_detail_title(request=request, obj=obj)
+        header.navigation = self.get_detail_navigation(request=request, obj=obj)
+        header.actions = self._get_detail_action(request=request, obj=obj)
+
         extra_context = {
-            'detail_header': detail_header,
-            'detail_actions': self._render_buttons(buttons=detail_actions),
+            'header': header
         }
 
         response = super(ModelAdminView, self).changeform_view(

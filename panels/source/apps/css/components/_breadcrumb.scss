@@ -1,0 +1,29 @@
+/*
+// Breadcrumb
+*/
+
+// Fix padding for first item
+// Fix left for all second elements
+
+.vds-breadcrumb .vds-list__item,
+.vds-breadcrumb__item {
+  padding: 0 1rem 0 0;
+}
+
+.vds-breadcrumb .vds-list__item > a,
+.vds-breadcrumb__item > a {
+  padding: 0 0;
+}
+
+.vds-breadcrumb .vds-list__item::before,
+.vds-breadcrumb__item::before {
+    left: -0.75rem;
+}
+
+// Fix default text so we do need to use
+.vds-breadcrumb__item {
+  font-size: 0.75rem;
+  line-height: 1.25;
+  text-transform: uppercase;
+  letter-spacing: 0.0625rem;
+}

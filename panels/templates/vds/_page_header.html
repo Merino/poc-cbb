@@ -1,0 +1,36 @@
+<div class="vds-page-header" role="banner">
+    <div class="vds-grid">
+
+        <div class="vds-col vds-has-flexi-truncate">
+            <div class="vds-media vds-media--center vds-no-space vds-grow">
+
+{#                  <div class="vds-media__figure">#}
+{#                      <div class="vds-icon vds-icon-{{ detail_header.icon }}">#}
+{#                          <i class="fa fa-{{ detail_header.icon }}" aria-hidden="true"></i>#}
+{#                      </div>#}
+{#                  </div>#}
+
+                <div class="vds-media__body">
+                    <nav role="navigation" aria-label="Breadcrumbs">
+                        <ol class="vds-breadcrumb vds-list--horizontal">
+                            {% for breadcrumb in header.navigation %}
+                            <li class="vds-breadcrumb__item"><a href="{{ breadcrumb.href }}">{{ breadcrumb.title }}</a></li>
+                            {% endfor %}
+                        </ol>
+                    </nav>
+
+                    <p class="vds-page-header__title vds-m-right--small vds-align-middle vds-truncate" title="{{ header.title }}">
+                        {{ header.title }}
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="vds-col vds-no-flex vds-grid vds-align-middle">
+            {% for action in header.actions %}
+                {{ action.render|safe }}
+            {% endfor %}
+        </div>
+
+    </div>
+</div>

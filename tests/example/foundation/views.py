@@ -1,34 +1,123 @@
-# Create your views here.
-from django.views.generic.base import TemplateView
+from panels.layouts import Breadcrumb, Button
+from panels.views import TemplateAdminView
 
 
-class FoundationColors(TemplateView):
-    template_name = 'foundation_colors.html'
-
-class FoundationGrid(TemplateView):
-    template_name = 'foundation_grid.html'
-
-# needs to go to panels
-# class FoundationBlocks(TemplateView):
-#     template_name = 'design_blocks.html'
-
-class FoundationIcons(TemplateView):
-    template_name = 'foundation_icons.html'
-
-class FoundationIndex(TemplateView):
+class FoundationIndex(TemplateAdminView):
+    """
+    """
     template_name = 'foundation_index.html'
 
-class FoundationLayout(TemplateView):
+
+class FoundationColors(TemplateAdminView):
+    """
+    """
+    page_header_title = 'Color'
+    page_header_navigation = [
+        Breadcrumb(title='Dashboard',  href='/'),
+        Breadcrumb(title='Foundation', href='/foundation/'),
+    ]
+
+    template_name = 'foundation_colors.html'
+
+
+class FoundationGrid(TemplateAdminView):
+    """
+    """
+    page_header_title = 'Grid'
+    page_header_navigation = [
+        Breadcrumb(title='Dashboard',  href='/'),
+        Breadcrumb(title='Foundation', href='/foundation/'),
+    ]
+
+    template_name = 'foundation_grid.html'
+
+
+class FoundationIcons(TemplateAdminView):
+    """
+    """
+    page_header_title = 'Icons'
+    page_header_navigation = [
+        Breadcrumb(title='Dashboard',  href='/'),
+        Breadcrumb(title='Foundation', href='/foundation/'),
+    ]
+
+    template_name = 'foundation_icons.html'
+
+
+class FoundationLayout(TemplateAdminView):
+    """
+    """
+    page_header_title = 'Layout'
+    page_header_navigation = [
+        Breadcrumb(title='Dashboard',  href='/'),
+        Breadcrumb(title='Foundation', href='/foundation/'),
+    ]
+
     template_name = 'foundation_layout.html'
 
-class FoundationMotions(TemplateView):
+
+class FoundationLoading(TemplateAdminView):
+    """
+    """
+    page_header_title = 'Loading'
+    page_header_navigation = [
+        Breadcrumb(title='Dashboard',  href='/'),
+        Breadcrumb(title='Foundation', href='/foundation/'),
+    ]
+
+    template_name = 'foundation_loading.html'
+
+
+class FoundationMotions(TemplateAdminView):
+    """
+    """
+    page_header_title = 'Motions'
+    page_header_navigation = [
+        Breadcrumb(title='Dashboard',  href='/'),
+        Breadcrumb(title='Foundation', href='/foundation/'),
+    ]
     template_name = 'foundation_motions.html'
 
-class FoundationTypography(TemplateView):
+
+class FoundationMessaging(TemplateAdminView):
+    """
+    """
+    page_header_title = 'Messaging'
+    page_header_navigation = [
+        Breadcrumb(title='Dashboard',  href='/'),
+        Breadcrumb(title='Foundation', href='/foundation/'),
+    ]
+    template_name = 'foundation_messaging.html'
+
+
+class FoundationTypography(TemplateAdminView):
+    """
+    """
+    page_header_title = 'Typography'
+    page_header_navigation = [
+        Breadcrumb(title='Dashboard',  href='/'),
+        Breadcrumb(title='Foundation', href='/foundation/'),
+    ]
     template_name = 'foundation_typography.html'
 
-class FoundationNavigation(TemplateView):
+
+class FoundationNavigation(TemplateAdminView):
+    """
+    """
+    page_header_title = 'Navigation'
+    page_header_navigation = [
+        Breadcrumb(title='Dashboard',  href='/'),
+        Breadcrumb(title='Foundation', href='/foundation/'),
+    ]
     template_name = 'foundation_navigation.html'
 
-class FoundationVoiceAndTone(TemplateView):
+
+class FoundationVoiceAndTone(TemplateAdminView):
+    """
+    """
+    page_header_title = 'Voice & Tone'
+    page_header_navigation = [
+        Breadcrumb(title='Dashboard',  href='/'),
+        Breadcrumb(title='Foundation', href='/foundation/'),
+    ]
     template_name =  'foundation_voice_and_tone.html'

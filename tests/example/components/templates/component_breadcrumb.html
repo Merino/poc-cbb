@@ -8,17 +8,53 @@
 
 {% block page-content %}
 
-<ol class="breadcrumb">
-  <li class="breadcrumb-item active">Home</li>
-</ol>
-<ol class="breadcrumb">
-  <li class="breadcrumb-item"><a href="#">Home</a></li>
-  <li class="breadcrumb-item active">Library</li>
-</ol>
-<ol class="breadcrumb">
-  <li class="breadcrumb-item"><a href="#">Home</a></li>
-  <li class="breadcrumb-item"><a href="#">Library</a></li>
-  <li class="breadcrumb-item active">Data</li>
-</ol>
+    <nav role="navigation" aria-label="Breadcrumbs">
+        <ol class="vds-breadcrumb vds-list--horizontal">
+            <li class="vds-breadcrumb__item"><a href="javascript:void(0);">Parent Entity</a></li>
+            <li class="vds-breadcrumb__item"><a href="javascript:void(0);">Parent Record Name</a></li>
+        </ol>
+    </nav>
+
+    <br />
+
+    <nav role="navigation" aria-label="Breadcrumbs">
+        <ol class="vds-breadcrumb vds-list--horizontal">
+            <li class="vds-breadcrumb__item"><a href="javascript:void(0);">Parent Entity</a></li>
+            <li class="vds-breadcrumb__item"><a href="javascript:void(0);">Parent Record Name</a></li>
+            <li class="vds-breadcrumb__item">Name</li>
+        </ol>
+    </nav>
+
+    <br />
+
+    <nav role="navigation" aria-label="Breadcrumbs">
+        <ol class="vds-breadcrumb vds-list--horizontal">
+            <li class="vds-breadcrumb__item">
+                <a href="javascript:void(0);">Dashboard</a>
+            </li>
+            <li class="vds-breadcrumb__item">
+                <a href="javascript:void(0);">PIM</a>
+            </li>
+            <li class="vds-breadcrumb__item">
+                <a href="javascript:void(0);">Products</a>
+            </li>
+            <li class="vds-breadcrumb__item">
+                PH39281 - Philips Bureau Lamp
+            </li>
+        </ol>
+    </nav>
+
+    <br />
+
+    <nav role="navigation" aria-label="Breadcrumbs">
+        <ol class="vds-breadcrumb vds-list--horizontal">
+            <li class="vds-breadcrumb__item">
+                <a href="/">Dashboard</a>
+            </li>
+            <li class="vds-breadcrumb__item">
+                <a href="/components/">Components</a>
+            </li>
+        </ol>
+    </nav>
 
 {% endblock %}
