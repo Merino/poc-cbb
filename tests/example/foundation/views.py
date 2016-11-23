@@ -1,6 +1,7 @@
 from panels.layouts import Breadcrumb, Button
 from panels.views import TemplateAdminView
 
+from .utils import FONT_AWESOME_ICON_LIST
 
 class FoundationIndex(TemplateAdminView):
     """
@@ -42,6 +43,17 @@ class FoundationIcons(TemplateAdminView):
     ]
 
     template_name = 'foundation_icons.html'
+
+    def icon_list(self):
+        return FONT_AWESOME_ICON_LIST
+
+    def get_context_data(self, **kwargs):
+        kwargs = super(FoundationIcons, self).get_context_data(**kwargs)
+        kwargs.update({
+            'icon_list': self.icon_list()
+        })
+
+        return kwargs
 
 
 class FoundationLayout(TemplateAdminView):
