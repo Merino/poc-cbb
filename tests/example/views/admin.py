@@ -45,6 +45,8 @@ class CreatePackageInline(TabularFormAdminInline):
 class ExtraViewAdmin(FormAdminView):
     """
     """
+
+
     form_class = CreateShipmentForm
     form_layout = Layout(
                     Fieldset('Fields',
@@ -64,6 +66,12 @@ class ExtraViewAdmin(FormAdminView):
     inlines = [
         CreatePackageInline
     ]
+
+    def get_page_header_title(self, request, obj):
+        if obj:
+            return str(obj)
+        else:
+            return 'New object'
 
     def get_form_initial(self):
         """

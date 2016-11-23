@@ -2,7 +2,7 @@ from django.conf.urls import url
 
 from .views import ComponentIndexView, ComponentNotificationView, ComponentFormInputView, ComponentFormLayoutView, \
     ComponentFormValidationView, ComponentButtonView, ComponentTableView, ComponentLabelView, ComponentHeaderView, \
-    ComponentPanelView, ComponentBreadcrumbView
+    ComponentCardsView, ComponentBreadcrumbView
 
 urlpatterns = [
     url(r'^$', ComponentIndexView.as_view()),
@@ -14,6 +14,6 @@ urlpatterns = [
     url(r'^header/', ComponentHeaderView.as_view()),
     url(r'^table/', ComponentTableView.as_view()),
     url(r'^label/', ComponentLabelView.as_view()),
-     url(r'^panel/', ComponentPanelView.as_view()),
+     url(r'^cards/', ComponentCardsView.as_view()),
     url(r'^breadcrumb', ComponentBreadcrumbView.as_view()),
 ]

@@ -16,8 +16,9 @@ from django.core import urlresolvers
 from django.template.defaultfilters import capfirst
 from django.utils.translation import ugettext, ugettext_lazy as _
 
-from ..layouts import FormHelper, Layout, TabHolder, Tab, Fieldset, Field, Button
+from ..layouts import FormHelper, Layout, TabHolder, Tab, Fieldset, Field, Button, Header, Breadcrumb
 from ..widgets import ForeignKeyWidget, InputWidget
+from mixins import AdminPageMixin
 
 
 import nested_admin
@@ -123,7 +124,7 @@ class TabularFormAdminInline(BaseFormAdminInline):
 
 
 
-class FormAdminView(FormView):
+class FormAdminView(AdminPageMixin, FormView):
     """
     """
     template_name = 'vds/forms/object_edit.html'
@@ -179,19 +180,13 @@ class FormAdminView(FormView):
         """
         return self.admin.get_object(request=request, object_id=object_id)
 
+
     def get_context_data(self, **kwargs):
 
-        header = self.admin.get_detail_header(request=self.request, obj=self.object)
-        header.subtitle = 'Mail Payment'
-
-        buttons = [
-            Button(name='submit', value='Submit', link='submit', style='primary'),
-            Button(name='submit', value='Submit', link='submit', style='brand'),
-        ]
+        header = self.get_page_header(request=self.request, obj=self.object)
 
         context = {
-            'detail_header': header,
-            'detail_actions': self._render_buttons(buttons),
+            'header': header,
             'object': self.object,
         }
 

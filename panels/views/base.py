@@ -1,9 +1,9 @@
 from django.views.generic.base import TemplateView
 
-from .mixins import AdminRequiredMixin, PageHeaderMixin
+from .mixins import AdminPageMixin
 
 
-class TemplateAdminView(AdminRequiredMixin, PageHeaderMixin, TemplateView):
+class TemplateAdminView(AdminPageMixin, TemplateView):
     """
     """
 

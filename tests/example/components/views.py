@@ -60,8 +60,14 @@ class ComponentLabelView(TemplateAdminView):
     template_name = 'component_label.html'
 
 
-class ComponentPanelView(TemplateAdminView):
-    template_name = 'component_panel.html'
+class ComponentCardsView(TemplateAdminView):
+    page_header_title = 'Cards'
+    page_header_navigation = [
+        Breadcrumb(title='Dashboard',  href='/'),
+        Breadcrumb(title='Components', href='/components/'),
+    ]
+
+    template_name = 'component_cards.html'
 
 
 class ComponentBreadcrumbView(TemplateAdminView):

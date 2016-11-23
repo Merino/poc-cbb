@@ -4,15 +4,21 @@
 
 {% block page-content %}
 
-<div class="page-content">
-<h1>Panel</h1>
+    <style type="text/css">
+        p {
+            margin-bottom:14px;
+        }
+
+    </style>
+
     <p>
-        The building parts of the page
+        A card present a high level of information and guides the user toward actions and details. <br/>
+        Card use the block-element.
     </p>
 
     <p>
         TODO
-        <ul>
+        <ul class="vds-list--dotted">
             <li>Panels with options</li>
             <li>Panels JS load / block</li>
             <li>Panels transparent version</li>
@@ -21,13 +27,104 @@
         </ul>
     </p>
 
-    <div class="page-header page-header--small page-header--transparent">
-        <div class="page-header--title">
-            <div class="page-header--record-name">
-                Basic panels in a panel-deck
+    <p>
+        A basic example of a block the just some text
+    </p>
+    <div class="example">
+        <div class="vds-grid vds-grid-gutters">
+
+            <div class="vds-size--1-of-3">
+                <div class="vds-block">
+                    <div class="vds-block__body">
+                        A Content
+                    </div>
+                </div>
             </div>
+
+            <div class="vds-size--1-of-3">
+                <div class="vds-block">
+                    <div class="vds-block__body">
+                        B Content
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
+
+    <p>A block can have a title</p>
+    <div class="example">
+        <div class="vds-grid vds-grid-gutters">
+
+            <div class="vds-size--1-of-3">
+                <div class="vds-block">
+                    <div class="vds-block__header">
+                        <div class="vds-block__title">
+                            A Title
+                        </div>
+                    </div>
+                    <div class="vds-block__body">
+                        A Content
+                    </div>
+                </div>
+            </div>
+
+            <div class="vds-size--1-of-3">
+                <div class="vds-block">
+                    <div class="vds-block__header">
+                        <div class="vds-block__title">
+                            B Title
+                        </div>
+                    </div>
+                    <div class="vds-block__body">
+                        B Content
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <p>A block can have a title & icon</p>
+    <div class="example">
+        <div class="vds-grid vds-grid-gutters">
+
+            <div class="vds-size--1-of-3">
+                <div class="vds-block">
+                    <div class="vds-block__header">
+                        <div class="vds-block__icon">
+                            <i class="fa fa-car"></i>
+                        </div>
+                        <div class="vds-block__title">
+                            A Title & Icon
+                        </div>
+                    </div>
+                    <div class="vds-block__body">
+                        A Content
+                    </div>
+                </div>
+            </div>
+
+            <div class="vds-size--1-of-3">
+                <div class="vds-block">
+                    <div class="vds-block__header">
+                        <div class="vds-block__icon">
+                            <i class="fa fa-cloud"></i>
+                        </div>
+                        <div class="vds-block__title">
+                            B Title & Icon
+                        </div>
+                    </div>
+                    <div class="vds-block__body">
+                        B Content
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    Card can used in a grid layout.
 
 
     <div class="panel-deck">

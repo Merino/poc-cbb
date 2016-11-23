@@ -53,3 +53,7 @@ class PageHeaderMixin(object):
         header.actions = self.get_page_header_actions(**kwargs)
 
         return header
+
+
+class AdminPageMixin(AdminRequiredMixin, PageHeaderMixin):
+    pass
