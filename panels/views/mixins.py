@@ -21,7 +21,7 @@ class PageHeaderMixin(object):
     """
     """
     page_header_title = ''
-    page_header_actions = []
+    page_header_options = []
     page_header_navigation = []
 
     def get_page_header_navigation(self, **kwargs):
@@ -39,10 +39,10 @@ class PageHeaderMixin(object):
         """
         return self.page_header_title
 
-    def get_page_header_actions(self, **kwargs):
+    def get_page_header_options(self, **kwargs):
         """
         """
-        return self.page_header_actions
+        return self.page_header_options
 
     def get_page_header(self, **kwargs):
         """
@@ -50,7 +50,7 @@ class PageHeaderMixin(object):
         header = Header()
         header.title = self.get_page_header_title(**kwargs)
         header.navigation = self.get_page_header_navigation(**kwargs)
-        header.actions = self.get_page_header_actions(**kwargs)
+        header.options = self.get_page_header_options(**kwargs)
 
         return header
 

@@ -1,16 +1,15 @@
 {% extends "vds/base.html" %}
 
-{% block head_title %}Form{% endblock %}
+{% block head_title %}Form Layout{% endblock %}
 
 {% block page-content %}
 
 
-    <div class="block">
-        <div class="block__header">
-            
+    <div class="vds-block">
+        <div class="vds-block__header">
+            <div class="vds-block__title">Basic Layout</div>
         </div>
-        <div class="block__body">
-            
+        <div class="vds-block__body">
             <div class="vds-form--horizontal">
               <div class="vds-form-element">
                 <label class="vds-form-element__label" for="inputSample2">Text Input</label>
@@ -24,36 +23,32 @@
                   <textarea id="textareaSample2" class="vds-textarea"></textarea>
                 </div>
               </div>
-              <fieldset class="vds-form-element">
-                <legend class="vds-form-element__legend vds-form-element__label">Checkbox Group label</legend>
+              <div class="vds-form-element">
+                <div class="vds-form-element__label vds-form-element__legend">Checkbox Group label</div>
                 <div class="vds-form-element__control">
                   <label class="vds-checkbox" for="opportunities-ownership">
                     <input name="default" type="checkbox" id="opportunities-ownership" />
-                    <span class="vds-checkbox--faux"></span>
                     <span class="vds-form-element__label">All opportunities owned by you</span>
                   </label>
                   <label class="vds-checkbox" for="contact-ownership">
                     <input name="default" type="checkbox" id="contact-ownership" />
-                    <span class="vds-checkbox--faux"></span>
                     <span class="vds-form-element__label">All contacts in the account owned by you</span>
                   </label>
                 </div>
-              </fieldset>
-              <fieldset class="vds-form-element">
+              </div>
+              <div class="vds-form-element">
                 <legend class="vds-form-element__legend vds-form-element__label">Radio Group label</legend>
                 <div class="vds-form-element__control">
                   <label class="vds-radio" for="lead">
                     <input type="radio" name="options" id="lead" />
-                    <span class="vds-radio--faux"></span>
                     <span class="vds-form-element__label">Lead Generation</span>
                   </label>
                   <label class="vds-radio" for="education">
                     <input type="radio" name="options" id="education" />
-                    <span class="vds-radio--faux"></span>
                     <span class="vds-form-element__label">Education Leads</span>
                   </label>
                 </div>
-              </fieldset>
+              </div>
               <div class="vds-form-element">
                 <div class="vds-form-element__control">
                   <label class="vds-checkbox" for="agree">
@@ -64,219 +59,210 @@
                 </div>
               </div>
             </div>
-            
-            
-            
-            
         </div>
-        
     </div>
-        
-        
 
-    <section class="block">
-        <form class="form-horizontal">
-            <h3>Create a project</h3>
-            <p> Projects are where your repositories live. They are contrainers you
-                can group similar repositories in for better code organisations</p>
+    <br />
+    <br />
 
-            <div class="form-element">
-                <div class="form-element__label">
-                    <label for="inputProjectName">
-                        Project name <span class="form-element__label--required">*</span>
+    <div class="vds-block">
+        <div class="vds-block__header">
+            <div class="vds-block__icon">
+                <i class="fa fa-archive"></i>
+            </div>
+            <div class="vds-block__title">
+                Create a project
+            </div>
+        </div>
+        <div class="vds-block__body">
+            <p>
+                Projects are where your repositories live. They are contrainers you
+                can group similar repositories in for better code organisations
+            </p>
+            <div class="vds-form--horizontal">
+                <div class="vds-form-element">
+                    <label class="vds-form-element__label" for="project.name">Project name
+                        <abbr class="vds-required" title="required">*</abbr>
                     </label>
+                    <div class="vds-form-element__control">
+                        <input id="project.name" class="vds-input" type="text" />
+                    </div>
                 </div>
-                <div class="form-element__value">
-                    <input type="email" class="form-control" id="inputProjectName">
-                </div>
-            </div>
-
-            <div class="form-element">
-                <div class="form-element__label">
-                    <label for="inputKey">
-                        Key
+                <div class="vds-form-element">
+                    <label class="vds-form-element__label" for="project.key">Key
                     </label>
+                    <div class="vds-form-element__control">
+                        <input id="project.key" class="vds-input" type="text"  placeholder="Eg. AT (project named Atlassian)" />
+                    </div>
                 </div>
-                <div class="form-element__value">
-                    <input type="email" class="form-control" id="inputKey" placeholder="Eg. AT (project named Atlassian)">
-                    <small>Input must be a unique value</small>
-                </div>
-            </div>
-
-            <div class="form-element">
-                <div class="form-element__label">
-                    <label for="inputDescription">
-                        Description
+                <div class="vds-form-element">
+                    <label class="vds-form-element__label" for="project.description">Description
                     </label>
+                    <div class="vds-form-element__control">
+                        <textarea id="project.description" class="vds-textarea"></textarea>
+                    </div>
                 </div>
-                <div class="form-element__value">
-                    <textarea id="inputDescription" class="form-control"></textarea>
-                </div>
-            </div>
-
-
-
-
-            <h5>Project permissions</h5>
-
-            <div class="form-element row">
-                <div class="col-sm-2">
-                    <label for="inputDescription" class="form-control-label">
-                        All active users can
+                <div class="vds-form-element">
+                    <label class="vds-form-element__label" for="project.description">Description
                     </label>
-                </div>
-                <div class="col-sm-10">
-                    <div class="radio">
-                <label>
-                  <input type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-                  Read and write
-                </label>
-              </div>
-              <div class="radio">
-                <label>
-                  <input type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                  Read only
-                </label>
-              </div>
-              <div class="radio">
-                <label>
-                  <input type="radio" name="gridRadios" id="gridRadios3" value="option3">
-                  No access
-                </label>
-              </div>
+                    <div class="vds-form-element__control">
+                        <textarea id="project.description" class="vds-textarea"></textarea>
+                    </div>
                 </div>
             </div>
+        </div>
+    </div>
 
+    <br />
+    <br />
 
+    <div class="vds-grid vds-wrap vds-grid-gutters">
 
-            <div class="form-element form-action row">
-                <div class="col-sm-2">
-                    <br />
+        <div class="vds-size--1-of-2">
+            <div class="vds-block">
+                <div class="vds-block__header">
+                    <div class="vds-block__title">
+                        Formset 1 of 2
+                    </div>
                 </div>
-                <div class="col-sm-10">
-
-                    <button type="submit" class="btn btn-primary">Create project</button> <a class="btn btn-link">Cancel</a>
-
+                <div class="vds-block__body">
+                    <div class="vds-form--horizontal">
+                        <div class="vds-form-element">
+                            <label class="vds-form-element__label" for="project1.name">Project name
+                                <abbr class="vds-required" title="required">*</abbr>
+                            </label>
+                            <div class="vds-form-element__control">
+                                <input id="project1.name" class="vds-input" type="text" />
+                            </div>
+                        </div>
+                        <div class="vds-form-element">
+                            <label class="vds-form-element__label" for="project1.key">Key
+                            </label>
+                            <div class="vds-form-element__control">
+                                <input id="project1.key" class="vds-input" type="text"  placeholder="Eg. AT (project named Atlassian)" />
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-        </form>
-    </section>
-
-
-    <section class="block">
-        <form class="form-horizontal">
-            <h4>Form Horizontal</h4>
-            <div class="form-element">
-                <div class="form-element__label">
-                    <label for="inputProjectName">
-                        Project name <span class="form-element__label--required">*</span>
-                    </label>
+        </div>
+        <div class="vds-size--1-of-2">
+            <div class="vds-block">
+                <div class="vds-block__header">
+                    <div class="vds-block__title">
+                        Formset 1 of 2
+                    </div>
                 </div>
-                <div class="form-element__control">
-                    <input type="email" class="form-control" id="inputProjectName">
-                </div>
-            </div>
-            <div class="form-element">
-                <div class="form-element__label">
-                    <label for="inputKey">
-                        Key
-                    </label>
-                </div>
-                <div class="form-element__control">
-                    <input type="email" class="form-control" id="inputKey" placeholder="Eg. AT (project named Atlassian)">
-                    <small>Input must be a unique value</small>
-                </div>
-            </div>
-        </form>
-    </section>
-
-
-    <section class="block">
-        <form class="form-stacked">
-            <h4>Form Stacked</h4>
-            <div class="form-element">
-                <div class="form-element__label">
-                    <label for="inputProjectName">
-                        Project name <span class="form-element__label--required">*</span>
-                    </label>
-                </div>
-                <div class="form-element__control">
-                    <input type="email" class="form-control" id="inputProjectName">
+                <div class="vds-block__body">
+                    <div class="vds-form--horizontal">
+                        <div class="vds-form-element">
+                            <label class="vds-form-element__label" for="project1.name">Project name
+                                <abbr class="vds-required" title="required">*</abbr>
+                            </label>
+                            <div class="vds-form-element__control">
+                                <input id="project1.name" class="vds-input" type="text" />
+                            </div>
+                        </div>
+                        <div class="vds-form-element">
+                            <label class="vds-form-element__label" for="project1.key">Key
+                            </label>
+                            <div class="vds-form-element__control">
+                                <input id="project1.key" class="vds-input" type="text"  placeholder="Eg. AT (project named Atlassian)" />
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="form-element">
-                <div class="form-element__label">
-                    <label for="inputKey">
-                        Key
-                    </label>
+        </div>
+        <div class="vds-size--1-of-1">
+            <div class="vds-block">
+                <div class="vds-block__header">
+                    <div class="vds-block__title">
+                        Formset 1 of 1
+                    </div>
                 </div>
-                <div class="form-element__control">
-                    <input type="email" class="form-control" id="inputKey" placeholder="Eg. AT (project named Atlassian)">
-                    <small>Input must be a unique value</small>
+                <div class="vds-block__body">
+                    <div class="vds-form--horizontal">
+                        <div class="vds-form-element">
+                            <label class="vds-form-element__label" for="project1.name">Project name
+                                <abbr class="vds-required" title="required">*</abbr>
+                            </label>
+                            <div class="vds-form-element__control">
+                                <input id="project1.name" class="vds-input" type="text" />
+                            </div>
+                        </div>
+                        <div class="vds-form-element">
+                            <label class="vds-form-element__label" for="project1.key">Key
+                            </label>
+                            <div class="vds-form-element__control">
+                                <input id="project1.key" class="vds-input" type="text"  placeholder="Eg. AT (project named Atlassian)" />
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </form>
-    </section>
+        </div>
+        <div class="vds-size--1-of-3">
+            <div class="vds-block">
+                <div class="vds-block__header">
+                    <div class="vds-block__title">
+                        Formset 1 of 3
+                    </div>
+                </div>
+                <div class="vds-block__body">
+                    <div class="vds-form--horizontal">
+                        <div class="vds-form-element">
+                            <label class="vds-form-element__label" for="project1.name">Project name
+                                <abbr class="vds-required" title="required">*</abbr>
+                            </label>
+                            <div class="vds-form-element__control">
+                                <input id="project1.name" class="vds-input" type="text" />
+                            </div>
+                        </div>
+                        <div class="vds-form-element">
+                            <label class="vds-form-element__label" for="project1.key">Key
+                            </label>
+                            <div class="vds-form-element__control">
+                                <input id="project1.key" class="vds-input" type="text"  placeholder="Eg. AT (project named Atlassian)" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="vds-size--2-of-3">
+            <div class="vds-block">
+                <div class="vds-block__header">
+                    <div class="vds-block__title">
+                        Formset 2 of 3
+                    </div>
+                </div>
+                <div class="vds-block__body">
+                    <div class="vds-form--horizontal">
+                        <div class="vds-form-element">
+                            <label class="vds-form-element__label" for="project1.name">Project name
+                                <abbr class="vds-required" title="required">*</abbr>
+                            </label>
+                            <div class="vds-form-element__control">
+                                <input id="project1.name" class="vds-input" type="text" />
+                            </div>
+                        </div>
+                        <div class="vds-form-element">
+                            <label class="vds-form-element__label" for="project1.key">Key
+                            </label>
+                            <div class="vds-form-element__control">
+                                <input id="project1.key" class="vds-input" type="text"  placeholder="Eg. AT (project named Atlassian)" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
-    <section class="block">
-        <form class="form-stacked">
-            <h4>Form Stacked (Placeholder)</h4>
-            <div class="form-element">
-                <div class="form-element__control">
-                    <input type="email" class="form-control form-control-lg" id="inputProjectName" placeholder="Email">
-                </div>
-            </div>
-            <div class="form-element">
-                <div class="form-element__control">
-                    <input type="password" class="form-control form-control-lg" id="inputKey" placeholder="Password">
-                </div>
-            </div>
-
-            <div class="form-element">
-                <div class="form-element__control">
-                    <button class="btn btn-primary btn-lg btn-block">Sign In</button>
-                </div>
-            </div>
-
-            <div class="form-element">
-                <div class="form-element__control">
-                    <p class="text-xs-right">
-                        <a href="">Forgot your password?</a>
-                    </p>
-                </div>
-            </div>
-        </form>
-    </section>
 
 
-    <section class="block">
-        <form class="form-inline">
-            <h4>Form Inline</h4>
-            <div class="form-element">
-                <div class="form-element__label">
-                    <label for="inputProjectName">
-                        Project name <span class="form-element__label--required">*</span>
-                    </label>
-                </div>
-                <div class="form-element__control">
-                    <input type="email" class="form-control" id="inputProjectName">
-                </div>
-            </div>
-            <div class="form-element">
-                <div class="form-element__label">
-                    <label for="inputKey">
-                        Key
-                    </label>
-                </div>
-                <div class="form-element__control">
-                    <input type="email" class="form-control" id="inputKey" placeholder="Eg. AT (project named Atlassian)">
-                    <small>Input must be a unique value</small>
-                </div>
-            </div>
-        </form>
-    </section>
 
 
 {% endblock %}

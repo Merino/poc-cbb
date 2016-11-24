@@ -1,6 +1,6 @@
 {% extends "vds/base.html" %}
 
-{% block head_title %}Design Typography{% endblock %}
+{% block head_title %}Typography{% endblock %}
 
 {% block page-content %}
     <p>
@@ -10,17 +10,21 @@
     </p>
     <div>
         Source : Bootstrap 4
-        <table class="table">
+        <table class="vds-table">
             <tbody>
                 <tr>
-                    <th>Element</th>
+                    <th>Name</th>
                     <th>Pixel sizes</th>
-                    <th>Description</th>
+                    <th>Example</th>
                 </tr>
                 <tr>
-                    <td><h1>h1. Heading</h1></td>
+                    <td><h1 class="">HEADING LARGE</h1></td>
                     <td class="type-info">Semibold 35px</td>
-                    <td>The main page heading is an H1 element. You should only use it once per page</td>
+                    <td>
+                        <span class="vds-text-heading--large">
+                            The quick brown fox jumps over the lazy dog.
+                        </span>
+                    </td>
                 </tr>
                 <tr>
                     <td><h2>h2. Heading</h2></td>

@@ -1,0 +1,527 @@
+{% extends "vds/base.html" %}
+
+{% block head_title %}Form Elements{% endblock %}
+
+{% block page-content %}
+
+
+
+    <div class="vds-block">
+        <div class="vds-block__header">
+            <div class="vds-block__title">
+                Input
+            </div>
+        </div>
+        <div class="vds-block__body">
+            <p>
+                You can style the HTML 'input' element to align with the Vesper brand by using the .vds-input
+                class on the 'input' element.
+                <br />
+                The 'input' element includes support for all HTML5 types: text, password, datetime, datetime-local,
+                date, month, time, week, number, email, url, search, tel, and color.
+            </p>
+            <div class="vds-form--horizontal">
+                <div class="vds-form-element">
+                    <div class="vds-form-element__label">
+                        <label for="input.default">
+                            Input Default
+                        </label>
+                    </div>
+                    <div class="vds-form-element__control">
+                        <input id="input.default" class="vds-input" type="text" />
+                    </div>
+                </div>
+                <div class="vds-form-element">
+                    <div class="vds-form-element__label">
+                        <label for="input.value">
+                            Input Value
+                        </label>
+                    </div>
+                    <div class="vds-form-element__control">
+                        <input id="input.value" class="vds-input" type="text" value="Value"/>
+                    </div>
+                </div>
+                <div class="vds-form-element">
+                    <div class="vds-form-element__label">
+                        <label for="input.placeholder">
+                            Input Placeholder
+                        </label>
+                    </div>
+                    <div class="vds-form-element__control">
+                        <input id="input.placeholder" class="vds-input" type="text" placeholder="Placeholder"/>
+                    </div>
+                </div>
+                <div class="vds-form-element">
+                    <div class="vds-form-element__label">
+                        <label for="input.disabled">
+                            Input Disabled
+                        </label>
+                    </div>
+                    <div class="vds-form-element__control">
+                        <input id="input.disabled" class="vds-input" type="text" disabled value="Disabled"/>
+                    </div>
+                </div>
+                <div class="vds-form-element">
+                    <div class="vds-form-element__label">
+                        <label for="input.readonly">
+                            Input Readonly
+                        </label>
+                    </div>
+                    <div class="vds-form-element__control">
+                        <span class="vds-form-element__static">Read Only</span>
+                    </div>
+                </div>
+                <div class="vds-form-element">
+                    <div class="vds-form-element__label">
+                        <label for="input.required">
+                            Input Required
+                            <abbr class="vds-required" title="required">*</abbr>
+                        </label>
+                    </div>
+                    <div class="vds-form-element__control">
+                        <input id="input.required" class="vds-input" type="text" value="Required Field"/>
+                    </div>
+                </div>
+                <div class="vds-form-element vds-has-error">
+                    <div class="vds-form-element__label">
+                        <label for="input.error">
+                            Input Error
+                        </label>
+                    </div>
+                    <div class="vds-form-element__control vds-input-has-icon vds-input-has-icon--right">
+                        <div aria-hidden="true" class="vds-input__icon">
+                            <i class="fa fa-exclamation-triangle"></i>
+                        </div>
+                        <input id="input.error" class="vds-input" type="text" value="Wrong Value"/>
+                        <div class="vds-form-element__help">This field contains an error.</div>
+                    </div>
+                </div>
+                 <div class="vds-form-element">
+                    <div class="vds-form-element__label">
+                        <label for="input.icon.left">
+                            Input Icon Left
+                        </label>
+                    </div>
+                    <div class="vds-form-element__control vds-input-has-icon vds-input-has-icon--left">
+                        <div aria-hidden="true" class="vds-input__icon">
+                            <i class="fa fa-euro"></i>
+                        </div>
+                        <input id="input.error" class="vds-input" type="text" value="icon left"/>
+                    </div>
+                </div>
+                 <div class="vds-form-element">
+                    <div class="vds-form-element__label">
+                        <label for="input.icon.right">
+                            Input Icon Right
+                        </label>
+                    </div>
+                    <div class="vds-form-element__control vds-input-has-icon vds-input-has-icon--right">
+                        <div aria-hidden="true" class="vds-input__icon">
+                            <i class="fa fa-search"></i>
+                        </div>
+                        <input id="input.icon.right" class="vds-input" type="text" value="icon right"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br />
+    <br />
+
+    <div class="vds-block">
+        <div class="vds-block__header">
+            <div class="vds-block__title">
+                Select
+            </div>
+        </div>
+        <div class="vds-block__body">
+            <p>
+               The HTML 'select' element presents a menu of options. The options within the menu are represented by
+                'option' elements that you can group with 'optgroup' elements. You can pre-select options for the user.
+            </p>
+            <div class="vds-form--horizontal">
+                <div class="vds-form-element">
+                    <div class="vds-form-element__label">
+                        <label for="select.default">
+                            Select Default
+                        </label>
+                    </div>
+                    <div class="vds-form-element__control">
+                        <div class="vds-select_container">
+                            <select id="select.default" class="vds-select">
+                                <option></option>
+                                <option>Option One</option>
+                                <option>Option Two</option>
+                                <option>Option Three</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="vds-form-element">
+                    <div class="vds-form-element__label">
+                        <label for="select.value">
+                            Select Value
+                        </label>
+                    </div>
+                    <div class="vds-form-element__control">
+                        <div class="vds-select_container">
+                            <select id="select.default" class="vds-select">
+                                <option selected="selected">Value</option>
+                                <option>Option One</option>
+                                <option>Option Two</option>
+                                <option>Option Three</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="vds-form-element">
+                    <div class="vds-form-element__label">
+                        <label for="select.required">
+                            Select Required
+                            <abbr class="vds-required" title="required">*</abbr>
+                        </label>
+                    </div>
+                    <div class="vds-form-element__control">
+                        <div class="vds-select_container">
+                            <select id="select.required" class="vds-select">
+                                <option>Required Field</option>
+                                <option>Option One</option>
+                                <option>Option Two</option>
+                                <option>Option Three</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="vds-form-element">
+                    <div class="vds-form-element__label">
+                        <label for="select.disabled">
+                            Select Disabled
+                        </label>
+                    </div>
+                    <div class="vds-form-element__control">
+                        <div class="vds-select_container">
+                            <select id="select.disabled" class="vds-select" disabled>
+                                <option>Disabled</option>
+                                <option>Option One</option>
+                                <option>Option Two</option>
+                                <option>Option Three</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="vds-form-element vds-has-error">
+                    <div class="vds-form-element__label">
+                        <label for="select.error">
+                            Select Error
+                        </label>
+                    </div>
+                    <div class="vds-form-element__control">
+                        <div class="vds-select_container">
+                            <select id="select.error" class="vds-select">
+                                <option>Wrong Value</option>
+                                <option>Option One</option>
+                                <option>Option Two</option>
+                                <option>Option Three</option>
+                            </select>
+                        </div>
+                         <div class="vds-form-element__help">This field contains an error.</div>
+                    </div>
+                </div>
+            </div>
+         </div>
+    </div>
+
+    <br />
+    <br />
+
+    <div class="vds-block">
+        <div class="vds-block__header">
+            <div class="vds-block__title">
+                Boolean Checkbox
+            </div>
+        </div>
+        <div class="vds-block__body">
+            <p>
+               The ability to style checkboxes with CSS varies across browsers. To ensure that checkboxes look the same
+                everywhere, we use a custom DOM. Pay close attention to the markup, because all elements must exist for the styles to work.
+            </p>
+            <div class="vds-form--horizontal">
+                <div class="vds-form-element">
+                    <div class="vds-form-element__label">
+                        <label for="select.error">
+                            Checkbox Default
+                        </label>
+                    </div>
+                    <div class="vds-form-element__control">
+                        <label class="vds-checkbox--toggle vds-grid">
+                            <input name="checkbox" type="checkbox" aria-describedby="toggle-desc" />
+                            <span id="toggle-desc" class="vds-checkbox--faux_container" aria-live="assertive">
+                              <span class="vds-checkbox--faux"></span>
+                            </span>
+                          </label>
+                    </div>
+                </div>
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+        <div class="form-element">
+            <div class="form-element__label">
+                <label for="inputLabel">
+                    Field label
+                </label>
+            </div>
+            <div class="form-element__control">
+                <input type="email" class="form-control" id="inputLabel">
+            </div>
+        </div>
+
+        <div class="form-element">
+            <div class="form-element__label">
+                <label for="inputLabelRequired">
+                    Field label required <span class="form-element__label--required">*</span>
+                </label>
+            </div>
+            <div class="form-element__control">
+                <input type="email" class="form-control" id="inputLabelRequired">
+            </div>
+        </div>
+
+
+
+        <div class="form-element">
+            <div class="form-element__label">
+                <label>
+                    Static
+                </label>
+            </div>
+            <div class="form-element__control">
+               <p class="form-control-static">email@example.com</p>
+            </div>
+        </div>
+
+        <div class="form-element">
+            <div class="form-element__label">
+                <label for="inputValue">
+                    Value
+                </label>
+            </div>
+            <div class="form-element__control">
+                <input type="email" class="form-control" id="inputValue" value="value from database">
+            </div>
+        </div>
+
+        <div class="form-element">
+            <div class="form-element__label">
+                <label for="inputPlaceholder">
+                    Placeholder
+                </label>
+            </div>
+            <div class="form-element__control">
+                <input type="email" class="form-control" id="inputPlaceholder" placeholder="eg. name">
+            </div>
+        </div>
+
+        <div class="form-element">
+            <div class="form-element__label">
+                <label for="inputFocus">
+                    Focus
+                </label>
+            </div>
+            <div class="form-element__control">
+                <input type="email" class="form-control form-control__focus" id="inputFocus" placeholder="eg. name">
+            </div>
+        </div>
+
+        <div class="form-element">
+            <div class="form-element__label">
+                <label for="inputReadonly">
+                    Readonly
+                </label>
+            </div>
+            <div class="form-element__control">
+                <input type="text" class="form-control" id="inputReadonly" value="Readonly input here…" readonly />
+            </div>
+        </div>
+
+        <div class="form-element">
+            <div class="form-element__label">
+                <label for="inputDisabled">
+                    Disabled
+                </label>
+            </div>
+            <div class="form-element__control">
+                <input type="text" class="form-control" id="inputDisabled" value="Disabled input here…" disabled />
+            </div>
+        </div>
+
+        <div class="form-element">
+            <div class="form-element__label">
+                <label for="inputDisabled">
+                    Disabled
+                </label>
+            </div>
+            <div class="form-element__control">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Recipient's username" aria-describedby="basic-addon2">
+                    <span class="input-group-addon" id="basic-addon2">@example.com</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-element">
+            <div class="form-element__label">
+                <label for="inputDisabled">
+                    Disabled
+                </label>
+            </div>
+            <div class="form-element__control">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">@</span>
+                    <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-element">
+            <div class="form-element__label">
+                <label for="inputDisabled">
+                    Disabled
+                </label>
+            </div>
+            <div class="form-element__control">
+                <div class="input-group">
+                    <span class="input-group-addon">$</span>
+                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                    <span class="input-group-addon">.00</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-element">
+            <div class="form-element__label">
+                <label for="inputDisabled">
+                    Icon left
+                </label>
+            </div>
+            <div class="form-element__control">
+                <span class="input-group-addon form-control__icon-left">$</span>
+                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+            </div>
+        </div>
+
+            <style>
+
+
+                .form-control__icon-left{
+
+    position: absolute;
+    margin-top: 1px;
+    margin-left: 1px;
+    height: 27px;
+    border: none;
+
+                }
+
+            </style>
+
+        <div class="form-element">
+            <div class="form-element__label">
+                <label for="inputDisabled">
+                    Icon right
+                </label>
+            </div>
+            <div class="form-element__control">
+                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                <span class="input-group-addon">.00</span>
+            </div>
+        </div>
+
+
+
+        <div class="form-element">
+            <div class="form-element__label">
+                <label for="inputFocus">
+                    Select
+                </label>
+            </div>
+            <div class="form-element__control">
+                <select class="form-control" id="exampleSelect1">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-element">
+            <div class="form-element__label">
+                 <label>
+                     Radios
+                 </label>
+            </div>
+            <div class="form-element__control">
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                        Option one is this and that&mdash;be sure to include why it's great
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                        Option two can be something else and selecting it will deselect option one
+                    </label>
+                </div>
+                <div class="radio disabled">
+                    <label>
+                        <input type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
+                        Option three is disabled
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-element">
+            <div class="form-element__label">
+                <label for="inputFocus">
+                    Checkbox
+                </label>
+            </div>
+            <div class="form-element__control">
+                <div class="checkbox">
+                    <label>
+                      <input type="checkbox"> Check me out
+                    </label>
+                  </div>
+            </div>
+        </div>
+
+
+        <div class="form-element">
+            <div class="form-element__label">
+                <label for="inputFocus">
+                    Textarea
+                </label>
+            </div>
+            <div class="form-element__control">
+                <div class="checkbox">
+                    <textarea id="inputDescription" class="form-control"></textarea>
+                </div>
+            </div>
+        </div>
+
+        </div>
+
+    </div>
+
+{% endblock %}

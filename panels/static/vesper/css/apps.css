@@ -1,3 +1,11 @@
+p {
+  margin-bottom: 1.3rem;
+}
+
+a {
+  color: #3572b0;
+}
+
 .vds-section__title {
   font-size: 1.3rem;
   color: #333;
@@ -207,10 +215,11 @@ html {
 .vds-block .vds-block__header {
   float: left;
   width: 100%;
-  padding: 0.66rem 1rem 0.66rem 1rem;
+  padding: 7px 14px 7px;
   margin-bottom: 1rem;
   background: #E9E9E9;
   border-bottom: 1px solid #cccccc;
+  font-size: 14px;
 }
 .vds-block .vds-block__header .vds-block__icon {
   float: left;
@@ -379,6 +388,21 @@ html {
 }
 .vds-form-element__label {
   margin-bottom: 0.5rem;
+}
+.vds-form-element__help {
+  margin-top: 0.25rem;
+}
+
+.vds-input-has-icon .vds-input__icon {
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 0;
+  margin-top: 4.5px;
+  font-size: 1rem;
+}
+.vds-has-error .vds-input-has-icon .vds-input__icon {
+  color: #d04437;
 }
 
 .related-widget-wrapper-link {

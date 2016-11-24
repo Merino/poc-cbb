@@ -27,8 +27,8 @@
         </div>
 
         <div class="vds-col vds-no-flex vds-grid vds-align-middle">
-            {% for action in header.actions %}
-                {{ action.render|safe }}
+            {% for option in header.options %}
+                {{ option.render|safe }}
             {% endfor %}
         </div>
 

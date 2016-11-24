@@ -26,15 +26,31 @@ class ComponentNotificationView(TemplateAdminView):
     template_name = 'component_notification.html'
 
 
-class ComponentFormInputView(TemplateAdminView):
-    template_name = 'component_form_input.html'
+class ComponentFormElementsView(TemplateAdminView):
+    page_header_title = 'Form Elements'
+    page_header_navigation = [
+        Breadcrumb(title='Dashboard',  href='/'),
+        Breadcrumb(title='Components', href='/components/'),
+    ]
+    template_name = 'component_form_elements.html'
 
 
 class ComponentFormValidationView(TemplateAdminView):
+    page_header_title = 'Form Validation'
+    page_header_navigation = [
+        Breadcrumb(title='Dashboard',  href='/'),
+        Breadcrumb(title='Components', href='/components/'),
+    ]
     template_name = 'component_form_validation.html'
 
 
 class ComponentFormLayoutView(TemplateAdminView):
+    page_header_title = 'Form Layout'
+    page_header_navigation = [
+        Breadcrumb(title='Dashboard',  href='/'),
+        Breadcrumb(title='Components', href='/components/'),
+    ]
+
     template_name = 'component_form_layout.html'
 
 

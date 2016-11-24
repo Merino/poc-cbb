@@ -7,6 +7,14 @@ $vds-font-color: #333;
 
 $vds-link-color: $vds-color-blue;
 
+//
+p {
+  margin-bottom: 1.3rem;
+}
+
+a {
+  color: $vds-link-color;
+}
 
 // Section Title
 .vds-section {
@@ -17,3 +25,5 @@ $vds-link-color: $vds-color-blue;
     border-bottom: 1px solid $vds-color-silver;
   }
 }
+
+

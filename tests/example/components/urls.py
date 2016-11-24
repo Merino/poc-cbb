@@ -1,13 +1,13 @@
 from django.conf.urls import url
 
-from .views import ComponentIndexView, ComponentNotificationView, ComponentFormInputView, ComponentFormLayoutView, \
+from .views import ComponentIndexView, ComponentNotificationView, ComponentFormElementsView, ComponentFormLayoutView, \
     ComponentFormValidationView, ComponentButtonView, ComponentTableView, ComponentLabelView, ComponentHeaderView, \
     ComponentCardsView, ComponentBreadcrumbView
 
 urlpatterns = [
     url(r'^$', ComponentIndexView.as_view()),
     url(r'^notification/', ComponentNotificationView.as_view()),
-    url(r'^form-input/', ComponentFormInputView.as_view()),
+    url(r'^form-elements/', ComponentFormElementsView.as_view()),
     url(r'^form-validation/', ComponentFormValidationView.as_view()),
     url(r'^form-layout/', ComponentFormLayoutView.as_view()),
     url(r'^button/', ComponentButtonView.as_view()),

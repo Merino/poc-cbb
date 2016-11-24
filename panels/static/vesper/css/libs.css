@@ -1,4 +1,12 @@
 @charset "UTF-8";
+p {
+  margin-bottom: 1.3rem;
+}
+
+a {
+  color: #3572b0;
+}
+
 .vds-section__title {
   font-size: 1.3rem;
   color: #333;
@@ -23,6 +31,14 @@
 }
 .vds-grid-gutters > div {
   padding: 2em 0 0 2em;
+}
+
+p {
+  margin-bottom: 1.3rem;
+}
+
+a {
+  color: #3572b0;
 }
 
 .vds-section__title {
@@ -2958,7 +2974,7 @@ a.slds-button--inverse:focus {
 }
 .vds-form-element__label {
   display: inline-block;
-  color: #707070;
+  color: #333;
   font-size: 0.75rem;
   line-height: 1.5;
   margin-right: 0.75rem;
@@ -3418,7 +3434,7 @@ a.slds-button--inverse:focus {
 }
 .vds-checkbox--toggle [type="checkbox"] + .vds-checkbox--faux_container {
   font-size: 0.625rem;
-  color: #707070;
+  color: #333;
 }
 .vds-checkbox--toggle [type="checkbox"] + .vds-checkbox--faux_container .vds-checkbox--off {
   display: block;
@@ -4782,7 +4798,7 @@ a.slds-button--inverse:focus {
 .vds-datepicker th {
   padding: 0.5rem;
   font-weight: 400;
-  color: #707070;
+  color: #333;
 }
 .vds-datepicker td {
   padding: 0.25rem;

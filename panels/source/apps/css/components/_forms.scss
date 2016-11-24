@@ -6,7 +6,34 @@
   &__label{
     margin-bottom: 0.5rem;
   }
+
+  &__help{
+    margin-top: 0.25rem;
+  }
 }
+
+
+//
+// Input
+//
+.vds-input-has-icon .vds-input__icon {
+  // icon is to small, make it bigger
+  width: auto;
+  height: auto;
+  position: absolute;
+  top:0;
+  margin-top: 4.5px;
+  font-size:1rem;
+
+  .vds-has-error & {
+    color:$vds-status-danger;
+  }
+
+}
+
+
+
+
 
 
 // Hide some django functions

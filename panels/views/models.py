@@ -131,12 +131,12 @@ class ModelAdminView(nested_admin.NestedModelAdmin):
 
         return navigation
 
-    def get_detail_actions(self, request, obj=None, **kwargs):
+    def get_detail_options(self, request, obj=None, **kwargs):
         """
         """
-        return self.detail_actions
+        return self.detail_options
 
-    def _get_detail_action(self, request, obj=None, **kwargs):
+    def _get_detail_options(self, request, obj=None, **kwargs):
         """
             Wrapper function around 'get_detail_actions' to control the form.
         """
@@ -170,7 +170,7 @@ class ModelAdminView(nested_admin.NestedModelAdmin):
         header = Header()
         header.title = self.get_detail_title(request=request, obj=obj)
         header.navigation = self.get_detail_navigation(request=request, obj=obj)
-        header.actions = self._get_detail_action(request=request, obj=obj)
+        header.options = self._get_detail_options(request=request, obj=obj)
 
         extra_context = {
             'header': header
