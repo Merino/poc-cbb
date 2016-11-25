@@ -1,5 +1,5 @@
-from panels.layouts import Breadcrumb, Button
-from panels.views import TemplateAdminView
+from vesper.layouts import Breadcrumb, Button
+from vesper.views import TemplateAdminView
 
 from .utils import FONT_AWESOME_ICON_LIST
 

@@ -11,7 +11,7 @@ try:
 except ImportError:
     from distutils.core import setup
 
-version = panels.__version__
+version = vesper.__version__
 
 if sys.argv[-1] == 'publish':
     os.system('python setup.py sdist upload')

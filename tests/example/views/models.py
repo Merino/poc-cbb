@@ -1,6 +1,6 @@
 from django.db import models
 
-from panels.fields import RichTextarea
+from vesper.fields import RichTextarea
 
 
 class ListData(models.Model):

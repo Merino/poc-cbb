@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class DesignConfig(AppConfig):
-    name = 'design'
+class FoundationConfig(AppConfig):
+    name = 'foundation'

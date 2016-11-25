@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 
 from django.db import migrations, models
-import panels.fields
+import vesper.fields
 
 
 class Migration(migrations.Migration):
@@ -16,7 +16,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='listdata',
             name='description',
-            field=panels.fields.RichTextarea(blank=True),
+            field=vesper.fields.RichTextarea(blank=True),
         ),
         migrations.AlterField(
             model_name='listdata',

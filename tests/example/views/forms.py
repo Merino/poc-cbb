@@ -1,6 +1,6 @@
 from django import forms
 
-from panels.widgets import InputWidget, RadioSelectWidget
+from vesper.widgets import InputWidget, RadioSelectWidget
 
 CHOICES = [
     ('1', 'Value 1'),

@@ -1,10 +1,5 @@
-from django.shortcuts import render
-
-# Create your views here.
-from django.views.generic.base import TemplateView
-
-from panels.layouts import Breadcrumb
-from panels.views import TemplateAdminView
+from vesper.layouts import Breadcrumb
+from vesper.views import TemplateAdminView
 
 
 class ComponentIndexView(TemplateAdminView):

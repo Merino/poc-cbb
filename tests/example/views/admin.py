@@ -14,8 +14,8 @@ from django.utils.translation import ugettext, ugettext_lazy as _
 # from vds.apps import site
 # from vesper.views import ModelAdmin
 
-from panels.layouts import Tab, Fieldset, Field, Button, Inline, Layout, FormHelper
-from panels.views import ModelAdminView, TabularModelAdminInline, FormAdminView, TabularFormAdminInline, TemplateAdminView
+from vesper.layouts import Tab, Fieldset, Field, Button, Inline, Layout, FormHelper
+from vesper.views import ModelAdminView, TabularModelAdminInline, FormAdminView, TabularFormAdminInline, TemplateAdminView
 
 
 from .models import ListData, GlobalA, GlobalB, NestedA, NestedB1, NestedC1

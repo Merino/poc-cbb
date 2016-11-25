@@ -46,7 +46,7 @@ INSTALLED_APPS = (
 
     'django_pygments',
     'turbolinks',
-    'panels',
+    'vesper',
     'crispy_forms',
     'nested_admin',
 
