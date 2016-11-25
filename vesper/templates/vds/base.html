@@ -12,17 +12,17 @@
 
         <title>{% block head_title %}{% endblock %}</title>
 
-        <link rel="shortcut icon" type="image/x-icon" href="/static/vesper/image/vesper-icon.png"/>
+        <link rel="shortcut icon" type="image/x-icon" href="/static/vds/apps/image/vesper-icon.png"/>
 
         <!-- Styles -->
-        <link rel="stylesheet" href="/static/vesper/css/libs.css?{{ BUILD }}" type="text/css" />
-        <link rel="stylesheet" href="/static/vesper/css/apps.css?{{ BUILD }}" type="text/css" />
+        <link rel="stylesheet" href="/static/vds/apps/css/libs.css?{{ BUILD }}" type="text/css" />
+        <link rel="stylesheet" href="/static/vds/apps/css/apps.css?{{ BUILD }}" type="text/css" />
         {% block header_css %}
         {% endblock %}
 
         <!-- Javascript -->
-        <script src="/static/vesper/javascript/libs.js?{{ BUILD }}"></script>
-        <script src="/static/vesper/javascript/apps.js?{{ BUILD }}"></script>
+        <script src="/static/vds/apps/javascript/libs.js?{{ BUILD }}"></script>
+        <script src="/static/vds/apps/javascript/apps.js?{{ BUILD }}"></script>
 
         {% block extrahead %}
         {% endblock %}

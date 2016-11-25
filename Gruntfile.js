@@ -20,8 +20,8 @@ module.exports = function(grunt) {
             style: 'expanded'
           },
           files: {                         // Dictionary of files
-            'panels/static/vesper/css/apps.css': 'panels/source/apps/css/apps.scss',
-            'panels/static/vesper/css/libs.css': 'panels/source/vendors/libs.scss'
+            'vesper/static/vds/apps/css/apps.css': 'vds/source/apps/css/apps.scss',
+            'vesper/static/vds/apps/css/libs.css': 'vds/source/vendors/libs.scss'
           }
         }
     },
@@ -29,12 +29,12 @@ module.exports = function(grunt) {
     concat: {
         dist: {
             files: {
-                'panels/static/vesper/javascript/apps.js': [
-                    'panels/source/apps/javascript/_apps.js'
+                'vesper/static/vds/apps/javascript/apps.js': [
+                    'vds/source/apps/javascript/_apps.js'
                     ],
-                'panels/static/vesper/javascript/libs.js': [
-                    'panels/source/vendors/jquery/jquery-3.1.1.min.js',
-                    'panels/source/vendors/django-1.9/javascript/inlines.js',
+                'vesper/static/vds/apps/javascript/libs.js': [
+                    'vds/source/vendors/jquery/jquery-3.1.1.min.js',
+                    'vds/source/vendors/django-1.9/javascript/inlines.js',
                     //'panels/source/vendors/bootstrap/assets/javascripts/bootstrap.min.js',
                     //'panels/source/vendors/turbolinks/turbolinks.js'
                     ],
@@ -44,7 +44,7 @@ module.exports = function(grunt) {
 
     watch: {
         css: {
-            files: 'panels/source/**/*.scss',
+            files: 'vds/source/**/*.scss',
             tasks: ['sass:dist', 'postcss'],
         }
     },
@@ -64,7 +64,7 @@ module.exports = function(grunt) {
           ]
         },
         dist: {
-          src: 'panels/static/vesper/css/*.css'
+          src: 'vesper/static/vds/apps/css/*.css'
         }
     },
 
@@ -73,8 +73,8 @@ module.exports = function(grunt) {
             expand: true,
             cwd: '.',
             src: [
-                'panels/source/vendors/font-awesome-4.7.0/fonts/*'],
-            dest: 'panels/static/vesper/fonts/',
+                'vds/source/vendors/font-awesome-4.7.0/fonts/*'],
+            dest: 'vesper/static/vds/apps/fonts/',
             filter: 'isFile',
             flatten: true
         },
@@ -82,19 +82,19 @@ module.exports = function(grunt) {
             expand: true,
             cwd: '.',
             src: [
-                'panels/source/apps/image/*',
+                'vds/source/apps/image/*',
             ],
-            dest: 'panels/static/vesper/image/',
+            dest: 'vesper/static/vds/apps/image/',
             filter: 'isFile',
             flatten: true
         },
         tinymce: {
             expand: true,
-            cwd: 'panels/source/vendors/tinymce-4.4.3/js/tinymce/',
+            cwd: 'vds/source/vendors/tinymce-4.4.3/js/tinymce/',
             src: [
                 '**',
             ],
-            dest: 'panels/static/vesper/libs/tinymce/',
+            dest: 'vesper/static/vds/libs/tinymce/',
         }
     }
   });
